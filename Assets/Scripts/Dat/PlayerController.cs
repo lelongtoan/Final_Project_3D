@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 10f;
 
 
-
+    public bool freze=false;//Biến để cấm nhân vật di chuyển
     private float animSpeed = 0f;
     public bool isRun = false;
     Rigidbody rb;
@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
             if (isRun == false)
             {
                 isRun = true;
-                speed = 9f;
+                speed = 8f;
             }
             else if (isRun == true)
             {
@@ -37,7 +37,10 @@ public class PlayerController : MonoBehaviour
             }
         }
         Debug.Log(isRun);
-        HandleMovement();
+        if (freze == false)
+        {
+            HandleMovement();
+        }
     }
     public void HandleMovement()
     {
