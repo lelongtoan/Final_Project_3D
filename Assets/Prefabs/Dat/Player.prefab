@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7641004714079254164}
   - component: {fileID: 3977399343567858268}
   - component: {fileID: 280252676348190061}
-  - component: {fileID: 3871731288694049178}
+  - component: {fileID: 1675787634457802666}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1511198212671380516}
   serializedVersion: 2
   m_LocalRotation: {x: 0.08282786, y: -0.90197986, z: 0.19996414, w: 0.37361234}
-  m_LocalPosition: {x: 18.905499, y: 14.431234, z: 13.400962}
+  m_LocalPosition: {x: 19.225693, y: 14.431234, z: 13.72569}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &3871731288694049178
+--- !u!114 &1675787634457802666
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,50 +137,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1511198212671380516}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Script: {fileID: 11500000, guid: 25533778e31d58743a18292f177a4d8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ImpulseDefinition:
-    m_ImpulseChannel: 1
-    m_ImpulseShape: 0
-    m_CustomImpulseShape:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_ImpulseDuration: 0.2
-    m_ImpulseType: 3
-    m_DissipationRate: 0
-    m_RawSignal: {fileID: 0}
-    m_AmplitudeGain: 1
-    m_FrequencyGain: 1
-    m_RepeatMode: 0
-    m_Randomize: 1
-    m_TimeEnvelope:
-      m_AttackShape:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      m_DecayShape:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      m_AttackTime: 0
-      m_SustainTime: 0.2
-      m_DecayTime: 0.7
-      m_ScaleWithImpact: 1
-      m_HoldForever: 0
-    m_ImpactRadius: 100
-    m_DirectionMode: 0
-    m_DissipationMode: 2
-    m_DissipationDistance: 100
-    m_PropagationSpeed: 343
-  m_DefaultVelocity: {x: 0, y: -1, z: 0}
 --- !u!1001 &2808792515438158432
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -843,6 +802,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f4b049fd990d224448b714a4550d9c68, type: 3}
       insertIndex: -1
       addedObject: {fileID: 9183807864950052091}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f4b049fd990d224448b714a4550d9c68, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2212609546718068637}
   m_SourcePrefab: {fileID: 100100000, guid: f4b049fd990d224448b714a4550d9c68, type: 3}
 --- !u!4 &2409545184574096779 stripped
 Transform:
@@ -959,4 +921,25 @@ MonoBehaviour:
   comboTiming: 0
   comboDelay: 0
   attackmove: 0.5
-  source: {fileID: 0}
+--- !u!114 &2212609546718068637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3043232924716146481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b154f51bbdb3634aa9f6e87b19a5f43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Walk
+    clip: {fileID: 8300000, guid: 29ef9062a055e5142abf9bf5d07225b4, type: 3}
+  - name: Run
+    clip: {fileID: 8300000, guid: 59f50849b54ec974f967a06656f5e259, type: 3}
+  - name: Attack
+    clip: {fileID: 8300000, guid: baf76b7db1a547247b50a0aa7e7563f5, type: 3}
+  - name: EndAttack
+    clip: {fileID: 8300000, guid: e21e4da69895a9d4c93b5e9e8eb018ab, type: 3}
+  audioSource: {fileID: 0}
