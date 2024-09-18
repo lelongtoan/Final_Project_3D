@@ -17,7 +17,6 @@ public class ComboAtack : MonoBehaviour
 
     public float attackmove = 0.5f;
     PlayerController playerController;
-    public CameraShaker shaker;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -28,7 +27,6 @@ public class ComboAtack : MonoBehaviour
         combonum = 4;
         ani.speed = 0.8f;
         playerController = GetComponent<PlayerController>();
-        shaker = FindObjectOfType<CinemachineVirtualCamera>().GetComponent<CameraShaker>();
     }
 
     // Update is called once per frame
@@ -61,7 +59,9 @@ public class ComboAtack : MonoBehaviour
             ani.SetTrigger("Attack" + combo);
             if (combo == 4)
             {
-                StartCoroutine(shaker.Shake(0.2f, 10f)); // Rung camera trong 0.2s với độ mạnh 0.3
+                //GameObject camObject = GameObject.Find("Camera");
+                //CameraShaker shaker = camObject.GetComponent<CameraShaker>();
+                //shaker.CameraShake(2f); // Rung camera trong 0.2s với độ mạnh 0.3
             }
             comboDelay = comboTiming;
 
