@@ -12,6 +12,8 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] GameObject settingMenu;
     [SerializeField] GameObject loginMenu;
     [SerializeField] GameObject languageMenu;
+    [SerializeField] GameObject startGameMenu;
+    [SerializeField] GameObject newCharMenu;
 
     void Start()
     {
@@ -69,5 +71,13 @@ public class MainMenuManager : MonoBehaviour
     public void SetLanguageMenu()
     {
         languageMenu.SetActive(!languageMenu.activeInHierarchy);
+    }
+    public void SetStartMenu()
+    {
+        startGameMenu.SetActive(!startGameMenu.activeInHierarchy);
+    }
+    public void SetNewCharMenu()
+    {
+        newCharMenu.SetActive(!newCharMenu.activeInHierarchy);
     }
 }
