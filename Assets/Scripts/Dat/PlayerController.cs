@@ -1,19 +1,20 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     [Header("Thuộc tính nhân vật")]
     public float speed = 5f;
+    public float runSpeed = 8f; // Tốc độ khi chạy
     public float jumpForce = 10f;
 
-
-    public bool freze=false;//Biến để cấm nhân vật di chuyển
+    public bool freeze = false; // Biến để cấm nhân vật di chuyển
     private float animSpeed = 0f;
-    public bool isRun = false;
+    public bool isRunning = false;
     Rigidbody rb;
     Animator animator;
+    Coroutine runningCoroutine; // Lưu lại Coroutine để có thể dừng khi cần
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -22,58 +23,91 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        PlayerInfor playerInfo = gameObject.GetComponent<PlayerInfor>();
+
         if (Input.GetKeyDown(KeyCode.C))
         {
-            if (isRun == false)
+            if (playerInfo.mp > 0)
             {
-                isRun = true;
-                speed = 8f;
+                if (!isRunning)
+                {
+                    isRunning = true;
+                    speed = runSpeed;
+                    animator.SetBool("IsRun", true);
+                    runningCoroutine = StartCoroutine(SubtractValue());
+                }
+                else
+                {
+                    StopRunning();
+                }
             }
-            else if (isRun == true)
+            else
             {
-                animator.SetBool("IsRun", false);
-                isRun = false;
-                speed = 5f;
+                Debug.Log("Not enough Mana");
+                StopRunning();
             }
         }
-        Debug.Log(isRun);
-        if (freze == false)
+
+        if (!freeze)
         {
             HandleMovement();
         }
     }
+
     public void HandleMovement()
     {
-        float ipVetical = Input.GetAxis("Vertical");
+        float ipVertical = Input.GetAxis("Vertical");
         float ipHorizontal = Input.GetAxis("Horizontal");
-        Vector3 move = new Vector3(ipHorizontal, 0, ipVetical);
+        Vector3 move = new Vector3(ipHorizontal, 0, ipVertical);
+
         RotateCharacter(move);
-        Debug.Log(move);
-        if (move != Vector3.zero && isRun == false)
+
+        if (move != Vector3.zero)
         {
-            animSpeed = 1;
+            animSpeed = isRunning ? 2 : 1;
         }
-        if (move != Vector3.zero && isRun == true)
+        else
         {
-            animSpeed = 2;
-            animator.SetBool("IsRun", true);
+            animSpeed = 0;
         }
+
         animator.SetFloat("Speed", animSpeed);
-        transform.position = transform.position + move * speed * Time.deltaTime;
-        if (move == Vector3.zero)
-        {
-            animator.SetFloat("Speed", 0);
-        }
+
+        rb.velocity = move * speed + new Vector3(0, rb.velocity.y, 0); // Di chuyển bằng Rigidbody.velocity
     }
-    // Hàm xoay
+
     public void RotateCharacter(Vector3 playerMovementInput)
     {
-        Vector3 lookDirection = playerMovementInput;
-        lookDirection.y = 0f;
-        if (lookDirection != Vector3.zero)
+        if (playerMovementInput != Vector3.zero)
         {
-            Quaternion rotation = Quaternion.LookRotation(lookDirection);
+            Quaternion rotation = Quaternion.LookRotation(playerMovementInput);
             transform.rotation = rotation;
         }
+    }
+
+    IEnumerator SubtractValue()
+    {
+        while (gameObject.GetComponent<PlayerInfor>().mp > 0)
+        {
+            yield return new WaitForSeconds(1f); // Đợi 1 giây
+            gameObject.GetComponent<PlayerInfor>().PlayerUseSkill(5);
+
+            if (gameObject.GetComponent<PlayerInfor>().mp <= 0)
+            {
+                StopRunning();
+            }
+        }
+    }
+
+    // Hàm để dừng chạy
+    private void StopRunning()
+    {
+        if (runningCoroutine != null)
+        {
+            StopCoroutine(runningCoroutine);
+        }
+        isRunning = false;
+        speed = 5f; // Khôi phục lại tốc độ ban đầu
+        animator.SetBool("IsRun", false);
     }
 }
