@@ -41,7 +41,7 @@ public class ComboAtack : MonoBehaviour
         if(Input.GetMouseButtonDown(0) && comboDelay < 0)
         {
             isAttack = true;
-            playerController.freze = true;
+            playerController.freeze = true;
             MoveForwardDuringAttack();
             ani.SetTrigger("Attack" + combo);
             comboDelay = comboTiming;
@@ -49,7 +49,7 @@ public class ComboAtack : MonoBehaviour
         else if (Input.GetMouseButtonDown(0) && comboDelay > 0 && comboDelay < 0.5)
         {
             isAttack = true;
-            playerController.freze = true;
+            playerController.freeze = true;
             MoveForwardDuringAttack();
             combo++;
             if (combo > combonum)
@@ -69,7 +69,7 @@ public class ComboAtack : MonoBehaviour
         else if(comboDelay<0 && !Input.GetMouseButton(0))
         {
             isAttack=false;
-            playerController.freze = false;
+            playerController.freeze = false;
         }
         if(comboDelay<0)
         {
