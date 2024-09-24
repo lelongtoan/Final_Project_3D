@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class MainMenuManager : MonoBehaviour
 {
+    [SerializeField] GameObject mainMenu;
     [SerializeField] GameObject characterMenu;
+    [SerializeField] GameObject perkMenu;
     [SerializeField] GameObject shopMenu;
     [SerializeField] GameObject chestMenu;
     [SerializeField] GameObject detailChest;
@@ -24,9 +26,17 @@ public class MainMenuManager : MonoBehaviour
     {
         
     }
+    public void SetMainMenu()
+    {
+        mainMenu.SetActive(!mainMenu.activeInHierarchy);
+    }
     public void SetCharMenu()
     {
         characterMenu.SetActive(!characterMenu.activeInHierarchy);
+    }
+    public void SetPerkMenu()
+    {
+        perkMenu.SetActive(!perkMenu.activeInHierarchy);
     }
     public void SetShopMenu()
     {
