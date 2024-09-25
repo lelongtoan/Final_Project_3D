@@ -7,7 +7,8 @@ using UnityEngine.UI;
 
 public class ComboAtack : MonoBehaviour
 {
-    public GameObject atackCollider;
+   
+    public Collider atackCollider;
     private bool isComboActive = false;
     Animator ani;
     bool trigger;
@@ -51,7 +52,7 @@ public class ComboAtack : MonoBehaviour
         if( comboDelay < 0 && isComboActive == true)
         {
             isAttack = true;
-            atackCollider.SetActive(true);
+            atackCollider.enabled = true;
             MoveForwardDuringAttack();
             ani.SetTrigger("Attack" + combo);
             comboDelay = comboTiming;
@@ -59,7 +60,7 @@ public class ComboAtack : MonoBehaviour
         else if (isComboActive == true && comboDelay > 0 && comboDelay < 0.4)
         {
             isAttack = true;
-            atackCollider.SetActive(true);
+            atackCollider.enabled = true;
             MoveForwardDuringAttack();
             combo++;
             if (combo > combonum)
@@ -76,7 +77,7 @@ public class ComboAtack : MonoBehaviour
         }
         //atackCollider.SetActive(false);
     }
-    private void OnAtackClick()
+    private void OnAtackClick() // Hàm này dùng để kiểm tra có nhấn phím đánh không
     {
         if (!isComboActive)
         {
@@ -100,6 +101,7 @@ public class ComboAtack : MonoBehaviour
     }
     public void SetEndCoiler()
     {
-        atackCollider.SetActive(false);
+        atackCollider.enabled = false;
     }
+    
 }

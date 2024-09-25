@@ -47465,12 +47465,12 @@ AnimationClip:
   m_Events:
   - time: 0.17391305
     functionName: PlaySound
-    data: Attack
+    data: EndAttack
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.45652175
+  - time: 0.5869565
     functionName: SetEndCoiler
     data: 
     objectReferenceParameter: {fileID: 0}

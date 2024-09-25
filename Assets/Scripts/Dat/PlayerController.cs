@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     [Header("Thuộc tính nhân vật")]
     public float speed = 5f;
     public float runSpeed = 8f; // Tốc độ khi chạy
-    public float jumpForce = 10f;
+    //public float jumpForce = 10f;
 
     public bool freeze = false; // Biến để cấm nhân vật di chuyển
     private float animSpeed = 0f;
@@ -66,10 +66,6 @@ public class PlayerController : MonoBehaviour
         float ipVertical = joystick.Vertical != 0 ? joystick.Vertical : Input.GetAxis("Vertical");
         float ipHorizontal = joystick.Horizontal != 0 ? joystick.Horizontal : Input.GetAxis("Horizontal");
 
-        // Log giá trị đầu vào để kiểm tra
-        Debug.Log("Joystick Horizontal: " + joystick.Horizontal + ", Joystick Vertical: " + joystick.Vertical);
-        Debug.Log("Input Horizontal: " + Input.GetAxis("Horizontal") + ", Input Vertical: " + Input.GetAxis("Vertical"));
-
         // Điều chỉnh độ nhạy cho joystick
         float joystickSensitivity = 1.5f; // Tăng hệ số để joystick mạnh hơn
 
@@ -77,10 +73,12 @@ public class PlayerController : MonoBehaviour
         Vector3 move = new Vector3(ipHorizontal, 0, ipVertical);
 
         // Nếu di chuyển bằng joystick, nhân với hệ số để tăng tốc độ
-        if (joystick.Vertical != 0 || joystick.Horizontal != 0)
-        {
-            move *= joystickSensitivity;
-        }
+        //if (joystick.Vertical != 0 || joystick.Horizontal != 0)
+        //{
+        //    move *= joystickSensitivity;
+        //}
+
+
         Vector3 forward = camera.transform.forward;
         Vector3 right = camera.transform.right;
         forward.y = 0f;
