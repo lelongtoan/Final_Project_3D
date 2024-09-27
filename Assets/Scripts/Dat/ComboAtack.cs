@@ -7,21 +7,36 @@ using UnityEngine.UI;
 
 public class ComboAtack : MonoBehaviour
 {
-   
-    public Collider atackCollider;
+    [System.Serializable]
+    public class Effect
+    {
+        public int name;
+        public GameObject vfx;
+    }
+    [Header("Hiệu ứng chém")]
+    public List<Effect> effects;
+
     private bool isComboActive = false;
     Animator ani;
+    [Header("Chỉ số combo")]
     bool trigger;
     public int combo;
     public int combonum;
     public bool isAttack;
     public float comboTiming;
     public float comboDelay;
-
-    public Button attack;
-    Rigidbody rb;
-
     public float attackmove = 0.1f;
+
+    [Header("Hiệu ứng và vị trí spamw hiệu ứng")]
+    public Transform effectSpawn;
+    public Transform headSword;
+    public GameObject VFX;
+
+
+    [Header("Các thông số khác")]
+    public Button attack;
+    public Collider atackCollider;
+    Rigidbody rb;
     PlayerController playerController;
     void Start()
     {
@@ -83,7 +98,6 @@ public class ComboAtack : MonoBehaviour
         {
             playerController.freeze = true;
             isComboActive = true;
-            Debug.Log(isComboActive);
             Combo();
             isComboActive = false;
             playerController.freeze = false;
@@ -102,6 +116,25 @@ public class ComboAtack : MonoBehaviour
     public void SetEndCoiler()
     {
         atackCollider.enabled = false;
+    }
+
+    public void SpawnEffect(int comboeff)
+    {
+        if (comboeff >= 0 && comboeff < effects.Count)
+        {
+            Vector3 spawnPosittion = effectSpawn.position;
+            if (combo == 4)
+            {
+                spawnPosittion = headSword.position;
+            }
+            GameObject slashVFX = Instantiate(effects[comboeff].vfx,spawnPosittion,effectSpawn.rotation);
+            slashVFX.transform.Rotate(180, 0, 0);
+            Destroy(slashVFX, 1f);
+        }
+        else
+        {
+            Debug.LogWarning("Combo index không hợp lệ!");
+        }
     }
     
 }
