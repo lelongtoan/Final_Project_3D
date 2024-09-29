@@ -4,21 +4,55 @@ using UnityEngine;
 
 public class InGameMenu : MonoBehaviour
 {
-    [SerializeField] GameObject baloPanel;
+    [SerializeField] GameObject allPanel;
+    [SerializeField] GameObject inventoryPanel;
+    [SerializeField] GameObject characterPanel;
+    [SerializeField] GameObject craftPanel;
+    [SerializeField] GameObject mapPanel;
+    [SerializeField] GameObject questPanel;
+    [SerializeField] GameObject settingPanel;
     // Start is called before the first frame update
-    void Start()
+    public void SetAllPanel()
     {
-        
+        allPanel.SetActive(!allPanel.activeInHierarchy);
     }
-
-    // Update is called once per frame
-    void Update()
+    public void SetInventoryPanel()
     {
-        
+        CloseAllPanel();
+        inventoryPanel.SetActive(!inventoryPanel.activeInHierarchy);
     }
-
-    public void SetBaloPanel()
+    public void SetCharPanel()
     {
-        baloPanel.SetActive(!baloPanel.activeInHierarchy);
+        CloseAllPanel();
+        characterPanel.SetActive(!characterPanel.activeInHierarchy);
+    }
+    public void SetCraftPanel()
+    {
+        CloseAllPanel();
+        craftPanel.SetActive(!craftPanel.activeInHierarchy);
+    }
+    public void SetMapPanel()
+    {
+        CloseAllPanel();
+        mapPanel.SetActive(!mapPanel.activeInHierarchy);
+    }
+    public void SetQuestPanel()
+    {
+        CloseAllPanel();
+        questPanel.SetActive(!questPanel.activeInHierarchy);
+    }
+    public void SetSettingPanel()
+    {
+        CloseAllPanel();
+        settingPanel.SetActive(!settingPanel.activeInHierarchy);
+    }
+    public void CloseAllPanel()
+    {
+        inventoryPanel.SetActive(false);
+        characterPanel.SetActive(false);
+        craftPanel.SetActive(false);
+        mapPanel.SetActive(false);
+        questPanel.SetActive(false);
+        settingPanel.SetActive(false);
     }
 }
