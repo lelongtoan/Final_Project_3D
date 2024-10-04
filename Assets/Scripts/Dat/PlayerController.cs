@@ -18,12 +18,12 @@ public class PlayerController : MonoBehaviour
     Coroutine runningCoroutine; // Lưu lại Coroutine để có thể dừng khi cần
     public Camera camera;
 
-    public Button run;
+    Button run;
 
     [SerializeField] private Joystick joystick;
     void Start()
     {
-        run = GameObject.Find("Skill 1").GetComponent<Button>();
+        run = GameObject.Find("Skill2").GetComponent<Button>();
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         joystick = GameObject.Find("Fixed Joystick").GetComponent<Joystick>();
@@ -32,11 +32,11 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!freeze)
+        if (freeze == false)
         {
             HandleMovement();
         }
-        if(isRunning && isRunning && IsMoving())
+        if(isRunning && isRunning && IsMoving() && freeze == false)
         {
             if (runningCoroutine == null)
             {
@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
         float joystickSensitivity = 1.5f; // Tăng hệ số để joystick mạnh hơn
 
         // Tạo vector di chuyển, nếu là joystick thì nhân với độ nhạy
-        Vector3 move = new Vector3(ipHorizontal, 0, ipVertical);
+        Vector3 move = new Vector3(ipHorizontal, 0, ipVertical).normalized;
 
         // Nếu di chuyển bằng joystick, nhân với hệ số để tăng tốc độ
         //if (joystick.Vertical != 0 || joystick.Horizontal != 0)
@@ -76,8 +76,8 @@ public class PlayerController : MonoBehaviour
         //}
 
 
-        Vector3 forward = camera.transform.forward;
-        Vector3 right = camera.transform.right;
+        Vector3 forward = camera.transform.forward.normalized;
+        Vector3 right = camera.transform.right.normalized;
         forward.y = 0f;
         right.y = 0f;
         Vector3 desired = (forward * ipVertical + right * ipHorizontal) * speed;
@@ -116,7 +116,7 @@ public class PlayerController : MonoBehaviour
     {
         PlayerInfor playerInfo = gameObject.GetComponent<PlayerInfor>();
 
-        while (playerInfo.mp > 0 && IsMoving())
+        while (playerInfo.mp > 0 && IsMoving() && freeze != true)
         {
             yield return new WaitForSeconds(1f); // Đợi 1 giây
             playerInfo.PlayerUseSkill(5);
@@ -145,7 +145,7 @@ public class PlayerController : MonoBehaviour
     private void OnRunClick()
     {
         PlayerInfor playerInfo = gameObject.GetComponent<PlayerInfor>();
-        if (playerInfo.mp > 0)
+        if (playerInfo.mp > 0 && freeze != true)
         {
             if (!isRunning)
             {
