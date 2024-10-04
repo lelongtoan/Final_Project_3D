@@ -1,79 +1,171 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     [Header("Thuộc tính nhân vật")]
     public float speed = 5f;
-    public float jumpForce = 10f;
+    public float runSpeed = 8f; // Tốc độ khi chạy
+    //public float jumpForce = 10f;
 
-
-    public bool freze=false;//Biến để cấm nhân vật di chuyển
+    public bool freeze = false; // Biến để cấm nhân vật di chuyển
     private float animSpeed = 0f;
-    public bool isRun = false;
+    public bool isRunning = false;
     Rigidbody rb;
     Animator animator;
+    Coroutine runningCoroutine; // Lưu lại Coroutine để có thể dừng khi cần
+    public Camera camera;
+
+    public Button run;
+
+    [SerializeField] private Joystick joystick;
     void Start()
     {
+        run = GameObject.Find("Skill 1").GetComponent<Button>();
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        joystick = GameObject.Find("Fixed Joystick").GetComponent<Joystick>();
+        run.onClick.AddListener(OnRunClick);
     }
 
-    void Update()
+    private void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            if (isRun == false)
-            {
-                isRun = true;
-                speed = 8f;
-            }
-            else if (isRun == true)
-            {
-                animator.SetBool("IsRun", false);
-                isRun = false;
-                speed = 5f;
-            }
-        }
-        Debug.Log(isRun);
-        if (freze == false)
+        if (!freeze)
         {
             HandleMovement();
         }
+        if(isRunning && isRunning && IsMoving())
+        {
+            if (runningCoroutine == null)
+            {
+                runningCoroutine = StartCoroutine(SubtractValue());
+            }
+        }
+        else if (!IsMoving() && runningCoroutine != null)
+        {
+            StopCoroutine(runningCoroutine);
+            runningCoroutine = null;
+        }
+    }
+    private bool IsMoving()
+    {
+        float ipVertical = joystick.Vertical != 0 ? joystick.Vertical : Input.GetAxis("Vertical");
+        float ipHorizontal = joystick.Horizontal != 0 ? joystick.Horizontal : Input.GetAxis("Horizontal");
+
+        // Kiểm tra nếu có bất kỳ giá trị nào từ joystick hoặc bàn phím
+        return ipVertical != 0 || ipHorizontal != 0;
     }
     public void HandleMovement()
     {
-        float ipVetical = Input.GetAxis("Vertical");
-        float ipHorizontal = Input.GetAxis("Horizontal");
-        Vector3 move = new Vector3(ipHorizontal, 0, ipVetical);
-        RotateCharacter(move);
-        Debug.Log(move);
-        if (move != Vector3.zero && isRun == false)
+        // Lấy giá trị từ joystick hoặc bàn phím
+        float ipVertical = joystick.Vertical != 0 ? joystick.Vertical : Input.GetAxis("Vertical");
+        float ipHorizontal = joystick.Horizontal != 0 ? joystick.Horizontal : Input.GetAxis("Horizontal");
+
+        // Điều chỉnh độ nhạy cho joystick
+        float joystickSensitivity = 1.5f; // Tăng hệ số để joystick mạnh hơn
+
+        // Tạo vector di chuyển, nếu là joystick thì nhân với độ nhạy
+        Vector3 move = new Vector3(ipHorizontal, 0, ipVertical);
+
+        // Nếu di chuyển bằng joystick, nhân với hệ số để tăng tốc độ
+        //if (joystick.Vertical != 0 || joystick.Horizontal != 0)
+        //{
+        //    move *= joystickSensitivity;
+        //}
+
+
+        Vector3 forward = camera.transform.forward;
+        Vector3 right = camera.transform.right;
+        forward.y = 0f;
+        right.y = 0f;
+        Vector3 desired = (forward * ipVertical + right * ipHorizontal) * speed;
+
+
+        // Xoay nhân vật theo hướng di chuyển
+        RotateCharacter(desired);
+
+        // Cập nhật animation dựa trên tốc độ
+        if (move != Vector3.zero)
         {
-            animSpeed = 1;
+            animSpeed = isRunning ? 2 : 1;
         }
-        if (move != Vector3.zero && isRun == true)
+        else
         {
-            animSpeed = 2;
-            animator.SetBool("IsRun", true);
+            animSpeed = 0;
         }
+
         animator.SetFloat("Speed", animSpeed);
-        transform.position = transform.position + move * speed * Time.deltaTime;
-        if (move == Vector3.zero)
-        {
-            animator.SetFloat("Speed", 0);
-        }
+
+        // Di chuyển nhân vật
+        rb.MovePosition(rb.position + desired * Time.fixedDeltaTime);
+        
     }
-    // Hàm xoay
+
     public void RotateCharacter(Vector3 playerMovementInput)
     {
-        Vector3 lookDirection = playerMovementInput;
-        lookDirection.y = 0f;
-        if (lookDirection != Vector3.zero)
+        if (playerMovementInput != Vector3.zero)
         {
-            Quaternion rotation = Quaternion.LookRotation(lookDirection);
+            Quaternion rotation = Quaternion.LookRotation(playerMovementInput);
             transform.rotation = rotation;
+        }
+    }
+
+    IEnumerator SubtractValue()
+    {
+        PlayerInfor playerInfo = gameObject.GetComponent<PlayerInfor>();
+
+        while (playerInfo.mp > 0 && IsMoving())
+        {
+            yield return new WaitForSeconds(1f); // Đợi 1 giây
+            playerInfo.PlayerUseSkill(5);
+
+            if (playerInfo.mp <= 0)
+            {
+                StopRunning(); // Dừng chạy ngay khi mana hết
+                break; // Thoát khỏi Coroutine
+            }
+        }
+    }
+
+    // Hàm để dừng chạy
+    private void StopRunning()
+    {
+        if (runningCoroutine != null)
+        {
+            StopCoroutine(runningCoroutine);
+            runningCoroutine = null;
+        }
+        isRunning = false;
+        speed = 5f; // Khôi phục lại tốc độ ban đầu
+        animator.SetBool("IsRun", false);
+    }
+
+    private void OnRunClick()
+    {
+        PlayerInfor playerInfo = gameObject.GetComponent<PlayerInfor>();
+        if (playerInfo.mp > 0)
+        {
+            if (!isRunning)
+            {
+                isRunning = true;
+                speed = runSpeed;
+                animator.SetBool("IsRun", true);
+                if (runningCoroutine == null)
+                {
+                    runningCoroutine = StartCoroutine(SubtractValue());
+                }
+            }
+            else
+            {
+                StopRunning();
+            }
+        }
+        else
+        {
+            Debug.Log("Not enough Mana");
+            StopRunning();
         }
     }
 }

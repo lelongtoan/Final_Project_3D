@@ -1,24 +1,47 @@
 ﻿using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Mail;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ComboAtack : MonoBehaviour
 {
+    [System.Serializable]
+    public class Effect
+    {
+        public int name;
+        public GameObject vfx;
+    }
+    [Header("Hiệu ứng chém")]
+    public List<Effect> effects;
+
+    private bool isComboActive = false;
     Animator ani;
+    [Header("Chỉ số combo")]
     bool trigger;
     public int combo;
     public int combonum;
     public bool isAttack;
     public float comboTiming;
     public float comboDelay;
+    public float attackmove = 0.1f;
 
+    [Header("Hiệu ứng và vị trí spamw hiệu ứng")]
+    public Transform effectSpawn;
+    public Transform headSword;
+    public GameObject VFX;
+
+
+    [Header("Các thông số khác")]
+    public Button attack;
+    public Collider atackCollider;
     Rigidbody rb;
-
-    public float attackmove = 0.5f;
     PlayerController playerController;
     void Start()
     {
+        attack = GameObject.Find("Click").GetComponent<Button>();
+        attack.onClick.AddListener(OnAtackClick);
         rb = GetComponent<Rigidbody>();
         ani = GetComponent<Animator>();
         combo = 1;
@@ -32,24 +55,27 @@ public class ComboAtack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Combo();
+        Combodelay();
+        if(comboDelay<0)
+        {
+            combo = 1;
+        }
     }   
 
     public void Combo()
     {
-        comboDelay -= Time.deltaTime;
-        if(Input.GetMouseButtonDown(0) && comboDelay < 0)
+        if( comboDelay < 0 && isComboActive == true)
         {
             isAttack = true;
-            playerController.freze = true;
+            atackCollider.enabled = true;
             MoveForwardDuringAttack();
             ani.SetTrigger("Attack" + combo);
             comboDelay = comboTiming;
         }
-        else if (Input.GetMouseButtonDown(0) && comboDelay > 0 && comboDelay < 0.5)
+        else if (isComboActive == true && comboDelay > 0 && comboDelay < 0.4)
         {
             isAttack = true;
-            playerController.freze = true;
+            atackCollider.enabled = true;
             MoveForwardDuringAttack();
             combo++;
             if (combo > combonum)
@@ -57,24 +83,29 @@ public class ComboAtack : MonoBehaviour
                 combo = 1;
             }
             ani.SetTrigger("Attack" + combo);
-            if (combo == 4)
-            {
-                //GameObject camObject = GameObject.Find("Camera");
-                //CameraShaker shaker = camObject.GetComponent<CameraShaker>();
-                //shaker.CameraShake(2f); // Rung camera trong 0.2s với độ mạnh 0.3
-            }
             comboDelay = comboTiming;
 
         }
-        else if(comboDelay<0 && !Input.GetMouseButton(0))
+        else if(comboDelay<0 && !isComboActive==false)
         {
             isAttack=false;
-            playerController.freze = false;
         }
-        if(comboDelay<0)
+        //atackCollider.SetActive(false);
+    }
+    private void OnAtackClick() // Hàm này dùng để kiểm tra có nhấn phím đánh không
+    {
+        if (!isComboActive)
         {
-            combo = 1;
+            playerController.freeze = true;
+            isComboActive = true;
+            Combo();
+            isComboActive = false;
+            playerController.freeze = false;
         }
+    }
+    private void Combodelay()
+    {
+        comboDelay -= Time.deltaTime;
     }
     void MoveForwardDuringAttack()
     {
@@ -82,4 +113,28 @@ public class ComboAtack : MonoBehaviour
         Vector3 moveDirection = transform.forward * attackmove;
         rb.MovePosition(rb.position + moveDirection);
     }
+    public void SetEndCoiler()
+    {
+        atackCollider.enabled = false;
+    }
+
+    public void SpawnEffect(int comboeff)
+    {
+        if (comboeff >= 0 && comboeff < effects.Count)
+        {
+            Vector3 spawnPosittion = effectSpawn.position;
+            if (combo == 4)
+            {
+                spawnPosittion = headSword.position;
+            }
+            GameObject slashVFX = Instantiate(effects[comboeff].vfx,spawnPosittion,effectSpawn.rotation);
+            slashVFX.transform.Rotate(180, 0, 0);
+            Destroy(slashVFX, 1f);
+        }
+        else
+        {
+            Debug.LogWarning("Combo index không hợp lệ!");
+        }
+    }
+    
 }

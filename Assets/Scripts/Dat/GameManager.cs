@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject playerPrefab;
     public GameObject virtualCameraPrefab;
+    public GameObject enemyPrefab;
     public CinemachineVirtualCamera virtualCamera;
     void Start()
     {
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour
         //================================================================================
         GameObject playerInstance = Instantiate(playerPrefab, new Vector3(85, 2, -45), Quaternion.identity);
         GameObject cameraInstance = Instantiate(virtualCameraPrefab, new Vector3(0, 1, 0), Quaternion.identity);
+        GameObject enemy=Instantiate(enemyPrefab, new Vector3(7,3, 0), Quaternion.identity);
         if (virtualCamera == null)
         {
             virtualCamera=FindObjectOfType<CinemachineVirtualCamera>();
