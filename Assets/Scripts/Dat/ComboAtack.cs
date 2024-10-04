@@ -60,12 +60,14 @@ public class ComboAtack : MonoBehaviour
         {
             combo = 1;
         }
-    }   
+    }
 
     public void Combo()
     {
+
         if( comboDelay < 0 && isComboActive == true)
         {
+            playerController.freeze = true;
             isAttack = true;
             atackCollider.enabled = true;
             MoveForwardDuringAttack();
@@ -74,6 +76,7 @@ public class ComboAtack : MonoBehaviour
         }
         else if (isComboActive == true && comboDelay > 0 && comboDelay < 0.4)
         {
+            playerController.freeze = true;
             isAttack = true;
             atackCollider.enabled = true;
             MoveForwardDuringAttack();
@@ -90,17 +93,16 @@ public class ComboAtack : MonoBehaviour
         {
             isAttack=false;
         }
-        //atackCollider.SetActive(false);
     }
-    private void OnAtackClick() // Hàm này dùng để kiểm tra có nhấn phím đánh không
+
+
+    private void OnAtackClick()
     {
         if (!isComboActive)
         {
-            playerController.freeze = true;
             isComboActive = true;
             Combo();
             isComboActive = false;
-            playerController.freeze = false;
         }
     }
     private void Combodelay()
@@ -137,4 +139,8 @@ public class ComboAtack : MonoBehaviour
         }
     }
     
+    public void SetFreeze()
+    {
+        playerController.freeze = false;
+    }
 }

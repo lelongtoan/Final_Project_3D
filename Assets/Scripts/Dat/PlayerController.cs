@@ -18,12 +18,12 @@ public class PlayerController : MonoBehaviour
     Coroutine runningCoroutine; // Lưu lại Coroutine để có thể dừng khi cần
     public Camera camera;
 
-    public Button run;
+    Button run;
 
     [SerializeField] private Joystick joystick;
     void Start()
     {
-        run = GameObject.Find("Skill 1").GetComponent<Button>();
+        run = GameObject.Find("Skill2").GetComponent<Button>();
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         joystick = GameObject.Find("Fixed Joystick").GetComponent<Joystick>();
@@ -32,11 +32,11 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!freeze)
+        if (freeze == false)
         {
             HandleMovement();
         }
-        if(isRunning && isRunning && IsMoving())
+        if(isRunning && isRunning && IsMoving() && freeze == false)
         {
             if (runningCoroutine == null)
             {
@@ -116,7 +116,7 @@ public class PlayerController : MonoBehaviour
     {
         PlayerInfor playerInfo = gameObject.GetComponent<PlayerInfor>();
 
-        while (playerInfo.mp > 0 && IsMoving())
+        while (playerInfo.mp > 0 && IsMoving() && freeze != true)
         {
             yield return new WaitForSeconds(1f); // Đợi 1 giây
             playerInfo.PlayerUseSkill(5);
@@ -145,7 +145,7 @@ public class PlayerController : MonoBehaviour
     private void OnRunClick()
     {
         PlayerInfor playerInfo = gameObject.GetComponent<PlayerInfor>();
-        if (playerInfo.mp > 0)
+        if (playerInfo.mp > 0 && freeze != true)
         {
             if (!isRunning)
             {
