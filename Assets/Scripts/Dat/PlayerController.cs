@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
         float joystickSensitivity = 1.5f; // Tăng hệ số để joystick mạnh hơn
 
         // Tạo vector di chuyển, nếu là joystick thì nhân với độ nhạy
-        Vector3 move = new Vector3(ipHorizontal, 0, ipVertical);
+        Vector3 move = new Vector3(ipHorizontal, 0, ipVertical).normalized;
 
         // Nếu di chuyển bằng joystick, nhân với hệ số để tăng tốc độ
         //if (joystick.Vertical != 0 || joystick.Horizontal != 0)
@@ -76,8 +76,8 @@ public class PlayerController : MonoBehaviour
         //}
 
 
-        Vector3 forward = camera.transform.forward;
-        Vector3 right = camera.transform.right;
+        Vector3 forward = camera.transform.forward.normalized;
+        Vector3 right = camera.transform.right.normalized;
         forward.y = 0f;
         right.y = 0f;
         Vector3 desired = (forward * ipVertical + right * ipHorizontal) * speed;

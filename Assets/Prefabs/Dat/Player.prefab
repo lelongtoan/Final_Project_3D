@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1511198212671380516}
   serializedVersion: 2
   m_LocalRotation: {x: 0.08282786, y: -0.90197986, z: 0.19996414, w: 0.37361234}
-  m_LocalPosition: {x: 20.744526, y: 14.431233, z: 20.741222}
+  m_LocalPosition: {x: 20.432362, y: 12.678544, z: 19.425785}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -66,11 +66,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: -100
+  near clip plane: 0.01
   far clip plane: 1000
-  field of view: 6
+  field of view: 5
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 7.5
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -201,6 +201,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8075307869333065369}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4770094946644237858
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3869415533297484387}
+  m_Layer: 0
+  m_Name: Skill1_Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3869415533297484387
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4770094946644237858}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2409545184574096779}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8997002519180700119
 GameObject:
@@ -911,6 +942,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: f4b049fd990d224448b714a4550d9c68, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6228224871339171686}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: f4b049fd990d224448b714a4550d9c68, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3869415533297484387}
     - targetCorrespondingSourceObject: {fileID: -2960109251601355527, guid: f4b049fd990d224448b714a4550d9c68, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1461700063733065818}
@@ -991,7 +1025,6 @@ MonoBehaviour:
   freeze: 0
   isRunning: 0
   camera: {fileID: 7641004714079254164}
-  run: {fileID: 0}
   joystick: {fileID: 0}
 --- !u!54 &2953578238360264623
 Rigidbody:
@@ -1120,6 +1153,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ce4b5ac3b9f6d048952d58f2611ccf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eff1: {fileID: 2708598583397607911, guid: 6398d43fe79ea0140913dc5530c646af, type: 3}
+  timingskill: 0.5
+  exploCount: 3
+  size: 1
+  upsize: 1.5
+  exploDistance: 2
+  skillSpawm: {fileID: 3869415533297484387}
+  colliderSkill: {fileID: 3533313265591716537, guid: 6060b039fb5c98e44ad9bd00917a0759, type: 3}
 --- !u!4 &8075307869333065369 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -2960109251601355527, guid: f4b049fd990d224448b714a4550d9c68, type: 3}

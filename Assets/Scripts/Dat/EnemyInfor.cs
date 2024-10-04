@@ -25,9 +25,10 @@ public class EnemyInfor : MonoBehaviour
     {
         if (other.gameObject.CompareTag("AttackNormal") && isCollision == false)
         {
+            Debug.Log("Attack");
             isCollision = true; // Cập nhật lại sát thương
             hpcurrent -= dame; // Giảm HP hiện tại của kẻ địch theo sát thương
-
+            
             StartCoroutine(DisableCollider(other, 0.1f));
         }
     }
