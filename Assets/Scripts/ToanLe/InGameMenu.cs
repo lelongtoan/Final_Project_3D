@@ -4,55 +4,66 @@ using UnityEngine;
 
 public class InGameMenu : MonoBehaviour
 {
+    public static InGameMenu inGameMenu { get; set; }
+    private void Awake()
+    {
+        inGameMenu = this;
+    }
     [SerializeField] GameObject allPanel;
-    [SerializeField] GameObject inventoryPanel;
+    //[SerializeField] GameObject inventoryPanel;
     [SerializeField] GameObject characterPanel;
     [SerializeField] GameObject craftPanel;
-    [SerializeField] GameObject mapPanel;
+    //[SerializeField] GameObject mapPanel;
     [SerializeField] GameObject questPanel;
-    [SerializeField] GameObject settingPanel;
+
+    [Header("Iventory")]
+    [SerializeField] GameObject infoItem;
+    [SerializeField] GameObject dragAndDrop;
+    //[SerializeField] GameObject settingPanel;
     // Start is called before the first frame update
-    public void SetAllPanel()
-    {
-        allPanel.SetActive(!allPanel.activeInHierarchy);
-    }
-    public void SetInventoryPanel()
-    {
-        CloseAllPanel();
-        inventoryPanel.SetActive(!inventoryPanel.activeInHierarchy);
-    }
+    //public void SetInventoryPanel()
+    //{
+    //    CloseAllPanel();
+    //    inventoryPanel.SetActive(!inventoryPanel.activeInHierarchy);
+    //}
     public void SetCharPanel()
     {
-        CloseAllPanel();
         characterPanel.SetActive(!characterPanel.activeInHierarchy);
     }
     public void SetCraftPanel()
     {
-        CloseAllPanel();
         craftPanel.SetActive(!craftPanel.activeInHierarchy);
     }
     public void SetMapPanel()
     {
-        CloseAllPanel();
-        mapPanel.SetActive(!mapPanel.activeInHierarchy);
+        //mapPanel.SetActive(!mapPanel.activeInHierarchy);
     }
     public void SetQuestPanel()
     {
-        CloseAllPanel();
         questPanel.SetActive(!questPanel.activeInHierarchy);
     }
     public void SetSettingPanel()
     {
-        CloseAllPanel();
-        settingPanel.SetActive(!settingPanel.activeInHierarchy);
+        //settingPanel.SetActive(!settingPanel.activeInHierarchy);
     }
     public void CloseAllPanel()
     {
-        inventoryPanel.SetActive(false);
+        //inventoryPanel.SetActive(false);
         characterPanel.SetActive(false);
         craftPanel.SetActive(false);
-        mapPanel.SetActive(false);
+        //mapPanel.SetActive(false);
         questPanel.SetActive(false);
-        settingPanel.SetActive(false);
+        //settingPanel.SetActive(false);
+    }
+
+    //Inventory
+
+    public void SetInfoItem()
+    {
+        infoItem.SetActive(!infoItem.activeInHierarchy);
+    }
+    public void SetDragAndDrop()
+    {
+        dragAndDrop.SetActive(!dragAndDrop.activeInHierarchy);
     }
 }
