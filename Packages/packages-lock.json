@@ -96,13 +96,12 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
-    "com.unity.localization": {
-      "version": "1.5.3",
+    "com.unity.inputsystem": {
+      "version": "1.7.0",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.addressables": "1.22.2",
-        "com.unity.nuget.newtonsoft-json": "3.0.2"
+        "com.unity.modules.uielements": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },
