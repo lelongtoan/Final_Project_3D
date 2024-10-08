@@ -10,7 +10,6 @@ public class InventoryButton : MonoBehaviour, IPointerClickHandler
     [SerializeField] Image icon;
     [SerializeField] TextMeshProUGUI textQ;
     [SerializeField] Image select;
-    [SerializeField] public TextMeshProUGUI numberText;
     InventoryController inventoryController;
 
     float NumberToClamp;
