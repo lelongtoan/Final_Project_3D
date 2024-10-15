@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1511198212671380516}
   serializedVersion: 2
   m_LocalRotation: {x: 0.08282786, y: -0.90197986, z: 0.19996414, w: 0.37361234}
-  m_LocalPosition: {x: 20.432362, y: 12.678544, z: 19.425785}
+  m_LocalPosition: {x: 19.227358, y: 12.678544, z: 20.053274}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -164,13 +164,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2893957780407934745}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0, y: 1.84, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8075307869333065369}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &4315427098502211173
 GameObject:
   m_ObjectHideFlags: 0
@@ -1020,8 +1020,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f10a54fe6dedf9b4abffc9cdee84c4d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  runSpeed: 4
+  speed: 5
+  runSpeed: 8
   freeze: 0
   isRunning: 0
   camera: {fileID: 7641004714079254164}
@@ -1154,14 +1154,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eff1: {fileID: 2708598583397607911, guid: 6398d43fe79ea0140913dc5530c646af, type: 3}
+  clip1: {fileID: 8300000, guid: 4957c817f0d0e194b8926cf34bb0825a, type: 3}
+  endCountDow1: 1
   timingskill: 0.5
   exploCount: 3
   size: 1
   upsize: 1.5
   exploDistance: 2
-  skillSpawm: {fileID: 3869415533297484387}
+  skill1Spawm: {fileID: 120786775793484316}
   colliderSkill: {fileID: 3533313265591716537, guid: 6060b039fb5c98e44ad9bd00917a0759, type: 3}
   dame: 0
+  prefabSword: {fileID: 919132149155446097, guid: 0e8286713d3d4104c8091a19b74158bf, type: 3}
+  numberSword: 3
+  endCountDow2: 1
+  orbitRadius: 3
+  rotationSpeed: 5
+  skill2Spawn: {fileID: 2409545184574096779}
 --- !u!4 &8075307869333065369 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -2960109251601355527, guid: f4b049fd990d224448b714a4550d9c68, type: 3}
