@@ -20,7 +20,10 @@ public class EnemyInfor : MonoBehaviour
         dame = playerInfor.PlayerUpdateDame(); // Lấy sát thương của người chơi
         hpcurrent = hp;
     }
-
+    private void Update()
+    {
+        dame = playerInfor.PlayerUpdateDame();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("AttackNormal") && isCollision == false)
