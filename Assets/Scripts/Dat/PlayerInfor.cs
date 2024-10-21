@@ -8,6 +8,7 @@ public class PlayerInfor : MonoBehaviour
 
     [Header("Thông tin nhân vật")]
     public float hp = 100f;
+    public float currenthp = 100f;
     public float mp = 100f;
     public float dame = 10;
 
@@ -24,11 +25,20 @@ public class PlayerInfor : MonoBehaviour
         }
     }
 
+    public void Heal(int amount)
+    {
+        currenthp += amount;
+
+        if (currenthp > hp)
+        {
+            currenthp = hp;
+        }
+    }
     // Hàm nhận sát thương
     public void PlayerReciveDame(float atk)
     {
-        hp -= atk;
-        if (hp <= 0)
+        currenthp -= atk;
+        if (currenthp <= 0)
         {
             hp = 0;
             // Xử lý khi nhân vật chết

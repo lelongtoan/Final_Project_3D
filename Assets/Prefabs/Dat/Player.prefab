@@ -1,5 +1,64 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &695475291087884003
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5737324211188198399}
+  - component: {fileID: 2201316817832918268}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5737324211188198399
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695475291087884003}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2409545184574096779}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &2201316817832918268
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695475291087884003}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &1511198212671380516
 GameObject:
   m_ObjectHideFlags: 0
@@ -945,6 +1004,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: f4b049fd990d224448b714a4550d9c68, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3869415533297484387}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: f4b049fd990d224448b714a4550d9c68, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5737324211188198399}
     - targetCorrespondingSourceObject: {fileID: -2960109251601355527, guid: f4b049fd990d224448b714a4550d9c68, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1461700063733065818}
@@ -1119,12 +1181,19 @@ MonoBehaviour:
   sounds:
   - name: Walk
     clip: {fileID: 8300000, guid: 29ef9062a055e5142abf9bf5d07225b4, type: 3}
+    volume: 1
   - name: Run
     clip: {fileID: 8300000, guid: 59f50849b54ec974f967a06656f5e259, type: 3}
+    volume: 1
   - name: Attack
     clip: {fileID: 8300000, guid: e21e4da69895a9d4c93b5e9e8eb018ab, type: 3}
+    volume: 1
   - name: EndAttack
     clip: {fileID: 8300000, guid: baf76b7db1a547247b50a0aa7e7563f5, type: 3}
+    volume: 1
+  - name: RecoveryHP
+    clip: {fileID: 8300000, guid: 08998ca5665845c40b574d239ac785a6, type: 3}
+    volume: 0.4
   audioSource: {fileID: 0}
 --- !u!114 &2714658418295945862
 MonoBehaviour:
@@ -1139,6 +1208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
+  currenthp: 100
   mp: 100
   dame: 10
 --- !u!114 &959833306431311766
@@ -1164,12 +1234,16 @@ MonoBehaviour:
   skill1Spawm: {fileID: 120786775793484316}
   colliderSkill: {fileID: 3533313265591716537, guid: 6060b039fb5c98e44ad9bd00917a0759, type: 3}
   dame: 0
-  prefabSword: {fileID: 919132149155446097, guid: 0e8286713d3d4104c8091a19b74158bf, type: 3}
+  soundEffect: {fileID: 0}
+  prefabSword: {fileID: 4072140244881190095, guid: 01741e07e24ddfe40b139e416f3efc39, type: 3}
   numberSword: 3
   endCountDow2: 1
   orbitRadius: 3
   rotationSpeed: 5
   skill2Spawn: {fileID: 2409545184574096779}
+  hpAmount: 2
+  duration: 10
+  hpInterval: 1
 --- !u!4 &8075307869333065369 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -2960109251601355527, guid: f4b049fd990d224448b714a4550d9c68, type: 3}

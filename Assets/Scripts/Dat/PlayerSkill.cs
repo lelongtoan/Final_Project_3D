@@ -21,7 +21,7 @@ public class PlayerSkill : MonoBehaviour
     PlayerInfor playerInfor;
     public float dame = 0f;
     AudioSource audioSource;
-
+    public SoundEffect soundEffect;
 
 
     [Header("Skill2")]
@@ -35,26 +35,54 @@ public class PlayerSkill : MonoBehaviour
     private bool activeSkill = false;
     private Coroutine coroutine;
 
+    [Header("Skill3")]
+    public int hpAmount = 2;
+    public float duration = 10f;
+    public float hpInterval = 1f;
+    private bool isHealing = false;
+
 
     protected Button skill1;
+    protected Button skill2;
     protected Button skill3;
-    //public Button skill3;
     PlayerController playerController;
     void Start()
     {
         playerInfor = GetComponent<PlayerInfor>();
         animator = GetComponent<Animator>();
         skill1 = GameObject.Find("Skill1").GetComponent<Button>();
+        skill2 = GameObject.Find("Skill2").GetComponent<Button>();
         skill3 = GameObject.Find("Skill3").GetComponent<Button>();
-        skill1.onClick.AddListener(SpawmSkill1);
-        skill3.onClick.AddListener(ActiveSkill);
+        skill1.onClick.AddListener(ActivateHeal);
+        skill2.onClick.AddListener(ActiveSkill);
+        skill3.onClick.AddListener(SpawmSkillUltimate);
         playerController = GetComponent<PlayerController>();
         dame = playerInfor.dame;
         audioSource = FindObjectOfType<AudioSource>();
-
-
+        soundEffect = FindObjectOfType<SoundEffect>();
     }
+    public void ActivateHeal()
+    {
+        if (!isHealing)
+        {
+            StartCoroutine(HealOverTime());
+        }
+    }
+    IEnumerator HealOverTime()
+    {
+        isHealing = true;
+        float elapsedTime = 0f;
 
+        while (elapsedTime < duration)
+        {
+            // Mỗi giây hồi phục 2 máu
+            playerInfor.Heal(hpAmount);
+            soundEffect.PlaySound("RecoveryHP");
+            yield return new WaitForSeconds(hpInterval); // Chờ 1 giây
+            elapsedTime += hpInterval;
+        }
+        isHealing = false;
+    }
     void Update()
     {
         if (activeSkill)
@@ -62,7 +90,7 @@ public class PlayerSkill : MonoBehaviour
             RotateSwords();
         }
     }
-    void SpawmSkill1()
+    void SpawmSkillUltimate()
     {
         if (endCountDow1)
         {
@@ -81,14 +109,13 @@ public class PlayerSkill : MonoBehaviour
         for (int i = 0; i < numberSword; i++)
         {
             float angle = i * Mathf.PI * 2 / numberSword;
-            Vector3 newPos = new Vector3(Mathf.Cos(angle), 0, Mathf.Sin(angle)) * orbitRadius;
+            Vector3 newPos = new Vector3(Mathf.Cos(angle), 0, Mathf.Sin(angle)) * orbitRadius; 
 
-            Vector3 direction = (newPos).normalized;
+            Vector3 direction = (newPos).normalized; 
+            Quaternion swordRotation = Quaternion.LookRotation(direction); 
 
-            Quaternion swordRotation = Quaternion.LookRotation(direction);
-
+            
             GameObject sword = Instantiate(prefabSword, skill2Spawn.position + newPos, swordRotation);
-            sword.transform.SetParent(skill2Spawn);
             swords.Add(sword);
         }
     }
@@ -96,18 +123,19 @@ public class PlayerSkill : MonoBehaviour
     {
         for (int i = 0; i < swords.Count; i++)
         {
-            float angle = Time.time * rotationSpeed + i * Mathf.PI * 2 / numberSword;
+            float angle = (i * Mathf.PI * 2 / numberSword) + Time.time * rotationSpeed;
             Vector3 newPos = new Vector3(Mathf.Cos(angle), 0, Mathf.Sin(angle)) * orbitRadius;
+            swords[i].transform.position = skill2Spawn.position + newPos;
 
-            swords[i].transform.localPosition = newPos;
-            swords[i].transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
+            Vector3 direction = (swords[i].transform.position - skill2Spawn.position).normalized;
+            swords[i].transform.rotation = Quaternion.LookRotation(direction);
         }
     }
 
     IEnumerator DeactivateSkillAfterTime()
     {
-        yield return new WaitForSeconds(8); // Đợi thời gian tồn tại của skill
-        DeactivateSkill(); // Dừng skill
+        yield return new WaitForSeconds(8);
+        DeactivateSkill();
     }
     void DeactivateSkill()
     {
