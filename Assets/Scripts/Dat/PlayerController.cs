@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Joystick joystick;
     void Start()
     {
-        run = GameObject.Find("Skill2").GetComponent<Button>();
+        run = GameObject.Find("Run").GetComponent<Button>();
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         joystick = GameObject.Find("Fixed Joystick").GetComponent<Joystick>();

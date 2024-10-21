@@ -29,17 +29,24 @@ public class EnemyInfor : MonoBehaviour
         if (other.gameObject.CompareTag("AttackNormal") && isCollision == false)
         {
             Debug.Log("Attack");
-            isCollision = true; // Cập nhật lại sát thương
-            hpcurrent -= dame; // Giảm HP hiện tại của kẻ địch theo sát thương
+            isCollision = true;
+            hpcurrent -= dame;
             
             StartCoroutine(DisableCollider(other, 0.1f));
+        }
+        if (other.CompareTag("Skill"))
+        {
+            Debug.Log("Attack");
+            isCollision = true;
+            hpcurrent -= dame;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("AttackNormal"))
+        if (other.gameObject.CompareTag("Skill"))
         {
+            isCollision = false;
         }
     }
 
