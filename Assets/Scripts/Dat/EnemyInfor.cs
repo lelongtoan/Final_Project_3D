@@ -20,22 +20,43 @@ public class EnemyInfor : MonoBehaviour
         dame = playerInfor.PlayerUpdateDame(); // Lấy sát thương của người chơi
         hpcurrent = hp;
     }
-
+    private void Update()
+    {
+        dame = playerInfor.PlayerUpdateDame();
+        if (hpcurrent <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("AttackNormal") && isCollision == false)
         {
-            isCollision = true; // Cập nhật lại sát thương
-            hpcurrent -= dame; // Giảm HP hiện tại của kẻ địch theo sát thương
-
+            Debug.Log("Attack");
+            isCollision = true;
+            hpcurrent -= dame;
+            
             StartCoroutine(DisableCollider(other, 0.1f));
+        }
+        else if (other.CompareTag("Skill1"))
+        {
+            Debug.Log("Attack");
+            isCollision = true;
+            hpcurrent -= 1;
+        }
+        else if (other.CompareTag("Skill"))
+        {
+            Debug.Log("Attack");
+            isCollision = true;
+            hpcurrent -= dame;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("AttackNormal"))
+        if (other.gameObject.CompareTag("Skill") || other.gameObject.CompareTag("Skill1"))
         {
+            isCollision = false;
         }
     }
 

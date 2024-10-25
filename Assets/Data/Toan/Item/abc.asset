@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d690ab03900124439ed5e618aa451db, type: 3}
+  m_Name: abc
+  m_EditorClassIdentifier: 
+  itemName: 
+  stackable: 0
+  HP: 0
+  isFood: 0
+  water: 0
+  food: 0
+  canShow: 0
+  itemSet: 0
+  icon: {fileID: 0}
