@@ -7,17 +7,18 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Thuộc tính nhân vật")]
     public float speed = 5f;
-    public float runSpeed = 8f; // Tốc độ khi chạy
-    //public float jumpForce = 10f;
+    public float runSpeed = 8f;
 
-    public bool freeze = false; // Biến để cấm nhân vật di chuyển
+    public bool freeze = false; 
     private float animSpeed = 0f;
     public bool isRunning = false;
     Rigidbody rb;
     Animator animator;
-    Coroutine runningCoroutine; // Lưu lại Coroutine để có thể dừng khi cần
+    Coroutine runningCoroutine; 
     public Camera camera;
 
+    public GameObject speedEff;
+    public GameObject runEff;
     Button run;
 
     [SerializeField] private Joystick joystick;
@@ -28,9 +29,13 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         joystick = GameObject.Find("Fixed Joystick").GetComponent<Joystick>();
         run.onClick.AddListener(OnRunClick);
+        runEff = Instantiate(speedEff, transform.position, Quaternion.identity);
+        runEff.SetActive(false);
+        runEff.transform.SetParent(transform);
+
     }
 
-    private void FixedUpdate()
+    private void FixedUpdate()  
     {
         if (freeze == false)
         {
@@ -118,18 +123,18 @@ public class PlayerController : MonoBehaviour
 
         while (playerInfo.mp > 0 && IsMoving() && freeze != true)
         {
-            yield return new WaitForSeconds(1f); // Đợi 1 giây
             playerInfo.PlayerUseSkill(5);
+            yield return new WaitForSeconds(1f);
 
             if (playerInfo.mp <= 0)
             {
-                StopRunning(); // Dừng chạy ngay khi mana hết
-                break; // Thoát khỏi Coroutine
+                SetEffSpeed(false);
+                StopRunning();
+                break;
             }
         }
     }
 
-    // Hàm để dừng chạy
     private void StopRunning()
     {
         if (runningCoroutine != null)
@@ -138,7 +143,7 @@ public class PlayerController : MonoBehaviour
             runningCoroutine = null;
         }
         isRunning = false;
-        speed = 5f; // Khôi phục lại tốc độ ban đầu
+        speed = 5f;
         animator.SetBool("IsRun", false);
     }
 
@@ -149,6 +154,7 @@ public class PlayerController : MonoBehaviour
         {
             if (!isRunning)
             {
+                SetEffSpeed(true);
                 isRunning = true;
                 speed = runSpeed;
                 animator.SetBool("IsRun", true);
@@ -159,6 +165,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
+                SetEffSpeed(false);
                 StopRunning();
             }
         }
@@ -167,5 +174,10 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Not enough Mana");
             StopRunning();
         }
+    }
+
+    public void SetEffSpeed(bool enable)
+    {
+        runEff.SetActive(enable);
     }
 }

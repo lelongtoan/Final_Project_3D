@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0ea78a39b9fc32347a160a4d973663cb, type: 3}
       propertyPath: m_TagString
-      value: Skill
+      value: Skill1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -107,4 +107,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d825a84b42a9b442b9070472f4d750e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effect: {fileID: 0}
+  soundEffect: {fileID: 0}
