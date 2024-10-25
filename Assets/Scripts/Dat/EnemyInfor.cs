@@ -23,6 +23,10 @@ public class EnemyInfor : MonoBehaviour
     private void Update()
     {
         dame = playerInfor.PlayerUpdateDame();
+        if (hpcurrent <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -34,7 +38,13 @@ public class EnemyInfor : MonoBehaviour
             
             StartCoroutine(DisableCollider(other, 0.1f));
         }
-        if (other.CompareTag("Skill"))
+        else if (other.CompareTag("Skill1"))
+        {
+            Debug.Log("Attack");
+            isCollision = true;
+            hpcurrent -= 1;
+        }
+        else if (other.CompareTag("Skill"))
         {
             Debug.Log("Attack");
             isCollision = true;
@@ -44,7 +54,7 @@ public class EnemyInfor : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Skill"))
+        if (other.gameObject.CompareTag("Skill") || other.gameObject.CompareTag("Skill1"))
         {
             isCollision = false;
         }

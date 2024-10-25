@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class PlayerSkill : MonoBehaviour
 { 
     Animator animator;
-    [Header("Skill 1")]
+    [Header("Skill 3")]
     public GameObject eff1;
     public AudioClip clip1;
     public bool endCountDow1 = true;
@@ -24,7 +24,7 @@ public class PlayerSkill : MonoBehaviour
     public SoundEffect soundEffect;
 
 
-    [Header("Skill2")]
+    [Header("Skill1")]
     public GameObject prefabSword;
     public int numberSword;
     public bool endCountDow2 = true;
@@ -35,10 +35,11 @@ public class PlayerSkill : MonoBehaviour
     private bool activeSkill = false;
     private Coroutine coroutine;
 
-    [Header("Skill3")]
+    [Header("Skill2")]
     public int hpAmount = 2;
     public float duration = 10f;
     public float hpInterval = 1f;
+    public GameObject eff;
     private bool isHealing = false;
 
 
@@ -72,7 +73,8 @@ public class PlayerSkill : MonoBehaviour
     {
         isHealing = true;
         float elapsedTime = 0f;
-
+        GameObject effhp = Instantiate(eff, transform.position, Quaternion.identity);
+        effhp.transform.SetParent(transform);
         while (elapsedTime < duration)
         {
             // Mỗi giây hồi phục 2 máu
@@ -82,6 +84,7 @@ public class PlayerSkill : MonoBehaviour
             elapsedTime += hpInterval;
         }
         isHealing = false;
+        Destroy(effhp);
     }
     void Update()
     {
@@ -134,7 +137,7 @@ public class PlayerSkill : MonoBehaviour
 
     IEnumerator DeactivateSkillAfterTime()
     {
-        yield return new WaitForSeconds(8);
+        yield return new WaitForSeconds(5);
         DeactivateSkill();
     }
     void DeactivateSkill()
