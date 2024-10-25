@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 3977399343567858268}
   - component: {fileID: 280252676348190061}
   - component: {fileID: 1675787634457802666}
+  - component: {fileID: 6376536470586434144}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -88,7 +89,11 @@ Transform:
   m_GameObject: {fileID: 1511198212671380516}
   serializedVersion: 2
   m_LocalRotation: {x: 0.08282786, y: -0.90197986, z: 0.19996414, w: 0.37361234}
+<<<<<<< HEAD
+  m_LocalPosition: {x: -17.959126, y: 9.678639, z: 15.927859}
+=======
   m_LocalPosition: {x: 25.142263, y: 12.678548, z: 14.57317}
+>>>>>>> main
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -199,6 +204,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25533778e31d58743a18292f177a4d8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6376536470586434144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511198212671380516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fee76f5c3ca2d994abac24ddcc0ef49c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CloudsMask:
+    serializedVersion: 2
+    m_Bits: 0
+  LightMask:
+    serializedVersion: 2
+    m_Bits: 0
+  WorldBlockingMask:
+    serializedVersion: 2
+    m_Bits: 55
+  ResolutionDivider: 3
+  WorldDepthResolutionDivider: 2
+  DepthPrecision: 5
+  LateCut: 1
+  BlurRadius: 10
+  BlurQuality: 10
+  LateCutThreshohld: 0
+  LateCutPower: 1.5
+  UseDepthFiltering: 0
+  DepthFilteringPower: 0
+  UseNoise: 0
+  Noise: {fileID: 2800000, guid: ea4ad7e4f21a143478fefc813c9174ab, type: 3}
+  Wind: {x: 2, y: 1, z: 3}
+  NoiseScale: 1
+  DepthNoiseScale: 1
+  NormalNoisePower: 1
+  DepthNoisePower: 1
+  DisplacementNoisePower: 1
+  NoiseSinTimeScale: 0.2
+  DistanceToClouds: 10
+  Light: {fileID: 0}
+  UseRamp: 0
+  Ramp: {fileID: 0}
+  LightColor: {r: 1, g: 1, b: 1, a: 1}
+  ShadowColor: {r: 0.6, g: 0.72, b: 0.84, a: 1}
+  LightEnd: 0.75
+  HaloPower: 3
+  HaloDistance: 0.5
+  FallbackDistance: 1
+  blurFastShader: {fileID: 4800000, guid: 7ab901123de490e4bad21fdb835edd20, type: 3}
+  blurShader: {fileID: 4800000, guid: fd4453f270eb2734b886efe5223588ce, type: 3}
+  blurHQShader: {fileID: 4800000, guid: 22d75b161fbf2d14b9cd656fde6d05bd, type: 3}
+  depthBlurShader: {fileID: 4800000, guid: 86ffe5743a2c74741be2ae7d00c19d9b, type: 3}
+  depthShader: {fileID: 4800000, guid: 009f6c8cf8d3c144792d6321909e830c, type: 3}
+  cloudShader: {fileID: 4800000, guid: ddd68a53b8f487941ac09b4480974963, type: 3}
+  clearColorShader: {fileID: 4800000, guid: e8f3ce2cbe4971147b1b7f04b791e52a, type: 3}
 --- !u!1 &2893957780407934745
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,16 +466,28 @@ PrefabInstance:
       value: -174.81516
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f4b049fd990d224448b714a4550d9c68, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f4b049fd990d224448b714a4550d9c68, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f4b049fd990d224448b714a4550d9c68, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f4b049fd990d224448b714a4550d9c68, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -30.82054
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f4b049fd990d224448b714a4550d9c68, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.015429497
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f4b049fd990d224448b714a4550d9c68, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 29.963722
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f4b049fd990d224448b714a4550d9c68, type: 3}
       propertyPath: m_LocalRotation.w
@@ -443,6 +517,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+    - target: {fileID: -8679921383154817045, guid: f4b049fd990d224448b714a4550d9c68, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+=======
     - target: {fileID: -8621610038360776779, guid: f4b049fd990d224448b714a4550d9c68, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
@@ -450,6 +529,7 @@ PrefabInstance:
     - target: {fileID: -8621610038360776779, guid: f4b049fd990d224448b714a4550d9c68, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+>>>>>>> main
       objectReference: {fileID: 0}
     - target: {fileID: -8619802937757159691, guid: f4b049fd990d224448b714a4550d9c68, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1099,8 +1179,12 @@ MonoBehaviour:
   freeze: 0
   isRunning: 0
   camera: {fileID: 7641004714079254164}
+<<<<<<< HEAD
+  run: {fileID: 0}
+=======
   speedEff: {fileID: 1936488993998635378, guid: 88b14fae91f3b5345abdc3e7a5f29793, type: 3}
   runEff: {fileID: 0}
+>>>>>>> main
   joystick: {fileID: 0}
 --- !u!54 &2953578238360264623
 Rigidbody:
@@ -1128,7 +1212,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!136 &86524219590404948
 CapsuleCollider:
   m_ObjectHideFlags: 0

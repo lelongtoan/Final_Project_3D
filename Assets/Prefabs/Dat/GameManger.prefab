@@ -46,4 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 3043232924716146481, guid: a1e4ba919cb0ab84ea68981da749d4b9, type: 3}
   virtualCameraPrefab: {fileID: 1811974859840727150, guid: cc03315514e6f7f4cbf115ff5e571094, type: 3}
+  enemyPrefab: {fileID: 0}
   virtualCamera: {fileID: 0}

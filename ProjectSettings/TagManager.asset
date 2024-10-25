@@ -6,8 +6,12 @@ TagManager:
   tags:
   - Enemy
   - AttackNormal
+<<<<<<< HEAD
+  - Teleport
+=======
   - Skill
   - Skill1
+>>>>>>> main
   layers:
   - Default
   - TransparentFX

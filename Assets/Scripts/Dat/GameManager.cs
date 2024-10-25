@@ -15,9 +15,13 @@ public class GameManager : MonoBehaviour
     {
         // Code để gán nhân vật vào camera
         //================================================================================
+<<<<<<< HEAD
+        GameObject playerInstance = Instantiate(playerPrefab, new Vector3(13.5f, 1f, 29f), Quaternion.identity);
+=======
         GameObject playerInstance = Instantiate(playerPrefab,new Vector3(spwanPointPlayer.position.x,2,spwanPointPlayer.position.z), Quaternion.identity);
+>>>>>>> main
         GameObject cameraInstance = Instantiate(virtualCameraPrefab, new Vector3(0, 1, 0), Quaternion.identity);
-        GameObject enemy=Instantiate(enemyPrefab, new Vector3(7,3, 0), Quaternion.identity);
+        //GameObject enemy=Instantiate(enemyPrefab, new Vector3(7,3, 0), Quaternion.identity);
         if (virtualCamera == null)
         {
             virtualCamera=FindObjectOfType<CinemachineVirtualCamera>();

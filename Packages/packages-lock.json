@@ -115,6 +115,8 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+<<<<<<< HEAD
+=======
     "com.unity.postprocessing": {
       "version": "3.4.0",
       "depth": 0,
@@ -124,6 +126,7 @@
       },
       "url": "https://packages.unity.com"
     },
+>>>>>>> main
     "com.unity.render-pipelines.core": {
       "version": "14.0.11",
       "depth": 1,
