@@ -108,6 +108,12 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    public void Teleport(Vector3 position, Quaternion rotation)
+    {
+        transform.position = position;
+        Physics.SyncTransforms();
+    }
+
     public void RotateCharacter(Vector3 playerMovementInput)
     {
         if (playerMovementInput != Vector3.zero)
