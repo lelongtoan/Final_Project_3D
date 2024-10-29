@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+
     [Header("Thuộc tính nhân vật")]
     public float speed = 5f;
     public float runSpeed = 8f;
@@ -106,12 +107,6 @@ public class PlayerController : MonoBehaviour
         // Di chuyển nhân vật
         rb.MovePosition(rb.position + desired * Time.fixedDeltaTime);
         
-    }
-
-    public void Teleport(Vector3 position, Quaternion rotation)
-    {
-        transform.position = position;
-        Physics.SyncTransforms();
     }
 
     public void RotateCharacter(Vector3 playerMovementInput)
