@@ -88,7 +88,7 @@ Transform:
   m_GameObject: {fileID: 1511198212671380516}
   serializedVersion: 2
   m_LocalRotation: {x: 0.08282786, y: -0.90197986, z: 0.19996414, w: 0.37361234}
-  m_LocalPosition: {x: 25.142263, y: 12.678548, z: 14.57317}
+  m_LocalPosition: {x: 20.57702, y: 12.6784725, z: 23.455}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -286,7 +286,7 @@ Transform:
   m_GameObject: {fileID: 4770094946644237858}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 3}
+  m_LocalPosition: {x: 0, y: 1, z: 9.62}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1232,18 +1232,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ce4b5ac3b9f6d048952d58f2611ccf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eff1: {fileID: 2708598583397607911, guid: 6398d43fe79ea0140913dc5530c646af, type: 3}
+  eff1: {fileID: 5222750351268202474, guid: 471430dca40f907499aac08fe5b5bb09, type: 3}
   clip1: {fileID: 8300000, guid: 4957c817f0d0e194b8926cf34bb0825a, type: 3}
-  endCountDow1: 1
+  endCountDow3: 1
   timingskill: 0.5
   exploCount: 3
   size: 1
   upsize: 1.5
   exploDistance: 2
-  skill1Spawm: {fileID: 120786775793484316}
+  skill1Spawm: {fileID: 3869415533297484387}
   colliderSkill: {fileID: 3533313265591716537, guid: 6060b039fb5c98e44ad9bd00917a0759, type: 3}
   dame: 0
   soundEffect: {fileID: 0}
+  maxRange: 5
+  lineRenderer: {fileID: 0}
   prefabSword: {fileID: 4072140244881190095, guid: 01741e07e24ddfe40b139e416f3efc39, type: 3}
   numberSword: 3
   endCountDow2: 1

@@ -8,6 +8,7 @@ TagManager:
   - AttackNormal
   - Skill
   - Skill1
+  - Skill3
   layers:
   - Default
   - TransparentFX

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class PlayerSkill : MonoBehaviour
@@ -10,7 +11,8 @@ public class PlayerSkill : MonoBehaviour
     [Header("Skill 3")]
     public GameObject eff1;
     public AudioClip clip1;
-    public bool endCountDow1 = true;
+    public float dame3 = 25f;
+    public bool endCountDow3 = true;
     public float timingskill = 1f;
     public int exploCount = 3;
     public float size = 1;
@@ -22,11 +24,17 @@ public class PlayerSkill : MonoBehaviour
     public float dame = 0f;
     AudioSource audioSource;
     public SoundEffect soundEffect;
+    public float maxRange = 5f;
+    public LineRenderer lineRenderer;
+    private Vector3 startTouchPos;
+    private Vector3 direction;
+
 
 
     [Header("Skill1")]
     public GameObject prefabSword;
     public int numberSword;
+    public int dame1 = 1;
     public bool endCountDow2 = true;
     public float orbitRadius = 2f;
     public float rotationSpeed = 100f;
@@ -95,12 +103,16 @@ public class PlayerSkill : MonoBehaviour
     }
     void SpawmSkillUltimate()
     {
-        if (endCountDow1)
+        if (endCountDow3)
         {
             playerController.freeze = true;
             animator.SetTrigger("Skill 1");
-            StartCoroutine(CountDown(5,"Skill1"));
-            endCountDow1 = false;
+            GameObject explo = Instantiate(eff1, skill1Spawm.transform.position, Quaternion.identity);
+            GameObject coliskill = Instantiate(colliderSkill, explo.transform.position, Quaternion.identity);
+            Destroy(explo, 5f);
+            coliskill.transform.SetParent(explo.transform);
+            StartCoroutine(CountDown(5,"Skill3"));
+            endCountDow3 = false;
         }
         else
         {
@@ -162,41 +174,23 @@ public class PlayerSkill : MonoBehaviour
         }
     }
 
-
-    private IEnumerator TriggerExplosion()
-    {
-        //float dame = playerInfor.dame;
-        float a = dame;
-        Vector3 exPositio = skill1Spawm.position;
-        Vector3 expDirection = skill1Spawm.forward;
-        float currentSize = size;
-        for (int i = 0; i < exploCount; i++)
-        {
-            playerInfor.dame += 2 * (i + 1);
-            GameObject explo = Instantiate(eff1, exPositio, Quaternion.identity);
-            GameObject coliskill = Instantiate(colliderSkill, explo.transform.position,Quaternion.identity);
-            audioSource.PlayOneShot(clip1);
-            explo.transform.localScale = new Vector3(currentSize, currentSize, currentSize);
-            coliskill.transform.localScale = new Vector3(currentSize, currentSize, currentSize);
-            currentSize *= upsize;
-            exPositio += expDirection.normalized * exploDistance;
-            Destroy(coliskill, 0.5f);
-            yield return new WaitForSeconds(0.5f);
-        }
-        playerInfor.dame = a ;
-    }
     IEnumerator CountDown(float time,string name)
     {
         Debug.Log("Dung");
         yield return new WaitForSeconds(time);
         if (name == "Skill1")
         {
-            endCountDow1 = true;
+           // endCountDow1 = true;
         }
         else if (name == "Skill2")
         {
             endCountDow2 = true;
         }
+        else if (name == "Skill3")
+        {
+            endCountDow3 = true;
+        }
     }
 
+    
 }
