@@ -7,14 +7,17 @@ public class EnemyInfor : MonoBehaviour
 {
     public float hp = 100f;
     public float hpcurrent;
-
+    public PlayerSkill skill;
     private PlayerInfor playerInfor; // Tham chiếu đến script PlayerInfor
     public float dame;
+    public float dame1;
+    public float dame3;
 
     bool isCollision = false;
 
     private void Start()
     {
+        skill = GameObject.FindWithTag("Player").GetComponent<PlayerSkill>();
         // Truy cập PlayerInfor từ biến static Instance
         playerInfor = PlayerInfor.Instance;
         dame = playerInfor.PlayerUpdateDame(); // Lấy sát thương của người chơi
@@ -23,6 +26,8 @@ public class EnemyInfor : MonoBehaviour
     private void Update()
     {
         dame = playerInfor.PlayerUpdateDame();
+        dame1 = skill.dame1;
+        dame3 = skill.dame3;
         if (hpcurrent <= 0)
         {
             Destroy(gameObject);
@@ -49,6 +54,12 @@ public class EnemyInfor : MonoBehaviour
             Debug.Log("Attack");
             isCollision = true;
             hpcurrent -= dame;
+        }
+        else if (other.CompareTag("Skill3"))
+        {
+            Debug.Log("Attack");
+            isCollision = true;
+            hpcurrent -= dame3;
         }
     }
 
