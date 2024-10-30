@@ -3,15 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Enemy
-  - AttackNormal
-<<<<<<< HEAD
-  - Teleport
-=======
-  - Skill
-  - Skill1
->>>>>>> main
+  tags: []
   layers:
   - Default
   - TransparentFX
