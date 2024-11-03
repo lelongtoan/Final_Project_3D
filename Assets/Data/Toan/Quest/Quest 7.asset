@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1fb1b14631b5ab4481225d739ee8807, type: 3}
+  m_Name: Quest 7
+  m_EditorClassIdentifier: 
+  questId: 7
+  numberInt: 0
+  numberComplete: 1
+  questString: Find A
+  isShowQuest: 0
+  stateQuest: 1
+  isCoin: 0
+  isStack: 0
+  itemOpen: {fileID: 11400000, guid: 6eda1781bd003e349b2a8cc76e86abe3, type: 2}
+  itemCheck: {fileID: 11400000, guid: 81c908a33a925f54394e0ddbc551e807, type: 2}

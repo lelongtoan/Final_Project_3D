@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d60abddf843e61b4d846638c63ef8a7c, type: 3}
+  m_Sprite: {fileID: 21300118, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 8407620672234130563}
   - component: {fileID: 5978227381788467647}
   m_Layer: 5
-  m_Name: NameAchie
+  m_Name: DetailQuest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -265,8 +265,9 @@ GameObject:
   - component: {fileID: 3972413601074224581}
   - component: {fileID: 5466566806309096853}
   - component: {fileID: 2857259586351054064}
+  - component: {fileID: 3278842286035818134}
   m_Layer: 5
-  m_Name: Award
+  m_Name: Reward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -331,6 +332,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3278842286035818134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3188522731859961709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a63cbe95207cb514589a9efc29e517a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idGOQuest: 0
+  takeGO: {fileID: 367432585312789941}
+  completeGO: {fileID: 4616965902675278153}
+  detailQuestGO: {fileID: 5978227381788467647}
+  quaCountText: {fileID: 5332671728201898134}
+  itemRewardImage: {fileID: 3994999390344657324}
+  qualityRewardText: {fileID: 115349708334616500}
 --- !u!1 &3226766967156383098
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,7 +363,7 @@ GameObject:
   - component: {fileID: 4357761984783090263}
   - component: {fileID: 5332671728201898134}
   m_Layer: 5
-  m_Name: CountAchie
+  m_Name: CountlQuest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -805,7 +825,7 @@ GameObject:
   - component: {fileID: 6652987789406935590}
   - component: {fileID: 2612204378162174189}
   - component: {fileID: 4968477454036401401}
-  - component: {fileID: 4420077999381444146}
+  - component: {fileID: 6591878853097523833}
   m_Layer: 5
   m_Name: Quest
   m_TagString: Untagged
@@ -825,9 +845,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 5000184351677428820}
   - {fileID: 6805207869526122138}
   - {fileID: 3724618532674485579}
-  - {fileID: 5000184351677428820}
   - {fileID: 518020571894085559}
   - {fileID: 3972413601074224581}
   m_Father: {fileID: 0}
@@ -875,7 +895,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4420077999381444146
+--- !u!114 &6591878853097523833
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -884,19 +904,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6766769812817084503}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1fb1b14631b5ab4481225d739ee8807, type: 3}
+  m_Script: {fileID: 11500000, guid: a63cbe95207cb514589a9efc29e517a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questText: {fileID: 5978227381788467647}
-  numberTextCheck: {fileID: 5332671728201898134}
-  take: {fileID: 367432585312789941}
-  completed: {fileID: 4616965902675278153}
-  itemOpen: {fileID: 0}
-  numberInt: 0
-  numberComplete: 0
-  questString: 
-  completedBool: 0
-  questId: 0
-  questShow: 0
-  itemCheck: {fileID: 0}
-  questManager: {fileID: 0}
+  idGOQuest: 0
+  takeGO: {fileID: 367432585312789941}
+  completeGO: {fileID: 4616965902675278153}
+  detailQuestGO: {fileID: 5978227381788467647}
+  quaCountText: {fileID: 5332671728201898134}
+  itemRewardImage: {fileID: 3994999390344657324}
+  qualityRewardText: {fileID: 115349708334616500}

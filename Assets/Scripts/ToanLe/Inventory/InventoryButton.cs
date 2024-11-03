@@ -10,14 +10,9 @@ public class InventoryButton : MonoBehaviour, IPointerClickHandler
     [SerializeField] Image icon;
     [SerializeField] TextMeshProUGUI textQ;
     [SerializeField] Image select;
-    InventoryController inventoryController;
 
     float NumberToClamp;
     public int myIndex;
-    private void Start()
-    {
-        inventoryController = FindObjectOfType<InventoryController>();
-    }
     public void SetIndex(int index)
     {
         myIndex = index;
@@ -49,10 +44,7 @@ public class InventoryButton : MonoBehaviour, IPointerClickHandler
     {
         ItemManager itemManager = transform.parent.GetComponent<ItemManager>();
         itemManager.OnClick(myIndex);
-    }
-    public void Selected(bool sl)
-    {
-        select.gameObject.SetActive(sl);
+        Debug.Log(myIndex);
     }
 
 }

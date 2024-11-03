@@ -16,9 +16,9 @@ MonoBehaviour:
   - item: {fileID: 0}
     toolDurability: 0
     count: 0
-  - item: {fileID: 0}
-    toolDurability: 0
-    count: 0
+  - item: {fileID: 11400000, guid: 6eda1781bd003e349b2a8cc76e86abe3, type: 2}
+    toolDurability: 15
+    count: 12
   - item: {fileID: 0}
     toolDurability: 0
     count: 0
