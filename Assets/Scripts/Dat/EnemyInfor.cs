@@ -8,7 +8,7 @@ public class EnemyInfor : MonoBehaviour
     public float hp = 100f;
     public float hpcurrent;
     public PlayerSkill skill;
-    private PlayerInfor playerInfor; // Tham chiếu đến script PlayerInfor
+    private PlayerInfor playerInfor; 
     public float dame;
     public float dame1;
     public float dame3;
@@ -18,9 +18,8 @@ public class EnemyInfor : MonoBehaviour
     private void Start()
     {
         skill = GameObject.FindWithTag("Player").GetComponent<PlayerSkill>();
-        // Truy cập PlayerInfor từ biến static Instance
         playerInfor = PlayerInfor.Instance;
-        dame = playerInfor.PlayerUpdateDame(); // Lấy sát thương của người chơi
+        dame = playerInfor.PlayerUpdateDame();
         hpcurrent = hp;
     }
     private void Update()
