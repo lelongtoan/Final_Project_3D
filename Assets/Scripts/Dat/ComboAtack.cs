@@ -38,6 +38,9 @@ public class ComboAtack : MonoBehaviour
     public Collider atackCollider;
     Rigidbody rb;
     PlayerController playerController;
+    public float closetRadius;
+    public LayerMask layerEnemy;
+    public Transform targetEnemy;
     void Start()
     {
         attack = GameObject.Find("Click").GetComponent<Button>();
@@ -55,6 +58,7 @@ public class ComboAtack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        FindClosestEnemy();
         Combodelay();
         if(comboDelay<0)
         {
@@ -64,8 +68,8 @@ public class ComboAtack : MonoBehaviour
 
     public void Combo()
     {
-
-        if( comboDelay < 0 && isComboActive == true)
+        gameObject.transform.LookAt(targetEnemy);
+        if ( comboDelay < 0 && isComboActive == true)
         {
             playerController.freeze = true;
             isAttack = true;
@@ -95,7 +99,24 @@ public class ComboAtack : MonoBehaviour
         }
     }
 
+    private void FindClosestEnemy()
+    {
+        float closestDistance = closetRadius;
+        Transform closestEnemy = null;
 
+        Collider[] enemiesInRange = Physics.OverlapSphere(transform.position, closetRadius, layerEnemy);
+
+        foreach (Collider enemy in enemiesInRange)
+        {
+            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+            if (distanceToEnemy < closestDistance)
+            {
+                closestDistance = distanceToEnemy;
+                closestEnemy = enemy.transform;
+            }
+        }
+        targetEnemy = closestEnemy;
+    }
     private void OnAtackClick()
     {
         if (!isComboActive)
