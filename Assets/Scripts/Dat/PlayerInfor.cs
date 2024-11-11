@@ -8,8 +8,9 @@ public class PlayerInfor : MonoBehaviour
 
     [Header("Thông tin nhân vật")]
     public float hp = 100f;
+    public float currenthp = 100f;
     public float mp = 100f;
-    public float dame = 10;
+    public int dame = 10;
 
     private void Awake()
     {
@@ -24,24 +25,31 @@ public class PlayerInfor : MonoBehaviour
         }
     }
 
+    public void Heal(int amount)
+    {
+        currenthp += amount;
+
+        if (currenthp > hp)
+        {
+            currenthp = hp;
+        }
+    }
     // Hàm nhận sát thương
     public void PlayerReciveDame(float atk)
     {
-        hp -= atk;
-        if (hp <= 0)
+        currenthp -= atk;
+        if (currenthp <= 0)
         {
             hp = 0;
             // Xử lý khi nhân vật chết
         }
     }
 
-    // Hàm trả về sát thương hiện tại của người chơi
     public float PlayerUpdateDame()
     {
         return dame;
     }
 
-    // Hàm sử dụng mana cho kỹ năng
     public void PlayerUseSkill(float mana)
     {
         mp -= mana;
@@ -49,5 +57,9 @@ public class PlayerInfor : MonoBehaviour
         {
             mp = 0;
         }
+    }
+    public void PlayerTakeDame(int hp)
+    {
+        currenthp -= hp;
     }
 }

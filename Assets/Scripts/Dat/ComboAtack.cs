@@ -38,6 +38,9 @@ public class ComboAtack : MonoBehaviour
     public Collider atackCollider;
     Rigidbody rb;
     PlayerController playerController;
+    public float closetRadius;
+    public LayerMask layerEnemy;
+    public Transform targetEnemy;
     void Start()
     {
         attack = GameObject.Find("Click").GetComponent<Button>();
@@ -55,17 +58,20 @@ public class ComboAtack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        FindClosestEnemy();
         Combodelay();
         if(comboDelay<0)
         {
             combo = 1;
         }
-    }   
+    }
 
     public void Combo()
     {
-        if( comboDelay < 0 && isComboActive == true)
+        gameObject.transform.LookAt(targetEnemy);
+        if ( comboDelay < 0 && isComboActive == true)
         {
+            playerController.freeze = true;
             isAttack = true;
             atackCollider.enabled = true;
             MoveForwardDuringAttack();
@@ -74,6 +80,7 @@ public class ComboAtack : MonoBehaviour
         }
         else if (isComboActive == true && comboDelay > 0 && comboDelay < 0.4)
         {
+            playerController.freeze = true;
             isAttack = true;
             atackCollider.enabled = true;
             MoveForwardDuringAttack();
@@ -90,17 +97,33 @@ public class ComboAtack : MonoBehaviour
         {
             isAttack=false;
         }
-        //atackCollider.SetActive(false);
     }
-    private void OnAtackClick() // Hàm này dùng để kiểm tra có nhấn phím đánh không
+
+    private void FindClosestEnemy()
+    {
+        float closestDistance = closetRadius;
+        Transform closestEnemy = null;
+
+        Collider[] enemiesInRange = Physics.OverlapSphere(transform.position, closetRadius, layerEnemy);
+
+        foreach (Collider enemy in enemiesInRange)
+        {
+            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+            if (distanceToEnemy < closestDistance)
+            {
+                closestDistance = distanceToEnemy;
+                closestEnemy = enemy.transform;
+            }
+        }
+        targetEnemy = closestEnemy;
+    }
+    private void OnAtackClick()
     {
         if (!isComboActive)
         {
-            playerController.freeze = true;
             isComboActive = true;
             Combo();
             isComboActive = false;
-            playerController.freeze = false;
         }
     }
     private void Combodelay()
@@ -137,4 +160,8 @@ public class ComboAtack : MonoBehaviour
         }
     }
     
+    public void SetFreeze()
+    {
+        playerController.freeze = false;
+    }
 }

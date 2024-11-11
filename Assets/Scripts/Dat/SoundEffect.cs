@@ -13,12 +13,11 @@ public class SoundEffect : MonoBehaviour
 
 
     public List<Sound> sounds;
-    private Dictionary<string, AudioClip> soundDictionary;  // Từ điển để truy xuất âm thanh
-    public AudioSource audioSource; // 
+    private Dictionary<string, AudioClip> soundDictionary; 
+    public AudioSource audioSource; 
     void Awake()
     {
         audioSource = FindObjectOfType<AudioSource>();
-        // Tạo dictionary từ danh sách âm thanh
         soundDictionary = new Dictionary<string, AudioClip>();
         foreach (var sound in sounds)
         {
@@ -26,7 +25,6 @@ public class SoundEffect : MonoBehaviour
         }
     }
 
-    // Hàm phát âm thanh dựa trên tên âm thanh
     public void PlaySound(string soundName)
     {
         if (soundDictionary.ContainsKey(soundName))
