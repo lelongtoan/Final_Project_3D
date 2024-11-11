@@ -17,17 +17,13 @@ public class QuestManager : MonoBehaviour
     {
         for (int i = 0; i < questContainer.questList.Count; i++)
         {
-            GameObject newQuest = Instantiate(quest);
-            newQuest.transform.SetParent(content.transform);
-            newQuest.GetComponent<GOQuest>().SetQuest(questContainer.questList[i]);
-            quests.Add(newQuest);
-        }
-    }
-    public void SetShowQuest()
-    {
-        for (int i = 0; i < quests.Count; i++) 
-        {
-            quests[i].SetActive(questContainer.questList[i] ? true : false);
+            if (questContainer.questList[i].isShowQuest)
+            {
+                GameObject newQuest = Instantiate(quest);
+                newQuest.transform.SetParent(content.transform);
+                newQuest.GetComponent<GOQuest>().SetQuest(questContainer.questList[i]);
+                quests.Add(newQuest);
+            }
         }
     }
 }

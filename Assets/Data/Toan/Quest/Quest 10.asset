@@ -15,10 +15,10 @@ MonoBehaviour:
   questId: 10
   numberInt: 0
   numberComplete: 1
-  questString: Find A
+  questString: 11
   isShowQuest: 0
   stateQuest: 2
-  isCoin: 0
+  isCoin: 1000
   isStack: 0
   itemOpen: {fileID: 11400000, guid: 6eda1781bd003e349b2a8cc76e86abe3, type: 2}
   itemCheck: {fileID: 11400000, guid: 81c908a33a925f54394e0ddbc551e807, type: 2}

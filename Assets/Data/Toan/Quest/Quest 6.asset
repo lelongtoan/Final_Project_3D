@@ -15,7 +15,7 @@ MonoBehaviour:
   questId: 6
   numberInt: 0
   numberComplete: 1
-  questString: Find A
+  questString: 7
   isShowQuest: 0
   stateQuest: 1
   isCoin: 0
