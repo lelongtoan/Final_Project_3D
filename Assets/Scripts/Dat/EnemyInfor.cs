@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
-
+//
 public class EnemyInfor : MonoBehaviour
 {
     public int dame = 10;
@@ -27,7 +27,7 @@ public class EnemyInfor : MonoBehaviour
             Die();
         }
     }
-    public void EnemyTakeDame(int dame)
+    public void EnemyTakeDame(float dame)
     {
         hpcurrent -= dame;
     }

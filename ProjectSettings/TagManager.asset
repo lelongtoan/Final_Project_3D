@@ -9,6 +9,8 @@ TagManager:
   - Skill
   - Skill1
   - Skill3
+  - MinionEnemy
+  - WarioBoss
   layers:
   - Default
   - TransparentFX

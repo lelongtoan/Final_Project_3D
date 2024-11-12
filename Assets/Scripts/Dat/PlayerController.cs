@@ -33,7 +33,6 @@ public class PlayerController : MonoBehaviour
         runEff = Instantiate(speedEff, transform.position, Quaternion.identity);
         runEff.SetActive(false);
         runEff.transform.SetParent(transform);
-
     }
 
     private void FixedUpdate()  
@@ -122,12 +121,12 @@ public class PlayerController : MonoBehaviour
     {
         PlayerInfor playerInfo = gameObject.GetComponent<PlayerInfor>();
 
-        while (playerInfo.mp > 0 && IsMoving() && freeze != true)
+        while (playerInfo.manaPoint > 0 && IsMoving() && freeze != true)
         {
             playerInfo.PlayerUseSkill(5);
             yield return new WaitForSeconds(1f);
 
-            if (playerInfo.mp <= 0)
+            if (playerInfo.manaPoint <= 0)
             {
                 SetEffSpeed(false);
                 StopRunning();
@@ -151,7 +150,7 @@ public class PlayerController : MonoBehaviour
     private void OnRunClick()
     {
         PlayerInfor playerInfo = gameObject.GetComponent<PlayerInfor>();
-        if (playerInfo.mp > 0 && freeze != true)
+        if (playerInfo.manaPoint > 0 && freeze != true)
         {
             if (!isRunning)
             {
