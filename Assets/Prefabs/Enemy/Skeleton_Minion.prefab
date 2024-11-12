@@ -692,7 +692,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 02f8179fb2347a9419b34a124c71bc12, type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: MinionEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 1336212565047022375, guid: 02f8179fb2347a9419b34a124c71bc12, type: 3}
       propertyPath: m_Layer
@@ -1017,6 +1017,8 @@ MonoBehaviour:
   dame: 10
   hp: 100
   hpcurrent: 0
+  isdead: 0
+  fadeDuration: 2
 --- !u!54 &8178622063208903138
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1042,7 +1044,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!195 &8705243034638653047
 NavMeshAgent:

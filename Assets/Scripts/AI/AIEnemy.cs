@@ -37,43 +37,47 @@ public class AIEnemy : MonoBehaviour
             player = GameObject.FindWithTag("Player")?.transform;
             if (player == null) return;
         }
-
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-        switch (currentState)
+        if (gameObject.CompareTag("MinionEnemy"))
         {
-            case State.Patrolling:
-                Patrol();
-                if (distanceToPlayer < chaseDistance)
-                {
-                    StartChasing();
-                }
-                break;
+            switch (currentState)
+            {
+                case State.Patrolling:
+                    Patrol();
+                    if (distanceToPlayer < chaseDistance)
+                    {
+                        StartChasing();
+                    }
+                    break;
 
-            case State.Chasing:
-                ChasePlayer();
-                if (distanceToPlayer < attackDistance)
-                {
-                    StartAttacking();
-                }
-                else if (distanceToPlayer > chaseDistance)
-                {
-                    StartPatrolling();
-                }
-                break;
+                case State.Chasing:
+                    ChasePlayer();
+                    if (distanceToPlayer < attackDistance)
+                    {
+                        StartAttacking();
+                    }
+                    else if (distanceToPlayer > chaseDistance)
+                    {
+                        StartPatrolling();
+                    }
+                    break;
 
-            case State.Attacking:
-                if (Time.time > lastAttackTime + attackCooldown)
-                {
-                    AttackPlayer();
-                    lastAttackTime = Time.time;
-                }
-                if (distanceToPlayer > attackDistance)
-                {
-                    currentState = distanceToPlayer < chaseDistance ? State.Chasing : State.Patrolling;
-                }
-                break;
+                case State.Attacking:
+                    if (Time.time > lastAttackTime + attackCooldown)
+                    {
+                        AttackPlayer();
+                        lastAttackTime = Time.time;
+                    }
+                    if (distanceToPlayer > attackDistance)
+                    {
+                        currentState = distanceToPlayer < chaseDistance ? State.Chasing : State.Patrolling;
+                    }
+                    break;
+            }
+
         }
+
     }
 
     private void Patrol()
