@@ -32,36 +32,31 @@ public class ItemD : MonoBehaviour
     }
     public void UseItem()
     {
+        if (itemSlot.item == null)
+            return;
         if (itemSlot.item.itemSet == ItemSet.Equippable)
         {
+            //goi ham eq
             itemSlot = null;
+        }
+        else if (itemSlot.item.itemSet == ItemSet.Heal )
+        {
+            //goi ham HealthR
+        }
+        else if (itemSlot.item.itemSet == ItemSet.Mana)
+        {
+            //goi ham ManaR
         }
         else
         {
-            if (itemSlot.item == null)
-                return;
-                itemSlot.count--;
-            if (itemSlot.count <= 0)
-            {
-                itemSlot.Clear();
-            }
-            //statusCharacter.HealthPoint += (int)itemSlot.item.HP;
-            //statusCharacter.FoodPoint += itemSlot.item.food;
-            //statusCharacter.WaterPoint += itemSlot.item.water;
-            //if (statusCharacter.HealthPoint > statusCharacter.MaxHealthPoint)
-            //{
-            //    statusCharacter.HealthPoint = statusCharacter.MaxHealthPoint;
-            //}
-            //if (statusCharacter.FoodPoint > 100)
-            //{
-            //    statusCharacter.FoodPoint = 100;
-            //}
-            //if (statusCharacter.WaterPoint > 100)
-            //{
-            //    statusCharacter.WaterPoint = 100;
-            //}
-            itemSlot = null;
+            //goi ham use
         }
+        itemSlot.count--;
+        if (itemSlot.count <= 0)
+        {
+            itemSlot.Clear();
+        }
+        itemSlot = null;
     }
     public void MoveItem(ItemSlot itemSlot)
     {

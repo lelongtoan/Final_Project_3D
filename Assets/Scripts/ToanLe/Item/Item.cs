@@ -4,7 +4,11 @@ using UnityEngine;
 
 public enum ItemSet
 {
-    Nope,Equippable,Food
+    Nope, Equippable, Food, Heal, Mana
+}
+public enum Buff
+{
+    Nope, HP, MP, Dmg, Armour, DmgAp
 }
 [CreateAssetMenu(menuName = "Data/Item")]
 public class Item : ScriptableObject
@@ -13,8 +17,11 @@ public class Item : ScriptableObject
     public bool stackable;
 
     public float HP;
-    public int water;
-    public int food;
+    public float MP;
+    public Buff buff;
+
+    public float buffD;
+
 
     public bool canShow;
     public string description;
