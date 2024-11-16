@@ -75,7 +75,10 @@ public class ItemContainer : ScriptableObject
         Debug.Log("Inventory Full");
         return false;
     }
-
+    public void Delete(int id)
+    {
+        slots[id].Clear();
+    }
     internal bool CheckFreeSpace()
     {
         for (int i = 0; i < slots.Count; i++)
