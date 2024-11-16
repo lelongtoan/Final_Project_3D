@@ -9,7 +9,8 @@ TagManager:
   - Skill
   - Skill1
   - Skill3
-  - Teleport
+  - MinionEnemy
+  - WarioBoss
   layers:
   - Default
   - TransparentFX
@@ -17,9 +18,9 @@ TagManager:
   - 
   - Water
   - UI
-  - XuyenTuong
-  - 
-  - 
+  - EnemyAttcakLayer
+  - EnemyBaseLayer
+  - Player
   - 
   - 
   - 

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6907662794703583385}
   - component: {fileID: 7517370458687941752}
   - component: {fileID: 8634499391229406271}
+  - component: {fileID: 6423032665152839909}
   m_Layer: 0
   m_Name: Skillcolider
   m_TagString: Skill3
@@ -81,3 +82,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6423032665152839909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3533313265591716537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d825a84b42a9b442b9070472f4d750e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEffect: {fileID: 0}

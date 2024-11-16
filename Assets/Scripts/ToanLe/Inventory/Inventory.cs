@@ -5,13 +5,6 @@ using static UnityEditor.Progress;
 
 public class Inventory : ItemManager
 {
-    public static Inventory inventoryInstance { get; set; }
-
-    int idTemp;
-    private void Awake()
-    {
-        inventoryInstance = this;
-    }
     private void Update()
     {
         SetIndex();
@@ -19,9 +12,17 @@ public class Inventory : ItemManager
     }
     public override void OnClick(int id)
     {
-        idTemp = id;
-        DragAndDrop.dragAndDrop.OnClick(inventory.slots[id]);
-        InGameMenu.inGameMenu.SetDragAndDrop();
-
+        if (inventory.slots[id].item != null || ItemD.Instance.itemSlot.count > 0)
+            if (ItemD.Instance.itemSlot.count <= 0) 
+            {
+                InGameMenu.inGameMenu.SetInfoItem();
+                ItemD.Instance.SetItem(inventory.slots[id],id);
+                Debug.Log("Info");
+            }
+            else
+            {
+                Debug.Log("moveitem");
+                ItemD.Instance.MoveItem(inventory.slots[id]);
+            }
     }
 }

@@ -1,80 +1,61 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-
+using UnityEngine.AI;
+//
 public class EnemyInfor : MonoBehaviour
 {
+    public int dame = 10;
     public float hp = 100f;
     public float hpcurrent;
-    public PlayerSkill skill;
-    private PlayerInfor playerInfor; // Tham chiếu đến script PlayerInfor
-    public float dame;
-    public float dame1;
-    public float dame3;
-
+    public bool isdead = false;
+    public float fadeDuration = 2f;
     bool isCollision = false;
+    Animator animator;
 
     private void Start()
     {
-        skill = GameObject.FindWithTag("Player").GetComponent<PlayerSkill>();
-        // Truy cập PlayerInfor từ biến static Instance
-        playerInfor = PlayerInfor.Instance;
-        dame = playerInfor.PlayerUpdateDame(); // Lấy sát thương của người chơi
+        animator = GetComponent<Animator>();
         hpcurrent = hp;
     }
     private void Update()
     {
-        dame = playerInfor.PlayerUpdateDame();
-        dame1 = skill.dame1;
-        dame3 = skill.dame3;
         if (hpcurrent <= 0)
         {
-            Destroy(gameObject);
+            Die();
         }
     }
-    private void OnTriggerEnter(Collider other)
+    public void EnemyTakeDame(float dame)
     {
-        if (other.gameObject.CompareTag("AttackNormal") && isCollision == false)
-        {
-            Debug.Log("Attack");
-            isCollision = true;
-            hpcurrent -= dame;
-            
-            StartCoroutine(DisableCollider(other, 0.1f));
-        }
-        else if (other.CompareTag("Skill1"))
-        {
-            Debug.Log("Attack");
-            isCollision = true;
-            hpcurrent -= 1;
-        }
-        else if (other.CompareTag("Skill"))
-        {
-            Debug.Log("Attack");
-            isCollision = true;
-            hpcurrent -= dame;
-        }
-        else if (other.CompareTag("Skill3"))
-        {
-            Debug.Log("Attack");
-            isCollision = true;
-            hpcurrent -= dame3;
-        }
+        hpcurrent -= dame;
     }
-
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Skill") || other.gameObject.CompareTag("Skill1"))
-        {
-            isCollision = false;
-        }
+
     }
 
-    IEnumerator DisableCollider(Collider other,float delay)
+    IEnumerator DisableCollider(Collider other, float delay)
     {
         yield return new WaitForSeconds(delay);
         isCollision = false;
         other.enabled = false;
+    }
+    public void Die()
+    {
+        if (isdead) return;
+
+        isdead = true;
+        animator.SetTrigger("Dead");
+
+        GetComponent<Collider>().enabled = false;
+        GetComponent<NavMeshAgent>().enabled = false;
+        GetComponent<AIEnemy>().enabled = false;
+    }
+
+    public void DestroyEnemy()
+    {
+        Destroy(gameObject);
     }
 }

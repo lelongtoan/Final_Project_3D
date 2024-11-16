@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d690ab03900124439ed5e618aa451db, type: 3}
   m_Name: abc
   m_EditorClassIdentifier: 
-  itemName: 
-  stackable: 0
-  HP: 0
-  isFood: 0
-  water: 0
-  food: 0
-  canShow: 0
+  itemName: abc
+  stackable: 1
+  HP: 100
+  MP: 100
+  water: 100
+  food: 100
+  canShow: 1
+  description: test
   itemSet: 0
-  icon: {fileID: 0}
+  icon: {fileID: 21300004, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
