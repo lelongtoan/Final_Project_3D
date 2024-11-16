@@ -9,6 +9,7 @@ TagManager:
   - Skill
   - Skill1
   - Skill3
+  - Teleport
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - XuyenTuong
   - 
   - 
   - 
