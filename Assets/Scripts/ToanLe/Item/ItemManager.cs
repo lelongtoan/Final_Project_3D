@@ -6,11 +6,11 @@ public class ItemManager : MonoBehaviour
 {
     public ItemContainer inventory;
     public List<InventoryButton> buttons;
-    public static ItemManager itemPanel { get; set; }
+    public static ItemManager intance { get; set; }
 
     private void Awake()
     {
-        itemPanel = this;
+        intance = this;
     }
     private void Start()
     {
