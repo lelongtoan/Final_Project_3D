@@ -5,7 +5,7 @@ using UnityEngine;
 public class Teleporter : MonoBehaviour
 {
     [SerializeField] Transform destination;
-    public float teleportDelay = 2.0f;
+    public float teleportDelay = .1f;
 
     void OnTriggerEnter(Collider other)
     {
@@ -20,7 +20,7 @@ public class Teleporter : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.color = Color.white;
-        Gizmos.DrawWireSphere(destination.position, .4f);
+        Gizmos.DrawWireSphere(destination.position, -.6f);
         var direction = destination.TransformDirection(Vector3.forward);
         Gizmos.DrawRay(destination.position, direction);
     }
