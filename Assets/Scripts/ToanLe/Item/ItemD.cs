@@ -12,6 +12,8 @@ public class ItemD : MonoBehaviour
     [SerializeField] Image icon;
     [SerializeField] TextMeshProUGUI textQ;
     [SerializeField] TextMeshProUGUI textDes;
+
+    [SerializeField] GameObject useGO;
     public static ItemD Instance { get; set; }
 
     private void Awake()

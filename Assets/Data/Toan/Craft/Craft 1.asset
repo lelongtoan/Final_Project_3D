@@ -9,16 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d690ab03900124439ed5e618aa451db, type: 3}
-  m_Name: Stone
+  m_Script: {fileID: 11500000, guid: 40abad5b0bd37894fa7585439dd7a1dd, type: 3}
+  m_Name: Craft 1
   m_EditorClassIdentifier: 
-  itemName: 
-  stackable: 0
-  HP: 0
-  MP: 0
-  buff: 0
-  buffD: 0
-  canShow: 0
-  description: 
-  itemSet: 0
-  icon: {fileID: 21300000, guid: 03d9e4002c10dda459f3b21a314e0c29, type: 3}
+  nameCraft: 1234
+  resultCount: 1
+  resultItem: {fileID: 0}
+  requiredItems: []
