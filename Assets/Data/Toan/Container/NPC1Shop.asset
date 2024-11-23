@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5272ff46bba89804c9da6df50ccae579, type: 3}
+  m_Name: NPC1Shop
+  m_EditorClassIdentifier: 
+  itemsInShop:
+  - nameItem: Item1
+    priceItem: 500
+    locked: 1
+    itemShop: {fileID: 0}
+  - nameItem: Item2
+    priceItem: 555
+    locked: 1
+    itemShop: {fileID: 0}
+  - nameItem: Item3
+    priceItem: 111
+    locked: 0
+    itemShop: {fileID: 0}
+  - nameItem: Item4
+    priceItem: 123
+    locked: 0
+    itemShop: {fileID: 0}
+  - nameItem: Item5
+    priceItem: 15125
+    locked: 1
+    itemShop: {fileID: 0}
