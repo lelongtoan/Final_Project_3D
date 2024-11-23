@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum ItemSet
 {
-    Nope, Equippable, Food, Heal, Mana
+    Nope, Equippable, Food
 }
 public enum Buff
 {
@@ -18,10 +18,15 @@ public class Item : ScriptableObject
 
     public float HP;
     public float MP;
+    public float Dmg;
+    
+
     public Buff buff;
+
 
     public float buffD;
 
+    public float gold;
 
     public bool canShow;
     public string description;
