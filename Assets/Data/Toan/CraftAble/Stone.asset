@@ -15,8 +15,10 @@ MonoBehaviour:
   itemName: 
   stackable: 0
   HP: 0
-  isFood: 0
-  water: 0
-  food: 0
+  MP: 0
+  buff: 0
+  buffD: 0
+  canShow: 0
+  description: 
   itemSet: 0
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 03d9e4002c10dda459f3b21a314e0c29, type: 3}

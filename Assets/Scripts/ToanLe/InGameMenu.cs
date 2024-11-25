@@ -15,6 +15,12 @@ public class InGameMenu : MonoBehaviour
     [SerializeField] GameObject craftPanel;
     //[SerializeField] GameObject mapPanel;
     [SerializeField] GameObject questPanel;
+    [SerializeField] GameObject gameOver;
+    [Header("NPC")]
+    [SerializeField] GameObject npcPanel;
+    [SerializeField] GameObject buyNPCPanel;
+    [SerializeField] GameObject craftNPCPanel;
+    [SerializeField] GameObject questNPCPanel;
 
     [Header("Iventory")]
     [SerializeField] GameObject infoItem;
@@ -66,4 +72,13 @@ public class InGameMenu : MonoBehaviour
     {
         dragAndDrop.SetActive(!dragAndDrop.activeInHierarchy);
     }
+    public void SetGameOver()
+    {
+        gameOver.SetActive(!gameOver.activeInHierarchy);
+    }
+    public void SetNPC()
+    {
+        npcPanel.SetActive(!npcPanel.activeInHierarchy);
+    }
+    
 }

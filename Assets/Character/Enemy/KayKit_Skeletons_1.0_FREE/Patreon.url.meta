@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/Tutorial Map.unity.meta
+guid: 29ab7efcf95c9d143b185a987646bc40
+========
 guid: ae631d5ebf884d04b918dad107d52a50
+>>>>>>>> main:Assets/Character/Enemy/KayKit_Skeletons_1.0_FREE/Patreon.url.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
