@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
-//
+using UnityEngine.UI;
+
 public class EnemyInfor : MonoBehaviour
 {
     public int dame = 10;
@@ -13,8 +14,9 @@ public class EnemyInfor : MonoBehaviour
     public bool isdead = false;
     public float fadeDuration = 2f;
     bool isCollision = false;
+    public Image hpBar;
     Animator animator;
-
+    public GameObject canvas;
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -22,6 +24,7 @@ public class EnemyInfor : MonoBehaviour
     }
     private void Update()
     {
+        hpBar.GetComponent<Image>().fillAmount = hpcurrent / hp;
         if (hpcurrent <= 0)
         {
             Die();
@@ -52,6 +55,7 @@ public class EnemyInfor : MonoBehaviour
         GetComponent<Collider>().enabled = false;
         GetComponent<NavMeshAgent>().enabled = false;
         GetComponent<AIEnemy>().enabled = false;
+        canvas.SetActive(false);
     }
 
     public void DestroyEnemy()
