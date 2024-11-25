@@ -138,11 +138,20 @@ public class AIEnemy : MonoBehaviour
                     break;
 
                 case State.Attacking:
+
                     if (Time.time > lastAttackTime + attackCooldown)
                     {
-                        AttackPlayer();
-                        lastAttackTime = Time.time;
-                        currentState = State.Reload;
+                        if (distanceToPlayer <= 3f)
+                        {
+                            NormalAttacking();
+                            lastAttackTime = Time.time;
+                        }
+                        else if (distanceToPlayer > 3)
+                        {
+                            AttackPlayer();
+                            lastAttackTime = Time.time;
+                            currentState = State.Reload;
+                        }
                     }
                     break;
             }
@@ -268,6 +277,13 @@ public class AIEnemy : MonoBehaviour
         currentState = State.Attacking;
     }
 
+    protected void NormalAttacking()
+    {
+        agent.speed = 0;
+        animator.SetTrigger("AttackNormal");
+        animator.ResetTrigger("Chase");
+        StartReLoad();
+    }
     protected void AttackPlayer()
     {
         agent.speed = 0;
