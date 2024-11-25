@@ -91,15 +91,16 @@ public class PlayerSkill : MonoBehaviour
         {
             if (!buff)
             {
-                playerInfor.manaPoint -= manaskill2;
                 endCountDow2 = false;
-                CountDown(15, "Skill2");
+                CountDown(15, 2);
+                playerInfor.manaPoint -= manaskill2;
                 StartCoroutine(BuffDame());
             }
         }
     }
     IEnumerator BuffDame()
     {
+
         int dame = playerInfor.dame;
         buff = true;
         float elapsedTime = 0f;
@@ -138,6 +139,7 @@ public class PlayerSkill : MonoBehaviour
         }
         else if (endCountDow3)
         {
+            StartCoroutine(CountDown(30, 3));
             playerInfor.manaPoint -= manaskill3;
             playerController.freeze = true;
             animator.SetTrigger("Skill 1");
@@ -145,7 +147,6 @@ public class PlayerSkill : MonoBehaviour
             GameObject coliskill = Instantiate(colliderSkill, explo.transform.position, Quaternion.identity);
             Destroy(explo, 5f);
             coliskill.transform.SetParent(explo.transform);
-            StartCoroutine(CountDown(30, "Skill3"));
             endCountDow3 = false;
         }
         else if (!endCountDow3)
@@ -210,33 +211,26 @@ public class PlayerSkill : MonoBehaviour
         }
         if (!activeSkill)
         {
+            CountDown(5, 1);
             activeSkill = true;
             playerInfor.manaPoint -= manaskill1;
-            endCountDow1 = false;
-            CountDown(12, "Skill1");
             SpawnSwords();
             StartCoroutine(DeactivateSkillAfterTime());
         }
     }
 
-    IEnumerator CountDown(float time, string name)
+    IEnumerator CountDown(float time, int skill)
     {
-        Debug.Log("Dung");
+        SetSkillReady(skill, false);
         yield return new WaitForSeconds(time);
-        if (name == "Skill1")
-        {
-            // endCountDow1 = true;
-        }
-        else if (name == "Skill2")
-        {
-            endCountDow2 = true;
-        }
-        else if (name == "Skill3")
-        {
-            endCountDow3 = true;
-        }
+        SetSkillReady(skill, true);
     }
-
+    private void SetSkillReady(int skillIndex, bool isReady)
+    {
+        if (skillIndex == 1) endCountDow1 = isReady;
+        if (skillIndex == 2) endCountDow2 = isReady;
+        if (skillIndex == 3) endCountDow3 = isReady;
+    }
     bool CheckMana(int manaskill)
     {
         if (mana < manaskill)

@@ -1347,9 +1347,9 @@ MonoBehaviour:
   runSpeed: 8
   freeze: 0
   isRunning: 0
-  camera: {fileID: 7641004714079254164}
+  playercam: {fileID: 7641004714079254164}
   speedEff: {fileID: 1936488993998635378, guid: 88b14fae91f3b5345abdc3e7a5f29793, type: 3}
-  runEff: {fileID: 0}
+  runEff: {fileID: 1936488993998635378, guid: 88b14fae91f3b5345abdc3e7a5f29793, type: 3}
   joystick: {fileID: 0}
 --- !u!54 &2953578238360264623
 Rigidbody:
@@ -1493,12 +1493,13 @@ MonoBehaviour:
   prefabSword: {fileID: 4072140244881190095, guid: 01741e07e24ddfe40b139e416f3efc39, type: 3}
   numberSword: 3
   dame1: 1
-  endCountDow2: 1
+  endCountDow1: 1
   orbitRadius: 1.5
   rotationSpeed: 5
   swordSpawn: {fileID: 2427101003066311262}
   manaskill1: 10
   hpAmount: 2
+  endCountDow2: 1
   duration: 10
   manaskill2: 20
   ameInterval: 1

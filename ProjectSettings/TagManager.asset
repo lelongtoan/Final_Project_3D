@@ -10,7 +10,10 @@ TagManager:
   - Skill1
   - Skill3
   - MinionEnemy
-  - WarioBoss
+  - WariorBoss
+  - RogueEnemy
+  - Camerafollow
+  - Arrow
   layers:
   - Default
   - TransparentFX

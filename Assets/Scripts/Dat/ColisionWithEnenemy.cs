@@ -7,6 +7,7 @@ public class ColisionWithEnenemy : MonoBehaviour
     public SoundEffect soundEffect;
     public PlayerInfor infor;
     public PlayerSkill skill;
+    bool isAttack = false;
     void Start()
     {
         soundEffect = FindObjectOfType<SoundEffect>();
@@ -16,24 +17,35 @@ public class ColisionWithEnenemy : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         EnemyInfor enemy = other.gameObject.GetComponent<EnemyInfor>();
-        if (other.CompareTag("MinionEnemy") || other.CompareTag("WarioBoss"))
+        if ((other.CompareTag("MinionEnemy") || other.CompareTag("RogueEnemy") || other.CompareTag("WariorBoss"))&& !isAttack)
         {
             if (gameObject.CompareTag("Skill1"))
             {
-
-                    enemy.EnemyTakeDame(skill.dame1);
-                    soundEffect.PlaySound("Attack");
+                isAttack = true;
+                enemy.EnemyTakeDame(skill.dame1);
+                soundEffect.PlaySound("Attack");
             }
             if (gameObject.CompareTag("Skill3"))
             {
-                    enemy.EnemyTakeDame(skill.dame3);
-                    soundEffect.PlaySound("Attack");
+                isAttack = true;
+                enemy.EnemyTakeDame(skill.dame3);
+                soundEffect.PlaySound("Attack");
             }
             if (gameObject.CompareTag("AttackNormal"))
             {
-                    enemy.EnemyTakeDame(infor.dame);
-                    soundEffect.PlaySound("Attack");
+                isAttack = true;
+                enemy.EnemyTakeDame(infor.dame);
+                Debug.Log("Dame");
+                soundEffect.PlaySound("Attack");
             }
+            isAttack = false;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if ((other.CompareTag("MinionEnemy") || other.CompareTag("WariorBoss")))
+        {
+            isAttack = false;
         }
     }
 }
