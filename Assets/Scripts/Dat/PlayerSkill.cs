@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -29,7 +30,7 @@ public class PlayerSkill : MonoBehaviour
     public int manaskill2 = 20;
     public float ameInterval = 1f;
     public GameObject eff;
-    private bool buff = false;
+    public bool buff = false;
 
     Animator animator;
     [Header("Skill 3")]
@@ -58,7 +59,7 @@ public class PlayerSkill : MonoBehaviour
     public Button skill3;
     PlayerController playerController;
 
-    public float dame = 0f;
+    public int dame = 0;
     ComboAtack comboAtack;
     void Start()
     {
@@ -75,6 +76,7 @@ public class PlayerSkill : MonoBehaviour
         audioSource = FindObjectOfType<AudioSource>();
         soundEffect = FindObjectOfType<SoundEffect>();
         comboAtack = GetComponent<ComboAtack>();
+        dame = playerInfor.dame;
     }
     public void BuffDameNormal()
     {
@@ -101,7 +103,7 @@ public class PlayerSkill : MonoBehaviour
     IEnumerator BuffDame()
     {
 
-        int dame = playerInfor.dame;
+        dame = playerInfor.dame;
         buff = true;
         float elapsedTime = 0f;
         GameObject effhp = Instantiate(eff, transform.position, Quaternion.identity);
@@ -116,7 +118,7 @@ public class PlayerSkill : MonoBehaviour
         playerInfor.dame = dame;
         Destroy(effhp);
         buff = false;
-        Destroy(effhp);
+        playerInfor.SaveData();
     }
     void Update()
     {
