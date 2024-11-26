@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -16,8 +17,14 @@ public class PlayerInfor : MonoBehaviour
     public float maxMP = 100f;
     public int def = 10;
     public int dame = 10;
-    public int exp = 0;
+    public int level = 1;
+    public float exp = 0;
     public int money = 0;
+
+
+    float baseXp = 10f;
+    float scaleFactor = 1.5f;
+    public float XPToLevelUp => baseXp * Mathf.Pow(level, scaleFactor) + 1;
 
 
     private void Awake()
@@ -25,47 +32,59 @@ public class PlayerInfor : MonoBehaviour
         // Đảm bảo rằng chỉ có một instance duy nhất của player
         if (Instance == null)
         {
-            playerData.ResetData();
             Instance = this;
         }
         else
         {
             Debug.Log("Load Data");
-            LoadData();
             Destroy(gameObject); // Hủy các instance khác nếu đã tồn tại
         }
+        LoadData();
+    }
+    private void Update()
+    {
+        CheckLevelUp();
     }
     private void Start()
     {
-        LoadData();
     }
     private void LoadData()
     {
-        if (playerData != null)
+        if (PlayerPrefs.HasKey("Health"))
         {
-            maxHP = playerData.maxHP;
-            healthPoint=playerData.healthPoint;
-            maxMP = playerData.maxMP;
-            manaPoint = playerData.manaPoint;
-            def = playerData.def;
-            money = playerData.money;
-            dame = playerData.dame;
-            exp = playerData.exp;
+            maxHP = PlayerPrefs.GetFloat("MaxHP");
+            healthPoint = PlayerPrefs.GetFloat("Health");
+            maxMP = PlayerPrefs.GetFloat("MaxMP");
+            manaPoint = PlayerPrefs.GetFloat("Mana");
+            money = PlayerPrefs.GetInt("Money");
+            level = PlayerPrefs.GetInt("Level");
+            exp = PlayerPrefs.GetFloat("EXP");
+            dame = PlayerPrefs.GetInt("Dame");
+            def = PlayerPrefs.GetInt("Def");
+        }
+        else
+        {
+            healthPoint = maxHP;
+            manaPoint = maxMP;
+            dame = 10;
+            def = 5;
+            level = 1;
+            money = 0;
+            exp = 0;
         }
     }
     public void SaveData()
     {
-        if (playerData != null)
-        {
-            playerData.maxHP = maxHP;
-            playerData.healthPoint = healthPoint;
-            playerData.maxMP = maxMP;
-            playerData.manaPoint = manaPoint;
-            playerData.dame = dame;
-            playerData.def = def;
-            playerData.exp = exp;
-            playerData.money = money;
-        }
+        PlayerPrefs.SetFloat("MaxHP", maxHP);
+        PlayerPrefs.SetFloat("Health", healthPoint);
+        PlayerPrefs.SetFloat("MaxMP", maxMP);
+        PlayerPrefs.SetFloat("Mana", manaPoint);
+        PlayerPrefs.SetInt("Money", money);
+        PlayerPrefs.SetInt("Level", level);
+        PlayerPrefs.SetFloat("EXP", exp);
+        PlayerPrefs.SetInt("Dame", dame);
+        PlayerPrefs.SetInt("Def", def);
+        PlayerPrefs.Save();
     }
     public void HealthRecovery(int amount)
     {
@@ -81,17 +100,11 @@ public class PlayerInfor : MonoBehaviour
     {
         manaPoint += amount;
 
-        if (manaPoint > maxHP)
+        if (manaPoint > maxMP)
         {
-            manaPoint = maxHP;
+            manaPoint = maxMP;
         }
         SaveData();
-    }
-    // Hàm nhận sát thương
-
-    public float PlayerUpdateDame()
-    {
-        return dame;
     }
 
     public void PlayerUseSkill(float mana)
@@ -112,5 +125,37 @@ public class PlayerInfor : MonoBehaviour
         }
         healthPoint -= hp;
         SaveData();
+    }
+    public void GetMoney(int moneyCollect)
+    {
+        money += moneyCollect;
+        SaveData();
+    }
+    
+    public void GetExp(int expCollect)
+    {
+        exp += expCollect;
+    }
+
+    void CheckLevelUp()
+    {
+        while(exp >= XPToLevelUp)
+        {
+            exp -= XPToLevelUp;
+            level++;
+            OnLevelUp();
+            SaveData();
+        }
+    }
+    void OnLevelUp()
+    {
+        maxHP += 5;
+        maxMP += 5;
+        if (level % 5 == 0)
+        {
+            dame += 2;
+            def += 1;
+        }
+
     }
 }
