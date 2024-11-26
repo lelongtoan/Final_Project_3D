@@ -53,9 +53,9 @@ public class PlayerSkill : MonoBehaviour
     private Vector3 startTouchPos;
     private Vector3 direction;
 
-    protected Button skill1;
-    protected Button skill2;
-    protected Button skill3;
+    public Button skill1;
+    public Button skill2;
+    public Button skill3;
     PlayerController playerController;
 
     public float dame = 0f;
