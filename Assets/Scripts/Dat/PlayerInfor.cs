@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 public class PlayerInfor : MonoBehaviour
 {
@@ -21,6 +22,10 @@ public class PlayerInfor : MonoBehaviour
     public float exp = 0;
     public int money = 0;
 
+    Image hpbar;
+    Image mpbar;
+    Image Exp_Image;
+    TMP_Text text;
 
     float baseXp = 10f;
     float scaleFactor = 1.5f;
@@ -41,12 +46,32 @@ public class PlayerInfor : MonoBehaviour
         }
         LoadData();
     }
-    private void Update()
-    {
-        CheckLevelUp();
-    }
     private void Start()
     {
+        hpbar = GameObject.FindWithTag("HPBar").GetComponent<Image>();
+        mpbar = GameObject.FindWithTag("MPBar").GetComponent<Image>();
+        Exp_Image = GameObject.FindWithTag("EXP").GetComponent<Image>();
+        text = GameObject.FindWithTag("Level").GetComponent<TMP_Text>();
+    }
+    private void Update()
+    {
+        UpdateLevel();
+        UpdateExp();
+        UpdateHpMP();
+        CheckLevelUp();
+    }
+    void UpdateLevel()
+    {
+        text.text = "Lv : " + level.ToString(); ;
+    }
+    void UpdateHpMP()
+    {
+        mpbar.fillAmount = manaPoint / maxMP;
+        hpbar.fillAmount = healthPoint / maxHP;
+    }
+    void UpdateExp()
+    {
+        Exp_Image.fillAmount = exp / XPToLevelUp;
     }
     private void LoadData()
     {
@@ -131,10 +156,15 @@ public class PlayerInfor : MonoBehaviour
         money += moneyCollect;
         SaveData();
     }
-    
+    public void UseMoney(int moneyUse)
+    {
+        money -= moneyUse;
+        SaveData();
+    }
     public void GetExp(int expCollect)
     {
         exp += expCollect;
+        SaveData();
     }
 
     void CheckLevelUp()
