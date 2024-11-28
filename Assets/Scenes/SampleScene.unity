@@ -1169,8 +1169,8 @@ RectTransform:
   - {fileID: 1497401804}
   - {fileID: 194047825}
   - {fileID: 644817056}
-  - {fileID: 1023673110}
   - {fileID: 1972444859}
+  - {fileID: 1023673110}
   - {fileID: 2067986636}
   - {fileID: 1642389864}
   m_Father: {fileID: 579931857}
@@ -4361,7 +4361,7 @@ RectTransform:
   m_GameObject: {fileID: 435763694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.7, y: 1.7, z: 1.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1972444859}
@@ -4391,7 +4391,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c51afa706b02a044694b30f33f81d239, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8cd1835d87c58e04c89d6624c4d9da86, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10111,7 +10111,7 @@ GameObject:
   - component: {fileID: 1023673111}
   - component: {fileID: 1023673113}
   m_Layer: 5
-  m_Name: Skill2
+  m_Name: Skill1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10473,8 +10473,8 @@ RectTransform:
   m_GameObject: {fileID: 1038864669}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.7, y: 1.7, z: 1.7}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1023673110}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10503,7 +10503,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4dc051a0301cecb4aa1a85036ace2a58, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0e4690dee50935f4a81959699efce380, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16686,8 +16686,8 @@ RectTransform:
   m_GameObject: {fileID: 1534493061}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 644817056}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16716,7 +16716,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cf6478ef684ce7f4c830edba147c7607, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fada0289f73ec8e4d8684016ea055433, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -21642,7 +21642,7 @@ GameObject:
   - component: {fileID: 1972444860}
   - component: {fileID: 1972444862}
   m_Layer: 5
-  m_Name: Skill1
+  m_Name: Skill2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
