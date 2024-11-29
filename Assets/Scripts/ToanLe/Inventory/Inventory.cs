@@ -12,6 +12,7 @@ public class Inventory : ItemManager
     }
     public override void OnClick(int id)
     {
+        
         if (inventory.slots[id].item != null || ItemD.Instance.itemSlot.count > 0)
             if (ItemD.Instance.itemSlot.count <= 0) 
             {
@@ -21,8 +22,13 @@ public class Inventory : ItemManager
             }
             else
             {
-                Debug.Log("moveitem");
-                ItemD.Instance.MoveItem(inventory.slots[id]);
+                if (ItemD.Instance.isMoving)
+                {
+                    Debug.Log("moveitem");
+                    ItemD.Instance.MoveItem(inventory.slots[id]);
+                    InGameMenu.inGameMenu.SetDragAndDrop(false);
+                    return;
+                }
             }
     }
 }
