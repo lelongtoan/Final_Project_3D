@@ -14,15 +14,28 @@ public class ItemD : MonoBehaviour
     [SerializeField] TextMeshProUGUI textDes;
 
     [SerializeField] GameObject useGO;
+    [SerializeField] GameObject unStackGO;
+    [SerializeField] GameObject moveGO;
+    [SerializeField] GameObject dropGO;
     public static ItemD Instance { get; set; }
 
+    public bool isMoving;
     private void Awake()
     {
         Instance = this;
     }
     private void Start()
     {
+        isMoving = false;
+        useGO.SetActive(false);
+        unStackGO.SetActive(false);
+        moveGO.SetActive(true);
+        dropGO.SetActive(true);
         itemSlot = new ItemSlot();
+    }
+    private void Update()
+    {
+        
     }
     public void SetItem(ItemSlot itemSlot,int id)
     {
@@ -30,7 +43,16 @@ public class ItemD : MonoBehaviour
         icon.sprite = itemSlot.item.icon;
         tenText.text = itemSlot.item.name;
         textQ.text = itemSlot.count.ToString();
-        textDes.text = itemSlot.item.description;
+        textDes.text = itemSlot.item.description; 
+        if (itemSlot.item.itemSet != ItemSet.Nope)
+        {
+            useGO.SetActive(true);
+        }
+        Debug.Log("ItemD : 51 : Unstack");
+        //if (itemSlot.item.stackable)
+        //{
+        //    unStackGO.SetActive(true);
+        //}
     }
     public void UseItem()
     {
@@ -80,7 +102,11 @@ public class ItemD : MonoBehaviour
                 this.itemSlot.Clear();
             }
         }
-        
+        isMoving = false;
+    }
+    public void SetMoveItem()
+    {
+        isMoving = true;
     }
     public void DeleteItem()
     {
