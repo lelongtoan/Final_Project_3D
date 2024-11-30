@@ -10422,7 +10422,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allPanel: {fileID: 0}
   characterPanel: {fileID: 0}
-  craftPanel: {fileID: 0}
   questPanel: {fileID: 0}
   gameOver: {fileID: 0}
   npcPanel: {fileID: 0}
@@ -22823,7 +22822,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2067986638}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 0
 --- !u!224 &2072669849 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1938218223454003573, guid: 25237e2e1bd5c4949950d7a7c5a84c3d, type: 3}
