@@ -21,6 +21,7 @@ public class PlayerInfor : MonoBehaviour
     public int level = 1;
     public float exp = 0;
     public int money = 0;
+    public int skillPoint = 0;
 
     Image hpbar;
     Image mpbar;
@@ -86,6 +87,7 @@ public class PlayerInfor : MonoBehaviour
             exp = PlayerPrefs.GetFloat("EXP");
             dame = PlayerPrefs.GetInt("Dame");
             def = PlayerPrefs.GetInt("Def");
+            skillPoint = PlayerPrefs.GetInt("SkillP");
         }
         else
         {
@@ -96,6 +98,7 @@ public class PlayerInfor : MonoBehaviour
             level = 1;
             money = 0;
             exp = 0;
+            skillPoint = 0;
         }
     }
     public void SaveData()
@@ -109,6 +112,7 @@ public class PlayerInfor : MonoBehaviour
         PlayerPrefs.SetFloat("EXP", exp);
         PlayerPrefs.SetInt("Dame", dame);
         PlayerPrefs.SetInt("Def", def);
+        PlayerPrefs.SetInt("SkillP", skillPoint);
         PlayerPrefs.Save();
     }
     public void HealthRecovery(int amount)
@@ -186,6 +190,9 @@ public class PlayerInfor : MonoBehaviour
             dame += 2;
             def += 1;
         }
-
+        if(level % 10 == 0)
+        {
+            skillPoint += 3;
+        }
     }
 }
