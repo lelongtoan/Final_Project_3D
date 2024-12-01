@@ -37,6 +37,10 @@ public class ItemD : MonoBehaviour
     {
         
     }
+    public void Clear()
+    {
+        this.itemSlot = new ItemSlot();
+    }
     public void SetItem(ItemSlot itemSlot,int id)
     {
         this.itemSlot = itemSlot;
