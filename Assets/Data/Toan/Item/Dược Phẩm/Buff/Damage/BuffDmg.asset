@@ -18,7 +18,8 @@ MonoBehaviour:
   MP: 0
   Dmg: 0
   buff: 3
-  buffD: 5
+  buffD: 15
+  gold: 0
   canShow: 0
   description: 
   itemSet: 2

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bottim
   m_EditorClassIdentifier: 
   itemName: Bottim
-  stackable: 0
+  stackable: 1
   HP: 0
   MP: 0
   Dmg: 0

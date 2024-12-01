@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum ItemSet
 {
-    Nope, Equippable, Food
+    Nope, Equippable, Food, Heal, Mana
 }
 public enum Buff
 {

@@ -11,6 +11,7 @@ TagManager:
   - Skill3
   - MinionEnemy
   - WarioBoss
+  - Teleport
   layers:
   - Default
   - TransparentFX
@@ -21,8 +22,8 @@ TagManager:
   - EnemyAttcakLayer
   - EnemyBaseLayer
   - Player
-  - 
-  - 
+  - Minimap
+  - MMapIcon
   - 
   - 
   - 

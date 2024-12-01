@@ -14,4 +14,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Tutorial Map.unity
+    guid: ae3acd3c6ce0e50429080035391e0d0b
+  - enabled: 1
+    path: Assets/Scenes/Dungeon Map.unity
+    guid: cb4e1d2172617b54ab75a116c47186c7
+  - enabled: 1
+    path: Assets/Scenes/Dungeon Map 2.unity
+    guid: 7f76004c09ac6ad4f9337a114c0b36d6
+  - enabled: 1
+    path: Assets/Scenes/Lobby Map.unity
+    guid: cdf24495a23e9f6429c442810f5f44fa
   m_configObjects: {}
