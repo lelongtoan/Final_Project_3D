@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38b3197e4bb3ab24ea954f0378cf3bf1, type: 3}
-  m_Name: New NPC Chat Data
+  m_Name: NPC1Chat 1
   m_EditorClassIdentifier: 
-  npcName: 
-  npcImage: {fileID: 0}
+  npcName: 111
+  npcImage: {fileID: -828753811, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
   npcChat:
-  - 213
-  - 123
-  - 123
-  - 123
-  quest: {fileID: 0}
+  - 111
+  - 222
+  - 333
+  quest: {fileID: 11400000, guid: fa7d85dec35b73245b1ff1ee4e3520b1, type: 2}
