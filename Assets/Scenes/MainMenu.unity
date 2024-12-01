@@ -43750,10 +43750,10 @@ MonoBehaviour:
   icon: {fileID: 0}
   textQ: {fileID: 0}
   textDes: {fileID: 0}
-  useGO: {fileID: 0}
-  unStackGO: {fileID: 0}
+  useGO: {fileID: 357701315}
+  unStackGO: {fileID: 960456099}
   moveGO: {fileID: 0}
-  dropGO: {fileID: 0}
+  dropGO: {fileID: 532661177}
   isMoving: 0
 --- !u!114 &1563674015
 MonoBehaviour:
