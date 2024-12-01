@@ -19,7 +19,8 @@ MonoBehaviour:
   Dmg: 0
   buff: 0
   buffD: 0
+  gold: 0
   canShow: 0
   description: 
-  itemSet: 2
+  itemSet: 3
   icon: {fileID: -858261132, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}

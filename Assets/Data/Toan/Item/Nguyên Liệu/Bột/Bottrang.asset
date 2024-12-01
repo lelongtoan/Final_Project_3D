@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d690ab03900124439ed5e618aa451db, type: 3}
-  m_Name: Botcam
+  m_Name: Bottrang
   m_EditorClassIdentifier: 
-  itemName: Botcam
-  stackable: 0
+  itemName: Bottrang
+  stackable: 1
   HP: 0
   MP: 0
   Dmg: 0
@@ -23,4 +23,4 @@ MonoBehaviour:
   canShow: 0
   description: 
   itemSet: 0
-  icon: {fileID: -299593771, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
+  icon: {fileID: -1378031539, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
