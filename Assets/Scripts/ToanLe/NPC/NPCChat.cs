@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class NPCChat : MonoBehaviour
 {
-    public List<NPCChatData> npcChats;
+    public ListNPCChat npcChats;
     public TextMeshProUGUI nameText;
     public Image avatarImage;
     public TextMeshProUGUI dialogueText;
@@ -24,18 +24,18 @@ public class NPCChat : MonoBehaviour
 
     private void ShowNPCInfo()
     {
-        if (npcChats != null && npcChats.Count > currentChatIndex && npcChats[currentChatIndex] != null)
+        if (npcChats != null && npcChats.list.Count > currentChatIndex && npcChats.list[currentChatIndex] != null)
         {
-            nameText.text = npcChats[currentChatIndex].npcName;
-            avatarImage.sprite = npcChats[currentChatIndex].npcImage;
+            nameText.text = npcChats.list[currentChatIndex].npcName;
+            avatarImage.sprite = npcChats.list[currentChatIndex].npcImage;
         }
     }
 
     private void ShowDialogueLine()
     {
-        if (npcChats != null && npcChats.Count > currentChatIndex)
+        if (npcChats != null && npcChats.list.Count > currentChatIndex)
         {
-            NPCChatData currentChatData = npcChats[currentChatIndex];
+            NPCChatData currentChatData = npcChats.list[currentChatIndex];
             if (currentChatData != null && currentLine < currentChatData.npcChat.Length)
             {
                 dialogueText.text = currentChatData.npcChat[currentLine];
@@ -59,16 +59,21 @@ public class NPCChat : MonoBehaviour
         nameText.text = "";
         avatarImage.sprite = null;
 
-        if (npcChats[currentChatIndex] != null && npcChats[currentChatIndex].quest != null)
+        if (npcChats.list[currentChatIndex] != null && npcChats.list[currentChatIndex].quest != null)
         {
-            npcChats[currentChatIndex].quest.isShowQuest = true;
+            npcChats.list[currentChatIndex].quest.isShowQuest = true;
         }
 
         // đổi sang chat lần sau
         currentLine = 0;
-        if (currentChatIndex < npcChats.Count - 1)
+        InGameMenu.inGameMenu.SetNPCChat();
+        if (npcChats.list[currentChatIndex].quest.stateQuest == StateQuest.Completed 
+            || npcChats.list[currentChatIndex].quest.stateQuest == StateQuest.Taked)
         {
-            currentChatIndex++;
+            if (currentChatIndex < npcChats.list.Count - 1)
+            {
+                currentChatIndex++;
+            }
         }
     }
 }

@@ -10,38 +10,38 @@ public class InGameMenu : MonoBehaviour
         inGameMenu = this;
     }
     [SerializeField] GameObject allPanel;
-    //[SerializeField] GameObject inventoryPanel;
     [SerializeField] GameObject characterPanel;
-    //[SerializeField] GameObject mapPanel;
     [SerializeField] GameObject questPanel;
     [SerializeField] GameObject gameOver;
     [Header("NPC")]
     [SerializeField] GameObject npcPanel;
+    [SerializeField] GameObject shopNPCPanel;
     [SerializeField] GameObject buyNPCPanel;
     [SerializeField] GameObject craftNPCPanel;
-    [SerializeField] GameObject questNPCPanel;
+    [SerializeField] GameObject npcChatPanel;
 
     [Header("Iventory")]
     [SerializeField] GameObject infoItem;
     [SerializeField] GameObject dragAndDrop;
-    //[SerializeField] GameObject settingPanel;
-    // Start is called before the first frame update
-    //public void SetInventoryPanel()
-    //{
-    //    CloseAllPanel();
-    //    inventoryPanel.SetActive(!inventoryPanel.activeInHierarchy);
-    //}
     public void SetCharPanel()
     {
         characterPanel.SetActive(!characterPanel.activeInHierarchy);
     }
+    public void SetShopPanel()
+    {
+        shopNPCPanel.SetActive(!shopNPCPanel.activeInHierarchy);
+    }
     public void SetCraftPanel()
     {
-
+        SetShopPanel();
+        buyNPCPanel.SetActive(false);
+        craftNPCPanel.SetActive(true);
     }
-    public void SetMapPanel()
+    public void SetBuyPanel()
     {
-        //mapPanel.SetActive(!mapPanel.activeInHierarchy);
+        SetShopPanel();
+        buyNPCPanel.SetActive(true);
+        craftNPCPanel.SetActive(false);
     }
     public void SetQuestPanel()
     {
@@ -51,17 +51,6 @@ public class InGameMenu : MonoBehaviour
     {
         //settingPanel.SetActive(!settingPanel.activeInHierarchy);
     }
-    public void CloseAllPanel()
-    {
-        //inventoryPanel.SetActive(false);
-        characterPanel.SetActive(false);
-        //mapPanel.SetActive(false);
-        questPanel.SetActive(false);
-        //settingPanel.SetActive(false);
-    }
-
-    //Inventory
-
     public void SetInfoItem()
     {
         infoItem.SetActive(!infoItem.activeInHierarchy);
@@ -77,6 +66,10 @@ public class InGameMenu : MonoBehaviour
     public void SetNPC()
     {
         npcPanel.SetActive(!npcPanel.activeInHierarchy);
+    }
+    public void SetNPCChat()
+    {
+        npcChatPanel.SetActive(!npcChatPanel.activeInHierarchy);
     }
     
 }
