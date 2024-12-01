@@ -1,18 +1,25 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class PlayerSkill : MonoBehaviour
 {
+
+    public int pointSkill;
+
+
     public float mana;
     [Header("Skill1")]
-    public float levelskill1 = 1;
+    public int levelSkill1 = 1;
     public GameObject prefabSword;
     public int numberSword;
     public int dame1 = 1;
+    public float timeconti1 = 5;
+    public float counD1 = 20f;
     public bool endCountDow1 = true;
     public float orbitRadius = 2f;
     public float rotationSpeed = 100f;
@@ -23,42 +30,36 @@ public class PlayerSkill : MonoBehaviour
     private Coroutine coroutine;
 
     [Header("Skill2")]
-    public int hpAmount = 2;
+    public int levelSkill2 = 1;
+    public int dameBuff = 10;
+    public float counD2 = 25f;
     public bool endCountDow2 = true;
     public float duration = 10f;
     public int manaskill2 = 20;
     public float ameInterval = 1f;
     public GameObject eff;
-    private bool buff = false;
+    public bool buff = false;
 
     Animator animator;
     [Header("Skill 3")]
+    public int levelSkill3 = 1;
     public GameObject eff1;
-    public AudioClip clip1;
-    public float dame3 = 35f;
+    public int dame3 = 40;
+    public float counD3 = 35f;
     public bool endCountDow3 = true;
-    public float timingskill = 1f;
-    public int exploCount = 3;
-    public float size = 1;
-    public float upsize = 1.5f;
-    public float exploDistance = 2f;
-    public Transform skill1Spawm;
     public GameObject colliderSkill;
-    public int manaskill3 = 50;
+    public int manaskill3 = 35;
     PlayerInfor playerInfor;
     AudioSource audioSource;
     public SoundEffect soundEffect;
     public float maxRange = 5f;
-    public LineRenderer lineRenderer;
-    private Vector3 startTouchPos;
-    private Vector3 direction;
 
-    protected Button skill1;
-    protected Button skill2;
-    protected Button skill3;
+    public Button skill1;
+    public Button skill2;
+    public Button skill3;
     PlayerController playerController;
 
-    public float dame = 0f;
+    public int dame = 0;
     ComboAtack comboAtack;
     void Start()
     {
@@ -75,6 +76,84 @@ public class PlayerSkill : MonoBehaviour
         audioSource = FindObjectOfType<AudioSource>();
         soundEffect = FindObjectOfType<SoundEffect>();
         comboAtack = GetComponent<ComboAtack>();
+        dame = playerInfor.dame;
+        LoadSkill();
+    }
+    void Update()
+    {
+        mana = playerInfor.manaPoint;
+        dame = playerInfor.dame;
+        if (activeSkill)
+        {
+            RotateSwords();
+        }
+        pointSkill = gameObject.GetComponent<PlayerInfor>().skillPoint;
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            UpdateSkill(1);
+        }if (Input.GetKeyDown(KeyCode.H))
+        {
+            UpdateSkill(2);
+        }if (Input.GetKeyDown(KeyCode.B))
+        {
+            UpdateSkill(3);
+        }
+    }
+
+    public void LoadSkill()
+    {
+        if (PlayerPrefs.HasKey("Skill1"))
+        {
+            levelSkill1 = PlayerPrefs.GetInt("Skill1");
+            levelSkill2 = PlayerPrefs.GetInt("Skill2");
+            levelSkill3 = PlayerPrefs.GetInt("Skill3");
+            numberSword = PlayerPrefs.GetInt("NumberSw");
+            counD1 = PlayerPrefs.GetFloat("CD1");
+            timeconti1 = PlayerPrefs.GetFloat("Tmc1");
+            counD2 = PlayerPrefs.GetFloat("CD2");
+            counD3 = PlayerPrefs.GetFloat("CD3");
+            dame1 = PlayerPrefs.GetInt("DameSk1");
+            manaskill1 = PlayerPrefs.GetInt("MN1");
+            manaskill2 = PlayerPrefs.GetInt("MN2");
+            dameBuff = PlayerPrefs.GetInt("DameSk2");
+            manaskill3 = PlayerPrefs.GetInt("MN3");
+            dame3 = PlayerPrefs.GetInt("DameSk3");
+        }
+        else
+        {
+            levelSkill1 = 1;
+            levelSkill2 = 1;
+            levelSkill3 = 1;
+            numberSword = 2;
+            counD1 = 20f;
+            timeconti1 = 5;
+            counD2 = 25f;
+            counD3 = 35f;
+            dame1 = 1;
+            manaskill1 = 10;
+            manaskill2 = 20;
+            manaskill3 = 35;
+            dameBuff = 10;
+            dame3 = 40;
+        }
+    }
+    public void SaveSkill()
+    {
+        PlayerPrefs.SetInt("Skill1", levelSkill1);
+        PlayerPrefs.SetInt("Skill2", levelSkill2);
+        PlayerPrefs.SetInt("Skill3", levelSkill3);
+        PlayerPrefs.SetInt("NumberSw",numberSword);
+        PlayerPrefs.SetInt("DameSk1",dame1);
+        PlayerPrefs.SetInt("MN1", manaskill1);
+        PlayerPrefs.SetFloat("CD1", counD1);
+        PlayerPrefs.SetFloat("Tmc1", timeconti1);
+        PlayerPrefs.SetFloat("CD2", counD2);
+        PlayerPrefs.SetFloat("CD3", counD3);
+        PlayerPrefs.SetInt("MN2", manaskill2);
+        PlayerPrefs.SetInt("DameSk2", dameBuff);
+        PlayerPrefs.SetInt("MN3", manaskill3);
+        PlayerPrefs.SetInt("DameSk3", dame3);
+        PlayerPrefs.Save();
     }
     public void BuffDameNormal()
     {
@@ -91,39 +170,34 @@ public class PlayerSkill : MonoBehaviour
         {
             if (!buff)
             {
-                playerInfor.manaPoint -= manaskill2;
                 endCountDow2 = false;
-                CountDown(15, "Skill2");
+                StartCoroutine(CountDown(counD2, 2));
                 StartCoroutine(BuffDame());
+                playerInfor.manaPoint -= manaskill2;
             }
         }
     }
     IEnumerator BuffDame()
     {
-        int dame = playerInfor.dame;
+        dame = playerInfor.dame;
         buff = true;
         float elapsedTime = 0f;
         GameObject effhp = Instantiate(eff, transform.position, Quaternion.identity);
         effhp.transform.SetParent(transform);
         soundEffect.PlaySound("BuffDame");
-        playerInfor.dame += 10;
+        playerInfor.dame += dameBuff;
+        Debug.Log("buff");
         while (elapsedTime < duration)
         {
             yield return new WaitForSeconds(ameInterval); // Chờ 1 giây
             elapsedTime += ameInterval;
         }
+        Debug.Log("0 buff");
+
         playerInfor.dame = dame;
         Destroy(effhp);
         buff = false;
-        Destroy(effhp);
-    }
-    void Update()
-    {
-        mana = playerInfor.manaPoint;
-        if (activeSkill)
-        {
-            RotateSwords();
-        }
+        playerInfor.SaveData();
     }
     void SpawmSkillUltimate()
     {
@@ -136,8 +210,15 @@ public class PlayerSkill : MonoBehaviour
             Debug.Log("Không có mục tiêu");
             return;
         }
+        else if (!endCountDow3)
+        {
+            Debug.Log(" Chưa hồi chiêu");
+            return;
+        }
         else if (endCountDow3)
         {
+            endCountDow3 = false;
+            StartCoroutine(CountDown(counD3, 3));
             playerInfor.manaPoint -= manaskill3;
             playerController.freeze = true;
             animator.SetTrigger("Skill 1");
@@ -145,12 +226,6 @@ public class PlayerSkill : MonoBehaviour
             GameObject coliskill = Instantiate(colliderSkill, explo.transform.position, Quaternion.identity);
             Destroy(explo, 5f);
             coliskill.transform.SetParent(explo.transform);
-            StartCoroutine(CountDown(30, "Skill3"));
-            endCountDow3 = false;
-        }
-        else if (!endCountDow3)
-        {
-            Debug.Log(" Chưa hồi chiêu");
         }
     }
     void SpawnSwords()
@@ -182,7 +257,7 @@ public class PlayerSkill : MonoBehaviour
 
     IEnumerator DeactivateSkillAfterTime()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(timeconti1);
         DeactivateSkill();
     }
     void DeactivateSkill()
@@ -210,33 +285,27 @@ public class PlayerSkill : MonoBehaviour
         }
         if (!activeSkill)
         {
+            endCountDow1 = false;
+            StartCoroutine(CountDown(counD1, 1));
             activeSkill = true;
             playerInfor.manaPoint -= manaskill1;
-            endCountDow1 = false;
-            CountDown(12, "Skill1");
             SpawnSwords();
             StartCoroutine(DeactivateSkillAfterTime());
+
         }
     }
 
-    IEnumerator CountDown(float time, string name)
+    IEnumerator CountDown(float time, int skill)
     {
-        Debug.Log("Dung");
         yield return new WaitForSeconds(time);
-        if (name == "Skill1")
-        {
-            // endCountDow1 = true;
-        }
-        else if (name == "Skill2")
-        {
-            endCountDow2 = true;
-        }
-        else if (name == "Skill3")
-        {
-            endCountDow3 = true;
-        }
+        SetSkillReady(skill, true);
     }
-
+    private void SetSkillReady(int skillIndex, bool isReady)
+    {
+        if (skillIndex == 1) endCountDow1 = isReady;
+        if (skillIndex == 2) endCountDow2 = isReady;
+        if (skillIndex == 3) endCountDow3 = isReady;
+    }
     bool CheckMana(int manaskill)
     {
         if (mana < manaskill)
@@ -245,5 +314,87 @@ public class PlayerSkill : MonoBehaviour
             return false;
         }
         return true;
+    }
+
+    public void UpdateSkill(int skillName)
+    {
+        if (pointSkill == 0)
+        {
+            Debug.Log("Khoong đủ điểm nâng cấp Skill");
+            return;
+        }
+        else if (pointSkill >= 1)
+        {
+            playerInfor.skillPoint -= 1;
+            if (skillName == 1)
+            {
+                UpdateSkill1();
+            }
+            else if (skillName == 2)
+            {
+                UpdateSkill2();
+            }
+            else if (skillName == 3)
+            {
+                UpdateSkill3();
+            }
+            SaveSkill();
+        }
+    }
+
+    public void UpdateSkill1()
+    {
+        if (levelSkill1 == 5)
+        {
+            Debug.Log("Skill đạt cấp tối đa");
+            return;
+        }
+        else if (levelSkill1 < 5)
+        {
+
+            levelSkill1++;
+            if (levelSkill1 == 3 || levelSkill1 == 5)
+            {
+                numberSword++;
+            }
+            manaskill1 += 2;
+            dame1 += 1;
+            timeconti1++;
+            counD1 -= 1;
+            Debug.Log("Nang capp 1 thanh cong");
+        }
+    }
+    public void UpdateSkill2()
+    {
+        if (levelSkill2 == 5)
+        {
+            Debug.Log("Skill đạt cấp tối đa");
+            return;
+        }
+        else if (levelSkill2 < 5)
+        {
+            levelSkill2++;
+            dameBuff += 4;
+            manaskill2 += 4;
+            counD2--;
+            Debug.Log("Nang capp 2 thanh cong");
+        }
+
+    }
+    public void UpdateSkill3()
+    {
+        if (levelSkill3 == 5)
+        {
+            Debug.Log("Skill đạt cấp tối đa");
+            return;
+        }
+        else if (levelSkill3 < 5)
+        {
+            levelSkill3++;
+            dame3 += 5;
+            manaskill3 += 7;
+            counD3 -= 2.5f;
+            Debug.Log("Nang capp 1 thanh cong");
+        }
     }
 }

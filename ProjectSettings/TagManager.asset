@@ -10,8 +10,15 @@ TagManager:
   - Skill1
   - Skill3
   - MinionEnemy
-  - WarioBoss
-  - Teleport
+  - WariorBoss
+  - RogueEnemy
+  - Camerafollow
+  - Arrow
+  - LoadScene
+  - HPBar
+  - MPBar
+  - EXP
+  - Level
   layers:
   - Default
   - TransparentFX
@@ -22,8 +29,8 @@ TagManager:
   - EnemyAttcakLayer
   - EnemyBaseLayer
   - Player
-  - Minimap
-  - MMapIcon
+  - 
+  - 
   - 
   - 
   - 

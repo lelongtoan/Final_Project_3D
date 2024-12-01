@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody rb;
     Animator animator;
     Coroutine runningCoroutine; 
-    public Camera camera;
+    public Camera playercam;
 
     public GameObject speedEff;
     public GameObject runEff;
@@ -64,34 +64,15 @@ public class PlayerController : MonoBehaviour
     }
     public void HandleMovement()
     {
-        // Lấy giá trị từ joystick hoặc bàn phím
         float ipVertical = joystick.Vertical != 0 ? joystick.Vertical : Input.GetAxis("Vertical");
         float ipHorizontal = joystick.Horizontal != 0 ? joystick.Horizontal : Input.GetAxis("Horizontal");
-
-        // Điều chỉnh độ nhạy cho joystick
-        float joystickSensitivity = 1.5f; // Tăng hệ số để joystick mạnh hơn
-
-        // Tạo vector di chuyển, nếu là joystick thì nhân với độ nhạy
         Vector3 move = new Vector3(ipHorizontal, 0, ipVertical).normalized;
-
-        // Nếu di chuyển bằng joystick, nhân với hệ số để tăng tốc độ
-        //if (joystick.Vertical != 0 || joystick.Horizontal != 0)
-        //{
-        //    move *= joystickSensitivity;
-        //}
-
-
-        Vector3 forward = camera.transform.forward.normalized;
-        Vector3 right = camera.transform.right.normalized;
+        Vector3 forward = playercam.transform.forward.normalized;
+        Vector3 right = playercam.transform.right.normalized;
         forward.y = 0f;
         right.y = 0f;
         Vector3 desired = (forward * ipVertical + right * ipHorizontal) * speed;
-
-
-        // Xoay nhân vật theo hướng di chuyển
         RotateCharacter(desired);
-
-        // Cập nhật animation dựa trên tốc độ
         if (move != Vector3.zero)
         {
             animSpeed = isRunning ? 2 : 1;
@@ -100,12 +81,8 @@ public class PlayerController : MonoBehaviour
         {
             animSpeed = 0;
         }
-
         animator.SetFloat("Speed", animSpeed);
-
-        // Di chuyển nhân vật
         rb.MovePosition(rb.position + desired * Time.fixedDeltaTime);
-        
     }
 
     public void RotateCharacter(Vector3 playerMovementInput)
