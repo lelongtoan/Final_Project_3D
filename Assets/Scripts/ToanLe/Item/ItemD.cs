@@ -63,7 +63,7 @@ public class ItemD : MonoBehaviour
             //goi ham eq
             itemSlot = null;
         }
-        else if (itemSlot.item.itemSet == ItemSet.Heal )
+        else if (itemSlot.item.itemSet == ItemSet.Heal)
         {
             //goi ham HealthR
         }

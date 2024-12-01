@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public Transform spwanPointPlayer;
     void Start()
     {
-        GameObject playerInstance = Instantiate(playerPrefab,new Vector3(spwanPointPlayer.position.x,0,spwanPointPlayer.position.z), Quaternion.identity);
+        GameObject playerInstance = Instantiate(playerPrefab,new Vector3(spwanPointPlayer.position.x,0.5f,spwanPointPlayer.position.z), Quaternion.identity);
 
         GameObject cameraInstance = Instantiate(virtualCameraPrefab, new Vector3(0, 1, 0), Quaternion.identity);
         //GameObject enemy=Instantiate(enemyPrefab, new Vector3(7,3, 0), Quaternion.identity);
@@ -25,9 +25,9 @@ public class GameManager : MonoBehaviour
         {
             virtualCamera.Follow = playerInstance.transform;
         }
+        
     }
 
-    // Update is called once per frame
     void Update()
     {
         

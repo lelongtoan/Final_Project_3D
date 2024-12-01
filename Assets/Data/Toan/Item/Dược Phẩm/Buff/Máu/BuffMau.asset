@@ -18,7 +18,7 @@ MonoBehaviour:
   MP: 0
   Dmg: 0
   buff: 1
-  buffD: 10
+  buffD: 50
   gold: 0
   canShow: 0
   description: 
