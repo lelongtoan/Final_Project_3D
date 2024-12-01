@@ -14,6 +14,11 @@ TagManager:
   - RogueEnemy
   - Camerafollow
   - Arrow
+  - LoadScene
+  - HPBar
+  - MPBar
+  - EXP
+  - Level
   layers:
   - Default
   - TransparentFX

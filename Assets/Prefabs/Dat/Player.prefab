@@ -1294,6 +1294,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f4b049fd990d224448b714a4550d9c68, type: 3}
       insertIndex: -1
       addedObject: {fileID: 959833306431311766}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f4b049fd990d224448b714a4550d9c68, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -2550296197586893360}
   m_SourcePrefab: {fileID: 100100000, guid: f4b049fd990d224448b714a4550d9c68, type: 3}
 --- !u!4 &2409545184574096779 stripped
 Transform:
@@ -1470,12 +1473,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77700f41f14e6c44194a3d0a94e24d60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerData: {fileID: 11400000, guid: 4a0c7bb7eba4ea24c977a14c0f174428, type: 2}
   maxHP: 100
   healthPoint: 100
   manaPoint: 100
   maxMP: 100
   def: 10
   dame: 10
+  level: 1
+  exp: 0
+  money: 0
 --- !u!114 &959833306431311766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1504,6 +1511,7 @@ MonoBehaviour:
   manaskill2: 20
   ameInterval: 1
   eff: {fileID: 3874635022589376825, guid: ffdfb7851a968494f8fe76ee88f3791a, type: 3}
+  buff: 0
   eff1: {fileID: 5222750351268202474, guid: 471430dca40f907499aac08fe5b5bb09, type: 3}
   clip1: {fileID: 8300000, guid: 4957c817f0d0e194b8926cf34bb0825a, type: 3}
   dame3: 25
@@ -1519,7 +1527,22 @@ MonoBehaviour:
   soundEffect: {fileID: 0}
   maxRange: 5
   lineRenderer: {fileID: 0}
+  skill1: {fileID: 0}
+  skill2: {fileID: 0}
+  skill3: {fileID: 0}
   dame: 0
+--- !u!114 &-2550296197586893360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3043232924716146481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdcf8436504831444882c1c0d4f50861, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8075307869333065369 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -2960109251601355527, guid: f4b049fd990d224448b714a4550d9c68, type: 3}

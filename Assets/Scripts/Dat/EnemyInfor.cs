@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class EnemyInfor : MonoBehaviour
 {
+    public string enemyId;
     public int dame = 10;
     public float hp = 100f;
     public float hpcurrent;
@@ -19,8 +20,15 @@ public class EnemyInfor : MonoBehaviour
     public GameObject canvas;
     private void Start()
     {
-        animator = GetComponent<Animator>();
-        hpcurrent = hp;
+        if (PlayerPrefs.GetInt(enemyId, 0) == 1)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            animator = GetComponent<Animator>();
+            hpcurrent = hp;
+        }
     }
     private void Update()
     {
@@ -50,6 +58,8 @@ public class EnemyInfor : MonoBehaviour
         if (isdead) return;
 
         isdead = true;
+        PlayerPrefs.SetInt(enemyId, 1);
+        PlayerPrefs.Save();
         animator.SetTrigger("Dead");
 
         GetComponent<Collider>().enabled = false;

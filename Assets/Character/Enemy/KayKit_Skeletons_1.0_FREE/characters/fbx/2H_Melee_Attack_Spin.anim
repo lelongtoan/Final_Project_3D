@@ -53187,13 +53187,6 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.15
-    functionName: SetstopAI
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
   - time: 0.425
     functionName: OnCollider
     data: 
@@ -53203,13 +53196,6 @@ AnimationClip:
     messageOptions: 0
   - time: 1.175
     functionName: EndCollider
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 1.725
-    functionName: SetgoAI
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
