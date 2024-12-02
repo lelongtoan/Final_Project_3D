@@ -10,15 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38b3197e4bb3ab24ea954f0378cf3bf1, type: 3}
-  m_Name: NPC1Chat
+  m_Name: NPC1Chat 2
   m_EditorClassIdentifier: 
-  npcName: 111
-  npcImage: {fileID: -828753811, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
   npcChat:
-  - 111
-  - 222
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
   questNope:
   - "B\u1EA1n Ch\u01B0a Thu Th\u1EADp \u0110\u1EE7"
   questComplete:
   - "Ho\xE0n Th\xE0nh !"
-  quest: {fileID: 11400000, guid: 28d7d40c5a2a1dd48b0c4f58bac975e6, type: 2}
+  quest: {fileID: 11400000, guid: b7797d344c7270f4f9e6e12853848695, type: 2}

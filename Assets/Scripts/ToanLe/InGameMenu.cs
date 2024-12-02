@@ -9,7 +9,6 @@ public class InGameMenu : MonoBehaviour
     {
         inGameMenu = this;
     }
-    [SerializeField] GameObject allPanel;
     [SerializeField] GameObject characterPanel;
     [SerializeField] GameObject questPanel;
     [SerializeField] GameObject gameOver;
@@ -58,6 +57,7 @@ public class InGameMenu : MonoBehaviour
     public void SetDragAndDrop(bool i)
     {
         dragAndDrop.SetActive(i);
+        ItemD.Instance.isMoving = i;
     }
     public void SetGameOver()
     {

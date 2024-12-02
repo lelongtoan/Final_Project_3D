@@ -12,14 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d690ab03900124439ed5e618aa451db, type: 3}
   m_Name: Khien3
   m_EditorClassIdentifier: 
+  id: 0
   itemName: Khien3
   stackable: 0
   HP: 30
   MP: 0
   Dmg: 0
-  buff: 0
   buffD: 0
-  canShow: 0
+  gold: 0
   description: 
+  buff: 0
   itemSet: 1
+  itemType: 2
   icon: {fileID: -777789921, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}

@@ -39,7 +39,7 @@ public class ItemContainer : ScriptableObject
     {
         itemContainer = this;
     }
-    public bool Add(Item item, int count)
+    public void Add(Item item,int toolDurability = 100, int count = 1)
     {
         if (item.stackable == true)
         {
@@ -47,7 +47,8 @@ public class ItemContainer : ScriptableObject
             if (itemSlot != null)
             {
                 itemSlot.count += count;
-                return true;
+                Debug.Log("Success");
+                return ;
             }
             else
             {
@@ -55,9 +56,10 @@ public class ItemContainer : ScriptableObject
                 if (itemSlot != null)
                 {
                     itemSlot.item = item;
-                    itemSlot.toolDurability = 100;
+                    itemSlot.toolDurability = toolDurability;
                     itemSlot.count = count;
-                    return true;
+                    Debug.Log("Success");
+                    return ;
                 }
             }
         }
@@ -67,13 +69,18 @@ public class ItemContainer : ScriptableObject
             if (itemSlot != null)
             {
                 itemSlot.item = item;
-                itemSlot.toolDurability = 100;
+                itemSlot.toolDurability = toolDurability;
                 itemSlot.count = count;
-                return true;
+                Debug.Log("Success");
+                return ;
             }
         }
         Debug.Log("Inventory Full");
-        return false;
+    }
+    public bool CheckFull()
+    {
+        ItemSlot itemSlot = slots.Find(c => c.item == null);
+        return itemSlot != null ? true : false;
     }
     public void Delete(int id)
     {
@@ -89,20 +96,6 @@ public class ItemContainer : ScriptableObject
             }
         }
         return false;
-    }
-
-    internal bool CheckItem(ItemSlot itemSlot)
-    {
-        ItemSlot item = slots.Find(c => c.item == itemSlot.item);
-        if (item == null)
-        {
-            return false;
-        }
-        if (itemSlot.item.stackable)
-        {
-            return item.count >= itemSlot.count;
-        }
-        return true;
     }
     public void CraftRemove(Item item, int count)
     {

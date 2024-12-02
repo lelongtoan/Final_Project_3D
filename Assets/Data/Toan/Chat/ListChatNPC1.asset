@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 117f3f2d4d6f1e2429c15377a4ba905e, type: 3}
   m_Name: ListChatNPC1
   m_EditorClassIdentifier: 
+  npcName: "\u1ED0c S\xEAn"
+  npcImage: {fileID: 1019859777, guid: 080cb6d98b00c2645b2c41df5f69bc78, type: 3}
   list:
   - {fileID: 11400000, guid: 44cbb0a1eea5b384dae72ae216b709ef, type: 2}
   - {fileID: 11400000, guid: ee4bb8f174fab6b4b918e729017196fb, type: 2}
+  - {fileID: 11400000, guid: f0dcee2d7741e984cbe59c799dab3321, type: 2}
