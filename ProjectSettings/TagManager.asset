@@ -28,6 +28,7 @@ TagManager:
   - ManaPoint
   - DMG
   - DEF
+  - MageEnemy
   layers:
   - Default
   - TransparentFX
