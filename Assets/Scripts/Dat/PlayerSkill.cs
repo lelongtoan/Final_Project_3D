@@ -235,8 +235,8 @@ public class PlayerSkill : MonoBehaviour
             animator.SetTrigger("Skill 1");
             GameObject explo = Instantiate(eff1, comboAtack.targetEnemy.position, Quaternion.identity);
             GameObject coliskill = Instantiate(colliderSkill, explo.transform.position, Quaternion.identity);
-            Destroy(explo, 5f);
             coliskill.transform.SetParent(explo.transform);
+            Destroy(explo, 5f);
         }
     }
     void SpawnSwords()
