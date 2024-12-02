@@ -60,8 +60,9 @@ public class NPCShop : MonoBehaviour
         {
             if (true /*player.gold >= selectedItem.priceItem*/)
             {
-                if (ItemContainer.itemContainer.Add(selectedItem.itemShop, 1))
+                if (ItemManager.intance.inventory.CheckFull())
                 {
+                    ItemManager.intance.inventory.Add(selectedItem.itemShop, 1);
                     // player.gold -= selectedItem.priceItem;
                     Debug.Log($"Bạn đã chọn mua {selectedItem.nameItem} với giá {selectedItem.priceItem} vàng!");
                 }

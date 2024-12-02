@@ -10,6 +10,10 @@ public enum Buff
 {
     Nope, HP, MP, Dmg, Armour, DmgAp
 }
+public enum EQT
+{
+    Nope, Sword, Shield, Helmet, Armour, Gloves, Boot
+}
 [CreateAssetMenu(menuName = "Data/Item")]
 public class Item : ScriptableObject
 {
@@ -20,17 +24,11 @@ public class Item : ScriptableObject
     public float HP;
     public float MP;
     public float Dmg;
-    
-
-    public Buff buff;
-
-
     public float buffD;
-
     public float gold;
-
-    public bool canShow;
     public string description;
+    public Buff buff;
     public ItemSet itemSet;
+    public EQT itemType;
     public Sprite icon;
 }

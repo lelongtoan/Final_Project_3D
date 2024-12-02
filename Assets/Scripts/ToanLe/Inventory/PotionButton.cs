@@ -29,16 +29,14 @@ public class PotionButton : MonoBehaviour
             if (healingPotion && inventory.slots[i].item.itemSet == ItemSet.Heal)
             {
                 ItemD.Instance.itemSlot = inventory.slots[i];
-                ItemD.Instance.UseItem();
-                inventory.slots[i].count--;
+                ItemD.Instance.UseItem(inventory.slots[i]);
                 SetItemCount();
                 return;
             }
             else if (!healingPotion && inventory.slots[i].item.itemSet == ItemSet.Mana)
             {
                 ItemD.Instance.itemSlot = inventory.slots[i];
-                ItemD.Instance.UseItem();
-                inventory.slots[i].count--;
+                ItemD.Instance.UseItem(inventory.slots[i]);
                 SetItemCount();
                 return;
             }
@@ -46,17 +44,18 @@ public class PotionButton : MonoBehaviour
     }
     public void SetItemCount()
     {
+        countItem = 0;
         for (int i = 0; i < inventory.slots.Count; i++)
         {
             if (inventory.slots[i].item != null)
             {
                 if (healingPotion && inventory.slots[i].item.itemSet == ItemSet.Heal)
                 {
-                    countItem++;
+                    countItem += inventory.slots[i].count;
                 }
                 else if (!healingPotion && inventory.slots[i].item.itemSet == ItemSet.Mana)
                 {
-                    countItem++;
+                    countItem += inventory.slots[i].count;
                 }
             }
         }

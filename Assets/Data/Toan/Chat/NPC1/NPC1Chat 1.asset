@@ -18,4 +18,8 @@ MonoBehaviour:
   - 111
   - 222
   - 333
+  questNope:
+  - "B\u1EA1n Ch\u01B0a Thu Th\u1EADp \u0110\u1EE7"
+  questComplete:
+  - "Ho\xE0n Th\xE0nh !"
   quest: {fileID: 11400000, guid: fa7d85dec35b73245b1ff1ee4e3520b1, type: 2}

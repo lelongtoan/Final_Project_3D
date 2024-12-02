@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,40 +12,104 @@ public class NPCChat : MonoBehaviour
     public Image avatarImage;
     public TextMeshProUGUI dialogueText;
 
-    private int currentChatIndex = 0;
-    private int currentLine = 0;
-
+    public int currentChatIndex = 0;
+    public int currentLine = 0;
     private void Start()
     {
-        currentChatIndex = 0;
+        
         currentLine = 0;
-        ShowNPCInfo();
         ShowDialogueLine();
-    }
 
-    private void ShowNPCInfo()
+    }
+    public void SetCurrentChat()
     {
-        if (npcChats != null && npcChats.list.Count > currentChatIndex && npcChats.list[currentChatIndex] != null)
+        for (int i = 0; i < npcChats.list.Count; i++)
         {
-            nameText.text = npcChats.list[currentChatIndex].npcName;
-            avatarImage.sprite = npcChats.list[currentChatIndex].npcImage;
+            if (npcChats.list[i].quest.stateQuest != StateQuest.Taked)
+            {
+                currentChatIndex = i;
+                break;
+            }
+            if (i + 1 == npcChats.list.Count)
+            {
+                currentChatIndex = i + 1;
+            }
         }
     }
-
-    private void ShowDialogueLine()
+    public void SetInfo()
     {
-        if (npcChats != null && npcChats.list.Count > currentChatIndex)
+
+        nameText.text = npcChats.npcName;
+        avatarImage.sprite = npcChats.npcImage;
+    }
+    public void ShowDialogueLine()
+    {
+        SetCurrentChat();
+        SetInfo();
+        Debug.Log("Chat Index :"+currentChatIndex
+            +" Line : "+currentLine);
+        if (currentChatIndex >= npcChats.list.Count)
         {
-            NPCChatData currentChatData = npcChats.list[currentChatIndex];
-            if (currentChatData != null && currentLine < currentChatData.npcChat.Length)
+            if (currentLine == 0)
             {
-                dialogueText.text = currentChatData.npcChat[currentLine];
+                Debug.Log("xx");
+                dialogueText.text = "Xin lỗi! Tôi không còn nhiệm vụ cho bạn nữa.";
             }
             else
             {
                 EndChat();
             }
         }
+        else
+        {
+            NPCChatData npcData = npcChats.list[currentChatIndex];
+            if (QuestManager.instance.CheckQuest(npcData.quest) 
+                && npcData.quest.isShowQuest == true
+                && npcData.quest.stateQuest == StateQuest.Nope)
+            {
+                npcData.quest.stateQuest = StateQuest.Completed;
+                Debug.Log("X");
+            }
+            else
+            {
+                Debug.Log("XXXX");
+            }
+            if (!npcData.quest.isShowQuest)
+            {
+                if (npcData != null && currentLine < npcData.npcChat.Length)
+                {
+                    dialogueText.text = npcData.npcChat[currentLine];
+                }
+                else
+                {
+                    EndChat();
+                }
+            }
+            else if (npcData.quest.stateQuest == StateQuest.Nope)
+            {
+                if (npcData != null && currentLine < npcData.questNope.Length)
+                {
+                    dialogueText.text = npcData.questNope[currentLine];
+                }
+                else
+                {
+                    EndChat();
+                }
+            }
+            else
+            {
+                if (npcData != null && currentLine < npcData.questNope.Length)
+                {
+                    dialogueText.text = npcData.questComplete[currentLine];
+                }
+                else
+                {
+                    npcData.quest.stateQuest = StateQuest.Taked;
+                    EndChat();
+                }
+            }
+        }
+        
     }
 
     public void NextLine()
@@ -58,22 +123,22 @@ public class NPCChat : MonoBehaviour
         dialogueText.text = "";
         nameText.text = "";
         avatarImage.sprite = null;
-
-        if (npcChats.list[currentChatIndex] != null && npcChats.list[currentChatIndex].quest != null)
+        if(npcChats.list.Count > currentChatIndex)
         {
-            npcChats.list[currentChatIndex].quest.isShowQuest = true;
-        }
-
-        // đổi sang chat lần sau
-        currentLine = 0;
-        InGameMenu.inGameMenu.SetNPCChat();
-        if (npcChats.list[currentChatIndex].quest.stateQuest == StateQuest.Completed 
-            || npcChats.list[currentChatIndex].quest.stateQuest == StateQuest.Taked)
-        {
-            if (currentChatIndex < npcChats.list.Count - 1)
+            if (npcChats.list[currentChatIndex] != null && npcChats.list[currentChatIndex].quest != null)
             {
-                currentChatIndex++;
+                npcChats.list[currentChatIndex].quest.isShowQuest = true;
+            }
+            if (npcChats.list[currentChatIndex].quest.stateQuest == StateQuest.Taked)
+            {
+                if (currentChatIndex < npcChats.list.Count)
+                {
+                    currentChatIndex++;
+                }
             }
         }
+        currentLine = 0;
+        InGameMenu.inGameMenu.SetNPCChat();
+
     }
 }

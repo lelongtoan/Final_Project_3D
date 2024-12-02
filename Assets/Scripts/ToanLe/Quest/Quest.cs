@@ -17,8 +17,8 @@ public class Quest : ScriptableObject
     public bool isShowQuest;
     public StateQuest stateQuest;
     public int isCoin;
+    public int exp;
     public bool isStack;
-    public Item itemOpen;
     public Item itemCheck;
     
 }
