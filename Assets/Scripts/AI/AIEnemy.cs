@@ -28,6 +28,11 @@ public class AIEnemy : MonoBehaviour
     public GameObject arrowprefabs;
     public Transform arrowSpawn;
     public float bulletspeed = 10f;
+
+    public GameObject magicBall;
+    public GameObject coliBall;
+    public float ballSpawnHeight = 5f;
+
     protected enum State { Patrolling, Chasing, Attacking, Reload }
     protected State currentState;
 
@@ -156,7 +161,45 @@ public class AIEnemy : MonoBehaviour
                     break;
             }
         }
-        
+        else if (gameObject.CompareTag("MageEnemy"))
+        {
+            switch (currentState)
+            {
+                case State.Patrolling:
+                    Patrol();
+                    if (distanceToPlayer < chaseDistance)
+                    {
+                        StartChasing();
+                    }
+                    break;
+
+                case State.Chasing:
+                    ChasePlayer();
+                    if (distanceToPlayer < attackDistance)
+                    {
+                        StartAttacking();
+                    }
+                    else if (distanceToPlayer > chaseDistance)
+                    {
+                        StartPatrolling();
+                    }
+                    break;
+                case State.Attacking:
+
+                    if (Time.time > lastAttackTime + attackCooldown)
+                    {
+                        AttackPlayer();
+                        lastAttackTime = Time.time;
+                    }
+                    if (distanceToPlayer > attackDistance)
+                    {
+
+                        currentState = distanceToPlayer < chaseDistance ? State.Chasing : State.Patrolling;
+                    }
+                    break;
+            }
+        }
+
         else if (gameObject.CompareTag("WariorBoss"))
         {
             switch (currentState)
@@ -182,7 +225,7 @@ public class AIEnemy : MonoBehaviour
                             patrolSpeed = 4.5f;
                             FastAttack();
                         }
-                        
+
                         lastAttackTime = Time.time;
                     }
                     if (distanceToPlayer > attackDistance)
@@ -206,6 +249,19 @@ public class AIEnemy : MonoBehaviour
             rid.velocity = dicrection * bulletspeed;
         }
         Destroy(bullet, 5f);
+    }
+    protected void Mage()
+    {
+        if (player == null)
+        {
+            return;
+        }
+        gameObject.transform.LookAt (player);
+        Vector3 spawnPosittion = player.position;
+        GameObject explo = Instantiate(magicBall, spawnPosittion, Quaternion.identity);
+        GameObject colisball = Instantiate(coliBall, explo.transform.position, Quaternion.identity);
+        colisball.transform.SetParent(explo.transform);
+        Destroy(explo, 5);
     }
     protected virtual void Patrol()
     {
@@ -290,6 +346,7 @@ public class AIEnemy : MonoBehaviour
         animator.SetTrigger("Attack");
         animator.ResetTrigger("Chase");
     }
+    
 
     protected void StartPatrolling()
     {

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -54,6 +55,10 @@ public class PlayerSkill : MonoBehaviour
     public SoundEffect soundEffect;
     public float maxRange = 5f;
 
+    public TMP_Text lvsk1;
+    public TMP_Text lvsk2;
+    public TMP_Text lvsk3;
+
     public Button skill1;
     public Button skill2;
     public Button skill3;
@@ -68,9 +73,15 @@ public class PlayerSkill : MonoBehaviour
         skill1 = GameObject.Find("Skill1").GetComponent<Button>();
         skill2 = GameObject.Find("Skill2").GetComponent<Button>();
         skill3 = GameObject.Find("Skill3").GetComponent<Button>();
+        lvsk1 = GameObject.FindWithTag("LevelSkill1").GetComponent<TMP_Text>();
+        lvsk2 = GameObject.FindWithTag("LevelSkill2").GetComponent<TMP_Text>();
+        lvsk3 = GameObject.FindWithTag("LevelSkill3").GetComponent<TMP_Text>();
         skill1.onClick.AddListener(BuffDameNormal);
         skill2.onClick.AddListener(ActiveSkill);
         skill3.onClick.AddListener(SpawmSkillUltimate);
+        lvsk1.text = "Lv : " + levelSkill1.ToString();
+        lvsk2.text = "Lv : " + levelSkill2.ToString();
+        lvsk3.text = "Lv : " + levelSkill3.ToString();
         playerController = GetComponent<PlayerController>();
         dame = playerInfor.dame;
         audioSource = FindObjectOfType<AudioSource>();
@@ -224,8 +235,8 @@ public class PlayerSkill : MonoBehaviour
             animator.SetTrigger("Skill 1");
             GameObject explo = Instantiate(eff1, comboAtack.targetEnemy.position, Quaternion.identity);
             GameObject coliskill = Instantiate(colliderSkill, explo.transform.position, Quaternion.identity);
-            Destroy(explo, 5f);
             coliskill.transform.SetParent(explo.transform);
+            Destroy(explo, 5f);
         }
     }
     void SpawnSwords()
@@ -363,6 +374,8 @@ public class PlayerSkill : MonoBehaviour
             counD1 -= 1;
             Debug.Log("Nang capp 1 thanh cong");
         }
+        lvsk1.text = "Lv : " + levelSkill1.ToString();
+
     }
     public void UpdateSkill2()
     {
@@ -379,6 +392,7 @@ public class PlayerSkill : MonoBehaviour
             counD2--;
             Debug.Log("Nang capp 2 thanh cong");
         }
+        lvsk2.text = "Lv : " + levelSkill2.ToString();
 
     }
     public void UpdateSkill3()
@@ -396,5 +410,7 @@ public class PlayerSkill : MonoBehaviour
             counD3 -= 2.5f;
             Debug.Log("Nang capp 1 thanh cong");
         }
+        lvsk3.text = "Lv : " + levelSkill3.ToString();
+
     }
 }

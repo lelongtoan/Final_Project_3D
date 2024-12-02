@@ -24,6 +24,11 @@ TagManager:
   - LevelSkill1
   - LevelSkill2
   - LevelSkill3
+  - HealthPoint
+  - ManaPoint
+  - DMG
+  - DEF
+  - MageEnemy
   layers:
   - Default
   - TransparentFX
