@@ -1732,10 +1732,12 @@ MonoBehaviour:
   exp: 0
   money: 0
   skillPoint: 0
+  isDead: 0
   text_hp: {fileID: 0}
   text_mp: {fileID: 0}
   text_dame: {fileID: 0}
   text_def: {fileID: 0}
+  baloP: {fileID: 0}
 --- !u!114 &959833306431311766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1779,6 +1781,9 @@ MonoBehaviour:
   manaskill3: 50
   soundEffect: {fileID: 0}
   maxRange: 5
+  lvsk1: {fileID: 0}
+  lvsk2: {fileID: 0}
+  lvsk3: {fileID: 0}
   skill1: {fileID: 0}
   skill2: {fileID: 0}
   skill3: {fileID: 0}

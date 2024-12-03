@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 7044163053526740013}
   - component: {fileID: 8894553761216253514}
   - component: {fileID: 5971776413823866999}
+  - component: {fileID: 5871572219331079830}
   m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
@@ -177,6 +178,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &5871572219331079830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4994424751042263549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 931e30bbbf22f6c41b8f6e42b5c62282, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
 --- !u!1 &5273140670282343126
 GameObject:
   m_ObjectHideFlags: 0
@@ -1288,6 +1302,9 @@ MonoBehaviour:
   arrowprefabs: {fileID: 0}
   arrowSpawn: {fileID: 0}
   bulletspeed: 10
+  magicBall: {fileID: 0}
+  coliBall: {fileID: 0}
+  ballSpawnHeight: 5
 --- !u!4 &8858636797622356694 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7997947301047521070, guid: 7e85f4b39ee4a344f839ef9222ab4317, type: 3}
