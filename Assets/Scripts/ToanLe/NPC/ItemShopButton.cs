@@ -54,7 +54,7 @@ public class ItemShopButton : MonoBehaviour
     {
         if(!locked)
         {
-            NPCShop.instance.OnClick(index);
+            GameInstance.instance.npcShop.OnClick(index);
         }
     }
 }

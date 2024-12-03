@@ -5,16 +5,11 @@ using UnityEngine;
 
 public class QuestManager : MonoBehaviour
 {
-    public static QuestManager instance { get; set; }
     public QuestContainer questContainer;
     public List<GameObject> quests;
     public GameObject content;
     public GameObject quest;
     public ItemManager itemContainer;
-    private void Awake()
-    {
-        instance = this;
-    }
     private void Start()
     {
         UpdateQuest();

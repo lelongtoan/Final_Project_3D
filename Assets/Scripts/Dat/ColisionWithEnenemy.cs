@@ -17,7 +17,8 @@ public class ColisionWithEnenemy : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         EnemyInfor enemy = other.gameObject.GetComponent<EnemyInfor>();
-        if ((other.CompareTag("MinionEnemy") || other.CompareTag("RogueEnemy") || other.CompareTag("WariorBoss"))&& !isAttack)
+        if ((other.CompareTag("MinionEnemy") || other.CompareTag("RogueEnemy") || other.CompareTag("WariorBoss")
+            || other.CompareTag("MageEnemy"))&& !isAttack)
         {
             if (gameObject.CompareTag("Skill1"))
             {
@@ -43,7 +44,7 @@ public class ColisionWithEnenemy : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if ((other.CompareTag("MinionEnemy") || other.CompareTag("WariorBoss")))
+        if (other.CompareTag("MinionEnemy") || other.CompareTag("WariorBoss") || other.CompareTag("RogueEnemy") || other.CompareTag("MageEnemy"))
         {
             isAttack = false;
         }

@@ -52,6 +52,6 @@ public class ItemCraftButton : MonoBehaviour
 
     public void CraftButton()
     {
-        NPCCraft.instance.OnClick(index);
+        GameInstance.instance.npcCraft.OnClick(index);
     }
 }

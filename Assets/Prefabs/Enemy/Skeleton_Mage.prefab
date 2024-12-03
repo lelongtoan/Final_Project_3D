@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 1440577515586408270}
   - component: {fileID: 6621387100396094203}
   - component: {fileID: 854514659501636996}
+  - component: {fileID: 2387978742635254814}
   m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
@@ -101,14 +102,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5467989117389352999}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.03, y: 0.005, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8942223417420374923}
   m_Father: {fileID: 2031811085759007708}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 2.5}
@@ -177,6 +178,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &2387978742635254814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5467989117389352999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 931e30bbbf22f6c41b8f6e42b5c62282, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
 --- !u!1 &7706147292315884253
 GameObject:
   m_ObjectHideFlags: 0
@@ -1078,7 +1092,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
@@ -1176,7 +1190,7 @@ MonoBehaviour:
   arrowSpawn: {fileID: 2737986498804205161, guid: 7f5e690b5447c4d4aa43c3cc3f17b270, type: 3}
   bulletspeed: 15
   magicBall: {fileID: 7062806617379088084, guid: bd67489a2df67ba4ba4c3e7b9c4e0e8c, type: 3}
-  coliBall: {fileID: 3533313265591716537, guid: 6060b039fb5c98e44ad9bd00917a0759, type: 3}
+  coliBall: {fileID: 3533313265591716537, guid: bbe2a76e646eed34c96b3e83232f14f8, type: 3}
   ballSpawnHeight: 5
 --- !u!4 &2031811085759007708 stripped
 Transform:

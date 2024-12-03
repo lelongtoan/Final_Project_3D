@@ -63,16 +63,12 @@ public class NPCChat : MonoBehaviour
         else
         {
             NPCChatData npcData = npcChats.list[currentChatIndex];
-            if (QuestManager.instance.CheckQuest(npcData.quest) 
+            if (GameInstance.instance.questManager.CheckQuest(npcData.quest) 
                 && npcData.quest.isShowQuest == true
                 && npcData.quest.stateQuest == StateQuest.Nope)
             {
                 npcData.quest.stateQuest = StateQuest.Completed;
                 Debug.Log("X");
-            }
-            else
-            {
-                Debug.Log("XXXX");
             }
             if (!npcData.quest.isShowQuest)
             {
@@ -138,7 +134,7 @@ public class NPCChat : MonoBehaviour
             }
         }
         currentLine = 0;
-        InGameMenu.inGameMenu.SetNPCChat();
+        GameInstance.instance.gameMenu.SetNPCChat();
 
     }
 }

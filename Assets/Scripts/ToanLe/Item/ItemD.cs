@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
@@ -95,7 +95,7 @@ public class ItemD : MonoBehaviour
             return;
         if (itemSlot.item.itemSet == ItemSet.Equippable)
         {
-            ItemManager.intance.equipment.UseEquipment(itemSlot);
+            GameInstance.instance.itemManager.equipment.UseEquipment(itemSlot);
             itemSlot = new ItemSlot();
             return;
             
@@ -110,7 +110,14 @@ public class ItemD : MonoBehaviour
         }
         else
         {
-            //goi ham use
+            if (itemSlot.item.buff != Buff.Nope)
+            {
+                GameInstance.instance.buffManager.ActivateBuff(itemSlot.item);
+            }
+            else
+            {
+
+            }
         }
         itemSlot.count--;
         if (itemSlot.count <= 0)
@@ -121,9 +128,9 @@ public class ItemD : MonoBehaviour
     }
     public void UnEquipment()
     {
-        if (ItemManager.intance.inventory.CheckFull())
+        if (GameInstance.instance.itemManager.inventory.CheckFull())
         {
-            ItemManager.intance.inventory.Add(itemSlot.item);
+            GameInstance.instance.itemManager.inventory.Add(itemSlot.item);
             this.itemSlot.Clear();
         }
     }

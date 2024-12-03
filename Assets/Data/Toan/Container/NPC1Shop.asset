@@ -16,20 +16,20 @@ MonoBehaviour:
   - nameItem: Item1
     priceItem: 500
     locked: 1
-    itemShop: {fileID: 0}
+    itemShop: {fileID: 11400000, guid: 81c908a33a925f54394e0ddbc551e807, type: 2}
   - nameItem: Item2
     priceItem: 555
     locked: 1
-    itemShop: {fileID: 0}
+    itemShop: {fileID: 11400000, guid: 81c908a33a925f54394e0ddbc551e807, type: 2}
   - nameItem: Item3
     priceItem: 111
     locked: 0
-    itemShop: {fileID: 0}
+    itemShop: {fileID: 11400000, guid: 81c908a33a925f54394e0ddbc551e807, type: 2}
   - nameItem: Item4
     priceItem: 123
     locked: 0
-    itemShop: {fileID: 0}
+    itemShop: {fileID: 11400000, guid: 81c908a33a925f54394e0ddbc551e807, type: 2}
   - nameItem: Item5
     priceItem: 15125
     locked: 1
-    itemShop: {fileID: 0}
+    itemShop: {fileID: 11400000, guid: 81c908a33a925f54394e0ddbc551e807, type: 2}

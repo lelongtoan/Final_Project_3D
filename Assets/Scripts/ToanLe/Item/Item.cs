@@ -26,6 +26,7 @@ public class Item : ScriptableObject
     public float Dmg;
     public float buffD;
     public float gold;
+    public float rateDrop;
     public string description;
     public Buff buff;
     public ItemSet itemSet;
