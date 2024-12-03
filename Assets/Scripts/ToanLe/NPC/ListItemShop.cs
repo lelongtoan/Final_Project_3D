@@ -5,6 +5,7 @@ using UnityEngine;
 [Serializable]
 public class ItemInShop
 {
+    public string idItem;
     public string nameItem;
     public int priceItem;
     public bool locked;
