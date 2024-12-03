@@ -13,6 +13,7 @@ public enum Buff
 [CreateAssetMenu(menuName = "Data/Item")]
 public class Item : ScriptableObject
 {
+    public string itemID;
     public string itemName;
     public bool stackable;
 

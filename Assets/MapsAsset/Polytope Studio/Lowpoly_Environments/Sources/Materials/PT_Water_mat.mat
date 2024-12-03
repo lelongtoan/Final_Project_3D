@@ -8,17 +8,17 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: PT_Water_mat
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 39cf68574afc7f248bd78a99c3800e00, type: 3}
   m_Parent: {fileID: 2100000, guid: 7f1a01d22f40d3146b66a9113e3f7171, type: 2}
   m_ModifiedSerializedProperties: 12
-  m_ValidKeywords:
-  - _GLOSSYREFLECTIONS_OFF
+  m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 1
   m_CustomRenderQueue: -1
-  stringTagMap: {}
+  stringTagMap:
+    RenderType: Opaque
   disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
@@ -26,7 +26,11 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _GlossyReflections: 0
+    - _DepthStrength: 1
+    - _GlossyReflections: 1
+    - _Mettalic: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _DeepColor: {r: 0.3114988, g: 0.5266015, b: 0.5283019, a: 1}
+    - _ShallowColor: {r: 0.5238074, g: 0.7314408, b: 0.745283, a: 1}
   m_BuildTextureStacks: []

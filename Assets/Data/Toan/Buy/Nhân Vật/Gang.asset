@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5272ff46bba89804c9da6df50ccae579, type: 3}
+  m_Name: Gang
+  m_EditorClassIdentifier: 
+  itemsInShop:
+  - idItem: DBCGANG01
+    nameItem: Gang1
+    priceItem: 20
+    locked: 0
+    itemShop: {fileID: 11400000, guid: eb8c4c52af65fe346ae15510aa580e09, type: 2}
+  - idItem: DBCGANG02
+    nameItem: Gang2
+    priceItem: 40
+    locked: 0
+    itemShop: {fileID: 11400000, guid: 4b056bd42f7c44a40bedc9f8248dd0bb, type: 2}

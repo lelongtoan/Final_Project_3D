@@ -276,7 +276,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.01
+  near clip plane: 1
   far clip plane: 1000
   field of view: 5
   orthographic: 1
@@ -1740,6 +1740,7 @@ MonoBehaviour:
   level: 1
   exp: 0
   money: 0
+  skillPoint: 0
 --- !u!114 &959833306431311766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1752,38 +1753,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ce4b5ac3b9f6d048952d58f2611ccf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointSkill: 0
   mana: 0
-  levelskill1: 1
+  levelSkill1: 1
   prefabSword: {fileID: 4072140244881190095, guid: 01741e07e24ddfe40b139e416f3efc39, type: 3}
   numberSword: 3
   dame1: 1
+  timeconti1: 5
+  counD1: 20
   endCountDow1: 1
   orbitRadius: 1.5
   rotationSpeed: 5
   swordSpawn: {fileID: 2427101003066311262}
   manaskill1: 10
-  hpAmount: 2
+  levelSkill2: 1
+  dameBuff: 10
+  counD2: 25
   endCountDow2: 1
   duration: 10
   manaskill2: 20
   ameInterval: 1
   eff: {fileID: 3874635022589376825, guid: ffdfb7851a968494f8fe76ee88f3791a, type: 3}
   buff: 0
+  levelSkill3: 1
   eff1: {fileID: 5222750351268202474, guid: 471430dca40f907499aac08fe5b5bb09, type: 3}
-  clip1: {fileID: 8300000, guid: 4957c817f0d0e194b8926cf34bb0825a, type: 3}
   dame3: 25
+  counD3: 35
   endCountDow3: 1
-  timingskill: 0.5
-  exploCount: 3
-  size: 1
-  upsize: 1.5
-  exploDistance: 2
-  skill1Spawm: {fileID: 3869415533297484387}
   colliderSkill: {fileID: 3533313265591716537, guid: 6060b039fb5c98e44ad9bd00917a0759, type: 3}
   manaskill3: 50
   soundEffect: {fileID: 0}
   maxRange: 5
-  lineRenderer: {fileID: 0}
   skill1: {fileID: 0}
   skill2: {fileID: 0}
   skill3: {fileID: 0}
