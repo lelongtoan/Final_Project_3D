@@ -215,4 +215,24 @@ public class PlayerInfor : MonoBehaviour
             skillPoint += 3;
         }
     }
+    public void UpMaxHP(float hp)
+    {
+        maxHP += hp;
+        SaveData() ;
+    }
+    public void UpMaxMP(float mp)
+    {
+        maxMP += mp;
+        SaveData() ;
+    }
+    public void UpDame(int dmg)
+    {
+        dame+= dmg;
+        SaveData();
+    }
+    public void UpDef(int defen)
+    {
+        def+= defen;
+        SaveData();
+    }
 }
