@@ -81,7 +81,7 @@ public class PlayerInfor : MonoBehaviour
     }
     void UpdateLevel()
     {
-        text.text = "Lv : " + level.ToString(); ;
+        text.text = "Lv : " + level.ToString();
     }
     void UpdateHpMP()
     {
