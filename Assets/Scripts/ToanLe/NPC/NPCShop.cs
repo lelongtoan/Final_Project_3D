@@ -8,14 +8,7 @@ public class NPCShop : MonoBehaviour
     public List<ItemShopButton> buttons = new();
     public GameObject buttonItemShop;
     public GameObject content;
-    public static NPCShop instance { get; private set; }
-
-    private void Awake()
-    {
-        instance = this;
-    }
-
-    private void Start()
+    private void OnEnable()
     {
         CreateButtons();
         ShowShopInventory();
@@ -58,14 +51,18 @@ public class NPCShop : MonoBehaviour
         ItemInShop selectedItem = shopInventory.itemsInShop[id];
         if (id >= 0 && id < shopInventory.itemsInShop.Count)
         {
-            if (true /*player.gold >= selectedItem.priceItem*/)
+            if (PlayerInfor.Instance.money >= selectedItem.priceItem)
             {
-                if (ItemManager.intance.inventory.CheckFull())
+                if (GameInstance.instance.itemManager.inventory.CheckFull())
                 {
-                    ItemManager.intance.inventory.Add(selectedItem.itemShop, 1);
-                    // player.gold -= selectedItem.priceItem;
-                    Debug.Log($"Bạn đã chọn mua {selectedItem.nameItem} với giá {selectedItem.priceItem} vàng!");
+                    GameInstance.instance.itemManager.inventory.Add(selectedItem.itemShop, 1);
+                    PlayerInfor.Instance.GetMoney(selectedItem.priceItem);
+                    GameInstance.instance.gameReport.SetReport($"Bạn đã chọn mua {selectedItem.nameItem} với giá {selectedItem.priceItem} vàng!");
                 }
+            }
+            else
+            {
+                GameInstance.instance.gameReport.SetReport("Bạn Không Đủ Tiền");
             }
         }
     }

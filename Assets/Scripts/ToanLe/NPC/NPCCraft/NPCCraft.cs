@@ -1,5 +1,6 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class NPCCraft : MonoBehaviour
@@ -8,19 +9,11 @@ public class NPCCraft : MonoBehaviour
     public List<ItemCraftButton> buttons = new();
     public GameObject buttonCraftPrefab;
     public GameObject content;
-    public static NPCCraft instance { get; private set; }
-
-    private void Awake()
-    {
-        instance = this;
-    }
-
-    private void Start()
+    private void OnEnable()
     {
         CreateButtons();
         ShowCraftInventory();
     }
-
     private void CreateButtons()
     {
         foreach (Transform child in content.transform)
@@ -61,7 +54,19 @@ public class NPCCraft : MonoBehaviour
         CraftData selectedCraft = craftInventory.craftDataList[id];
         if (id >= 0 && id < craftInventory.craftDataList.Count)
         {
-            //asdfasdf
+            if (GameInstance.instance.itemManager.inventory.CheckCraft(selectedCraft))
+            {
+                for (int i = 0; i < selectedCraft.requiredItems.Count; i++)
+                {
+                    GameInstance.instance.itemManager.RemoveItem(selectedCraft.requiredItems[i], selectedCraft.requiredItems[i].count);
+                }
+                GameInstance.instance.itemManager.inventory.Add(selectedCraft.resultItem);
+                GameInstance.instance.gameReport.SetReport("Đã Chế Tạo Thành Công " + selectedCraft.resultItem.itemName + ".");
+            }
+            else
+            {
+                GameInstance.instance.gameReport.SetReport("Không Thể Chế Tạo");
+            }
         }
     }
 }

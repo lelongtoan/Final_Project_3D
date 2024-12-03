@@ -20,12 +20,12 @@ public class Inventory : ItemManager
             {
                 Debug.Log("moveitem");
                 ItemD.Instance.MoveItem(inventory.slots[id]);
-                InGameMenu.inGameMenu.SetDragAndDrop(false);
+                GameInstance.instance.gameMenu.SetDragAndDrop(false);
                 return;
             }
             if (inventory.slots[id].item != null)
             {
-                InGameMenu.inGameMenu.SetInfoItem();
+                GameInstance.instance.gameMenu.SetInfoItem();
                 ItemD.Instance.SetItem(inventory.slots[id]);
                 Debug.Log("Item Info");
             }
@@ -47,7 +47,7 @@ public class Inventory : ItemManager
 
             if (equipSlots[equipIndex] != null)
             {
-                InGameMenu.inGameMenu.SetInfoItem();
+                GameInstance.instance.gameMenu.SetInfoItem();
                 ItemD.Instance.SetItem(equipSlots[equipIndex],1);
                 Debug.Log("Equip Info");
             }

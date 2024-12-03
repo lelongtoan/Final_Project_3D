@@ -4,7 +4,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Data/Equipment Generator")]
 public class EquipmentGenerator : ScriptableObject
 {
-    public static EquipmentGenerator intance {  get; set; }
     [Header("Equipment Slots")]
     public ItemSlot swordSlot;
     public ItemSlot shieldSlot;
@@ -12,10 +11,6 @@ public class EquipmentGenerator : ScriptableObject
     public ItemSlot armourSlot;
     public ItemSlot glovesSlot;
     public ItemSlot bootSlot;
-    private void Awake()
-    {
-        intance = this;
-    }
     public void UseEquipment(ItemSlot itemSlot)
     {
         if (itemSlot == null || itemSlot.item == null)
