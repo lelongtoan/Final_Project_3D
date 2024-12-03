@@ -13,12 +13,6 @@ public class ItemManager : MonoBehaviour
     public EquipButton equipBoot;
     public ItemContainer inventory;
     public List<InventoryButton> buttons;
-    public static ItemManager intance { get; set; }
-
-    private void Awake()
-    {
-        intance = this;
-    }
     private void Start()
     {
         SetIndex();

@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class InGameMenu : MonoBehaviour
 {
-    public static InGameMenu inGameMenu { get; set; }
-    private void Awake()
-    {
-        inGameMenu = this;
-    }
     [SerializeField] GameObject characterPanel;
     [SerializeField] GameObject questPanel;
     [SerializeField] GameObject gameOver;
@@ -22,6 +17,12 @@ public class InGameMenu : MonoBehaviour
     [Header("Iventory")]
     [SerializeField] GameObject infoItem;
     [SerializeField] GameObject dragAndDrop;
+    [Header("Game Report")]
+    [SerializeField] GameObject gameReportPanel;
+    public void SetGameReport()
+    {
+        gameReportPanel.SetActive(!gameReportPanel.activeInHierarchy);
+    }
     public void SetCharPanel()
     {
         characterPanel.SetActive(!characterPanel.activeInHierarchy);

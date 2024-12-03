@@ -15,7 +15,7 @@ public class GOQuest : MonoBehaviour
     [SerializeField] public TextMeshProUGUI qualityRewardText;
     public void SetQuest(Quest qc)
     {
-        List<ItemSlot> itemTemp = QuestManager.instance.itemContainer.inventory.slots.Where(c => c.item == qc.itemCheck).ToList();
+        List<ItemSlot> itemTemp = GameInstance.instance.questManager.itemContainer.inventory.slots.Where(c => c.item == qc.itemCheck).ToList();
         int numberInt = 0;
         foreach (ItemSlot itemSlot in itemTemp)
         {

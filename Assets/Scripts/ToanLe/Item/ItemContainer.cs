@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -33,12 +33,6 @@ public class ItemSlot
 public class ItemContainer : ScriptableObject
 {
     public List<ItemSlot> slots;
-    public static ItemContainer itemContainer { get; set; }
-
-    private void Awake()
-    {
-        itemContainer = this;
-    }
     public void Add(Item item,int toolDurability = 100, int count = 1)
     {
         if (item.stackable == true)
@@ -79,48 +73,37 @@ public class ItemContainer : ScriptableObject
     }
     public bool CheckFull()
     {
-        ItemSlot itemSlot = slots.Find(c => c.item == null);
-        return itemSlot != null ? true : false;
+
+        bool ckeck = slots.Find(c => c.item == null) != null ? true : false;
+        if(!ckeck)
+        {
+            GameInstance.instance.gameReport.SetReport("Kho Đồ Đã Hết Chỗ ! Gỡ Trang Bị Thất Bại");
+        }
+        return ckeck;
+    }
+    public bool CheckItem(Item item)
+    {
+        return slots.Find(c => c.item == item) != null ? true : false;
+    }
+    public bool CheckItemQuantity(Item item,int count)
+    {
+        int itemCount = slots.Find(c => c.item == item).count;
+        return count > itemCount ? false : true;
     }
     public void Delete(int id)
     {
         slots[id].Clear();
     }
-    internal bool CheckFreeSpace()
+    public bool CheckCraft(CraftData craftData)
     {
-        for (int i = 0; i < slots.Count; i++)
+        for (int i = 0; i < craftData.requiredItems.Count; i++)
         {
-            if (slots[i].item == null)
+            ItemSlot temp = craftData.requiredItems[i];
+            if (!CheckItem(temp.item) || !CheckItemQuantity(temp.item, temp.count))
             {
-                return true;
+                return false;
             }
         }
-        return false;
-    }
-    public void CraftRemove(Item item, int count)
-    {
-        if (item.stackable)
-        {
-            ItemSlot itemSlot = slots.Find(c => c.item == item);
-            if (itemSlot == null)
-            {
-                return;
-            }
-            itemSlot.count -= count;
-            if (itemSlot.count <= 0)
-            {
-                itemSlot.Clear();
-            }
-        }
-        else
-        {
-            while (count > 0)
-            {
-                count -= 1;
-                ItemSlot itemSlot = slots.Find(c => c.item == item);
-                if (itemSlot == null) { break; }
-                itemSlot.Clear();
-            }
-        }
+        return true;
     }
 }

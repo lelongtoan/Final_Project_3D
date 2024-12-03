@@ -12,15 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d690ab03900124439ed5e618aa451db, type: 3}
   m_Name: BuffDmg
   m_EditorClassIdentifier: 
+  id: 0
   itemName: BuffDmg
-  stackable: 0
+  stackable: 1
   HP: 0
   MP: 0
   Dmg: 0
-  buff: 3
   buffD: 15
   gold: 0
-  canShow: 0
   description: 
+  buff: 3
   itemSet: 2
+  itemType: 0
   icon: {fileID: -1371944681, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
