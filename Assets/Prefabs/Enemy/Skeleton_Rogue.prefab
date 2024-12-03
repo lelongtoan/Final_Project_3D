@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 5247535383754248860}
   - component: {fileID: 948287448206729248}
   - component: {fileID: 3472908184557435135}
+  - component: {fileID: 3132902175950670909}
   m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
@@ -202,6 +203,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &3132902175950670909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3801038905201786307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 931e30bbbf22f6c41b8f6e42b5c62282, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
 --- !u!1 &4361388706539333563
 GameObject:
   m_ObjectHideFlags: 0
@@ -1195,6 +1209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b915b7a53df1c2f4eb688e7e6c22c959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyId: 
   dame: 15
   hp: 100
   hpcurrent: 0
@@ -1301,6 +1316,9 @@ MonoBehaviour:
   arrowprefabs: {fileID: 3185565952969402580, guid: d7f97a5884f7d7248bac4f5b28b89ab7, type: 3}
   arrowSpawn: {fileID: 2737986498804205161}
   bulletspeed: 15
+  magicBall: {fileID: 0}
+  coliBall: {fileID: 0}
+  ballSpawnHeight: 5
 --- !u!4 &7607411360010727141 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7997947301047521070, guid: 585b359cfd35cd0498ab525cdccd6674, type: 3}

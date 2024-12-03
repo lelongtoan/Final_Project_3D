@@ -29,6 +29,7 @@ TagManager:
   - DMG
   - DEF
   - MageEnemy
+  - Exp_Text
   layers:
   - Default
   - TransparentFX
