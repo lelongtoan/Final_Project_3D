@@ -18,13 +18,21 @@ public class ColisionByArrow : MonoBehaviour
         }
         if (player == null)
         {
-            player = GameManager.FindObjectOfType<PlayerInfor>().GetComponent<PlayerInfor>();
+            player = GameObject.FindObjectOfType<PlayerInfor>().GetComponent<PlayerInfor>();
         }
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            if (enemy == null)
+            {
+                enemy = GameObject.FindWithTag("RogueEnemy").GetComponent<EnemyInfor>();
+            }
+            if (player == null)
+            {
+                player = GameObject.FindObjectOfType<PlayerInfor>().GetComponent<PlayerInfor>();
+            }
             Debug.Log("Va cham");
 
             if (player != null)

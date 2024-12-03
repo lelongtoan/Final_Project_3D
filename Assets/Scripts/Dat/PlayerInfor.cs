@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem.Processors;
 using UnityEngine.UI;
 
 public class PlayerInfor : MonoBehaviour
@@ -22,7 +23,8 @@ public class PlayerInfor : MonoBehaviour
     public float exp = 0;
     public int money = 0;
     public int skillPoint = 0;
-
+    Animator animator;
+    public bool isDead = false;
     Image hpbar;
     Image mpbar;
     Image Exp_Image;
@@ -33,10 +35,9 @@ public class PlayerInfor : MonoBehaviour
     public TMP_Text text_def;
 
     float baseXp = 10f;
-    float scaleFactor = 1.5f;
-    public float XPToLevelUp => baseXp * Mathf.Pow(level, scaleFactor) + 1;
+    public float XPToLevelUp => baseXp * level;
 
-    public GameObject baloP;
+    //public GameObject baloP;
 
     private void Awake()
     {
@@ -54,16 +55,19 @@ public class PlayerInfor : MonoBehaviour
     }
     private void Start()
     {
-        baloP = GameObject.Find("BaloPanel");
+        //baloP = GameObject.Find("BaloPanel");
         hpbar = GameObject.FindWithTag("HPBar").GetComponent<Image>();
         mpbar = GameObject.FindWithTag("MPBar").GetComponent<Image>();
         Exp_Image = GameObject.FindWithTag("EXP").GetComponent<Image>();
-        text = GameObject.FindWithTag("Level").GetComponent<TMP_Text>();
-        text_hp = GameObject.FindWithTag("HealthPoint").GetComponent<TMP_Text>();
-        text_mp = GameObject.FindWithTag("ManaPoint").GetComponent<TMP_Text>();
-        text_dame = GameObject.FindWithTag("DMG").GetComponent<TMP_Text>();
-        text_def = GameObject.FindWithTag("DEF").GetComponent<TMP_Text>();
-        baloP.SetActive(false);
+        text= GameObject.FindWithTag("Exp_Text").GetComponent<TMP_Text>();
+        //text = GameObject.FindWithTag("Level").GetComponent<TMP_Text>();
+        //text_hp = GameObject.FindWithTag("HealthPoint").GetComponent<TMP_Text>();
+        //text_mp = GameObject.FindWithTag("ManaPoint").GetComponent<TMP_Text>();
+        //text_dame = GameObject.FindWithTag("DMG").GetComponent<TMP_Text>();
+        //text_def = GameObject.FindWithTag("DEF").GetComponent<TMP_Text>();
+        //baloP.SetActive(false);
+        isDead = false;
+        animator = gameObject.GetComponent<Animator>();
 
     }
     private void Update()
@@ -72,7 +76,8 @@ public class PlayerInfor : MonoBehaviour
         UpdateExp();
         UpdateHpMP();
         CheckLevelUp();
-        UpdateInfor();
+        CheclDead();
+        //UpdateInfor();
     }
     void UpdateLevel()
     {
@@ -168,11 +173,23 @@ public class PlayerInfor : MonoBehaviour
     public void PlayerTakeDame(int hp)
     {
         hp -= def;
-        if (hp < 0)
+        if (hp <= 0)
         {
             hp = 0;
         }
         healthPoint -= hp;
+        Debug.Log("Tru " + hp.ToString() + " mau");
+        SaveData();
+    }
+    public void PlayerTakeStandanDame(int hp)
+    {
+        if (hp < 0)
+        {
+            hp = 0;
+            
+        }
+        healthPoint -= hp;
+        Debug.Log("Tru " + hp.ToString() + " mau");
         SaveData();
     }
     public void GetMoney(int moneyCollect)
@@ -190,7 +207,14 @@ public class PlayerInfor : MonoBehaviour
         exp += expCollect;
         SaveData();
     }
-
+    void CheclDead()
+    {
+        if (healthPoint <= 0)
+        {
+            SaveData();
+            Dead();
+        }
+    }
     void CheckLevelUp()
     {
         while(exp >= XPToLevelUp)
@@ -229,6 +253,23 @@ public class PlayerInfor : MonoBehaviour
     {
         dame+= dmg;
         SaveData();
+    }
+    public void Dead()
+    {
+        if (!isDead)
+        {
+            GetComponent<PlayerController>().enabled = false;
+            GetComponent<PlayerSkill>().enabled = false;
+            //GetComponent<Collider>().enabled = false;
+            GetComponent<ComboAtack>().enabled = false;
+            isDead = true;
+            animator.SetTrigger("Dead");
+        }
+    }
+    public void DeadPos()
+    {
+        animator.ResetTrigger("Dead");
+        animator.SetTrigger("DeadPos");
     }
     public void UpDef(int defen)
     {

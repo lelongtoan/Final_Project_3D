@@ -287,6 +287,7 @@ GameObject:
   - component: {fileID: 6882524445638517927}
   - component: {fileID: 8546506638247157993}
   - component: {fileID: 5899837049675429070}
+  - component: {fileID: 8256729290531355140}
   m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
@@ -377,6 +378,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &8256729290531355140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7341568651330321886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 931e30bbbf22f6c41b8f6e42b5c62282, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
 --- !u!1001 &5928989844550469379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1270,6 +1284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b915b7a53df1c2f4eb688e7e6c22c959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyId: 
   dame: 10
   hp: 100
   hpcurrent: 0
@@ -1353,6 +1368,9 @@ MonoBehaviour:
   arrowprefabs: {fileID: 0}
   arrowSpawn: {fileID: 0}
   bulletspeed: 10
+  magicBall: {fileID: 0}
+  coliBall: {fileID: 0}
+  ballSpawnHeight: 5
 --- !u!136 &2280416751966527697
 CapsuleCollider:
   m_ObjectHideFlags: 0
