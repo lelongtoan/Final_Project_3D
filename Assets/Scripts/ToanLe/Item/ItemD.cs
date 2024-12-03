@@ -13,12 +13,15 @@ public class ItemD : MonoBehaviour
     [SerializeField] TextMeshProUGUI textQ;
     [SerializeField] TextMeshProUGUI textDes;
 
+    [SerializeField] GameObject sellGo;
+    [SerializeField] GameObject unEquipGo;
     [SerializeField] GameObject useGO;
     [SerializeField] GameObject unStackGO;
     [SerializeField] GameObject moveGO;
     [SerializeField] GameObject dropGO;
     public static ItemD Instance { get; set; }
 
+    public bool equipAble;
     public bool isMoving;
     private void Awake()
     {
@@ -26,33 +29,65 @@ public class ItemD : MonoBehaviour
     }
     private void Start()
     {
+        Clear();
+    }
+    public void Clear()
+    {
+        textQ.enabled = false;
         isMoving = false;
+        sellGo.SetActive(false);
+        unEquipGo.SetActive(false);
         useGO.SetActive(false);
         unStackGO.SetActive(false);
-        moveGO.SetActive(true);
-        dropGO.SetActive(true);
+        moveGO.SetActive(false);
+        dropGO.SetActive(false);
         itemSlot = new ItemSlot();
     }
-    private void Update()
+    public void SetItem(ItemSlot itemSlot, int equip = 0, int sell = 0)
     {
-        
-    }
-    public void SetItem(ItemSlot itemSlot,int id)
-    {
+        Clear();
         this.itemSlot = itemSlot;
         icon.sprite = itemSlot.item.icon;
         tenText.text = itemSlot.item.name;
-        textQ.text = itemSlot.count.ToString();
-        textDes.text = itemSlot.item.description; 
+        textDes.text = itemSlot.item.description;
+        if (equip != 0)
+        {
+            unEquipGo.SetActive(true);
+            return;
+        }
+        else
+        if (sell != 0)
+        {
+            sellGo.SetActive(true);
+            return;
+        }
+        else
+        {
+            moveGO.SetActive(true);
+            dropGO.SetActive(true);
+        }
         if (itemSlot.item.itemSet != ItemSet.Nope)
         {
             useGO.SetActive(true);
         }
+        if (itemSlot.item.stackable)
+        {
+            textQ.enabled = true;
+            textQ.text = itemSlot.count.ToString();
+            //unStackGO.SetActive(true);
+        }
+
         Debug.Log("ItemD : 51 : Unstack");
-        //if (itemSlot.item.stackable)
-        //{
-        //    unStackGO.SetActive(true);
-        //}
+        
+    }
+    public void UseItem(ItemSlot itemS)
+    {
+        if (itemS != null)
+        {
+            itemSlot = new ItemSlot();
+            itemSlot = itemS;
+        }
+        UseItem();
     }
     public void UseItem()
     {
@@ -60,8 +95,10 @@ public class ItemD : MonoBehaviour
             return;
         if (itemSlot.item.itemSet == ItemSet.Equippable)
         {
-            //goi ham eq
-            itemSlot = null;
+            ItemManager.intance.equipment.UseEquipment(itemSlot);
+            itemSlot = new ItemSlot();
+            return;
+            
         }
         else if (itemSlot.item.itemSet == ItemSet.Heal)
         {
@@ -80,7 +117,15 @@ public class ItemD : MonoBehaviour
         {
             itemSlot.Clear();
         }
-        itemSlot = null;
+        itemSlot = new ItemSlot();
+    }
+    public void UnEquipment()
+    {
+        if (ItemManager.intance.inventory.CheckFull())
+        {
+            ItemManager.intance.inventory.Add(itemSlot.item);
+            this.itemSlot.Clear();
+        }
     }
     public void MoveItem(ItemSlot itemSlot)
     {
@@ -99,7 +144,7 @@ public class ItemD : MonoBehaviour
                 int count = itemSlot.count;
                 itemSlot.Copy(this.itemSlot);
                 this.itemSlot.Set(item, toolDurability, count);
-                this.itemSlot.Clear();
+                this.itemSlot = new ItemSlot();
             }
         }
         isMoving = false;

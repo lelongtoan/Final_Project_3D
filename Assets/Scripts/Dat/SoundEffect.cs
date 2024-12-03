@@ -17,7 +17,13 @@ public class SoundEffect : MonoBehaviour
     public AudioSource audioSource; 
     void Awake()
     {
-        audioSource = FindObjectOfType<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+            Debug.LogWarning("AudioSource không tìm thấy. Tạo mới AudioSource trên GameObject này.");
+        }
+
         soundDictionary = new Dictionary<string, AudioClip>();
         foreach (var sound in sounds)
         {

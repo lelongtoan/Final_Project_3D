@@ -13,30 +13,30 @@ MonoBehaviour:
   m_Name: InventoryData
   m_EditorClassIdentifier: 
   slots:
-  - item: {fileID: 11400000, guid: e3e90a03c4b26c84cb20cb35fbde319a, type: 2}
-    toolDurability: 1
-    count: 11
-  - item: {fileID: 0}
-    toolDurability: 0
-    count: 0
-  - item: {fileID: 0}
-    toolDurability: 0
-    count: 0
-  - item: {fileID: 0}
-    toolDurability: 0
-    count: 0
-  - item: {fileID: 0}
-    toolDurability: 0
-    count: 0
-  - item: {fileID: 0}
-    toolDurability: 0
-    count: 0
-  - item: {fileID: 0}
-    toolDurability: 0
-    count: 0
   - item: {fileID: 11400000, guid: 6eda1781bd003e349b2a8cc76e86abe3, type: 2}
-    toolDurability: 1
+    toolDurability: 0
+    count: 11
+  - item: {fileID: 11400000, guid: be37074c5ad83204caba66eec379791b, type: 2}
+    toolDurability: 0
     count: 12
+  - item: {fileID: 11400000, guid: 81c908a33a925f54394e0ddbc551e807, type: 2}
+    toolDurability: 0
+    count: 4
+  - item: {fileID: 11400000, guid: a43f8c0733058a649a2ec0fa3867264b, type: 2}
+    toolDurability: 0
+    count: 7
+  - item: {fileID: 11400000, guid: d26709e28ae9faa4abff80569f89e6c2, type: 2}
+    toolDurability: 0
+    count: 12
+  - item: {fileID: 0}
+    toolDurability: 0
+    count: 0
+  - item: {fileID: 0}
+    toolDurability: 0
+    count: 0
+  - item: {fileID: 0}
+    toolDurability: 0
+    count: 0
   - item: {fileID: 0}
     toolDurability: 0
     count: 0

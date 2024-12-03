@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,7 +8,6 @@ using UnityEngine.UI;
 public class GOQuest : MonoBehaviour
 {
     public int idGOQuest;
-    [SerializeField] public GameObject takeGO;
     [SerializeField] public GameObject completeGO;
     [SerializeField] public TextMeshProUGUI detailQuestGO;
     [SerializeField] public TextMeshProUGUI quaCountText;
@@ -15,25 +15,24 @@ public class GOQuest : MonoBehaviour
     [SerializeField] public TextMeshProUGUI qualityRewardText;
     public void SetQuest(Quest qc)
     {
+        List<ItemSlot> itemTemp = QuestManager.instance.itemContainer.inventory.slots.Where(c => c.item == qc.itemCheck).ToList();
+        int numberInt = 0;
+        foreach (ItemSlot itemSlot in itemTemp)
+        {
+            numberInt += itemSlot.count;
+        }
+        qc.numberInt = numberInt;
         idGOQuest = qc.questId;
         detailQuestGO.text = qc.questString.ToString();
         if(qc.stateQuest == StateQuest.Nope)
         {
-            takeGO.SetActive(false);
             completeGO.SetActive(false);
             quaCountText.gameObject.SetActive(true);
             quaCountText.text = qc.numberInt + " / " + qc.numberComplete;
         }
-        else if(qc.stateQuest == StateQuest.Completed)
-        {
-            takeGO.SetActive(false);
-            completeGO.SetActive(true);
-            quaCountText.gameObject.SetActive(false);
-        }
         else
         {
-            takeGO.SetActive(true);
-            completeGO.SetActive(false);
+            completeGO.SetActive(true);
             quaCountText.gameObject.SetActive(false);
         }
         if (qc.isCoin != 0) 
@@ -43,7 +42,7 @@ public class GOQuest : MonoBehaviour
         }
         else
         {
-            itemRewardImage.sprite = qc.itemOpen.icon;
+            itemRewardImage.sprite = null;
         }
         if(qc.isStack)
         {
@@ -54,7 +53,6 @@ public class GOQuest : MonoBehaviour
             qualityRewardText.gameObject.SetActive(false);
         }
         Debug.Log(idGOQuest.ToString() + " + " + completeGO.activeInHierarchy + " + "
-            + takeGO.activeInHierarchy + " + "
             + detailQuestGO.text + " + "
             + quaCountText.text + " + "
             + qualityRewardText.text + " + ");

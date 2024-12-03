@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2164325302639953188}
   - component: {fileID: 7027720239956968629}
-  - component: {fileID: 3780930957915268258}
   - component: {fileID: 8646206364113255677}
   - component: {fileID: 7030675444040088291}
   - component: {fileID: 1437480187178741549}
@@ -87,14 +86,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &3780930957915268258
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 681253921437579781}
-  m_Enabled: 1
 --- !u!54 &8646206364113255677
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -276,7 +267,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 1
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 5
   orthographic: 1
@@ -1741,6 +1732,10 @@ MonoBehaviour:
   exp: 0
   money: 0
   skillPoint: 0
+  text_hp: {fileID: 0}
+  text_mp: {fileID: 0}
+  text_dame: {fileID: 0}
+  text_def: {fileID: 0}
 --- !u!114 &959833306431311766
 MonoBehaviour:
   m_ObjectHideFlags: 0

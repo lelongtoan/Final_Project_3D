@@ -19,6 +19,16 @@ TagManager:
   - MPBar
   - EXP
   - Level
+  - Minimap
+  - Teleport
+  - LevelSkill1
+  - LevelSkill2
+  - LevelSkill3
+  - HealthPoint
+  - ManaPoint
+  - DMG
+  - DEF
+  - MageEnemy
   layers:
   - Default
   - TransparentFX

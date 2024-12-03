@@ -27,11 +27,16 @@ public class PlayerInfor : MonoBehaviour
     Image mpbar;
     Image Exp_Image;
     TMP_Text text;
+    public TMP_Text text_hp;
+    public TMP_Text text_mp;
+    public TMP_Text text_dame;
+    public TMP_Text text_def;
 
     float baseXp = 10f;
     float scaleFactor = 1.5f;
     public float XPToLevelUp => baseXp * Mathf.Pow(level, scaleFactor) + 1;
 
+    public GameObject baloP;
 
     private void Awake()
     {
@@ -49,10 +54,17 @@ public class PlayerInfor : MonoBehaviour
     }
     private void Start()
     {
+        baloP = GameObject.Find("BaloPanel");
         hpbar = GameObject.FindWithTag("HPBar").GetComponent<Image>();
         mpbar = GameObject.FindWithTag("MPBar").GetComponent<Image>();
         Exp_Image = GameObject.FindWithTag("EXP").GetComponent<Image>();
         text = GameObject.FindWithTag("Level").GetComponent<TMP_Text>();
+        text_hp = GameObject.FindWithTag("HealthPoint").GetComponent<TMP_Text>();
+        text_mp = GameObject.FindWithTag("ManaPoint").GetComponent<TMP_Text>();
+        text_dame = GameObject.FindWithTag("DMG").GetComponent<TMP_Text>();
+        text_def = GameObject.FindWithTag("DEF").GetComponent<TMP_Text>();
+        baloP.SetActive(false);
+
     }
     private void Update()
     {
@@ -60,6 +72,7 @@ public class PlayerInfor : MonoBehaviour
         UpdateExp();
         UpdateHpMP();
         CheckLevelUp();
+        UpdateInfor();
     }
     void UpdateLevel()
     {
@@ -69,6 +82,13 @@ public class PlayerInfor : MonoBehaviour
     {
         mpbar.fillAmount = manaPoint / maxMP;
         hpbar.fillAmount = healthPoint / maxHP;
+    }
+    void UpdateInfor()
+    {
+        text_hp.text ="HP : "+healthPoint.ToString();
+        text_mp.text = "MP : " + manaPoint.ToString();
+        text_dame.text = "DMG : " + dame.ToString();
+        text_def.text = "DEF : " + def.ToString();
     }
     void UpdateExp()
     {
@@ -194,5 +214,25 @@ public class PlayerInfor : MonoBehaviour
         {
             skillPoint += 3;
         }
+    }
+    public void UpMaxHP(float hp)
+    {
+        maxHP += hp;
+        SaveData() ;
+    }
+    public void UpMaxMP(float mp)
+    {
+        maxMP += mp;
+        SaveData() ;
+    }
+    public void UpDame(int dmg)
+    {
+        dame+= dmg;
+        SaveData();
+    }
+    public void UpDef(int defen)
+    {
+        def+= defen;
+        SaveData();
     }
 }

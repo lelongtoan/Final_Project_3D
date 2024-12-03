@@ -5,9 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "NPCChat")]
 public class NPCChatData : ScriptableObject
 {
-    public string npcName;
-    public Sprite npcImage;
     public string[] npcChat;
-
+    public string[] questNope;
+    public string[] questComplete;
     public Quest quest;
 }
