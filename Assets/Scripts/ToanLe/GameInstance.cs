@@ -88,4 +88,11 @@ public class GameInstance : MonoBehaviour
             gameMenu = FindAnyObjectByType<InGameMenu>();
         }
     }
+    private void Update()
+    {
+        if(playerInfor == null)
+        {
+            playerInfor = FindAnyObjectByType<PlayerInfor>();
+        }
+    }
 }

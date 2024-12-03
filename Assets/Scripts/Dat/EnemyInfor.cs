@@ -76,6 +76,8 @@ public class EnemyInfor : MonoBehaviour
         Vector3 sapwnpoint = transform.position + new Vector3(0, 1, 0);
         GameObject item = Instantiate(orb, sapwnpoint, Quaternion.identity);
         Drop dr = item.GetComponent<Drop>();
+        ItemEnemyDrop itemDrop = GetComponent<ItemEnemyDrop>();
+        itemDrop.Set(dr);
         dr.money = coin;
         dr.exp = exp;
     }

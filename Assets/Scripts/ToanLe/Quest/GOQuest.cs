@@ -52,9 +52,9 @@ public class GOQuest : MonoBehaviour
         {
             qualityRewardText.gameObject.SetActive(false);
         }
-        Debug.Log(idGOQuest.ToString() + " + " + completeGO.activeInHierarchy + " + "
-            + detailQuestGO.text + " + "
-            + quaCountText.text + " + "
-            + qualityRewardText.text + " + ");
+        //Debug.Log(idGOQuest.ToString() + " + " + completeGO.activeInHierarchy + " + "
+        //    + detailQuestGO.text + " + "
+        //    + quaCountText.text + " + "
+        //    + qualityRewardText.text + " + ");
     }
 }

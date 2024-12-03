@@ -20,6 +20,7 @@ MonoBehaviour:
   Dmg: 0
   buffD: 0
   gold: 0
+  rateDrop: 100
   description: 
   buff: 0
   itemSet: 0

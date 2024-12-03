@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class ItemEnemyDrop : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public List<ItemSlot> itemSlots;
+    public void Set(Drop drop)
     {
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        for (int i = 0; i < itemSlots.Count; i++)
+        {
+            float rate = Random.Range(1, 101);
+            if (itemSlots[i].item.rateDrop <= rate) 
+            {
+                ItemSlot slot = new ItemSlot();
+                slot.item = itemSlots[i].item;
+                slot.count = Random.Range(1, itemSlots[i].count);
+                drop.itemSlots.Add(itemSlots[i]);
+            }
+        }
     }
 }

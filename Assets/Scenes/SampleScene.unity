@@ -6406,6 +6406,10 @@ PrefabInstance:
       propertyPath: coin
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 149285960251156676, guid: 0795617cffcd94649b1f18271ee8a637, type: 3}
+      propertyPath: enemyId
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7221070207254559994, guid: 0795617cffcd94649b1f18271ee8a637, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.140835
@@ -6473,7 +6477,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8033777097734366784, guid: 0795617cffcd94649b1f18271ee8a637, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 685386834}
   m_SourcePrefab: {fileID: 100100000, guid: 0795617cffcd94649b1f18271ee8a637, type: 3}
 --- !u!1001 &655229757
 PrefabInstance:
@@ -6832,6 +6839,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 673252316}
   m_CullTransparentMesh: 1
+--- !u!1 &685386826 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8033777097734366784, guid: 0795617cffcd94649b1f18271ee8a637, type: 3}
+  m_PrefabInstance: {fileID: 647714996}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &685386834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685386826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d52dbd587a1171d4ea4ccc0c2700aa9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemSlots:
+  - item: {fileID: 11400000, guid: d05d64d5af733ac4b8400d9f4e9e97de, type: 2}
+    toolDurability: 0
+    count: 5
+  - item: {fileID: 11400000, guid: 81c908a33a925f54394e0ddbc551e807, type: 2}
+    toolDurability: 0
+    count: 5
 --- !u!1 &687088378
 GameObject:
   m_ObjectHideFlags: 0
@@ -10178,6 +10209,7 @@ MonoBehaviour:
   npcChatPanel: {fileID: 235759784}
   infoItem: {fileID: 935386295}
   dragAndDrop: {fileID: 1189557442}
+  gameReportPanel: {fileID: 0}
 --- !u!4 &1033914507
 Transform:
   m_ObjectHideFlags: 0
@@ -18505,7 +18537,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1770967601}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74cbc43262f02574989798aaa835f77e, type: 3}
   m_Name: 
