@@ -9,6 +9,9 @@ using UnityEngine.UI;
 public class EnemyInfor : MonoBehaviour
 {
     public string enemyId;
+    public int level = 1;
+    public int coin = 1;
+    public int exp = 1;
     public int dame = 10;
     public float hp = 100f;
     public float hpcurrent;
@@ -18,6 +21,7 @@ public class EnemyInfor : MonoBehaviour
     public Image hpBar;
     Animator animator;
     public GameObject canvas;
+    public GameObject orb;
     private void Start()
     {
         if (PlayerPrefs.GetInt(enemyId, 0) == 1)
@@ -61,13 +65,20 @@ public class EnemyInfor : MonoBehaviour
         PlayerPrefs.SetInt(enemyId, 1);
         PlayerPrefs.Save();
         animator.SetTrigger("Dead");
-
+        Dropitem();
         GetComponent<Collider>().enabled = false;
         GetComponent<NavMeshAgent>().enabled = false;
         GetComponent<AIEnemy>().enabled = false;
         canvas.SetActive(false);
     }
-
+    void Dropitem()
+    {
+        Vector3 sapwnpoint = transform.position + new Vector3(0, 1, 0);
+        GameObject item = Instantiate(orb, sapwnpoint, Quaternion.identity);
+        Drop dr = item.GetComponent<Drop>();
+        dr.money = coin;
+        dr.exp = exp;
+    }
     public void DestroyEnemy()
     {
         Destroy(gameObject);
