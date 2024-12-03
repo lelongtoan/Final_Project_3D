@@ -70,10 +70,6 @@ public class NPCChat : MonoBehaviour
                 npcData.quest.stateQuest = StateQuest.Completed;
                 Debug.Log("X");
             }
-            else
-            {
-                Debug.Log("XXXX");
-            }
             if (!npcData.quest.isShowQuest)
             {
                 if (npcData != null && currentLine < npcData.npcChat.Length)

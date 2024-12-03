@@ -9,6 +9,7 @@ public class Drop : MonoBehaviour
     public float followDistans = 4f;
     public int money;
     public int exp;
+    public List<ItemSlot> itemSlots;
     void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
@@ -35,7 +36,18 @@ public class Drop : MonoBehaviour
         PlayerInfor inf = player.GetComponent<PlayerInfor>();
         inf.GetMoney(money);
         inf.GetExp(exp);
-        //gọi thêm hàm item vô dây
+        //AddItem(itemSlots);//bỏ note nếu có gameinstance
         Destroy(gameObject);
+    }
+    void AddItem(List<ItemSlot> itemSlots)
+    {
+        for (int i = 0; i < itemSlots.Count; i++)
+        {
+            if(GameInstance.instance.itemContainer.CheckFull())
+            {
+                GameInstance.instance.itemContainer.Add(itemSlots[i].item, itemSlots[i].count);
+                //gọi img
+            }
+        }
     }
 }

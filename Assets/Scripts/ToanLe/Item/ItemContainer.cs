@@ -77,7 +77,7 @@ public class ItemContainer : ScriptableObject
         bool ckeck = slots.Find(c => c.item == null) != null ? true : false;
         if(!ckeck)
         {
-            GameInstance.instance.gameReport.SetReport("Kho Đồ Đã Hết Chỗ ! Gỡ Trang Bị Thất Bại");
+            GameInstance.instance.gameReport.SetReport("Kho Đồ Đã Hết Chỗ !");
         }
         return ckeck;
     }
