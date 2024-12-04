@@ -25,7 +25,7 @@ MonoBehaviour:
     itemShop: {fileID: 11400000, guid: d26709e28ae9faa4abff80569f89e6c2, type: 2}
   - idItem: DBMBWHITE
     nameItem: Bottrang
-    priceItem: 15
+    priceItem: 25
     locked: 0
     itemShop: {fileID: 11400000, guid: d26709e28ae9faa4abff80569f89e6c2, type: 2}
   - idItem: DBMBPURPLE

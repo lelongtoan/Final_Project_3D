@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38b3197e4bb3ab24ea954f0378cf3bf1, type: 3}
+  m_Name: Borin
+  m_EditorClassIdentifier: 
+  npcChat:
+  - "Ch\xE0o ch\xE0ng trai tr\u1EBB! Mu\u1ED1n t\xECm ki\u1EBFm v\u0169 kh\xED m\u1EA1nh
+    m\u1EBD \xE0? \u0110\u1EEBng lo, Borin \u0111\xE2y c\xF3 \u0111\u1EE7 th\u1EE9
+    t\u1EEB c\xE1c lo\u1EA1i cho c\u1EADu l\u1EF1a ch\u1ECDn."
+  - "N\u1EBFu ng\u01B0\u01A1i c\xF3 \u0111\u1EE7 v\xE0ng, ch\xFAng ta c\xF3 th\u1EC3
+    th\u01B0\u01A1ng l\u01B0\u1EE3ng."
+  questNope:
+  - "Kh\xF4ng ti\u1EC1n th\xEC \u0111\u1EEBng m\u01A1 \u0111\u1EBFn v\u0169 kh\xED
+    c\u1EE7a ta! Nh\u01B0ng \u0111\u1EEBng lo, ta s\u1EBD kh\xF4ng qu\xEAn m\u1EB7t
+    ng\u01B0\u01A1i. Quay l\u1EA1i khi ng\u01B0\u01A1i gi\xE0u h\u01A1n nh\xE9!"
+  questComplete:
+  - "M\u1ED9t l\u1EF1a ch\u1ECDn th\xF4ng minh. Ch\xFAc may m\u1EAFn ngo\xE0i kia,
+    nh\xF3c!"
+  quest: {fileID: 0}

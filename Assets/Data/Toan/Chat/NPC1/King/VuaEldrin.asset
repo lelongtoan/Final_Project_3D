@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38b3197e4bb3ab24ea954f0378cf3bf1, type: 3}
+  m_Name: VuaEldrin
+  m_EditorClassIdentifier: 
+  npcChat:
+  - "Kailen, ng\u01B0\u01A1i l\xE0 m\u1ED9t chi\u1EBFn binh tr\u1EBB tu\u1ED5i nh\u01B0ng
+    \u0111\u1EA7y tri\u1EC3n v\u1ECDng. Tin t\u1EE9c v\u1EC1 l\xF2ng d\u0169ng c\u1EA3m
+    v\xE0 t\xE0i n\u0103ng c\u1EE7a ng\u01B0\u01A1i \u0111\xE3 lan \u0111\u1EBFn
+    tai ta."
+  - "Nh\u1EEFng c\xE1nh c\u1ED5ng... ch\xFAng \u0111\xE3 xu\u1EA5t hi\u1EC7n kh\u1EAFp
+    n\u01A1i trong v\u01B0\u01A1ng qu\u1ED1c. T\u1EEB ch\xFAng, qu\xE1i v\u1EADt
+    v\xE0 tai \u01B0\u01A1ng \u1EADp \u0111\u1EBFn, gieo r\u1EAFc n\u1ED7i kinh ho\xE0ng
+    cho th\u1EA7n d\xE2n c\u1EE7a ta. Nhi\u1EC1u chi\u1EBFn binh \u0111\xE3 ng\xE3
+    xu\u1ED1ng, nh\u01B0ng kh\xF4ng ai c\xF3 th\u1EC3 kh\xE1m ph\xE1 ra ngu\u1ED3n
+    g\u1ED1c th\u1EF1c s\u1EF1 c\u1EE7a ch\xFAng."
+  - "Ta tri\u1EC7u ng\u01B0\u01A1i \u0111\u1EBFn v\xEC linh c\u1EA3m r\u1EB1ng ng\u01B0\u01A1i
+    ch\xEDnh l\xE0 ng\u01B0\u1EDDi m\xE0 \u0111\u1ECBnh m\u1EC7nh \u0111\xE3 ch\u1ECDn.
+    Nhi\u1EC7m v\u1EE5 c\u1EE7a ng\u01B0\u01A1i l\xE0 t\xECm hi\u1EC3u b\xED m\u1EADt
+    \u0111\u1EB1ng sau c\xE1c c\xE1nh c\u1ED5ng, thu th\u1EADp th\xF4ng tin, v\xE0
+    n\u1EBFu c\xF3 th\u1EC3, phong \u1EA5n ch\xFAng l\u1EA1i m\xE3i m\xE3i."
+  - "Theo nh\u1EEFng g\xEC ta bi\u1EBFt, ch\xFAng li\xEAn quan \u0111\u1EBFn m\u1ED9t
+    th\u1EBF l\u1EF1c h\u1EAFc \xE1m c\u1ED5 x\u01B0a, m\u1ED9t k\u1EBB mu\u1ED1n
+    th\u1ED1ng tr\u1ECB c\u1EA3 c\xE1c th\u1EBF gi\u1EDBi. Ta e r\u1EB1ng h\u1EAFn
+    \u0111\xE3 ph\xE1 v\u1EE1 ranh gi\u1EDBi gi\u1EEFa c\xE1c kh\xF4ng gian \u0111\u1EC3
+    th\u1EF1c hi\u1EC7n tham v\u1ECDng \u0111i\xEAn r\u1ED3, ch\xFAc ng\u01B0\u01A1i
+    th\xE0nh c\xF4ng."
+  questNope:
+  - "H\xE3y ti\u1EBFp t\u1EE5c cu\u1ED9c h\xE0nh tr\xECnh kh\xE1m ph\xE1 nh\u1EEFng
+    c\xE1nh c\u1ED5ng v\xE0 \u0111em ti\xEAu di\u1EC7t t\xEAn Warrior \u0111\xF3.
+    Sau \u0111\xF3 h\xE3y quay v\u1EC1 \u0111\xE2y"
+  questComplete:
+  - "Kailen, ng\u01B0\u01A1i \u0111\xE3 v\u01B0\u1EE3t qua nh\u1EEFng th\u1EED th\xE1ch
+    kh\xF4ng t\u01B0\u1EDFng, \u0111\u1ED1i \u0111\u1EA7u v\u1EDBi nh\u1EEFng th\u1EBF
+    l\u1EF1c h\u1EAFc \xE1m, v\xE0 tr\u1EA3 l\u1EA1i \xE1nh s\xE1ng cho Guardian.
+    \u0110\xE2y l\xE0 nh\u1EEFng ph\u1EA7n th\u01B0\u1EDFng ng\u01B0\u01A1i x\u1EE9ng
+    \u0111\xE1ng c\xF3 \u0111\u01B0\u1EE3c."
+  quest: {fileID: 0}

@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38b3197e4bb3ab24ea954f0378cf3bf1, type: 3}
+  m_Name: Lyra
+  m_EditorClassIdentifier: 
+  npcChat:
+  - "Kailen, ta nghe r\u1EB1ng ng\u01B0\u01A1i \u0111ang th\u1EF1c hi\u1EC7n nhi\u1EC7m
+    v\u1EE5 b\u1EA3o v\u1EC7 v\u01B0\u01A1ng qu\u1ED1c. N\u1EBFu v\u1EADy, ta c\xF3
+    m\u1ED9t th\u1EED th\xE1ch d\xE0nh cho ng\u01B0\u01A1i."
+  - "\u1EDE \u0111\u01B0\u1EDDng h\u1EA7m b\xED \u1EA9n, c\xF3 m\u1ED9t con qu\xE1i
+    v\u1EADt t\xEAn Warrior. N\xF3 l\xE0 chi\u1EBFn binh x\u01B0\u01A1ng, m\u1ED9t
+    sinh v\u1EADt kh\u1ED5ng l\u1ED3 \u0111\xE3 s\u0103n l\xF9ng v\xE0 gi\u1EBFt
+    h\u1EA1i bao nhi\xEAu chi\u1EBFn binh. N\xF3 r\u1EA5t nguy hi\u1EC3m, nh\u01B0ng
+    n\u1EBFu ng\u01B0\u01A1i ti\xEAu di\u1EC7t \u0111\u01B0\u1EE3c n\xF3, ng\u01B0\u01A1i
+    s\u1EBD c\u1EE9u \u0111\u01B0\u1EE3c r\u1EA5t nhi\u1EC1u ng\u01B0\u1EDDi."
+  - "Warrior ch\u1EC9 xu\u1EA5t hi\u1EC7n \u1EDF khu v\u1EF1c \u0111\u1EB7c bi\u1EC7t,
+    v\xE0 n\xF3 r\u1EA5t nhanh nh\u1EB9n. T\u1ED1t nh\u1EA5t l\xE0 h\xE3y mang theo
+    v\u0169 kh\xED h\u1EA1ng n\u1EB7ng ho\u1EB7c nh\u1EDD m\u1ED9t ng\u01B0\u1EDDi
+    th\u1EE3 r\xE8n gi\xFAp ng\u01B0\u01A1i chu\u1EA9n b\u1ECB. H\xE3y quay l\u1EA1i
+    \u0111\xE2y khi ng\u01B0\u01A1i ho\xE0n th\xE0nh nhi\u1EC7m v\u1EE5."
+  questNope:
+  - "Ti\u1EBFp t\u1EE5c t\xECm ki\u1EBFm v\xE0 ti\xEAu di\u1EC7t t\xEAn Warrior \u0111\xF3."
+  questComplete:
+  - "Ng\u01B0\u01A1i \u0111\xE3 tr\u1EDF v\u1EC1, v\xE0 t\u1EEB v\u1EBB ngo\xE0i
+    c\u1EE7a ng\u01B0\u01A1i, ta \u0111o\xE1n r\u1EB1ng Warrior \u0111\xE3 b\u1ECB
+    h\u1EA1 g\u1EE5c."
+  - "Ng\u01B0\u01A1i \u0111\xE3 ch\u1EE9ng minh \u0111\u01B0\u1EE3c b\u1EA3n l\u0129nh
+    c\u1EE7a m\xECnh. \u0110\xE2y l\xE0 ph\u1EA7n th\u01B0\u1EDFng, m\u1ED9t m\xF3n
+    qu\xE0 t\u1EEB ta v\xE0 ng\u01B0\u1EDDi d\xE2n."
+  quest: {fileID: 0}
