@@ -36,7 +36,7 @@ public class Drop : MonoBehaviour
         PlayerInfor inf = player.GetComponent<PlayerInfor>();
         inf.GetMoney(money);
         inf.GetExp(exp);
-        //AddItem(itemSlots);//bỏ note nếu có gameinstance
+        AddItem(itemSlots);
         Destroy(gameObject);
     }
     void AddItem(List<ItemSlot> itemSlots)
@@ -46,7 +46,7 @@ public class Drop : MonoBehaviour
             if(GameInstance.instance.itemContainer.CheckFull(itemSlots[i].item))
             {
                 GameInstance.instance.itemContainer.Add(itemSlots[i].item, itemSlots[i].count);
-                //gọi img
+                GameInstance.instance.pickUpItem.ShowPickUp(itemSlots[i]);
             }
         }
     }
