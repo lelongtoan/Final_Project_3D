@@ -16,9 +16,9 @@ MonoBehaviour:
   resultCount: 1
   resultItem: {fileID: 11400000, guid: d05d64d5af733ac4b8400d9f4e9e97de, type: 2}
   requiredItems:
-  - item: {fileID: 11400000, guid: 6eda1781bd003e349b2a8cc76e86abe3, type: 2}
+  - item: {fileID: 0}
     toolDurability: 0
-    count: 1
-  - item: {fileID: 11400000, guid: 81c908a33a925f54394e0ddbc551e807, type: 2}
+    count: 0
+  - item: {fileID: 0}
     toolDurability: 0
-    count: 1
+    count: 0

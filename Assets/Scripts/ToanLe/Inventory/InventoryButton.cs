@@ -8,11 +8,28 @@ using UnityEngine.UI;
 public class InventoryButton : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] Image icon;
+    [SerializeField] GameObject quantity;
     [SerializeField] TextMeshProUGUI textQ;
     [SerializeField] Image select;
 
     float NumberToClamp;
     public int myIndex;
+    private void Start()
+    {
+        select.enabled = false;
+        quantity.SetActive(false);
+    }
+    private void Update()
+    {
+        if (GameInstance.instance.itemD.idSelect == myIndex && GameInstance.instance.gameMenu.dragAndDrop.activeInHierarchy)
+        {
+            select.enabled = true;
+        }
+        else
+        {
+            select.enabled = false;
+        }
+    }
     public void SetIndex(int index)
     {
         myIndex = index;
@@ -23,12 +40,8 @@ public class InventoryButton : MonoBehaviour, IPointerClickHandler
         icon.sprite = slot.item.icon;
         if (slot.item.stackable == true)
         {
-            textQ.gameObject.SetActive(true);
+            quantity.SetActive(true);
             textQ.text = slot.count + "";
-        }
-        else
-        {
-            textQ.gameObject.SetActive(false);
         }
     }
     public void Clean()
