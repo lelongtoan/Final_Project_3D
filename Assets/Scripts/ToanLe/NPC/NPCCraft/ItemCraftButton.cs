@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,10 +21,18 @@ public class ItemCraftButton : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
+
         foreach (var itemSlot in craft.requiredItems)
         {
+            List<ItemSlot> listItemSlot = GameInstance.instance.itemManager.inventory.slots.Where(c=>c.item == itemSlot.item).ToList();
+            int count = 0;
+            foreach (var item in listItemSlot)
+            {
+                count += item.count;
+            }
             GameObject newButton = Instantiate(reqItem, content.transform);
             RequiredItem buttonComponent = newButton.GetComponent<RequiredItem>();
+            buttonComponent.count = count;
             buttonComponent.Set(itemSlot.count,itemSlot.item.icon);
         }
 

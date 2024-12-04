@@ -8,10 +8,10 @@ public class RequiredItem : MonoBehaviour
 {
     public TextMeshProUGUI quantity;
     public Image icon;
-    int count; 
+    public int count; 
     public void Set(int sl,Sprite img)
     {
-        quantity.text =count +"/ "+ sl;
+        quantity.text = count +"/ "+ sl;
         if (img != null )
             icon.sprite = img;
     }

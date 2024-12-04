@@ -58,7 +58,7 @@ public class NPCCraft : MonoBehaviour
             {
                 for (int i = 0; i < selectedCraft.requiredItems.Count; i++)
                 {
-                    GameInstance.instance.itemManager.RemoveItem(selectedCraft.requiredItems[i], selectedCraft.requiredItems[i].count);
+                    GameInstance.instance.itemManager.RemoveItemCraft(selectedCraft.requiredItems[i], selectedCraft.requiredItems[i].count);
                 }
                 GameInstance.instance.itemManager.inventory.Add(selectedCraft.resultItem);
                 GameInstance.instance.gameReport.SetReport("Đã Chế Tạo Thành Công " + selectedCraft.resultItem.itemName + ".");

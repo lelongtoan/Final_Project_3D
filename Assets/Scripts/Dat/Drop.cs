@@ -45,7 +45,7 @@ public class Drop : MonoBehaviour
         {
             if(GameInstance.instance.itemContainer.CheckFull(itemSlots[i].item))
             {
-                GameInstance.instance.itemContainer.Add(itemSlots[i].item, itemSlots[i].count);
+                GameInstance.instance.itemContainer.Add(itemSlots[i].item, itemSlots[i].toolDurability);
                 GameInstance.instance.pickUpItem.ShowPickUp(itemSlots[i]);
             }
         }
