@@ -1,9 +1,11 @@
-﻿using Unity.VisualScripting;
+﻿using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class AIEnemy : MonoBehaviour
 {
+
     public Transform[] patrolPoints;
     public float chaseDistance = 10f;
     public float attackDistance = 2f;
@@ -13,7 +15,7 @@ public class AIEnemy : MonoBehaviour
 
     public float maxHP;
     public float curent;
-
+    public EnemyInfor infor;
     public float throwFroce = 10f;
     public float spawnRadius = 1f;
     public Transform player;
@@ -36,8 +38,13 @@ public class AIEnemy : MonoBehaviour
     protected enum State { Patrolling, Chasing, Attacking, Reload }
     protected State currentState;
 
+    public SoundEffect soundEffect;
+    public int dame;
     private void Start()
     {
+        infor = gameObject.GetComponent<EnemyInfor>();
+        dame = infor.dame;
+        soundEffect = FindObjectOfType<SoundEffect>();
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         currentState = State.Patrolling;
@@ -52,6 +59,10 @@ public class AIEnemy : MonoBehaviour
 
     private void Update()
     {
+        if (soundEffect == null)
+        {
+            soundEffect = FindObjectOfType<SoundEffect>();
+        }
         curent = GetComponent<EnemyInfor>().hpcurrent;
         if (player == null)
         {
@@ -89,6 +100,7 @@ public class AIEnemy : MonoBehaviour
                     {
                         AttackPlayer();
                         lastAttackTime = Time.time;
+                        StartCoroutine(WaitToAttack());
                     }
                     if (distanceToPlayer > attackDistance)
                     {
@@ -146,10 +158,13 @@ public class AIEnemy : MonoBehaviour
 
                     if (Time.time > lastAttackTime + attackCooldown)
                     {
+                        int temp = infor.dame;
                         if (distanceToPlayer <= 3f)
                         {
+                            infor.dame = temp / 3 * 2;
                             NormalAttacking();
                             lastAttackTime = Time.time;
+                            StartCoroutine(WaitToAttack());
                         }
                         else if (distanceToPlayer > 3)
                         {
@@ -225,6 +240,7 @@ public class AIEnemy : MonoBehaviour
                             patrolSpeed = 4.5f;
                             FastAttack();
                         }
+                            soundEffect.PlaySound("Warior");
 
                         lastAttackTime = Time.time;
                     }
@@ -237,6 +253,11 @@ public class AIEnemy : MonoBehaviour
         }
 
     }
+    IEnumerator WaitToAttack()
+    {
+        yield return new WaitForSeconds(0.4f);
+        soundEffect.PlaySound("EnemyNormalAttck");
+    }
     protected void Fire()
     {
         gameObject.transform.LookAt(player);
@@ -247,15 +268,22 @@ public class AIEnemy : MonoBehaviour
         if (rid != null)
         {
             rid.velocity = dicrection * bulletspeed;
+            soundEffect.PlaySound("Rouge");
         }
         Destroy(bullet, 5f);
+    }
+    public void SetDameForRouge()
+    {
+        infor.dame = dame;
     }
     protected void Mage()
     {
         if (player == null)
         {
             return;
+
         }
+        soundEffect.PlaySound("Mage");
         gameObject.transform.LookAt (player);
         Vector3 spawnPosittion = player.position;
         GameObject explo = Instantiate(magicBall, spawnPosittion, Quaternion.identity);
@@ -356,12 +384,12 @@ public class AIEnemy : MonoBehaviour
 
     public void SetgoAI()
     {
-        agent.isStopped = false;
+        agent.speed = chaseSpeed;
     }
 
     public void SetstopAI()
     {
-        agent.isStopped = true;
+        agent.speed = 0;
     }
 
     public void EndCollider()

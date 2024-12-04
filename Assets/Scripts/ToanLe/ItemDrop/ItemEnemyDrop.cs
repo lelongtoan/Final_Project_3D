@@ -11,7 +11,7 @@ public class ItemEnemyDrop : MonoBehaviour
         for (int i = 0; i < itemSlots.Count; i++)
         {
             float rate = Random.Range(1, 101);
-            if (itemSlots[i].item.rateDrop <= rate) 
+            if (itemSlots[i].item.rateDrop >= rate) 
             {
                 ItemSlot slot = new ItemSlot();
                 slot.item = itemSlots[i].item;

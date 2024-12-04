@@ -25,7 +25,7 @@ public class MagePoision : MonoBehaviour
     }
     private IEnumerator ApplyDamge()
     {
-        while(inside && player != null)
+        while(inside && player != null && gameObject != null)
         {
             Debug.Log("Trung doc");
             yield return new WaitForSeconds(time);

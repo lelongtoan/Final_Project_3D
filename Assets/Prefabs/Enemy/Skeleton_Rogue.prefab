@@ -1167,7 +1167,7 @@ PrefabInstance:
       addedObject: {fileID: -7139416587280091003}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 585b359cfd35cd0498ab525cdccd6674, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -3120947484110119084}
+      addedObject: {fileID: 7721031838647192443}
   m_SourcePrefab: {fileID: 100100000, guid: 585b359cfd35cd0498ab525cdccd6674, type: 3}
 --- !u!4 &64782795615225376 stripped
 Transform:
@@ -1223,7 +1223,7 @@ MonoBehaviour:
   fadeDuration: 2
   hpBar: {fileID: 7481778389171108774}
   canvas: {fileID: 3801038905201786307}
-  orb: {fileID: 0}
+  orb: {fileID: 3321536212677992701, guid: 164822c20062bc645a4e2b821a108290, type: 3}
 --- !u!136 &671569535933197772
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1326,7 +1326,7 @@ MonoBehaviour:
   magicBall: {fileID: 0}
   coliBall: {fileID: 0}
   ballSpawnHeight: 5
---- !u!114 &-3120947484110119084
+--- !u!114 &7721031838647192443
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1339,9 +1339,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemSlots:
-  - item: {fileID: 0}
+  - item: {fileID: 11400000, guid: 81c908a33a925f54394e0ddbc551e807, type: 2}
     toolDurability: 0
-    count: 0
+    count: 6
 --- !u!4 &7607411360010727141 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7997947301047521070, guid: 585b359cfd35cd0498ab525cdccd6674, type: 3}
