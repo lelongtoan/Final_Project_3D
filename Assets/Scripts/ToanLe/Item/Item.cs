@@ -17,7 +17,7 @@ public enum EQT
 [CreateAssetMenu(menuName = "Data/Item")]
 public class Item : ScriptableObject
 {
-    public int id;
+    public string id;
     public string itemName;
     public bool stackable;
 
