@@ -13,9 +13,9 @@ public class InforShow : MonoBehaviour
     private void OnEnable()
     {
         PlayerInfor pl = GameInstance.instance.playerInfor;
-        hp.text = pl.maxHP.ToString();
-        mp.text = pl.maxMP.ToString();
-        dmg.text = pl.dame.ToString();
-        def.text = pl.def.ToString();
+        hp.text = "HP : "+ pl.maxHP;
+        mp.text = "MP : " + pl.maxMP;
+        dmg.text = "DMG : " + pl.dame;
+        def.text = "DEF : " + pl.def;
     }
 }
