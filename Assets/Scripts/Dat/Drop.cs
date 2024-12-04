@@ -10,9 +10,11 @@ public class Drop : MonoBehaviour
     public int money;
     public int exp;
     public List<ItemSlot> itemSlots;
+    SoundEffect soundEffect;
     void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
+        soundEffect = FindObjectOfType<SoundEffect>();
     }
 
     void Update()
@@ -28,6 +30,7 @@ public class Drop : MonoBehaviour
 
         if (transform.position == player.position)
         {
+            soundEffect.PlaySound("Drop");
             CollectExperience();
         }
     }

@@ -76,8 +76,8 @@ public class PlayerSkill : MonoBehaviour
         lvsk1 = GameObject.FindWithTag("LevelSkill1").GetComponent<TMP_Text>();
         lvsk2 = GameObject.FindWithTag("LevelSkill2").GetComponent<TMP_Text>();
         lvsk3 = GameObject.FindWithTag("LevelSkill3").GetComponent<TMP_Text>();
-        skill1.onClick.AddListener(BuffDameNormal);
-        skill2.onClick.AddListener(ActiveSkill);
+        skill1.onClick.AddListener(ActiveSkill);
+        skill2.onClick.AddListener(BuffDameNormal);
         skill3.onClick.AddListener(SpawmSkillUltimate);
         lvsk1.text = "Lv : " + levelSkill1.ToString();
         lvsk2.text = "Lv : " + levelSkill2.ToString();
