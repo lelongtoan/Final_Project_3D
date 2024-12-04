@@ -21,6 +21,7 @@ public class ItemD : MonoBehaviour
     [SerializeField] GameObject dropGO;
     public static ItemD Instance { get; set; }
 
+    public int idSelect;
     public bool sell;
     public bool equipAble;
     public bool isMoving;
@@ -30,6 +31,7 @@ public class ItemD : MonoBehaviour
     }
     private void Start()
     {
+        idSelect = -1;
         Clear();
     }
     private void Update()
@@ -48,9 +50,10 @@ public class ItemD : MonoBehaviour
         dropGO.SetActive(false);
         itemSlot = new ItemSlot();
     }
-    public void SetItem(ItemSlot itemSlot, int equip = 0)
+    public void SetItem(ItemSlot itemSlot,int id, int equip = 0)
     {
         Clear();
+        idSelect = id;
         this.itemSlot = itemSlot;
         icon.sprite = itemSlot.item.icon;
         tenText.text = itemSlot.item.name;
