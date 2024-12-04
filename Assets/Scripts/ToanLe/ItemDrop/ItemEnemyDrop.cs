@@ -5,6 +5,7 @@ using UnityEngine;
 public class ItemEnemyDrop : MonoBehaviour
 {
     public List<ItemSlot> itemSlots;
+    public int quantity = 1;
     public void Set(Drop drop)
     {
         
@@ -15,7 +16,7 @@ public class ItemEnemyDrop : MonoBehaviour
             {
                 ItemSlot slot = new ItemSlot();
                 slot.item = itemSlots[i].item;
-                slot.count = Random.Range(1, itemSlots[i].count);
+                slot.toolDurability = Random.Range(1, itemSlots[i].count);
                 drop.itemSlots.Add(itemSlots[i]);
             }
         }

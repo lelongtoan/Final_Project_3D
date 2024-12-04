@@ -103,7 +103,12 @@ public class ItemContainer : ScriptableObject
     }
     public bool CheckItemQuantity(Item item,int count)
     {
-        int itemCount = slots.Find(c => c.item == item).count;
+        int itemCount = 0;
+        List<ItemSlot> temp = slots.Where(c => c.item == item).ToList();
+        foreach (ItemSlot slot in temp)
+        {
+            itemCount += slot.count;
+        }
         return count > itemCount ? false : true;
     }
     public void Delete(int id)

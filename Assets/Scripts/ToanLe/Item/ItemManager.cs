@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ItemManager : MonoBehaviour
@@ -95,6 +96,29 @@ public class ItemManager : MonoBehaviour
             if (itemSlot.count <= 0)
             {
                 itemSlot.Clear();
+            }
+        }
+    }
+    public void RemoveItemCraft(ItemSlot itemSlot,int count)
+    {
+        List<ItemSlot> temp = inventory.slots
+        .Where(c => c.item == itemSlot.item && c.count > 0)
+        .OrderBy(c => c.count)
+        .ToList();
+        int remaining = count;
+        foreach (var slot in temp)
+        {
+            if (remaining <= 0) break;
+
+            if (slot.count <= remaining)
+            {
+                remaining -= slot.count;
+                slot.Clear();
+            }
+            else
+            {
+                slot.count -= remaining;
+                remaining = 0;
             }
         }
     }

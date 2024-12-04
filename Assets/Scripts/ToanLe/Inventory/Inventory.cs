@@ -26,7 +26,7 @@ public class Inventory : ItemManager
             if (inventory.slots[id].item != null)
             {
                 GameInstance.instance.gameMenu.SetInfoItem();
-                ItemD.Instance.SetItem(inventory.slots[id]);
+                ItemD.Instance.SetItem(inventory.slots[id],id);
                 Debug.Log("Item Info");
             }
             return;
