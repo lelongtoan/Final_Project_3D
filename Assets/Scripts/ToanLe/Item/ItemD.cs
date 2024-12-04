@@ -107,11 +107,11 @@ public class ItemD : MonoBehaviour
         }
         else if (itemSlot.item.itemSet == ItemSet.Heal)
         {
-            //goi ham HealthR
+            GameInstance.instance.playerInfor.HealthRecovery((int)itemSlot.item.HP);
         }
         else if (itemSlot.item.itemSet == ItemSet.Mana)
         {
-            //goi ham ManaR
+            GameInstance.instance.playerInfor.ManaRecover((int)itemSlot.item.MP);
         }
         else
         {
@@ -121,6 +121,8 @@ public class ItemD : MonoBehaviour
             }
             else
             {
+                GameInstance.instance.playerInfor.HealthRecovery((int)itemSlot.item.HP);
+                GameInstance.instance.playerInfor.ManaRecover((int)itemSlot.item.MP);
 
             }
         }

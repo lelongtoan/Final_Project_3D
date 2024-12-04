@@ -19,6 +19,7 @@ public class GameInstance : MonoBehaviour
     public NPCChat chat;
     public ItemD itemD;
     public ValueSell valueSell;
+    public PickUpItem pickUpItem;
     private void Awake()
     {
         if (instance == null)
@@ -94,6 +95,11 @@ public class GameInstance : MonoBehaviour
         if (valueSell == null)
         {
             valueSell = FindAnyObjectByType<ValueSell>();
+        }
+
+        if (pickUpItem == null)
+        {
+            pickUpItem = FindAnyObjectByType<PickUpItem>();
         }
     }
 }
