@@ -1235,6 +1235,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 02f8179fb2347a9419b34a124c71bc12, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2280416751966527697}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 02f8179fb2347a9419b34a124c71bc12, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -7958933569297573675}
   m_SourcePrefab: {fileID: 100100000, guid: 02f8179fb2347a9419b34a124c71bc12, type: 3}
 --- !u!4 &955527106632504383 stripped
 Transform:
@@ -1285,6 +1288,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyId: 
+  level: 1
+  coin: 1
+  exp: 1
   dame: 10
   hp: 100
   hpcurrent: 0
@@ -1292,6 +1298,7 @@ MonoBehaviour:
   fadeDuration: 2
   hpBar: {fileID: 358027240678960861}
   canvas: {fileID: 7341568651330321886}
+  orb: {fileID: 3321536212677992701, guid: 164822c20062bc645a4e2b821a108290, type: 3}
 --- !u!54 &8178622063208903138
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1354,13 +1361,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patrolPoints: []
-  chaseDistance: 10
+  chaseDistance: 7
   attackDistance: 2
   attackCooldown: 1.5
-  patrolSpeed: 3
-  chaseSpeed: 5
+  patrolSpeed: 2
+  chaseSpeed: 3.5
   maxHP: 0
   curent: 0
+  infor: {fileID: 0}
   throwFroce: 10
   spawnRadius: 1
   player: {fileID: 0}
@@ -1371,6 +1379,8 @@ MonoBehaviour:
   magicBall: {fileID: 0}
   coliBall: {fileID: 0}
   ballSpawnHeight: 5
+  soundEffect: {fileID: 0}
+  dame: 0
 --- !u!136 &2280416751966527697
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1394,3 +1404,19 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &-7958933569297573675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8033777097734366784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d52dbd587a1171d4ea4ccc0c2700aa9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemSlots:
+  - item: {fileID: 11400000, guid: 81c908a33a925f54394e0ddbc551e807, type: 2}
+    toolDurability: 0
+    count: 6

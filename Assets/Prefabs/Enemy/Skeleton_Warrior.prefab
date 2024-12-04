@@ -1151,6 +1151,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7e85f4b39ee4a344f839ef9222ab4317, type: 3}
       insertIndex: -1
       addedObject: {fileID: 711171841849723122}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7e85f4b39ee4a344f839ef9222ab4317, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2109356896622209652}
   m_SourcePrefab: {fileID: 100100000, guid: 7e85f4b39ee4a344f839ef9222ab4317, type: 3}
 --- !u!4 &1406496322256249363 stripped
 Transform:
@@ -1218,6 +1221,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyId: 
+  level: 1
+  coin: 1
+  exp: 1
   dame: 10
   hp: 100
   hpcurrent: 0
@@ -1225,6 +1231,7 @@ MonoBehaviour:
   fadeDuration: 2
   hpBar: {fileID: 4059222979882607835}
   canvas: {fileID: 4994424751042263549}
+  orb: {fileID: 3321536212677992701, guid: 164822c20062bc645a4e2b821a108290, type: 3}
 --- !u!54 &-3022493308021478563
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1305,6 +1312,22 @@ MonoBehaviour:
   magicBall: {fileID: 0}
   coliBall: {fileID: 0}
   ballSpawnHeight: 5
+--- !u!114 &2109356896622209652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787700734209980585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d52dbd587a1171d4ea4ccc0c2700aa9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemSlots:
+  - item: {fileID: 11400000, guid: 81c908a33a925f54394e0ddbc551e807, type: 2}
+    toolDurability: 0
+    count: 6
 --- !u!4 &8858636797622356694 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7997947301047521070, guid: 7e85f4b39ee4a344f839ef9222ab4317, type: 3}

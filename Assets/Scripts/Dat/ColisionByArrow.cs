@@ -6,12 +6,17 @@ public class ColisionByArrow : MonoBehaviour
 {
     public PlayerInfor player;
     public EnemyInfor enemy;
+    SoundEffect soundEffect;
     public int dame = 0;
     private void Start()
     {
     }
     private void Update()
     {
+        if(soundEffect == null)
+        {
+            soundEffect = FindObjectOfType<SoundEffect>();
+        }
         if (enemy == null)
         {
             enemy = GameObject.FindWithTag("RogueEnemy").GetComponent<EnemyInfor>();
@@ -37,6 +42,11 @@ public class ColisionByArrow : MonoBehaviour
 
             if (player != null)
             {
+                if (soundEffect == null)
+                {
+                    soundEffect = FindObjectOfType<SoundEffect>();
+                }
+                soundEffect.PlaySound("Arrow");
                 player.PlayerTakeDame(enemy.dame);
             }
             else

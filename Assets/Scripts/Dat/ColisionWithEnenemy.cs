@@ -30,14 +30,13 @@ public class ColisionWithEnenemy : MonoBehaviour
             {
                 isAttack = true;
                 enemy.EnemyTakeDame(skill.dame3);
-                soundEffect.PlaySound("Attack");
+                soundEffect.PlaySound("EndAttack");
             }
             if (gameObject.CompareTag("AttackNormal"))
             {
                 isAttack = true;
                 enemy.EnemyTakeDame(infor.dame);
                 Debug.Log("Dame");
-                soundEffect.PlaySound("Attack");
             }
             isAttack = false;
         }
