@@ -31,6 +31,7 @@ TagManager:
   - MageEnemy
   - Exp_Text
   - Drop
+  - DeadPanel
   layers:
   - Default
   - TransparentFX

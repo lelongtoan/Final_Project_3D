@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor.Profiling;
 using UnityEngine;
 using UnityEngine.InputSystem.Processors;
 using UnityEngine.UI;
@@ -27,13 +28,10 @@ public class PlayerInfor : MonoBehaviour
     public bool isDead = false;
     Image hpbar;
     Image mpbar;
-    Image Exp_Image;
-    TMP_Text text;
-    public TMP_Text text_hp;
-    public TMP_Text text_mp;
-    public TMP_Text text_dame;
-    public TMP_Text text_def;
+    public Image Exp_Image;
+    public TMP_Text text;
 
+    public GameObject deadPanel;
     float baseXp = 10f;
     public float XPToLevelUp => baseXp * level;
 
@@ -55,23 +53,29 @@ public class PlayerInfor : MonoBehaviour
     }
     private void Start()
     {
-        //baloP = GameObject.Find("BaloPanel");
         hpbar = GameObject.FindWithTag("HPBar").GetComponent<Image>();
         mpbar = GameObject.FindWithTag("MPBar").GetComponent<Image>();
         Exp_Image = GameObject.FindWithTag("EXP").GetComponent<Image>();
         text= GameObject.FindWithTag("Exp_Text").GetComponent<TMP_Text>();
-        //text = GameObject.FindWithTag("Level").GetComponent<TMP_Text>();
-        //text_hp = GameObject.FindWithTag("HealthPoint").GetComponent<TMP_Text>();
-        //text_mp = GameObject.FindWithTag("ManaPoint").GetComponent<TMP_Text>();
-        //text_dame = GameObject.FindWithTag("DMG").GetComponent<TMP_Text>();
-        //text_def = GameObject.FindWithTag("DEF").GetComponent<TMP_Text>();
-        //baloP.SetActive(false);
         isDead = false;
         animator = gameObject.GetComponent<Animator>();
 
     }
     private void Update()
     {
+        if (text == null)
+        {
+            text = GameObject.FindWithTag("Exp_Text").GetComponent<TMP_Text>();
+        }
+        if (Exp_Image == null)
+        {
+            Exp_Image = GameObject.FindWithTag("EXP").GetComponent<Image>();
+        }
+        if(deadPanel == null)
+        {
+            deadPanel = GameObject.FindWithTag("DeadPanel");
+            deadPanel.SetActive(false);
+        }
         UpdateLevel();
         UpdateExp();
         UpdateHpMP();
@@ -88,13 +92,7 @@ public class PlayerInfor : MonoBehaviour
         mpbar.fillAmount = manaPoint / maxMP;
         hpbar.fillAmount = healthPoint / maxHP;
     }
-    void UpdateInfor()
-    {
-        text_hp.text ="HP : "+healthPoint.ToString();
-        text_mp.text = "MP : " + manaPoint.ToString();
-        text_dame.text = "DMG : " + dame.ToString();
-        text_def.text = "DEF : " + def.ToString();
-    }
+    
     void UpdateExp()
     {
         Exp_Image.fillAmount = exp / XPToLevelUp;
@@ -264,7 +262,13 @@ public class PlayerInfor : MonoBehaviour
             GetComponent<ComboAtack>().enabled = false;
             isDead = true;
             animator.SetTrigger("Dead");
+            DeadPanel();
         }
+    }
+    public void DeadPanel()
+    {
+        Time.timeScale = 0f;
+        deadPanel.SetActive(true);
     }
     public void DeadPos()
     {
