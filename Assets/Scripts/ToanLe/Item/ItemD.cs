@@ -21,6 +21,7 @@ public class ItemD : MonoBehaviour
     [SerializeField] GameObject dropGO;
     public static ItemD Instance { get; set; }
 
+    public bool sell;
     public bool equipAble;
     public bool isMoving;
     private void Awake()
@@ -30,6 +31,10 @@ public class ItemD : MonoBehaviour
     private void Start()
     {
         Clear();
+    }
+    private void Update()
+    {
+        sell = GameInstance.instance.gameMenu.buyNPCPanel.activeInHierarchy;
     }
     public void Clear()
     {
@@ -43,22 +48,22 @@ public class ItemD : MonoBehaviour
         dropGO.SetActive(false);
         itemSlot = new ItemSlot();
     }
-    public void SetItem(ItemSlot itemSlot, int equip = 0, int sell = 0)
+    public void SetItem(ItemSlot itemSlot, int equip = 0)
     {
         Clear();
         this.itemSlot = itemSlot;
         icon.sprite = itemSlot.item.icon;
         tenText.text = itemSlot.item.name;
-        textDes.text = itemSlot.item.description;
-        if (equip != 0)
+        textDes.text = itemSlot.item.description; 
+        if (sell)
         {
-            unEquipGo.SetActive(true);
+            sellGo.SetActive(true);
             return;
         }
         else
-        if (sell != 0)
+        if (equip != 0)
         {
-            sellGo.SetActive(true);
+            unEquipGo.SetActive(true);
             return;
         }
         else
@@ -102,11 +107,11 @@ public class ItemD : MonoBehaviour
         }
         else if (itemSlot.item.itemSet == ItemSet.Heal)
         {
-            //goi ham HealthR
+            GameInstance.instance.playerInfor.HealthRecovery((int)itemSlot.item.HP);
         }
         else if (itemSlot.item.itemSet == ItemSet.Mana)
         {
-            //goi ham ManaR
+            GameInstance.instance.playerInfor.ManaRecover((int)itemSlot.item.MP);
         }
         else
         {
@@ -116,6 +121,8 @@ public class ItemD : MonoBehaviour
             }
             else
             {
+                GameInstance.instance.playerInfor.HealthRecovery((int)itemSlot.item.HP);
+                GameInstance.instance.playerInfor.ManaRecover((int)itemSlot.item.MP);
 
             }
         }
@@ -128,7 +135,7 @@ public class ItemD : MonoBehaviour
     }
     public void UnEquipment()
     {
-        if (GameInstance.instance.itemManager.inventory.CheckFull())
+        if (GameInstance.instance.itemManager.inventory.CheckFull(itemSlot.item))
         {
             GameInstance.instance.itemManager.inventory.Add(itemSlot.item);
             this.itemSlot.Clear();
@@ -163,5 +170,11 @@ public class ItemD : MonoBehaviour
     public void DeleteItem()
     {
         this.itemSlot.Clear();
+    }
+    public void SetSell()
+    {
+        ValueSell valueSell = GameInstance.instance.valueSell;
+        GameInstance.instance.playerInfor.GetMoney((int)valueSell.price);
+        GameInstance.instance.itemManager.RemoveItem(itemSlot, valueSell.quantityItem);
     }
 }
