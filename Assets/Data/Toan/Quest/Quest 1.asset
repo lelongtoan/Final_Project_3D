@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Quest 1
   m_EditorClassIdentifier: 
   questId: 1
-  numberInt: 87
+  numberInt: 101
   numberComplete: 1
   questString: 2
   isShowQuest: 1

@@ -43,7 +43,7 @@ public class Drop : MonoBehaviour
     {
         for (int i = 0; i < itemSlots.Count; i++)
         {
-            if(GameInstance.instance.itemContainer.CheckFull())
+            if(GameInstance.instance.itemContainer.CheckFull(itemSlots[i].item))
             {
                 GameInstance.instance.itemContainer.Add(itemSlots[i].item, itemSlots[i].count);
                 //gọi img

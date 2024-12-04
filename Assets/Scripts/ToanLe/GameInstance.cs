@@ -16,7 +16,9 @@ public class GameInstance : MonoBehaviour
     public PlayerInfor playerInfor;
     public GameReport gameReport;
     public InGameMenu gameMenu;
-
+    public NPCChat chat;
+    public ItemD itemD;
+    public ValueSell valueSell;
     private void Awake()
     {
         if (instance == null)
@@ -29,24 +31,15 @@ public class GameInstance : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    private void Start()
+    private void Update()
     {
         if (playerInfor == null)
         {
             playerInfor = FindAnyObjectByType<PlayerInfor>();
-            if (playerInfor == null)
-            {
-                Debug.LogWarning("Không tìm thấy PlayerInfor trong Scene!");
-            }
         }
         if (itemContainer == null)
         {
             itemContainer = FindAnyObjectByType<ItemContainer>();
-            if (itemContainer == null)
-            {
-                Debug.LogWarning("Không tìm thấy ItemContainer trong Scene!");
-            }
         }
         if (itemManager == null)
         {
@@ -87,12 +80,20 @@ public class GameInstance : MonoBehaviour
         {
             gameMenu = FindAnyObjectByType<InGameMenu>();
         }
-    }
-    private void Update()
-    {
-        if(playerInfor == null)
+
+        if (chat == null)
         {
-            playerInfor = FindAnyObjectByType<PlayerInfor>();
+            chat = FindAnyObjectByType<NPCChat>();
+        }
+
+        if (itemD == null)
+        {
+            itemD = FindAnyObjectByType<ItemD>();
+        }
+
+        if (valueSell == null)
+        {
+            valueSell = FindAnyObjectByType<ValueSell>();
         }
     }
 }

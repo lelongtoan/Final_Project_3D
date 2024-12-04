@@ -5,11 +5,10 @@ using UnityEngine;
 [Serializable]
 public class ItemInShop
 {
-    public string idItem;
-    public string nameItem;
+    public Item itemShop;
     public int priceItem;
     public bool locked;
-    public Item itemShop;
+    public Quest questShop;
 }
 [CreateAssetMenu(menuName = "ListItemShop")]
 public class ListItemShop : ScriptableObject

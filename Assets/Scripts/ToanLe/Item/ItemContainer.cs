@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using static UnityEditor.Progress;
 
@@ -33,14 +34,20 @@ public class ItemSlot
 public class ItemContainer : ScriptableObject
 {
     public List<ItemSlot> slots;
-    public void Add(Item item,int toolDurability = 100, int count = 1)
+    public void Add(Item item, int count = 1, int toolDurability = 100)
     {
         if (item.stackable == true)
         {
-            ItemSlot itemSlot = slots.Find(c => c.item == item);
+            ItemSlot itemSlot = slots.Find(c => c.item == item && c.count < 99);
             if (itemSlot != null)
             {
                 itemSlot.count += count;
+                if (itemSlot.count > 99) 
+                {
+                    int temp = itemSlot.count - 99;
+                    itemSlot.count = 99;
+                    Add(item, temp);
+                }
                 Debug.Log("Success");
                 return ;
             }
@@ -71,10 +78,19 @@ public class ItemContainer : ScriptableObject
         }
         Debug.Log("Inventory Full");
     }
-    public bool CheckFull()
+    public bool CheckFull(Item item)
     {
+        bool ckeck = false;
+        ItemSlot itemSlot = slots.Find(c => c.item == item && c.count < 99);
 
-        bool ckeck = slots.Find(c => c.item == null) != null ? true : false;
+        if (itemSlot != null && item.stackable) 
+        {
+            ckeck = true;
+        }
+        else
+        {
+            ckeck = slots.Find(c => c.item == null) != null ? true : false;
+        }
         if(!ckeck)
         {
             GameInstance.instance.gameReport.SetReport("Kho Đồ Đã Hết Chỗ !");
