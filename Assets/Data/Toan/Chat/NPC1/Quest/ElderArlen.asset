@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38b3197e4bb3ab24ea954f0378cf3bf1, type: 3}
+  m_Name: ElderArlen
+  m_EditorClassIdentifier: 
+  npcChat:
+  - "Kailen, ta bi\u1EBFt con l\xE0 ng\u01B0\u1EDDi duy nh\u1EA5t c\xF3 th\u1EC3
+    c\u1EE9u l\u1EA5y ng\xF4i l\xE0ng n\xE0y. Nh\u1EEFng c\xE1nh c\u1ED5ng \u0111\xE3
+    xu\u1EA5t hi\u1EC7n tr\u1EDF l\u1EA1i... \u0111i\u1EC1u m\xE0 ta lo s\u1EE3 su\u1ED1t
+    c\u1EA3 \u0111\u1EDDi nay \u0111\xE3 th\xE0nh s\u1EF1 th\u1EADt."
+  - "Ch\xFAng l\xE0 l\u1ED1i \u0111i gi\u1EEFa c\xE1c th\u1EBF gi\u1EDBi. Nh\u01B0ng
+    gi\u1EDD \u0111\xE2y, ch\xFAng b\u1ECB thao t\xFAng b\u1EDFi m\u1ED9t k\u1EBB
+    nguy hi\u1EC3m. \u0110i t\xECm Tinh Linh C\u1ED5 \u0110\u1EA1i trong r\u1EEBng
+    s\xE2u, b\xE0 \u1EA5y s\u1EBD ch\u1EC9 \u0111\u01B0\u1EDDng cho con."
+  questNope:
+  - "Khi n\xE0o t\xECm th\u1EA5y b\u1ED9t \u0111\u1ECF th\xEC h\xE3y quay l\u1EA1i
+    t\xECm ta nh\xE9."
+  questComplete:
+  - "Con \u0111\xE3 l\xE0m t\u1ED1t l\u1EAFm, Kailen. \u0110\xE2y ch\u1EC9 l\xE0
+    kh\u1EDFi \u0111\u1EA7u. C\xE1nh C\u1ED5ng B\xF3ng T\u1ED1i \u0111ang \u0111\u1EE3i
+    con ph\xEDa tr\u01B0\u1EDBc. H\xE3y chu\u1EA9n b\u1ECB k\u1EF9 c\xE0ng!"
+  quest: {fileID: 0}
