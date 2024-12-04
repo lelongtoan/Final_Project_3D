@@ -22,7 +22,7 @@ public class LoadScnen : MonoBehaviour
                 inf.dame = player.dame;
             }
             gameObject.GetComponent<PlayerInfor>().SaveData();
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
     }
 }
