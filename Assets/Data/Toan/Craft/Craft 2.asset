@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40abad5b0bd37894fa7585439dd7a1dd, type: 3}
   m_Name: Craft 2
   m_EditorClassIdentifier: 
-  requiredItems: []
-  resultItem: {fileID: 0}
+  nameCraft: 
   resultCount: 0
+  resultItem: {fileID: 11400000, guid: 98e40597a7d10f949a89170ae3752626, type: 2}
+  requiredItems:
+  - item: {fileID: 11400000, guid: 81c908a33a925f54394e0ddbc551e807, type: 2}
+    toolDurability: 0
+    count: 1
+  - item: {fileID: 11400000, guid: 81c908a33a925f54394e0ddbc551e807, type: 2}
+    toolDurability: 0
+    count: 1

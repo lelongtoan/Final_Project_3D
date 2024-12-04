@@ -1316,6 +1316,7 @@ MonoBehaviour:
   chaseSpeed: 4
   maxHP: 0
   curent: 0
+  infor: {fileID: 0}
   throwFroce: 10
   spawnRadius: 1
   player: {fileID: 0}
@@ -1326,6 +1327,8 @@ MonoBehaviour:
   magicBall: {fileID: 0}
   coliBall: {fileID: 0}
   ballSpawnHeight: 5
+  soundEffect: {fileID: 0}
+  dame: 0
 --- !u!114 &7721031838647192443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1342,6 +1345,7 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: 81c908a33a925f54394e0ddbc551e807, type: 2}
     toolDurability: 0
     count: 6
+  quantity: 1
 --- !u!4 &7607411360010727141 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7997947301047521070, guid: 585b359cfd35cd0498ab525cdccd6674, type: 3}

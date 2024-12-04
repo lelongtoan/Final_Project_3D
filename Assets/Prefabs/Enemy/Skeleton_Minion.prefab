@@ -1420,3 +1420,4 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: 81c908a33a925f54394e0ddbc551e807, type: 2}
     toolDurability: 0
     count: 6
+  quantity: 1
