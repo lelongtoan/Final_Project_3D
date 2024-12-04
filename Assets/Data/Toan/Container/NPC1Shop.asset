@@ -13,23 +13,23 @@ MonoBehaviour:
   m_Name: NPC1Shop
   m_EditorClassIdentifier: 
   itemsInShop:
-  - nameItem: Item1
+  - itemShop: {fileID: 11400000, guid: 81c908a33a925f54394e0ddbc551e807, type: 2}
     priceItem: 500
-    locked: 1
-    itemShop: {fileID: 11400000, guid: 81c908a33a925f54394e0ddbc551e807, type: 2}
-  - nameItem: Item2
+    locked: 0
+    questShop: {fileID: 11400000, guid: 28d7d40c5a2a1dd48b0c4f58bac975e6, type: 2}
+  - itemShop: {fileID: 11400000, guid: 81c908a33a925f54394e0ddbc551e807, type: 2}
     priceItem: 555
     locked: 1
-    itemShop: {fileID: 11400000, guid: 81c908a33a925f54394e0ddbc551e807, type: 2}
-  - nameItem: Item3
+    questShop: {fileID: 0}
+  - itemShop: {fileID: 11400000, guid: 81c908a33a925f54394e0ddbc551e807, type: 2}
     priceItem: 111
     locked: 0
-    itemShop: {fileID: 11400000, guid: 81c908a33a925f54394e0ddbc551e807, type: 2}
-  - nameItem: Item4
+    questShop: {fileID: 0}
+  - itemShop: {fileID: 11400000, guid: 81c908a33a925f54394e0ddbc551e807, type: 2}
     priceItem: 123
     locked: 0
-    itemShop: {fileID: 11400000, guid: 81c908a33a925f54394e0ddbc551e807, type: 2}
-  - nameItem: Item5
+    questShop: {fileID: 0}
+  - itemShop: {fileID: 11400000, guid: 81c908a33a925f54394e0ddbc551e807, type: 2}
     priceItem: 15125
     locked: 1
-    itemShop: {fileID: 11400000, guid: 81c908a33a925f54394e0ddbc551e807, type: 2}
+    questShop: {fileID: 0}

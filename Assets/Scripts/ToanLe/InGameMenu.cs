@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class InGameMenu : MonoBehaviour
 {
-    [SerializeField] GameObject characterPanel;
-    [SerializeField] GameObject questPanel;
-    [SerializeField] GameObject gameOver;
+    [SerializeField] public GameObject characterPanel;
+    [SerializeField] public GameObject questPanel;
+    [SerializeField] public GameObject gameOver;
     [Header("NPC")]
-    [SerializeField] GameObject npcPanel;
-    [SerializeField] GameObject shopNPCPanel;
-    [SerializeField] GameObject buyNPCPanel;
-    [SerializeField] GameObject craftNPCPanel;
-    [SerializeField] GameObject npcChatPanel;
+    [SerializeField] public GameObject npcPanel;
+    [SerializeField] public GameObject shopNPCPanel;
+    [SerializeField] public GameObject buyNPCPanel;
+    [SerializeField] public GameObject craftNPCPanel;
+    [SerializeField] public GameObject npcChatPanel;
 
     [Header("Iventory")]
-    [SerializeField] GameObject infoItem;
-    [SerializeField] GameObject dragAndDrop;
+    [SerializeField] public GameObject infoItem;
+    [SerializeField] public GameObject dragAndDrop;
     [Header("Game Report")]
-    [SerializeField] GameObject gameReportPanel;
+    [SerializeField] public GameObject gameReportPanel;
     public void SetGameReport()
     {
         gameReportPanel.SetActive(!gameReportPanel.activeInHierarchy);

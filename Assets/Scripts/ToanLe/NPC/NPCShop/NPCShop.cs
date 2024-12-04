@@ -53,11 +53,11 @@ public class NPCShop : MonoBehaviour
         {
             if (PlayerInfor.Instance.money >= selectedItem.priceItem)
             {
-                if (GameInstance.instance.itemManager.inventory.CheckFull())
+                if (GameInstance.instance.itemManager.inventory.CheckFull(selectedItem.itemShop))
                 {
                     GameInstance.instance.itemManager.inventory.Add(selectedItem.itemShop, 1);
                     PlayerInfor.Instance.GetMoney(selectedItem.priceItem);
-                    GameInstance.instance.gameReport.SetReport($"Bạn đã chọn mua {selectedItem.nameItem} với giá {selectedItem.priceItem} vàng!");
+                    GameInstance.instance.gameReport.SetReport($"Bạn đã mua {selectedItem.itemShop.itemName} với giá {selectedItem.priceItem} vàng!");
                 }
             }
             else

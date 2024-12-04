@@ -89,13 +89,12 @@ public class ItemManager : MonoBehaviour
     }
     public void RemoveItem(ItemSlot itemSlot,int count)
     {
-        ItemSlot temp = inventory.slots.Find(c => c.item == itemSlot.item);
-        if(temp !=null)
+        if(itemSlot != null)
         {
-            temp.count -= count;
-            if (temp.count <= 0)
+            itemSlot.count -= count;
+            if (itemSlot.count <= 0)
             {
-                temp.Clear();
+                itemSlot.Clear();
             }
         }
     }

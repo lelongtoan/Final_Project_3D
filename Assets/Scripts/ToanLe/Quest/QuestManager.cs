@@ -40,9 +40,13 @@ public class QuestManager : MonoBehaviour
         }
         if(itemSlot.count >= quest.numberComplete)
         {
-            itemContainer.RemoveItem(itemSlot, quest.numberComplete);
             return true;
         }
         return false;
+    }
+    public void RemoveItemQuest(Quest quest)
+    {
+        ItemSlot itemSlot = itemContainer.inventory.slots.Find(c => c.item == quest.itemCheck);
+        itemContainer.RemoveItem(itemSlot, quest.numberComplete);
     }
 }

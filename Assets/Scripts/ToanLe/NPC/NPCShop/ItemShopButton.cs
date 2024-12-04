@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class ItemShopButton : MonoBehaviour
 {
     public TextMeshProUGUI itemNameText; 
+    public TextMeshProUGUI itemDes; 
     public TextMeshProUGUI itemPriceText; 
     public Image itemImage;
     public TextMeshProUGUI buyText;
@@ -14,9 +15,9 @@ public class ItemShopButton : MonoBehaviour
     public void Set(ItemInShop item)
     {
         gameObject.SetActive(true);
-        itemNameText.text = item.nameItem;
+        itemNameText.text = item.itemShop.itemName;
         itemPriceText.text = $"{item.priceItem}";
-
+        itemDes.text = item.itemShop.description;
         if (item.itemShop != null && item.itemShop.icon != null)
         {
             itemImage.sprite = item.itemShop.icon;
@@ -26,7 +27,10 @@ public class ItemShopButton : MonoBehaviour
         {
             itemImage.enabled = false;
         }
-
+        if (item.questShop != null && item.questShop.stateQuest == StateQuest.Taked)
+        {
+            item.locked = false;
+        }
         if (item.locked)
         {
             buyText.text = "Lock";

@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Quest
   m_EditorClassIdentifier: 
   questId: 0
-  numberInt: 0
+  numberInt: 101
   numberComplete: 1
   questString: 1
   isShowQuest: 1
-  stateQuest: 1
+  stateQuest: 2
   isCoin: 0
   exp: 0
   isStack: 1

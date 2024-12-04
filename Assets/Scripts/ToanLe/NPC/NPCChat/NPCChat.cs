@@ -16,10 +16,7 @@ public class NPCChat : MonoBehaviour
     public int currentLine = 0;
     private void Start()
     {
-        
-        currentLine = 0;
-        ShowDialogueLine();
-
+        SetCurrentChat();
     }
     public void SetCurrentChat()
     {
@@ -44,8 +41,6 @@ public class NPCChat : MonoBehaviour
     }
     public void ShowDialogueLine()
     {
-        SetCurrentChat();
-        SetInfo();
         Debug.Log("Chat Index :"+currentChatIndex
             +" Line : "+currentLine);
         if (currentChatIndex >= npcChats.list.Count)
@@ -63,13 +58,6 @@ public class NPCChat : MonoBehaviour
         else
         {
             NPCChatData npcData = npcChats.list[currentChatIndex];
-            if (GameInstance.instance.questManager.CheckQuest(npcData.quest) 
-                && npcData.quest.isShowQuest == true
-                && npcData.quest.stateQuest == StateQuest.Nope)
-            {
-                npcData.quest.stateQuest = StateQuest.Completed;
-                Debug.Log("X");
-            }
             if (!npcData.quest.isShowQuest)
             {
                 if (npcData != null && currentLine < npcData.npcChat.Length)
@@ -100,6 +88,9 @@ public class NPCChat : MonoBehaviour
                 }
                 else
                 {
+                    GameInstance.instance.playerInfor.GetExp(npcData.quest.exp);
+                    GameInstance.instance.playerInfor.GetMoney(npcData.quest.isCoin);
+
                     npcData.quest.stateQuest = StateQuest.Taked;
                     EndChat();
                 }
