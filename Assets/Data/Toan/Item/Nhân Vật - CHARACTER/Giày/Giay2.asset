@@ -12,16 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d690ab03900124439ed5e618aa451db, type: 3}
   m_Name: Giay2
   m_EditorClassIdentifier: 
-  itemID: ICGIAY02
+  id: 
   itemName: Giay2
   stackable: 0
   HP: 30
   MP: 0
   Dmg: 0
-  buff: 0
   buffD: 0
   gold: 0
-  canShow: 0
+  rateDrop: 0
   description: 
+  buff: 0
   itemSet: 1
+  itemType: 6
   icon: {fileID: 1900141189, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}

@@ -14,5 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameCraft: 1234
   resultCount: 1
-  resultItem: {fileID: 0}
-  requiredItems: []
+  resultItem: {fileID: 11400000, guid: 935a56a020eb978449142f6c89e53132, type: 2}
+  requiredItems:
+  - item: {fileID: 11400000, guid: 81c908a33a925f54394e0ddbc551e807, type: 2}
+    toolDurability: 0
+    count: 1
+  - item: {fileID: 11400000, guid: 81c908a33a925f54394e0ddbc551e807, type: 2}
+    toolDurability: 0
+    count: 1
