@@ -22,9 +22,9 @@ public class ItemCraftButton : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        foreach (var itemSlot in craft.requiredItems)
+        foreach (ItemSlot itemSlot in craft.requiredItems)
         {
-            List<ItemSlot> listItemSlot = GameInstance.instance.itemManager.inventory.slots.Where(c=>c.item == itemSlot.item).ToList();
+            List<ItemSlot> listItemSlot = GameInstance.instance.itemManager.inventory.slots.Where(c => c.item == itemSlot.item).ToList();
             int count = 0;
             foreach (var item in listItemSlot)
             {

@@ -4195,6 +4195,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5706663542296444550}
+  - component: {fileID: 3301198204541395753}
   m_Layer: 5
   m_Name: Craft
   m_TagString: Untagged
@@ -4223,6 +4224,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &3301198204541395753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096990200186872808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3abead398e2b86c45a1ec0557e51e1d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  craftInventory: {fileID: 11400000, guid: 34ca9385dde7b9c45b5f23e66833c470, type: 2}
+  buttons: []
+  buttonCraftPrefab: {fileID: 873012411390619544, guid: 5d1d1c22bc265a34e972c3d2ae089a1c, type: 3}
+  content: {fileID: 8857953053512504147}
 --- !u!1 &2177309871095797844
 GameObject:
   m_ObjectHideFlags: 0
@@ -9330,6 +9347,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 263109605885245279}
+  - component: {fileID: 2460419111019539745}
   m_Layer: 5
   m_Name: Buy
   m_TagString: Untagged
@@ -9358,6 +9376,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2460419111019539745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3618057856434027277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 411e42cd543a41f45a5b08edf73f318b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopInventory: {fileID: 11400000, guid: a517f11acb2dbf744b7fa53564fc9d3e, type: 2}
+  buttons: []
+  buttonItemShop: {fileID: 7416872198187331131, guid: 2fe7e6adf008c404ebd4309e8a67c145, type: 3}
+  content: {fileID: 241436176054420519}
 --- !u!1 &3654737405208480439
 GameObject:
   m_ObjectHideFlags: 0
@@ -14890,7 +14924,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -51}
-  m_SizeDelta: {x: 80, y: 35}
+  m_SizeDelta: {x: 100, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4079016388448589708
 CanvasRenderer:
@@ -16056,8 +16090,6 @@ GameObject:
   - component: {fileID: 250125621326564514}
   - component: {fileID: 7155450704697498446}
   - component: {fileID: 8219190260800663234}
-  - component: {fileID: 3872986297467435798}
-  - component: {fileID: 8182628642831335464}
   - component: {fileID: 8751885013935418879}
   m_Layer: 5
   m_Name: NPCPanel
@@ -16126,38 +16158,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3872986297467435798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6384528707973478446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 411e42cd543a41f45a5b08edf73f318b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shopInventory: {fileID: 11400000, guid: a517f11acb2dbf744b7fa53564fc9d3e, type: 2}
-  buttons: []
-  buttonItemShop: {fileID: 7416872198187331131, guid: 2fe7e6adf008c404ebd4309e8a67c145, type: 3}
-  content: {fileID: 241436176054420519}
---- !u!114 &8182628642831335464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6384528707973478446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3abead398e2b86c45a1ec0557e51e1d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  craftInventory: {fileID: 11400000, guid: 34ca9385dde7b9c45b5f23e66833c470, type: 2}
-  buttons: []
-  buttonCraftPrefab: {fileID: 873012411390619544, guid: 5d1d1c22bc265a34e972c3d2ae089a1c, type: 3}
-  content: {fileID: 8857953053512504147}
 --- !u!114 &8751885013935418879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18127,6 +18127,7 @@ MonoBehaviour:
   unStackGO: {fileID: 4796354567529450308}
   moveGO: {fileID: 1380834115394169248}
   dropGO: {fileID: 3147006243616175829}
+  idSelect: 0
   sell: 0
   equipAble: 0
   isMoving: 0
@@ -18196,9 +18197,9 @@ MonoBehaviour:
   itemManager: {fileID: 6740211258939209432}
   buffManager: {fileID: 7652394785318142819}
   equipmentGenerator: {fileID: 11400000, guid: efc68d7b58a3562458041f291fa1b319, type: 2}
-  npcShop: {fileID: 3872986297467435798}
+  npcShop: {fileID: 0}
   questManager: {fileID: 4332812791351096294}
-  npcCraft: {fileID: 8182628642831335464}
+  npcCraft: {fileID: 0}
   playerInfor: {fileID: 0}
   gameReport: {fileID: 7968659244251749483}
   gameMenu: {fileID: 4259210875758939407}
@@ -25939,7 +25940,7 @@ PrefabInstance:
     - target: {fileID: 8748283345359245963, guid: 25237e2e1bd5c4949950d7a7c5a84c3d, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: eeb5a1346cc816447a895ae12990519c, type: 3}
+      objectReference: {fileID: 21300000, guid: 4f033cdd2b09f9a43b139729d09d002c, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
