@@ -11,7 +11,7 @@ public class RequiredItem : MonoBehaviour
     public int count; 
     public void Set(int sl,Sprite img)
     {
-        quantity.text = count +"/ "+ sl;
+        quantity.text = count +"/"+ sl;
         if (img != null )
             icon.sprite = img;
     }

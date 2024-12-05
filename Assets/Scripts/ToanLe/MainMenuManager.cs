@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MainMenuManager : MonoBehaviour
 {
+    public static MainMenuManager Instance;
     [SerializeField] GameObject mainMenu;
     [SerializeField] GameObject characterMenu;
     [SerializeField] GameObject perkMenu;
@@ -16,15 +17,21 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] GameObject languageMenu;
     [SerializeField] GameObject startGameMenu;
     [SerializeField] GameObject newCharMenu;
+    [Header("Detail")]
+    [SerializeField] GameObject skillNodeDetail;
 
-    void Start()
+    private void Awake()
     {
-        
+        Instance = this;
     }
 
     void Update()
     {
         
+    }
+    public void SetSkillNodeDetail()
+    {
+        skillNodeDetail.SetActive(!skillNodeDetail.activeInHierarchy);
     }
     public void SetMainMenu()
     {
