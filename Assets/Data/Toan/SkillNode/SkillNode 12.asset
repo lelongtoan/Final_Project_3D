@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81aa03357c0454d4c8c635d997863668, type: 3}
+  m_Name: SkillNode 12
+  m_EditorClassIdentifier: 
+  icon: {fileID: -895623538, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
+  nameSkillNode: "T\u0103ng M\xE1u II"
+  description: "T\u0103ng 5 M\xE1u"
+  hp: 5
+  mp: 0
+  dmg: 0
+  def: 0
+  gold: 100
+  diamond: 0
+  listNextSkillNode:
+  - {fileID: 11400000, guid: a3cbe77afebf9884aa9c362c51c9e2ce, type: 2}
+  - {fileID: 11400000, guid: 9910d4cd1794e21419d914bc335efd3d, type: 2}
+  - {fileID: 11400000, guid: 77391a80cd29e1645a3962b0942016dd, type: 2}
+  state: 0

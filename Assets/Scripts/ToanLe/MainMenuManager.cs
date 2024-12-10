@@ -1,10 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class MainMenuManager : MonoBehaviour
 {
     public static MainMenuManager Instance;
+    [Header("Infor")]
+    [SerializeField] TextMeshProUGUI moneyText;
+    [SerializeField] TextMeshProUGUI diamondText;
+
+    [Header("Panel")]
     [SerializeField] GameObject mainMenu;
     [SerializeField] GameObject characterMenu;
     [SerializeField] GameObject perkMenu;
@@ -17,6 +23,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] GameObject languageMenu;
     [SerializeField] GameObject startGameMenu;
     [SerializeField] GameObject newCharMenu;
+    [SerializeField] GameObject checkInMenu;
     [Header("Detail")]
     [SerializeField] GameObject skillNodeDetail;
 
@@ -27,7 +34,12 @@ public class MainMenuManager : MonoBehaviour
 
     void Update()
     {
-        
+        moneyText.text = MainMenuInstance.instance.inforMenu.money.ToString();
+        diamondText.text = MainMenuInstance.instance.inforMenu.diamond.ToString();
+    }
+    public void SetCheckInMenu()
+    {
+        checkInMenu.SetActive(!checkInMenu.activeInHierarchy);
     }
     public void SetSkillNodeDetail()
     {
