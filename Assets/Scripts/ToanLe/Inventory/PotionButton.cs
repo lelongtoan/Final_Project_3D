@@ -9,10 +9,12 @@ public class PotionButton : MonoBehaviour
     public bool healingPotion;
     public TextMeshProUGUI countText;
     public int countItem;
+    SoundEffect sound;
     void Start()
     {
         countItem = 0;
         SetItemCount();
+        sound = FindObjectOfType<SoundEffect>();
     }
 
     // Update is called once per frame
@@ -31,6 +33,7 @@ public class PotionButton : MonoBehaviour
                 ItemD.Instance.itemSlot = inventory.slots[i];
                 ItemD.Instance.UseItem(inventory.slots[i]);
                 SetItemCount();
+                sound.PlaySound("Drink");
                 return;
             }
             else if (!healingPotion && inventory.slots[i].item.itemSet == ItemSet.Mana)
@@ -38,6 +41,7 @@ public class PotionButton : MonoBehaviour
                 ItemD.Instance.itemSlot = inventory.slots[i];
                 ItemD.Instance.UseItem(inventory.slots[i]);
                 SetItemCount();
+                sound.PlaySound("Drink");
                 return;
             }
         }

@@ -1725,6 +1725,26 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: fb41f79f43fbdec4287ce02849a455fe, type: 3}
   - name: Drop
     clip: {fileID: 8300000, guid: 072a4581362ccdd4181d02e20d764196, type: 3}
+  - name: Bag
+    clip: {fileID: 8300000, guid: 2ad53cad3c6a8c84aafd5bc1f1ad3867, type: 3}
+  - name: Button
+    clip: {fileID: 8300000, guid: a9fce917ea4d8bb40b4b7ab929d84ed6, type: 3}
+  - name: Buy
+    clip: {fileID: 8300000, guid: 572729f580e5b9344bbf79b2e9a5d517, type: 3}
+  - name: Cloth
+    clip: {fileID: 8300000, guid: 0038a6bb217641c4a88b6dda73797371, type: 3}
+  - name: Complete
+    clip: {fileID: 8300000, guid: 65d164b785bd705418d086414e953c47, type: 3}
+  - name: Craft
+    clip: {fileID: 8300000, guid: 35d3e3012e98caf4bb30805dc263ee98, type: 3}
+  - name: Drink
+    clip: {fileID: 8300000, guid: 778fe61d8bad02141963c46c77f756bb, type: 3}
+  - name: Quest
+    clip: {fileID: 8300000, guid: 8dfb0da7f28d65545bf683e2a929ab43, type: 3}
+  - name: Sell
+    clip: {fileID: 8300000, guid: 4ebafa72f84e7864eaa44321510a4537, type: 3}
+  - name: SoundDungeon
+    clip: {fileID: 8300000, guid: 827376f2c346e8e489fbee9ca54a25bc, type: 3}
   audioSource: {fileID: 0}
 --- !u!114 &2714658418295945862
 MonoBehaviour:
@@ -1748,10 +1768,10 @@ MonoBehaviour:
   level: 1
   exp: 0
   money: 0
-  skillPoint: 0
   isDead: 0
   Exp_Image: {fileID: 0}
   text: {fileID: 0}
+  parent: {fileID: 0}
   deadPanel: {fileID: 37135910088586535}
 --- !u!114 &959833306431311766
 MonoBehaviour:

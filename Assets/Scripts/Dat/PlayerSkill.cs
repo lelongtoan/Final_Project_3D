@@ -76,6 +76,7 @@ public class PlayerSkill : MonoBehaviour
         lvsk1 = GameObject.FindWithTag("LevelSkill1").GetComponent<TMP_Text>();
         lvsk2 = GameObject.FindWithTag("LevelSkill2").GetComponent<TMP_Text>();
         lvsk3 = GameObject.FindWithTag("LevelSkill3").GetComponent<TMP_Text>();
+        LoadSkill();
         skill1.onClick.AddListener(ActiveSkill);
         skill2.onClick.AddListener(BuffDameNormal);
         skill3.onClick.AddListener(SpawmSkillUltimate);
@@ -88,7 +89,6 @@ public class PlayerSkill : MonoBehaviour
         soundEffect = FindObjectOfType<SoundEffect>();
         comboAtack = GetComponent<ComboAtack>();
         dame = playerInfor.dame;
-        LoadSkill();
     }
     void Update()
     {
@@ -97,17 +97,6 @@ public class PlayerSkill : MonoBehaviour
         if (activeSkill)
         {
             RotateSwords();
-        }
-        pointSkill = gameObject.GetComponent<PlayerInfor>().skillPoint;
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            UpdateSkill(1);
-        }if (Input.GetKeyDown(KeyCode.H))
-        {
-            UpdateSkill(2);
-        }if (Input.GetKeyDown(KeyCode.B))
-        {
-            UpdateSkill(3);
         }
     }
 
@@ -336,7 +325,6 @@ public class PlayerSkill : MonoBehaviour
         }
         else if (pointSkill >= 1)
         {
-            playerInfor.skillPoint -= 1;
             if (skillName == 1)
             {
                 UpdateSkill1();
@@ -375,7 +363,7 @@ public class PlayerSkill : MonoBehaviour
             Debug.Log("Nang capp 1 thanh cong");
         }
         lvsk1.text = "Lv : " + levelSkill1.ToString();
-
+        SaveSkill();
     }
     public void UpdateSkill2()
     {
@@ -393,7 +381,7 @@ public class PlayerSkill : MonoBehaviour
             Debug.Log("Nang capp 2 thanh cong");
         }
         lvsk2.text = "Lv : " + levelSkill2.ToString();
-
+        SaveSkill();
     }
     public void UpdateSkill3()
     {
@@ -411,6 +399,6 @@ public class PlayerSkill : MonoBehaviour
             Debug.Log("Nang capp 1 thanh cong");
         }
         lvsk3.text = "Lv : " + levelSkill3.ToString();
-
+        SaveSkill();
     }
 }
