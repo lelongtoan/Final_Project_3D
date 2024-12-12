@@ -19,6 +19,12 @@ public class InGameMenu : MonoBehaviour
     [SerializeField] public GameObject dragAndDrop;
     [Header("Game Report")]
     [SerializeField] public GameObject gameReportPanel;
+    SoundEffect sound;
+
+    private void Start()
+    {
+        sound = FindObjectOfType<SoundEffect>();
+    }
     public void SetGameReport()
     {
         gameReportPanel.SetActive(!gameReportPanel.activeInHierarchy);
@@ -26,6 +32,7 @@ public class InGameMenu : MonoBehaviour
     public void SetCharPanel()
     {
         characterPanel.SetActive(!characterPanel.activeInHierarchy);
+        sound.PlaySound("Bag");
     }
     public void SetShopPanel()
     {

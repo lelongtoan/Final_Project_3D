@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 4732248115097294259}
   m_Layer: 5
   m_Name: Mana1
-  m_TagString: LevelSkill1
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15882,7 +15882,7 @@ GameObject:
   - component: {fileID: 8312089969176424778}
   m_Layer: 5
   m_Name: LevelSkill2
-  m_TagString: LevelSkill1
+  m_TagString: LevelSkill2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20983,7 +20983,7 @@ GameObject:
   - component: {fileID: 9173732723806061792}
   m_Layer: 5
   m_Name: LevelSkill3
-  m_TagString: LevelSkill1
+  m_TagString: LevelSkill3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

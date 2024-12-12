@@ -23,7 +23,6 @@ public class PlayerInfor : MonoBehaviour
     public int level = 1;
     public float exp = 0;
     public int money = 0;
-    public int skillPoint = 0;
     Animator animator;
     public bool isDead = false;
     Image hpbar;
@@ -31,6 +30,7 @@ public class PlayerInfor : MonoBehaviour
     public Image Exp_Image;
     public TMP_Text text;
 
+    public Transform parent;
     public GameObject deadPanel;
     float baseXp = 10f;
     public float XPToLevelUp => baseXp * level;
@@ -59,7 +59,8 @@ public class PlayerInfor : MonoBehaviour
         text= GameObject.FindWithTag("Exp_Text").GetComponent<TMP_Text>();
         isDead = false;
         animator = gameObject.GetComponent<Animator>();
-
+        parent = GameObject.Find("UIGame").transform;
+        deadPanel = parent.Find("GameOver").gameObject;
     }
     private void Update()
     {
@@ -73,7 +74,7 @@ public class PlayerInfor : MonoBehaviour
         }
         if(deadPanel == null)
         {
-            deadPanel = GameObject.FindWithTag("DeadPanel");
+            deadPanel = GameObject.Find("GameOver");
             deadPanel.SetActive(false);
         }
         UpdateLevel();
@@ -110,7 +111,6 @@ public class PlayerInfor : MonoBehaviour
             exp = PlayerPrefs.GetFloat("EXP");
             dame = PlayerPrefs.GetInt("Dame");
             def = PlayerPrefs.GetInt("Def");
-            skillPoint = PlayerPrefs.GetInt("SkillP");
         }
         else
         {
@@ -121,7 +121,6 @@ public class PlayerInfor : MonoBehaviour
             level = 1;
             money = 0;
             exp = 0;
-            skillPoint = 0;
         }
     }
     public void SaveData()
@@ -135,7 +134,6 @@ public class PlayerInfor : MonoBehaviour
         PlayerPrefs.SetFloat("EXP", exp);
         PlayerPrefs.SetInt("Dame", dame);
         PlayerPrefs.SetInt("Def", def);
-        PlayerPrefs.SetInt("SkillP", skillPoint);
         PlayerPrefs.Save();
     }
     public void HealthRecovery(int amount)
@@ -209,7 +207,6 @@ public class PlayerInfor : MonoBehaviour
     {
         if (healthPoint <= 0)
         {
-            SaveData();
             Dead();
         }
     }
@@ -234,7 +231,9 @@ public class PlayerInfor : MonoBehaviour
         }
         if(level % 10 == 0)
         {
-            skillPoint += 3;
+            gameObject.GetComponent<PlayerSkill>().UpdateSkill1();
+            gameObject.GetComponent<PlayerSkill>().UpdateSkill2();
+            gameObject.GetComponent<PlayerSkill>().UpdateSkill3();
         }
     }
     public void UpMaxHP(float hp)
@@ -258,7 +257,7 @@ public class PlayerInfor : MonoBehaviour
         {
             GetComponent<PlayerController>().enabled = false;
             GetComponent<PlayerSkill>().enabled = false;
-            //GetComponent<Collider>().enabled = false;
+            GetComponent<Collider>().enabled = false;
             GetComponent<ComboAtack>().enabled = false;
             isDead = true;
             animator.SetTrigger("Dead");
@@ -267,8 +266,8 @@ public class PlayerInfor : MonoBehaviour
     }
     public void DeadPanel()
     {
-        Time.timeScale = 0f;
         deadPanel.SetActive(true);
+        Time.timeScale = 0f;
     }
     public void DeadPos()
     {
