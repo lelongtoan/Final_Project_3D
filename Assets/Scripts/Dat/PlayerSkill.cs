@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 public class PlayerSkill : MonoBehaviour
 {
-
+    public PlayerSkillData skillData;
     public int pointSkill;
 
 
@@ -58,6 +58,9 @@ public class PlayerSkill : MonoBehaviour
     public TMP_Text lvsk1;
     public TMP_Text lvsk2;
     public TMP_Text lvsk3;
+    public TMP_Text mn1;
+    public TMP_Text mn2;
+    public TMP_Text mn3;
 
     public Button skill1;
     public Button skill2;
@@ -76,6 +79,9 @@ public class PlayerSkill : MonoBehaviour
         lvsk1 = GameObject.FindWithTag("LevelSkill1").GetComponent<TMP_Text>();
         lvsk2 = GameObject.FindWithTag("LevelSkill2").GetComponent<TMP_Text>();
         lvsk3 = GameObject.FindWithTag("LevelSkill3").GetComponent<TMP_Text>();
+        mn1 = GameObject.FindWithTag("MN1").GetComponent<TMP_Text>();
+        mn2 = GameObject.FindWithTag("MN2").GetComponent<TMP_Text>();
+        mn3 = GameObject.FindWithTag("MN3").GetComponent<TMP_Text>();
         LoadSkill();
         skill1.onClick.AddListener(ActiveSkill);
         skill2.onClick.AddListener(BuffDameNormal);
@@ -83,6 +89,9 @@ public class PlayerSkill : MonoBehaviour
         lvsk1.text = "Lv : " + levelSkill1.ToString();
         lvsk2.text = "Lv : " + levelSkill2.ToString();
         lvsk3.text = "Lv : " + levelSkill3.ToString();
+        mn1.text = manaskill1.ToString();
+        mn2.text = manaskill2.ToString();
+        mn3.text = manaskill3.ToString();
         playerController = GetComponent<PlayerController>();
         dame = playerInfor.dame;
         audioSource = FindObjectOfType<AudioSource>();
@@ -102,58 +111,40 @@ public class PlayerSkill : MonoBehaviour
 
     public void LoadSkill()
     {
-        if (PlayerPrefs.HasKey("Skill1"))
-        {
-            levelSkill1 = PlayerPrefs.GetInt("Skill1");
-            levelSkill2 = PlayerPrefs.GetInt("Skill2");
-            levelSkill3 = PlayerPrefs.GetInt("Skill3");
-            numberSword = PlayerPrefs.GetInt("NumberSw");
-            counD1 = PlayerPrefs.GetFloat("CD1");
-            timeconti1 = PlayerPrefs.GetFloat("Tmc1");
-            counD2 = PlayerPrefs.GetFloat("CD2");
-            counD3 = PlayerPrefs.GetFloat("CD3");
-            dame1 = PlayerPrefs.GetInt("DameSk1");
-            manaskill1 = PlayerPrefs.GetInt("MN1");
-            manaskill2 = PlayerPrefs.GetInt("MN2");
-            dameBuff = PlayerPrefs.GetInt("DameSk2");
-            manaskill3 = PlayerPrefs.GetInt("MN3");
-            dame3 = PlayerPrefs.GetInt("DameSk3");
-        }
-        else
-        {
-            levelSkill1 = 1;
-            levelSkill2 = 1;
-            levelSkill3 = 1;
-            numberSword = 2;
-            counD1 = 20f;
-            timeconti1 = 5;
-            counD2 = 25f;
-            counD3 = 35f;
-            dame1 = 1;
-            manaskill1 = 10;
-            manaskill2 = 20;
-            manaskill3 = 35;
-            dameBuff = 10;
-            dame3 = 40;
-        }
+        levelSkill1 = skillData.levelSkill1;
+        levelSkill2 = skillData.levelSkill2;
+        levelSkill3 = skillData.levelSkill3;
+        dame1 = skillData.dame1;
+        dame3 = skillData.dame3;
+        dameBuff = skillData.dameBuff;
+        counD1 = skillData.counD1;
+        counD2 = skillData.counD2;
+        counD3 = skillData.counD3;
+        timeconti1 = skillData.timeconti1;
+        numberSword = skillData.numberSword;
+        manaskill1 = skillData.manaskill1;
+        manaskill2 = skillData.manaskill2;
+        manaskill3 = skillData.manaskill3;
     }
     public void SaveSkill()
     {
-        PlayerPrefs.SetInt("Skill1", levelSkill1);
-        PlayerPrefs.SetInt("Skill2", levelSkill2);
-        PlayerPrefs.SetInt("Skill3", levelSkill3);
-        PlayerPrefs.SetInt("NumberSw",numberSword);
-        PlayerPrefs.SetInt("DameSk1",dame1);
-        PlayerPrefs.SetInt("MN1", manaskill1);
-        PlayerPrefs.SetFloat("CD1", counD1);
-        PlayerPrefs.SetFloat("Tmc1", timeconti1);
-        PlayerPrefs.SetFloat("CD2", counD2);
-        PlayerPrefs.SetFloat("CD3", counD3);
-        PlayerPrefs.SetInt("MN2", manaskill2);
-        PlayerPrefs.SetInt("DameSk2", dameBuff);
-        PlayerPrefs.SetInt("MN3", manaskill3);
-        PlayerPrefs.SetInt("DameSk3", dame3);
-        PlayerPrefs.Save();
+        skillData.levelSkill1 = levelSkill1;
+        skillData.levelSkill2 = levelSkill2;
+        skillData.levelSkill3 = levelSkill3;
+        skillData.dame1 = dame1;
+        skillData.dame3 = dame3;
+        skillData.dameBuff = dameBuff;
+        skillData.counD1 = counD1;
+        skillData.counD2 = counD2;
+        skillData.counD3 = counD3;
+        skillData.timeconti1 = timeconti1;
+        skillData.numberSword = numberSword;
+        skillData.manaskill1 = manaskill1;
+        skillData.manaskill2 = manaskill2;
+        skillData.manaskill3 = manaskill3;
+        #if UNITY_EDITOR
+            UnityEditor.EditorUtility.SetDirty(skillData);
+        #endif
     }
     public void BuffDameNormal()
     {
@@ -363,6 +354,7 @@ public class PlayerSkill : MonoBehaviour
             Debug.Log("Nang capp 1 thanh cong");
         }
         lvsk1.text = "Lv : " + levelSkill1.ToString();
+        mn1.text = manaskill1.ToString();
         SaveSkill();
     }
     public void UpdateSkill2()
@@ -381,6 +373,7 @@ public class PlayerSkill : MonoBehaviour
             Debug.Log("Nang capp 2 thanh cong");
         }
         lvsk2.text = "Lv : " + levelSkill2.ToString();
+        mn2.text = manaskill2.ToString();
         SaveSkill();
     }
     public void UpdateSkill3()
@@ -399,6 +392,7 @@ public class PlayerSkill : MonoBehaviour
             Debug.Log("Nang capp 1 thanh cong");
         }
         lvsk3.text = "Lv : " + levelSkill3.ToString();
+        mn3.text = manaskill3.ToString();
         SaveSkill();
     }
 }

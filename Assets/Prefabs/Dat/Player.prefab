@@ -1769,6 +1769,8 @@ MonoBehaviour:
   exp: 0
   money: 0
   isDead: 0
+  hpbar: {fileID: 0}
+  mpbar: {fileID: 0}
   Exp_Image: {fileID: 0}
   text: {fileID: 0}
   parent: {fileID: 0}
@@ -1785,6 +1787,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ce4b5ac3b9f6d048952d58f2611ccf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillData: {fileID: 11400000, guid: 945c8e7b287b3284fbb757c853d018eb, type: 2}
   pointSkill: 0
   mana: 0
   levelSkill1: 1

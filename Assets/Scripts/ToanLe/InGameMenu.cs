@@ -53,6 +53,7 @@ public class InGameMenu : MonoBehaviour
     public void SetQuestPanel()
     {
         questPanel.SetActive(!questPanel.activeInHierarchy);
+        sound.PlaySound("Quest");
     }
     public void SetSettingPanel()
     {

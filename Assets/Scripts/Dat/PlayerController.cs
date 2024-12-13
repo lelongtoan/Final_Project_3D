@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,8 +8,10 @@ public class PlayerController : MonoBehaviour
 {
 
     [Header("Thuộc tính nhân vật")]
-    public float speed = 5f;
-    public float runSpeed = 8f;
+    float speed;
+    public float Wallspeed = 5f;
+    public float dashSpeed = 10f;
+    public Vector3 dashDirection;
 
     public bool freeze = false; 
     private float animSpeed = 0f;
@@ -21,39 +24,37 @@ public class PlayerController : MonoBehaviour
     public GameObject speedEff;
     public GameObject runEff;
     Button run;
+    [Header("Lướt")]
+    public float dashDuration = 0.5f;
+    private float dashTime;
+    private bool isDashing = false;
 
     [SerializeField] private Joystick joystick;
     void Start()
     {
+        speed = Wallspeed;
         run = GameObject.Find("Run").GetComponent<Button>();
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         joystick = GameObject.Find("Fixed Joystick").GetComponent<Joystick>();
-        run.onClick.AddListener(OnRunClick);
+        run.onClick.AddListener(StartDash);
         runEff = Instantiate(speedEff, transform.position, Quaternion.identity);
         runEff.SetActive(false);
         runEff.transform.SetParent(transform);
     }
 
-    private void FixedUpdate()  
+    private void FixedUpdate()
     {
-        if (freeze == false)
+        if (isDashing)
+        {
+            HandleDash();
+        }
+        else
         {
             HandleMovement();
         }
-        if(isRunning && isRunning && IsMoving() && freeze == false)
-        {
-            if (runningCoroutine == null)
-            {
-                runningCoroutine = StartCoroutine(SubtractValue());
-            }
-        }
-        else if (!IsMoving() && runningCoroutine != null)
-        {
-            StopCoroutine(runningCoroutine);
-            runningCoroutine = null;
-        }
     }
+
     private bool IsMoving()
     {
         float ipVertical = joystick.Vertical != 0 ? joystick.Vertical : Input.GetAxis("Vertical");
@@ -61,6 +62,18 @@ public class PlayerController : MonoBehaviour
 
         // Kiểm tra nếu có bất kỳ giá trị nào từ joystick hoặc bàn phím
         return ipVertical != 0 || ipHorizontal != 0;
+    }
+    public void HandleDash()
+    {
+        if (dashTime > 0f)
+        {
+            rb.velocity = dashDirection * dashSpeed;
+            dashTime -= Time.fixedDeltaTime;
+        }
+        else
+        {
+            StopDash();
+        }
     }
     public void HandleMovement()
     {
@@ -71,19 +84,14 @@ public class PlayerController : MonoBehaviour
         Vector3 right = playercam.transform.right.normalized;
         forward.y = 0f;
         right.y = 0f;
+
         Vector3 desired = (forward * ipVertical + right * ipHorizontal) * speed;
         RotateCharacter(desired);
-        if (move != Vector3.zero)
-        {
-            animSpeed = isRunning ? 2 : 1;
-        }
-        else
-        {
-            animSpeed = 0;
-        }
-        animator.SetFloat("Speed", animSpeed);
+
+        animator.SetFloat("Speed", move.magnitude);
         rb.MovePosition(rb.position + desired * Time.fixedDeltaTime);
     }
+
 
     public void RotateCharacter(Vector3 playerMovementInput)
     {
@@ -124,37 +132,37 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("IsRun", false);
     }
 
-    private void OnRunClick()
+    private void OnDashClick()
     {
-        PlayerInfor playerInfo = gameObject.GetComponent<PlayerInfor>();
-        if (playerInfo.manaPoint > 0 && freeze != true)
+        if (!isDashing)
         {
-            if (!isRunning)
+            Vector3 moveDirection = new Vector3(joystick.Horizontal, 0, joystick.Vertical).normalized;
+            if (moveDirection != Vector3.zero)
             {
-                SetEffSpeed(true);
-                isRunning = true;
-                speed = runSpeed;
-                animator.SetBool("IsRun", true);
-                if (runningCoroutine == null)
-                {
-                    runningCoroutine = StartCoroutine(SubtractValue());
-                }
+                dashDirection = moveDirection;
+                isDashing = true;
+                dashTime = dashDuration;
+
+                //animator.SetTrigger("Dash");
             }
-            else
-            {
-                SetEffSpeed(false);
-                StopRunning();
-            }
-        }
-        else
-        {
-            Debug.Log("Not enough Mana");
-            StopRunning();
         }
     }
 
     public void SetEffSpeed(bool enable)
     {
         runEff.SetActive(enable);
+    }
+    public void StartDash()
+    {
+        dashTime = dashDuration;
+        isDashing = true;
+        speed = dashSpeed;
+        runEff.SetActive(true);
+    }
+    public void StopDash()
+    {
+        isDashing = false;
+        speed = Wallspeed;
+        runEff.SetActive(false);
     }
 }
