@@ -1,31 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics.Contracts;
+﻿using System.IO;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "PlayerData", menuName = "Game/Player Data", order = 1)]
+[CreateAssetMenu(fileName = "NewPlayerData", menuName = "Player/Player Data")]
 public class PlayerData : ScriptableObject
 {
     public float maxHP = 100f;
     public float healthPoint = 100f;
     public float manaPoint = 100f;
-    public float maxMP = 100f;
-    public int def = 10;
+    public float maxMP = 100f;  
+    public int def = 5;
     public int dame = 10;
-    public int exp = 0;
+    public int level = 1;
+    public float exp = 0;
     public int money = 0;
-    
-
-
-    public void ResetData()
-    {
-        healthPoint = maxHP;
-        manaPoint = maxMP;
-        dame = 10;
-        def = 5;
-        exp = 0;
-        money = 0;
-    }
-
-
 }

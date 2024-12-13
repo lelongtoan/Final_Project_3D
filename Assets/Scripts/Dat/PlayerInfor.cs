@@ -5,11 +5,12 @@ using Unity.VisualScripting;
 using UnityEditor.Profiling;
 using UnityEngine;
 using UnityEngine.InputSystem.Processors;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerInfor : MonoBehaviour
 {
-    public static PlayerInfor Instance; // Biến tĩnh để lưu trữ đối tượng Player
+    public static PlayerInfor Instance;
 
     [Header("Thông tin nhân vật")]
     public PlayerData playerData;
@@ -25,8 +26,8 @@ public class PlayerInfor : MonoBehaviour
     public int money = 0;
     Animator animator;
     public bool isDead = false;
-    Image hpbar;
-    Image mpbar;
+    public Image hpbar;
+    public Image mpbar;
     public Image Exp_Image;
     public TMP_Text text;
 
@@ -35,7 +36,9 @@ public class PlayerInfor : MonoBehaviour
     float baseXp = 10f;
     public float XPToLevelUp => baseXp * level;
 
-    //public GameObject baloP;
+    public Button reSpawn;
+    public Button reTurn;
+    public Button endGame;
 
     private void Awake()
     {
@@ -54,13 +57,21 @@ public class PlayerInfor : MonoBehaviour
     private void Start()
     {
         hpbar = GameObject.FindWithTag("HPBar").GetComponent<Image>();
-        mpbar = GameObject.FindWithTag("MPBar").GetComponent<Image>();
+        mpbar = GameObject.FindWithTag("MPBar").GetComponent<Image>();  
         Exp_Image = GameObject.FindWithTag("EXP").GetComponent<Image>();
         text= GameObject.FindWithTag("Exp_Text").GetComponent<TMP_Text>();
         isDead = false;
         animator = gameObject.GetComponent<Animator>();
         parent = GameObject.Find("UIGame").transform;
         deadPanel = parent.Find("GameOver").gameObject;
+        Transform imageui = deadPanel.transform.Find("Image");
+        reSpawn = imageui.Find("Respawn").GetComponent<Button>();
+        reTurn = imageui.Find("Return").GetComponent<Button>();
+        endGame = imageui.Find("EndGame").GetComponent<Button>();
+        reSpawn.onClick.AddListener(Respawn);
+        reTurn.onClick.AddListener(Return);
+        endGame.onClick.AddListener(EndGame);
+        
     }
     private void Update()
     {
@@ -100,41 +111,55 @@ public class PlayerInfor : MonoBehaviour
     }
     private void LoadData()
     {
-        if (PlayerPrefs.HasKey("Health"))
-        {
-            maxHP = PlayerPrefs.GetFloat("MaxHP");
-            healthPoint = PlayerPrefs.GetFloat("Health");
-            maxMP = PlayerPrefs.GetFloat("MaxMP");
-            manaPoint = PlayerPrefs.GetFloat("Mana");
-            money = PlayerPrefs.GetInt("Money");
-            level = PlayerPrefs.GetInt("Level");
-            exp = PlayerPrefs.GetFloat("EXP");
-            dame = PlayerPrefs.GetInt("Dame");
-            def = PlayerPrefs.GetInt("Def");
-        }
-        else
-        {
-            healthPoint = maxHP;
-            manaPoint = maxMP;
-            dame = 10;
-            def = 5;
-            level = 1;
-            money = 0;
-            exp = 0;
-        }
+        maxHP = playerData.maxHP;
+        healthPoint = playerData.healthPoint;
+        maxMP = playerData.maxMP;
+        manaPoint = playerData.manaPoint;
+        def = playerData.def;
+        dame = playerData.dame;
+        level = playerData.level;
+        exp = playerData.exp;
+        money = playerData.money;
+    }
+    private void LoadDataByDie()
+    {
+        maxHP = playerData.maxHP;
+        healthPoint = playerData.maxHP;
+        maxMP = playerData.maxMP;
+        manaPoint = playerData.maxMP;
+        SaveData();
+        Time.timeScale = 1;
+    }
+    private void EndGame()
+    {
+
+    }
+    private void Respawn()
+    {
+        LoadDataByDie();
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
+    }
+    public void Return()
+    {
+        LoadDataByDie();
+        SceneManager.LoadScene(0);
     }
     public void SaveData()
     {
-        PlayerPrefs.SetFloat("MaxHP", maxHP);
-        PlayerPrefs.SetFloat("Health", healthPoint);
-        PlayerPrefs.SetFloat("MaxMP", maxMP);
-        PlayerPrefs.SetFloat("Mana", manaPoint);
-        PlayerPrefs.SetInt("Money", money);
-        PlayerPrefs.SetInt("Level", level);
-        PlayerPrefs.SetFloat("EXP", exp);
-        PlayerPrefs.SetInt("Dame", dame);
-        PlayerPrefs.SetInt("Def", def);
-        PlayerPrefs.Save();
+        playerData.maxHP = maxHP;
+        playerData.healthPoint = healthPoint;
+        playerData.maxMP = maxMP;
+        playerData.manaPoint = manaPoint;
+        playerData.def = def;
+        playerData.dame = dame;
+        playerData.level = level;
+        playerData.exp = exp;
+        playerData.money = money;
+
+        #if UNITY_EDITOR
+            UnityEditor.EditorUtility.SetDirty(playerData);
+        #endif
     }
     public void HealthRecovery(int amount)
     {

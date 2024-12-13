@@ -32,6 +32,9 @@ TagManager:
   - Exp_Text
   - Drop
   - DeadPanel
+  - MN1
+  - MN2
+  - MN3
   layers:
   - Default
   - TransparentFX

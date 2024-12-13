@@ -47,7 +47,8 @@ public class SoundEffect : MonoBehaviour
         if (soundDictionary.ContainsKey(soundName))
         {
             audioSource.clip = soundDictionary[soundName];
-            audioSource.PlayDelayed(2);
+            audioSource.loop = true;
+            audioSource.Play();
         }
         else
         {

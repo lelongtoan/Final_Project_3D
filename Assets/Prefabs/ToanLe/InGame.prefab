@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 4732248115097294259}
   m_Layer: 5
   m_Name: Mana1
-  m_TagString: Untagged
+  m_TagString: MN1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1362,7 +1362,7 @@ GameObject:
   - component: {fileID: 4943445769089036705}
   - component: {fileID: 5134201311637757772}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Respawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5118,7 +5118,7 @@ GameObject:
   - component: {fileID: 4599960759864838478}
   m_Layer: 5
   m_Name: Mana2
-  m_TagString: LevelSkill1
+  m_TagString: MN2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7440,7 +7440,7 @@ GameObject:
   - component: {fileID: 6993679997519950225}
   m_Layer: 5
   m_Name: Mana3
-  m_TagString: LevelSkill1
+  m_TagString: MN3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16189,7 +16189,7 @@ GameObject:
   - component: {fileID: 9126516279985464134}
   - component: {fileID: 3061576497019028949}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: EndGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17106,7 +17106,7 @@ GameObject:
   - component: {fileID: 376158747570729175}
   - component: {fileID: 907569347974582520}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Return
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

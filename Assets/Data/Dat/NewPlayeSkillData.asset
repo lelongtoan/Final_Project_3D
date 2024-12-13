@@ -9,15 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9055cb94f485a894f8a95161b5ca46fa, type: 3}
-  m_Name: PlayerData
+  m_Script: {fileID: 11500000, guid: 2a24f07f266ddca4cb4cadd7e1e2ed46, type: 3}
+  m_Name: NewPlayeSkillData
   m_EditorClassIdentifier: 
-  maxHP: 100
-  healthPoint: 45
-  manaPoint: 100
-  maxMP: 100
-  def: 5
-  dame: 20
-  level: 1
-  exp: 7
-  money: 7
