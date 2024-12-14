@@ -18,4 +18,6 @@ public class PlayerSkillData : ScriptableObject
     public float counD1;
     public float counD2;
     public float counD3;
+
+    
 }

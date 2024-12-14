@@ -1599,14 +1599,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f10a54fe6dedf9b4abffc9cdee84c4d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  runSpeed: 8
+  Wallspeed: 5
+  dashSpeed: 15
+  dashDuration: 0.5
+  dashTime: 0
+  isDashing: 0
+  dashDirection: {x: 0, y: 0, z: 0}
+  counDDash: 0
+  manaDash: 0
   freeze: 0
-  isRunning: 0
-  playercam: {fileID: 7641004714079254164}
   speedEff: {fileID: 1936488993998635378, guid: 88b14fae91f3b5345abdc3e7a5f29793, type: 3}
-  runEff: {fileID: 1936488993998635378, guid: 88b14fae91f3b5345abdc3e7a5f29793, type: 3}
+  runButton: {fileID: 0}
   joystick: {fileID: 0}
+  playerCam: {fileID: 7641004714079254164}
 --- !u!54 &2953578238360264623
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1745,6 +1750,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 4ebafa72f84e7864eaa44321510a4537, type: 3}
   - name: SoundDungeon
     clip: {fileID: 8300000, guid: 827376f2c346e8e489fbee9ca54a25bc, type: 3}
+  - name: Dash
+    clip: {fileID: 8300000, guid: 3b908b1c28f72cf4a837eeda000e947d, type: 3}
   audioSource: {fileID: 0}
 --- !u!114 &2714658418295945862
 MonoBehaviour:
@@ -1775,6 +1782,9 @@ MonoBehaviour:
   text: {fileID: 0}
   parent: {fileID: 0}
   deadPanel: {fileID: 37135910088586535}
+  reSpawn: {fileID: 0}
+  reTurn: {fileID: 0}
+  endGame: {fileID: 0}
 --- !u!114 &959833306431311766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1822,6 +1832,9 @@ MonoBehaviour:
   lvsk1: {fileID: 0}
   lvsk2: {fileID: 0}
   lvsk3: {fileID: 0}
+  mn1: {fileID: 0}
+  mn2: {fileID: 0}
+  mn3: {fileID: 0}
   skill1: {fileID: 0}
   skill2: {fileID: 0}
   skill3: {fileID: 0}
