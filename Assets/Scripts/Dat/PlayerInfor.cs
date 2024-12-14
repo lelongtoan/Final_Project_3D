@@ -249,6 +249,7 @@ public class PlayerInfor : MonoBehaviour
     {
         maxHP += 5;
         maxMP += 5;
+        GetComponent<PlayerController>().UpdateManaDash();
         if (level % 5 == 0)
         {
             dame += 2;
