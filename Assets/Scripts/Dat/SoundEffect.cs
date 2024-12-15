@@ -48,6 +48,7 @@ public class SoundEffect : MonoBehaviour
         {
             audioSource.clip = soundDictionary[soundName];
             audioSource.loop = true;
+            audioSource.volume = 0.5f;
             audioSource.Play();
         }
         else

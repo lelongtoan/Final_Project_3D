@@ -71,6 +71,13 @@ public class PlayerSkill : MonoBehaviour
     ComboAtack comboAtack;
     void Start()
     {
+        if (IsFirstStartGame())
+        {
+            skillData.Initialize();
+            skillData.CheckSkill();
+            PlayerPrefs.SetInt("FirstStart", 0);
+            PlayerPrefs.Save();
+        }
         playerInfor = GetComponent<PlayerInfor>();
         animator = GetComponent<Animator>();
         skill1 = GameObject.Find("Skill1").GetComponent<Button>();
@@ -101,6 +108,7 @@ public class PlayerSkill : MonoBehaviour
     }
     void Update()
     {
+        
         mana = playerInfor.manaPoint;
         dame = playerInfor.dame;
         if (activeSkill)
@@ -276,6 +284,7 @@ public class PlayerSkill : MonoBehaviour
         }
         if (!activeSkill)
         {
+            Debug.Log("l");
             endCountDow1 = false;
             StartCoroutine(CountDown(counD1, 1));
             activeSkill = true;
@@ -343,15 +352,9 @@ public class PlayerSkill : MonoBehaviour
         {
 
             levelSkill1++;
-            if (levelSkill1 == 3 || levelSkill1 == 5)
-            {
-                numberSword++;
-            }
-            manaskill1 += 2;
-            dame1 += 1;
-            timeconti1++;
-            counD1 -= 1;
-            Debug.Log("Nang capp 1 thanh cong");
+            SaveSkill();
+            skillData.CheckSkill();
+            LoadSkill();
         }
         lvsk1.text = "Lv : " + levelSkill1.ToString();
         mn1.text = manaskill1.ToString();
@@ -367,10 +370,9 @@ public class PlayerSkill : MonoBehaviour
         else if (levelSkill2 < 5)
         {
             levelSkill2++;
-            dameBuff += 4;
-            manaskill2 += 4;
-            counD2--;
-            Debug.Log("Nang capp 2 thanh cong");
+            SaveSkill();
+            skillData.CheckSkill();
+            LoadSkill();
         }
         lvsk2.text = "Lv : " + levelSkill2.ToString();
         mn2.text = manaskill2.ToString();
@@ -386,13 +388,16 @@ public class PlayerSkill : MonoBehaviour
         else if (levelSkill3 < 5)
         {
             levelSkill3++;
-            dame3 += 5;
-            manaskill3 += 7;
-            counD3 -= 2.5f;
-            Debug.Log("Nang capp 1 thanh cong");
+            SaveSkill();
+            skillData.CheckSkill();
+            LoadSkill();
         }
         lvsk3.text = "Lv : " + levelSkill3.ToString();
         mn3.text = manaskill3.ToString();
         SaveSkill();
+    }
+    bool IsFirstStartGame()
+    {
+        return PlayerPrefs.GetInt("FirstStart", 1) == 1;
     }
 }

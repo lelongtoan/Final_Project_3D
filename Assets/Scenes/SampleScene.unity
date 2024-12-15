@@ -913,6 +913,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1578361095}
     m_Modifications:
     - target: {fileID: 3256239235895588220, guid: 14044dd8958a8c947bfe4173d8453763, type: 3}
+      propertyPath: soundName
+      value: Lobby
+      objectReference: {fileID: 0}
+    - target: {fileID: 3256239235895588220, guid: 14044dd8958a8c947bfe4173d8453763, type: 3}
       propertyPath: enemyPrefab
       value: 
       objectReference: {fileID: 1796582074672696507, guid: c591a6c7b6b41eb42b2c6fbd001694cc, type: 3}
