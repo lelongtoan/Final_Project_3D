@@ -51,11 +51,28 @@ public class PlayerInfor : MonoBehaviour
         {
             Debug.Log("Load Data");
             Destroy(gameObject); // Hủy các instance khác nếu đã tồn tại
+            LoadData();
         }
-        LoadData();
+    }
+
+    bool isFirst()
+    {
+        return PlayerPrefs.GetInt("FirstStart1", 1) == 1;
     }
     private void Start()
     {
+        if (isFirst())
+        {
+            playerData.Initialaze();
+            PlayerPrefs.SetInt("FirstStart1", 0);
+            PlayerPrefs.Save();
+            LoadData();
+            SaveData();
+        }
+        else
+        {
+            LoadData();
+        }
         hpbar = GameObject.FindWithTag("HPBar").GetComponent<Image>();
         mpbar = GameObject.FindWithTag("MPBar").GetComponent<Image>();  
         Exp_Image = GameObject.FindWithTag("EXP").GetComponent<Image>();
