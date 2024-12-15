@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9055cb94f485a894f8a95161b5ca46fa, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  maxHP: 100
-  healthPoint: 10
-  manaPoint: 2.9400005
-  maxMP: 100
+  maxHP: 105
+  healthPoint: 85
+  manaPoint: 80
+  maxMP: 105
   def: 5
   dame: 20
-  level: 1
-  exp: 9
-  money: 9
+  level: 2
+  exp: 0
+  money: 10

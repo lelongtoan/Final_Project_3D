@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public CinemachineVirtualCamera virtualCamera;
     public Transform spwanPointPlayer;
     public SoundEffect sound;
+    public string soundName;
     void Start()
     {
         
@@ -35,8 +36,10 @@ public class GameManager : MonoBehaviour
         if (sound == null)
         {
             sound = FindObjectOfType<SoundEffect>();
-            sound.Playmusic("SoundDungeon") ;
-            
+            if(sound != null )
+            {
+                sound.Playmusic(soundName) ;
+            }
         }
         
     }
