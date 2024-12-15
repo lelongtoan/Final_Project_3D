@@ -9,6 +9,7 @@ using UnityEngine.UI;
 
 public class PlayerSkill : MonoBehaviour
 {
+    public PlayerData playerData;
     public PlayerSkillData skillData;
     public int pointSkill;
 
@@ -69,6 +70,7 @@ public class PlayerSkill : MonoBehaviour
 
     public int dame = 0;
     ComboAtack comboAtack;
+
     void Start()
     {
         if (IsFirstStartGame())
@@ -396,7 +398,7 @@ public class PlayerSkill : MonoBehaviour
         mn3.text = manaskill3.ToString();
         SaveSkill();
     }
-    bool IsFirstStartGame()
+    public bool IsFirstStartGame()
     {
         return PlayerPrefs.GetInt("FirstStart", 1) == 1;
     }
