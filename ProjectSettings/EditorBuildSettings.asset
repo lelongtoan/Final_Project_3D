@@ -24,6 +24,6 @@ EditorBuildSettings:
     path: Assets/Scenes/DungeonMap2.unity
     guid: 7f76004c09ac6ad4f9337a114c0b36d6
   - enabled: 1
-    path: Assets/Scenes/Tutorial Map.unity
+    path: Assets/Scenes/PathwayMap.unity
     guid: ae3acd3c6ce0e50429080035391e0d0b
   m_configObjects: {}

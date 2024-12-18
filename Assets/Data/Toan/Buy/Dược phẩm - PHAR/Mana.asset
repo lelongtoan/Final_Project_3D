@@ -13,18 +13,15 @@ MonoBehaviour:
   m_Name: Mana
   m_EditorClassIdentifier: 
   itemsInShop:
-  - idItem: DBPMANA01
-    nameItem: Thuochoimana01
-    priceItem: 5
+  - itemShop: {fileID: 11400000, guid: a43f8c0733058a649a2ec0fa3867264b, type: 2}
+    priceItem: 30
     locked: 0
-    itemShop: {fileID: 11400000, guid: a43f8c0733058a649a2ec0fa3867264b, type: 2}
-  - idItem: DBPMANA02
-    nameItem: Thuochoimana02
-    priceItem: 15
+    questShop: {fileID: 0}
+  - itemShop: {fileID: 11400000, guid: b2e6e2fbdaa54c94fa872e6bbc07608a, type: 2}
+    priceItem: 70
     locked: 0
-    itemShop: {fileID: 11400000, guid: b2e6e2fbdaa54c94fa872e6bbc07608a, type: 2}
-  - idItem: DBPMANA03
-    nameItem: Thuochoimana03
-    priceItem: 35
+    questShop: {fileID: 0}
+  - itemShop: {fileID: 11400000, guid: e3e5a220c0b4ffc4fa968cf3288bbc65, type: 2}
+    priceItem: 90
     locked: 0
-    itemShop: {fileID: 11400000, guid: e3e5a220c0b4ffc4fa968cf3288bbc65, type: 2}
+    questShop: {fileID: 0}
