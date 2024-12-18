@@ -42,4 +42,18 @@ public class SoundEffect : MonoBehaviour
             Debug.LogWarning("Âm thanh: " + soundName + " không tìm thấy!");
         }
     }
+    public void Playmusic(string soundName)
+    {
+        if (soundDictionary.ContainsKey(soundName))
+        {
+            audioSource.clip = soundDictionary[soundName];
+            audioSource.loop = true;
+            audioSource.volume = 0.5f;
+            audioSource.Play();
+        }
+        else
+        {
+            Debug.LogWarning("Âm thanh: " + soundName + " không tìm thấy!");
+        }
+    }
 }

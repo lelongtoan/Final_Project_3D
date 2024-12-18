@@ -32,6 +32,10 @@ TagManager:
   - Exp_Text
   - Drop
   - DeadPanel
+  - MN1
+  - MN2
+  - MN3
+  - GameMNG
   layers:
   - Default
   - TransparentFX
