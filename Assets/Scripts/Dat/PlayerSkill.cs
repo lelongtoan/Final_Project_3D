@@ -172,9 +172,9 @@ public class PlayerSkill : MonoBehaviour
             if (!buff)
             {
                 endCountDow2 = false;
+                playerInfor.manaPoint -= manaskill2;
                 StartCoroutine(CountDown(counD2, 2));
                 StartCoroutine(BuffDame());
-                playerInfor.manaPoint -= manaskill2;
             }
         }
     }
@@ -187,6 +187,7 @@ public class PlayerSkill : MonoBehaviour
         effhp.transform.SetParent(transform);
         soundEffect.PlaySound("BuffDame");
         playerInfor.dame += dameBuff;
+        playerInfor.SaveData();
         Debug.Log("buff");
         while (elapsedTime < duration)
         {
@@ -195,10 +196,18 @@ public class PlayerSkill : MonoBehaviour
         }
         Debug.Log("0 buff");
 
-        playerInfor.dame = dame;
+        playerInfor.dame -= dameBuff;
+        playerInfor.SaveData();
+        playerInfor.LoadData();
         Destroy(effhp);
         buff = false;
+    }
+    public void EndBuff()
+    {
+        playerInfor.dame -= dameBuff;
         playerInfor.SaveData();
+        playerInfor.LoadData();
+        buff = false;
     }
     void SpawmSkillUltimate()
     {

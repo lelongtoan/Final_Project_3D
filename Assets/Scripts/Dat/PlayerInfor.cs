@@ -126,7 +126,7 @@ public class PlayerInfor : MonoBehaviour
     {
         Exp_Image.fillAmount = exp / XPToLevelUp;
     }
-    private void LoadData()
+    public void LoadData()
     {
         maxHP = playerData.maxHP;
         healthPoint = playerData.healthPoint;
