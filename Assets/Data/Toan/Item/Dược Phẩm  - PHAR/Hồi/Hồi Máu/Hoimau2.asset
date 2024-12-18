@@ -12,16 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d690ab03900124439ed5e618aa451db, type: 3}
   m_Name: Hoimau2
   m_EditorClassIdentifier: 
-  itemID: IHMAU02
+  id: IHMAU02
   itemName: Hoimau2
   stackable: 1
   HP: 50
   MP: 0
   Dmg: 0
-  buff: 0
   buffD: 0
-  gold: 0
-  canShow: 0
-  description: 
+  gold: 21
+  rateDrop: 40
+  description: "D\u01B0\u1EE3c ph\u1EA9m h\u1ED3i m\xE1u c\u1EA5p \u0111\u1ED9 2.
+    C\xF4ng d\u1EE5ng h\u1ED3i 50 m\xE1u."
+  buff: 0
   itemSet: 3
+  itemType: 0
   icon: {fileID: -311184917, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}

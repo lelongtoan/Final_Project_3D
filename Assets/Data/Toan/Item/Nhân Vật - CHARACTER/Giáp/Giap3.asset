@@ -12,16 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d690ab03900124439ed5e618aa451db, type: 3}
   m_Name: Giap3
   m_EditorClassIdentifier: 
-  id: 
+  id: ICGIAP03
   itemName: Giap3
   stackable: 0
   HP: 30
   MP: 0
   Dmg: 0
   buffD: 0
-  gold: 0
-  rateDrop: 0
-  description: 
+  gold: 54
+  rateDrop: 5
+  description: "\xC1o gi\xE1p t\u1ED1i th\u01B0\u1EE3ng c\u1EE9ng nh\u1EA5t th\u1EBF
+    gi\u1EDBi n\xE0y. M\u1EB7c v\xF4 t\u0103ng 30HP."
   buff: 0
   itemSet: 1
   itemType: 4

@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d690ab03900124439ed5e618aa451db, type: 3}
   m_Name: Mu1
   m_EditorClassIdentifier: 
-  id: 
+  id: ICMU01
   itemName: Mu1
   stackable: 0
   HP: 10
   MP: 0
   Dmg: 0
   buffD: 0
-  gold: 0
-  rateDrop: 0
-  description: 
+  gold: 12
+  rateDrop: 30
+  description: "\u0110\xE2y l\xE0 m\u0169 nh\u01B0ng m\u1EB7c v\xF4 t\u0103ng 10HP"
   buff: 0
   itemSet: 1
   itemType: 3

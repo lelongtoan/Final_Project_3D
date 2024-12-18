@@ -13,18 +13,15 @@ MonoBehaviour:
   m_Name: Mu
   m_EditorClassIdentifier: 
   itemsInShop:
-  - idItem: DBCMU01
-    nameItem: Mu1
-    priceItem: 20
-    locked: 0
-    itemShop: {fileID: 11400000, guid: 935a56a020eb978449142f6c89e53132, type: 2}
-  - idItem: DBCMU02
-    nameItem: Mu2
-    priceItem: 30
-    locked: 0
-    itemShop: {fileID: 11400000, guid: e8d3114aa309c34429f0bc1097f9e660, type: 2}
-  - idItem: DBCMU03
-    nameItem: Mu3
+  - itemShop: {fileID: 11400000, guid: 935a56a020eb978449142f6c89e53132, type: 2}
     priceItem: 40
     locked: 0
-    itemShop: {fileID: 11400000, guid: c9571f4bc2c710a4bb6fc9b799bac569, type: 2}
+    questShop: {fileID: 0}
+  - itemShop: {fileID: 11400000, guid: e8d3114aa309c34429f0bc1097f9e660, type: 2}
+    priceItem: 70
+    locked: 0
+    questShop: {fileID: 0}
+  - itemShop: {fileID: 11400000, guid: c9571f4bc2c710a4bb6fc9b799bac569, type: 2}
+    priceItem: 150
+    locked: 0
+    questShop: {fileID: 0}

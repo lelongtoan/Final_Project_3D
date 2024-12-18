@@ -13,13 +13,11 @@ MonoBehaviour:
   m_Name: Gang
   m_EditorClassIdentifier: 
   itemsInShop:
-  - idItem: DBCGANG01
-    nameItem: Gang1
-    priceItem: 20
-    locked: 0
-    itemShop: {fileID: 11400000, guid: eb8c4c52af65fe346ae15510aa580e09, type: 2}
-  - idItem: DBCGANG02
-    nameItem: Gang2
+  - itemShop: {fileID: 11400000, guid: eb8c4c52af65fe346ae15510aa580e09, type: 2}
     priceItem: 40
     locked: 0
-    itemShop: {fileID: 11400000, guid: 4b056bd42f7c44a40bedc9f8248dd0bb, type: 2}
+    questShop: {fileID: 0}
+  - itemShop: {fileID: 11400000, guid: 4b056bd42f7c44a40bedc9f8248dd0bb, type: 2}
+    priceItem: 70
+    locked: 0
+    questShop: {fileID: 0}

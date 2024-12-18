@@ -12,16 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d690ab03900124439ed5e618aa451db, type: 3}
   m_Name: Daquai
   m_EditorClassIdentifier: 
-  itemID: INSKIN01
+  id: INSKIN01
   itemName: Daquai
   stackable: 1
   HP: 0
   MP: 0
   Dmg: 0
-  buff: 0
   buffD: 0
-  gold: 0
-  canShow: 0
-  description: 
+  gold: 3
+  rateDrop: 75
+  description: "Da qu\xE1i th\xFA, c\xF3 th\u1EC3 d\xF9ng \u0111\u1EC3 ch\u1EBF t\u1EA1o
+    v\u0169 kh\xED."
+  buff: 0
   itemSet: 0
+  itemType: 0
   icon: {fileID: 2050828533, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}

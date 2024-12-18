@@ -13,18 +13,15 @@ MonoBehaviour:
   m_Name: La
   m_EditorClassIdentifier: 
   itemsInShop:
-  - idItem: DBLA01
-    nameItem: La1
+  - itemShop: {fileID: 11400000, guid: 3d348e5266e426a42b5dff03aeee8000, type: 2}
     priceItem: 5
     locked: 0
-    itemShop: {fileID: 11400000, guid: 3d348e5266e426a42b5dff03aeee8000, type: 2}
-  - idItem: DBLA02
-    nameItem: La2
+    questShop: {fileID: 0}
+  - itemShop: {fileID: 11400000, guid: 4c13f0314c9fb9b44bbd59173adfda60, type: 2}
     priceItem: 15
     locked: 0
-    itemShop: {fileID: 11400000, guid: 4c13f0314c9fb9b44bbd59173adfda60, type: 2}
-  - idItem: DBLA03
-    nameItem: La3
+    questShop: {fileID: 0}
+  - itemShop: {fileID: 11400000, guid: fd11d54e36de39846a804f24b8c93e5b, type: 2}
     priceItem: 25
     locked: 0
-    itemShop: {fileID: 11400000, guid: fd11d54e36de39846a804f24b8c93e5b, type: 2}
+    questShop: {fileID: 0}

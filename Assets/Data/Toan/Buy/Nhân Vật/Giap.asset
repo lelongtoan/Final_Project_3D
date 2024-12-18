@@ -13,18 +13,15 @@ MonoBehaviour:
   m_Name: Giap
   m_EditorClassIdentifier: 
   itemsInShop:
-  - idItem: DBCGIAP01
-    nameItem: Giap1
-    priceItem: 20
-    locked: 0
-    itemShop: {fileID: 11400000, guid: b01c18a9e777f4e48a5681380a00a650, type: 2}
-  - idItem: DBCGIAP02
-    nameItem: Giap2
-    priceItem: 30
-    locked: 0
-    itemShop: {fileID: 11400000, guid: 99cfa5f6c9f6b1941a165b89d72846b2, type: 2}
-  - idItem: DBCGIAP03
-    nameItem: Giap3
+  - itemShop: {fileID: 11400000, guid: b01c18a9e777f4e48a5681380a00a650, type: 2}
     priceItem: 40
     locked: 0
-    itemShop: {fileID: 11400000, guid: 0045e73bfd6a14840b72fc8a14bc831e, type: 2}
+    questShop: {fileID: 0}
+  - itemShop: {fileID: 11400000, guid: 99cfa5f6c9f6b1941a165b89d72846b2, type: 2}
+    priceItem: 60
+    locked: 0
+    questShop: {fileID: 0}
+  - itemShop: {fileID: 11400000, guid: 0045e73bfd6a14840b72fc8a14bc831e, type: 2}
+    priceItem: 180
+    locked: 0
+    questShop: {fileID: 0}

@@ -13,18 +13,15 @@ MonoBehaviour:
   m_Name: Food
   m_EditorClassIdentifier: 
   itemsInShop:
-  - idItem: DBF01
-    nameItem: Food1
-    priceItem: 5
+  - itemShop: {fileID: 11400000, guid: e3e90a03c4b26c84cb20cb35fbde319a, type: 2}
+    priceItem: 10
     locked: 0
-    itemShop: {fileID: 11400000, guid: e3e90a03c4b26c84cb20cb35fbde319a, type: 2}
-  - idItem: DBF02
-    nameItem: Food2
+    questShop: {fileID: 0}
+  - itemShop: {fileID: 11400000, guid: 5d2e8ba7e010bf541adc387df8d8094f, type: 2}
     priceItem: 15
     locked: 0
-    itemShop: {fileID: 11400000, guid: 5d2e8ba7e010bf541adc387df8d8094f, type: 2}
-  - idItem: DBF03
-    nameItem: Food3
+    questShop: {fileID: 0}
+  - itemShop: {fileID: 11400000, guid: 67e853e6b270a8345ba8c120c1c78692, type: 2}
     priceItem: 25
     locked: 0
-    itemShop: {fileID: 11400000, guid: 67e853e6b270a8345ba8c120c1c78692, type: 2}
+    questShop: {fileID: 0}

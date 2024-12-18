@@ -13,13 +13,11 @@ MonoBehaviour:
   m_Name: Giay
   m_EditorClassIdentifier: 
   itemsInShop:
-  - idItem: DBCGIAY01
-    nameItem: Giay1
-    priceItem: 20
-    locked: 0
-    itemShop: {fileID: 11400000, guid: 98e40597a7d10f949a89170ae3752626, type: 2}
-  - idItem: DBCGIAY02
-    nameItem: Giay2
+  - itemShop: {fileID: 11400000, guid: 98e40597a7d10f949a89170ae3752626, type: 2}
     priceItem: 40
     locked: 0
-    itemShop: {fileID: 11400000, guid: 10452e013ae8bd945bfca37bd34cd77f, type: 2}
+    questShop: {fileID: 0}
+  - itemShop: {fileID: 11400000, guid: 10452e013ae8bd945bfca37bd34cd77f, type: 2}
+    priceItem: 70
+    locked: 0
+    questShop: {fileID: 0}

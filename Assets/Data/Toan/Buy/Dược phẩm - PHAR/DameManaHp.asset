@@ -13,18 +13,15 @@ MonoBehaviour:
   m_Name: DameManaHp
   m_EditorClassIdentifier: 
   itemsInShop:
-  - idItem: DBPDAME
-    nameItem: Thuocbuffsucmanh
-    priceItem: 20
+  - itemShop: {fileID: 11400000, guid: e35a369cceb075c4db22d2fdcbb76fb3, type: 2}
+    priceItem: 45
     locked: 0
-    itemShop: {fileID: 11400000, guid: e35a369cceb075c4db22d2fdcbb76fb3, type: 2}
-  - idItem: DBPMANA
-    nameItem: Thuocbuffmana
-    priceItem: 30
+    questShop: {fileID: 0}
+  - itemShop: {fileID: 11400000, guid: 8f6264f078d4fd64e99aabc393b637c5, type: 2}
+    priceItem: 45
     locked: 0
-    itemShop: {fileID: 11400000, guid: c3af34225e0195c4cb35ff898a268fd6, type: 2}
-  - idItem: DBPHP
-    nameItem: Thuocbuffmau
-    priceItem: 25
+    questShop: {fileID: 0}
+  - itemShop: {fileID: 11400000, guid: c3af34225e0195c4cb35ff898a268fd6, type: 2}
+    priceItem: 50
     locked: 0
-    itemShop: {fileID: 11400000, guid: 8f6264f078d4fd64e99aabc393b637c5, type: 2}
+    questShop: {fileID: 0}

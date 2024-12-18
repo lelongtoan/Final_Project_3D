@@ -48,7 +48,7 @@ public class Inventory : ItemManager
             if (equipSlots[equipIndex] != null)
             {
                 GameInstance.instance.gameMenu.SetInfoItem();
-                ItemD.Instance.SetItem(equipSlots[equipIndex],1);
+                ItemD.Instance.SetItem(equipSlots[equipIndex],id,1);
                 Debug.Log("Equip Info");
             }
         }
