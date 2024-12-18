@@ -1620,7 +1620,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3043232924716146481}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 0.0000001
   m_Drag: 0
   m_AngularDrag: 9.8
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1801,6 +1801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ce4b5ac3b9f6d048952d58f2611ccf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerData: {fileID: 0}
   skillData: {fileID: 11400000, guid: 945c8e7b287b3284fbb757c853d018eb, type: 2}
   pointSkill: 0
   mana: 0
