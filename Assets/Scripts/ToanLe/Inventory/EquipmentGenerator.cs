@@ -11,6 +11,15 @@ public class EquipmentGenerator : ScriptableObject
     public ItemSlot armourSlot;
     public ItemSlot glovesSlot;
     public ItemSlot bootSlot;
+    public void Clear()
+    {
+        swordSlot.Clear();
+        shieldSlot.Clear();
+        helmetSlot.Clear();
+        armourSlot.Clear();
+        glovesSlot.Clear();
+        bootSlot.Clear();
+    }
     public void UseEquipment(ItemSlot itemSlot)
     {
         if (itemSlot == null || itemSlot.item == null)
