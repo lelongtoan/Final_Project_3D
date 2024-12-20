@@ -7,8 +7,8 @@ public class InforMainMenu : ScriptableObject
 {
     public int money = 0;
     public int diamond = 0;
+    public int ironKey = 0;
     public int silverKey = 0;
-    public int goldKey = 0;
 
     //public List<Perk> packUnclock;
     public void SetMoney(int i)
@@ -21,10 +21,10 @@ public class InforMainMenu : ScriptableObject
     }
     public void SetSilverKey(int i)
     {
-        silverKey += i;
+        ironKey += i;
     }
     public void SetGoldKey(int i)
     {
-        goldKey += i;
+        silverKey += i;
     }
 }

@@ -7,4 +7,6 @@ public class StartInfo : ScriptableObject
 {
     public Sprite avatar;
     public string nameChar;
+    public int level;
+    public int point;
 }
