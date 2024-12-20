@@ -1,6 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/MapsAsset/EmaceArt/Slavic World Free/URP_Support/URP/URP_Standard.unitypackage.meta
+guid: d884527f3e242c144af52b11faf49d2f
+========
 guid: be7270cb386513142ae1eacd49e703d7
 folderAsset: yes
+>>>>>>>> main:Assets/Scripts/ToanLe/MainMenu/StartInfo.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
