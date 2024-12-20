@@ -12,16 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d690ab03900124439ed5e618aa451db, type: 3}
   m_Name: Bottim
   m_EditorClassIdentifier: 
-  itemID: INBPURPLE
+  id: INBPURPLE
   itemName: Bottim
   stackable: 1
   HP: 0
   MP: 0
   Dmg: 0
-  buff: 0
   buffD: 0
-  gold: 0
-  canShow: 0
-  description: 
+  gold: 7
+  rateDrop: 10
+  description: "B\u1ED9t t\xEDm l\xE0 v\u1EADt ph\u1EA9m hi\u1EBFm th\u01B0\u1EDDng
+    d\xF9ng k\u1EBFt h\u1EE3p v\u1EDBi c\xE1c lo\u1EA1i b\u1ED9t kh\xE1c \u0111\u1EC3
+    t\u1EA1o n\xEAn d\u01B0\u1EE3c ph\u1EA9m ch\u1EA5t l\u01B0\u1EE3ng cao."
+  buff: 0
   itemSet: 0
+  itemType: 0
   icon: {fileID: 765389179, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}

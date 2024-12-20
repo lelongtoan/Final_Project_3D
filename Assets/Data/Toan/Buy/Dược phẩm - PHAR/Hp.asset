@@ -13,18 +13,15 @@ MonoBehaviour:
   m_Name: Hp
   m_EditorClassIdentifier: 
   itemsInShop:
-  - idItem: DBPHP01
-    nameItem: Thuochoimau01
-    priceItem: 5
+  - itemShop: {fileID: 11400000, guid: c34d11372e66d5f4d98fa85a113e7831, type: 2}
+    priceItem: 30
     locked: 0
-    itemShop: {fileID: 11400000, guid: c34d11372e66d5f4d98fa85a113e7831, type: 2}
-  - idItem: DBPHP02
-    nameItem: Thuochoimau02
-    priceItem: 15
+    questShop: {fileID: 0}
+  - itemShop: {fileID: 11400000, guid: f51bccb8db383294c898ffe947078937, type: 2}
+    priceItem: 70
     locked: 0
-    itemShop: {fileID: 11400000, guid: f51bccb8db383294c898ffe947078937, type: 2}
-  - idItem: DBPHP03
-    nameItem: Thuochoimau03
-    priceItem: 35
+    questShop: {fileID: 0}
+  - itemShop: {fileID: 11400000, guid: 83c1018c8ef1ab744b5d3cad575465f3, type: 2}
+    priceItem: 90
     locked: 0
-    itemShop: {fileID: 11400000, guid: 83c1018c8ef1ab744b5d3cad575465f3, type: 2}
+    questShop: {fileID: 0}

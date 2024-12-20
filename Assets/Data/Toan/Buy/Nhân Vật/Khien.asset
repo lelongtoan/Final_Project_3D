@@ -13,18 +13,15 @@ MonoBehaviour:
   m_Name: Khien
   m_EditorClassIdentifier: 
   itemsInShop:
-  - idItem: DBCKHIEN01
-    nameItem: Khien1
-    priceItem: 20
+  - itemShop: {fileID: 11400000, guid: 0d66c5c10c3b3ba4bba4d4c3f97f9b43, type: 2}
+    priceItem: 35
     locked: 0
-    itemShop: {fileID: 11400000, guid: 0d66c5c10c3b3ba4bba4d4c3f97f9b43, type: 2}
-  - idItem: DBCKHIEN02
-    nameItem: Khien2
-    priceItem: 30
+    questShop: {fileID: 0}
+  - itemShop: {fileID: 11400000, guid: ba90f2c3170b1374cbd2c9479504a9b7, type: 2}
+    priceItem: 75
     locked: 0
-    itemShop: {fileID: 11400000, guid: ba90f2c3170b1374cbd2c9479504a9b7, type: 2}
-  - idItem: DBCKHIEN03
-    nameItem: Khien3
-    priceItem: 40
+    questShop: {fileID: 0}
+  - itemShop: {fileID: 11400000, guid: c2ea9f7e09847ad4babcd3661b83c2a0, type: 2}
+    priceItem: 180
     locked: 0
-    itemShop: {fileID: 11400000, guid: c2ea9f7e09847ad4babcd3661b83c2a0, type: 2}
+    questShop: {fileID: 0}
