@@ -20,7 +20,11 @@ public class Quest : ScriptableObject
     public int exp;
     public bool isStack;
     public Item itemCheck;
-    
+    public void Clear()
+    {
+        stateQuest = StateQuest.Nope;
+        isShowQuest = false;
+    }
 }
 
 
