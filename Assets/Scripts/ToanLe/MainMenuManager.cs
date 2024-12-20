@@ -16,7 +16,6 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] GameObject perkMenu;
     [SerializeField] GameObject shopMenu;
     [SerializeField] GameObject chestMenu;
-    [SerializeField] GameObject detailChest;
     [SerializeField] GameObject achievementMenu;
     [SerializeField] GameObject settingMenu;
     [SerializeField] GameObject loginMenu;
@@ -24,6 +23,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] GameObject startGameMenu;
     [SerializeField] GameObject newCharMenu;
     [SerializeField] GameObject checkInMenu;
+    [SerializeField] GameObject statsTreeMenu;
     [Header("Detail")]
     [SerializeField] GameObject skillNodeDetail;
 
@@ -36,6 +36,10 @@ public class MainMenuManager : MonoBehaviour
     {
         moneyText.text = MainMenuInstance.instance.inforMenu.money.ToString();
         diamondText.text = MainMenuInstance.instance.inforMenu.diamond.ToString();
+    }
+    public void SetStatsTreeMenu()
+    {
+        statsTreeMenu.SetActive(!statsTreeMenu.activeInHierarchy);
     }
     public void SetCheckInMenu()
     {
@@ -64,18 +68,6 @@ public class MainMenuManager : MonoBehaviour
     public void SetChestMenu()
     {
         chestMenu.SetActive(!chestMenu.activeInHierarchy);
-    }
-    public void SetChestDetailMenu(bool open)
-    {
-        if (open)
-        {
-
-        }
-        else
-        {
-
-        }
-        detailChest.SetActive(!detailChest.activeInHierarchy);
     }
     public void SetAchievementMenu()
     {
