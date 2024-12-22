@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 676006fa71130c94ab7ba4bf86f471d3, type: 3}
   m_Name: Save
   m_EditorClassIdentifier: 
-  idSave: 1
+  idSave: 2
   playerData: {fileID: 11400000, guid: 4a0c7bb7eba4ea24c977a14c0f174428, type: 2}
   skillData: {fileID: 11400000, guid: 945c8e7b287b3284fbb757c853d018eb, type: 2}
   quests: []
   inventorySlots: {fileID: 11400000, guid: 072922a72bea53942964f7c71f20b362, type: 2}
   equipmentGenerator: {fileID: 11400000, guid: efc68d7b58a3562458041f291fa1b319, type: 2}
-  setIdItem: {fileID: 0}
+  setIdItem: {fileID: 11400000, guid: 3b912c76c43c64d47b5ebc6402f0a334, type: 2}

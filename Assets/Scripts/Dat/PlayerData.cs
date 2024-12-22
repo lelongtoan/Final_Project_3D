@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using UnityEngine;
 
+[System.Serializable]
 [CreateAssetMenu(fileName = "NewPlayerData", menuName = "Player/Player Data")]
 public class PlayerData : ScriptableObject
 {

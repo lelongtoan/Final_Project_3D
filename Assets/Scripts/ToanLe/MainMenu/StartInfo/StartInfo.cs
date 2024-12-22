@@ -9,4 +9,5 @@ public class StartInfo : ScriptableObject
     public string nameChar;
     public int level;
     public int point;
+    public bool isSave;
 }

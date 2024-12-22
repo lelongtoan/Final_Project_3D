@@ -7,6 +7,7 @@ public enum StateQuest
 {
     Nope, Completed, Taked
 }
+[System.Serializable]
 [CreateAssetMenu(menuName = "Data/Quest")]
 public class Quest : ScriptableObject
 {
