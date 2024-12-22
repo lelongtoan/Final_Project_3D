@@ -14,6 +14,7 @@ public enum EQT
 {
     Nope, Sword, Shield, Helmet, Armour, Gloves, Boot
 }
+[System.Serializable]
 [CreateAssetMenu(menuName = "Data/Item")]
 public class Item : ScriptableObject
 {

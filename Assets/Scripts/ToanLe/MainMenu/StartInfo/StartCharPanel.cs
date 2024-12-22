@@ -12,23 +12,43 @@ public class StartCharPanel : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI levelText;
     public TextMeshProUGUI pointText;
-
-    private void Start()
+    public Button deleteButton;
+    public Button button;
+    private void OnEnable()
+    {
+        Set();
+    }
+    public void Set()
     {
         avatar.gameObject.SetActive(false);
         nameText.gameObject.SetActive(false);
         levelText.gameObject.SetActive(false);
         pointText.gameObject.SetActive(false);
-        if (startInfo.avatar != null)
+        deleteButton.gameObject.SetActive(false);
+        if (startInfo.isSave)
         {
             avatar.gameObject.SetActive(true);
             nameText.gameObject.SetActive(true);
             levelText.gameObject.SetActive(true);
             pointText.gameObject.SetActive(true);
+            deleteButton.gameObject.SetActive(true);
+
             avatar.sprite = startInfo.avatar;
             nameText.text = startInfo.nameChar;
             levelText.text = "Level : " + startInfo.level;
             pointText.text = "Point : " + startInfo.point;
         }
+        button.onClick.AddListener(SetPlayer);
+        deleteButton.onClick.AddListener(SetDeletePlayer);
+    }
+    public void SetPlayer()
+    {
+        SaveInGame.instance.SetCharSave(id);
+    }
+    public void SetDeletePlayer()
+    {
+        SaveInGame.instance.DetelePlayer(id);
+        startInfo.isSave = false;
+        Set();
     }
 }

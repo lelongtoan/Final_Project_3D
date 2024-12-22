@@ -96,6 +96,7 @@ public class MainMenuManager : MonoBehaviour
     public void SetStartMenu()
     {
         startGameMenu.SetActive(!startGameMenu.activeInHierarchy);
+        SaveInGame.instance.LoadPanelChar();
     }
     public void SetNewCharMenu()
     {

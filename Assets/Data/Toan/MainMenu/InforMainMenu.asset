@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   money: 0
   diamond: 0
+  ironKey: 11
   silverKey: 0
-  goldKey: 0

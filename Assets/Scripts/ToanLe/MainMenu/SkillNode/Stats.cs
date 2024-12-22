@@ -5,7 +5,11 @@ using UnityEngine;
 public class Stats : MonoBehaviour
 {
     public ListSkillNode list;
-    private void Awake()
+    private void OnEnable()
+    {
+        SetListSkillNode();
+    }
+    public void SetListSkillNode()
     {
         list.hp = 0; list.mp = 0; list.dmg = 0; list.def = 0;
         foreach (SkillNodeData node in list.data)
@@ -19,4 +23,5 @@ public class Stats : MonoBehaviour
             }
         }
     }
+
 }

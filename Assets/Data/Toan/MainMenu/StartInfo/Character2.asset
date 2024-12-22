@@ -16,3 +16,4 @@ MonoBehaviour:
   nameChar: Mage
   level: 1
   point: 0
+  isSave: 0
