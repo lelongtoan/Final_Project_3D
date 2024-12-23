@@ -14,7 +14,11 @@ public class SoundEffect : MonoBehaviour
 
     public List<Sound> sounds;
     private Dictionary<string, AudioClip> soundDictionary; 
-    public AudioSource audioSource; 
+    public AudioSource audioSource;
+    [Range(0f, 1f)]
+    public float soundEffectVolume = 1.0f;
+    [Range(0f, 1f)]
+    public float musicVolume = 1.0f;
     void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -35,7 +39,7 @@ public class SoundEffect : MonoBehaviour
     {
         if (soundDictionary.ContainsKey(soundName))
         {
-            audioSource.PlayOneShot(soundDictionary[soundName]);
+            audioSource.PlayOneShot(soundDictionary[soundName],soundEffectVolume);
         }
         else
         {
@@ -48,12 +52,25 @@ public class SoundEffect : MonoBehaviour
         {
             audioSource.clip = soundDictionary[soundName];
             audioSource.loop = true;
-            audioSource.volume = 0.5f;
+            audioSource.volume = musicVolume;
             audioSource.Play();
         }
         else
         {
             Debug.LogWarning("Âm thanh: " + soundName + " không tìm thấy!");
+        }
+    }
+    public void SetSoundEffectVolume(float volume)
+    {
+        soundEffectVolume = Mathf.Clamp01(volume);
+    }
+
+    public void SetMusicVolume(float volume)
+    {
+        musicVolume = Mathf.Clamp01(volume);
+        if (audioSource.isPlaying)
+        {
+            audioSource.volume = musicVolume;
         }
     }
 }
