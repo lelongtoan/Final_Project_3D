@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InGameMenu : MonoBehaviour
 {
+    [SerializeField] public GameObject settingPanel;
     [SerializeField] public GameObject characterPanel;
     [SerializeField] public GameObject questPanel;
     [SerializeField] public GameObject gameOver;
@@ -24,6 +26,19 @@ public class InGameMenu : MonoBehaviour
     private void Start()
     {
         sound = FindObjectOfType<SoundEffect>();
+    }
+    public void SetSetting(bool on)
+    {
+        if(on)
+        {
+            Time.timeScale = 0;
+            gameReportPanel.SetActive(true);
+        }
+        else
+        {
+            Time.timeScale = 1;
+            gameReportPanel.SetActive(false);
+        }
     }
     public void SetGameReport()
     {
@@ -55,10 +70,6 @@ public class InGameMenu : MonoBehaviour
         questPanel.SetActive(!questPanel.activeInHierarchy);
         sound.PlaySound("Quest");
     }
-    public void SetSettingPanel()
-    {
-        //settingPanel.SetActive(!settingPanel.activeInHierarchy);
-    }
     public void SetInfoItem()
     {
         infoItem.SetActive(!infoItem.activeInHierarchy);
@@ -80,5 +91,4 @@ public class InGameMenu : MonoBehaviour
     {
         npcChatPanel.SetActive(!npcChatPanel.activeInHierarchy);
     }
-    
 }
