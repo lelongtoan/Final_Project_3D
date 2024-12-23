@@ -36,24 +36,27 @@ public class InGameMenu : MonoBehaviour
     }
     public void SetShopPanel()
     {
+        sound.PlaySound("Button");
         shopNPCPanel.SetActive(!shopNPCPanel.activeInHierarchy);
     }
     public void SetCraftPanel()
     {
+        sound.PlaySound("Button");
         SetShopPanel();
         buyNPCPanel.SetActive(false);
         craftNPCPanel.SetActive(true);
     }
     public void SetBuyPanel()
     {
+        sound.PlaySound("Button");
         SetShopPanel();
         buyNPCPanel.SetActive(true);
         craftNPCPanel.SetActive(false);
     }
     public void SetQuestPanel()
     {
-        questPanel.SetActive(!questPanel.activeInHierarchy);
         sound.PlaySound("Quest");
+        questPanel.SetActive(!questPanel.activeInHierarchy);
     }
     public void SetSettingPanel()
     {
@@ -61,10 +64,12 @@ public class InGameMenu : MonoBehaviour
     }
     public void SetInfoItem()
     {
+        sound.PlaySound("Button");
         infoItem.SetActive(!infoItem.activeInHierarchy);
     }
     public void SetDragAndDrop(bool i)
     {
+        sound.PlaySound("Button");
         dragAndDrop.SetActive(i);
         ItemD.Instance.isMoving = i;
     }
@@ -74,6 +79,7 @@ public class InGameMenu : MonoBehaviour
     }
     public void SetNPC()
     {
+        sound.PlaySound("Button");
         npcPanel.SetActive(!npcPanel.activeInHierarchy);
     }
     public void SetNPCChat()

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
-using UnityEditor.Profiling;
 using UnityEngine;
 using UnityEngine.InputSystem.Processors;
 using UnityEngine.SceneManagement;
