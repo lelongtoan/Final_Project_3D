@@ -19,6 +19,7 @@ public class ItemD : MonoBehaviour
     [SerializeField] GameObject unStackGO;
     [SerializeField] GameObject moveGO;
     [SerializeField] GameObject dropGO;
+    SoundEffect sound;
     public static ItemD Instance { get; set; }
 
     public int idSelect;
@@ -31,6 +32,7 @@ public class ItemD : MonoBehaviour
     }
     private void Start()
     {
+        sound = FindObjectOfType<SoundEffect>();
         idSelect = -1;
         Clear();
     }
@@ -104,6 +106,7 @@ public class ItemD : MonoBehaviour
         if (itemSlot.item.itemSet == ItemSet.Equippable)
         {
             GameInstance.instance.itemManager.equipment.UseEquipment(itemSlot);
+            sound.PlaySound("Cloth");
             itemSlot = new ItemSlot();
             return;
             
@@ -111,16 +114,19 @@ public class ItemD : MonoBehaviour
         else if (itemSlot.item.itemSet == ItemSet.Heal)
         {
             GameInstance.instance.playerInfor.HealthRecovery((int)itemSlot.item.HP);
+            sound.PlaySound("Drink");
         }
         else if (itemSlot.item.itemSet == ItemSet.Mana)
         {
             GameInstance.instance.playerInfor.ManaRecover((int)itemSlot.item.MP);
+            sound.PlaySound("Drink");
         }
         else
         {
             if (itemSlot.item.buff != Buff.Nope)
             {
                 GameInstance.instance.buffManager.ActivateBuff(itemSlot.item);
+                sound.PlaySound("Drink");
             }
             else
             {
@@ -141,6 +147,7 @@ public class ItemD : MonoBehaviour
         if (GameInstance.instance.itemManager.inventory.CheckFull(itemSlot.item))
         {
             GameInstance.instance.itemManager.inventory.Add(itemSlot.item);
+            sound.PlaySound("Cloth");
             this.itemSlot.Clear();
         }
     }
@@ -176,6 +183,7 @@ public class ItemD : MonoBehaviour
     }
     public void SetSell()
     {
+        sound.PlaySound("Sell");
         ValueSell valueSell = GameInstance.instance.valueSell;
         GameInstance.instance.playerInfor.GetMoney((int)valueSell.price);
         GameInstance.instance.itemManager.RemoveItem(itemSlot, valueSell.quantityItem);
