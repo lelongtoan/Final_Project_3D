@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 [CreateAssetMenu(menuName = "Data/Equipment Generator")]
 public class EquipmentGenerator : ScriptableObject
 {
@@ -40,7 +41,7 @@ public class EquipmentGenerator : ScriptableObject
             GameInstance.instance.playerInfor.UpMaxHP(itemSlot.item.HP);
             GameInstance.instance.playerInfor.UpMaxMP(itemSlot.item.MP);
             GameInstance.instance.playerInfor.UpDame((int)itemSlot.item.Dmg);
-
+            
             itemSlot.Clear();
         }
         else

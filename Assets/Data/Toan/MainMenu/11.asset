@@ -9,11 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec724f2ac0d9a55428d69b28002f5760, type: 3}
-  m_Name: Character1
+  m_Script: {fileID: 11500000, guid: 0e6b64d89526a9d40810eb282988194f, type: 3}
+  m_Name: 11
   m_EditorClassIdentifier: 
-  avatar: {fileID: 21300000, guid: cc8e2be9532fbc543af51c6932181466, type: 3}
-  nameChar: Knight
-  level: 1
-  point: 0
-  isSave: 0
+  idItemSlots: []

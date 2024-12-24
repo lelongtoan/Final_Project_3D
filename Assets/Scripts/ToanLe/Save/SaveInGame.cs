@@ -5,6 +5,10 @@ using UnityEngine;
 public class SaveInGame : MonoBehaviour
 {
     public static SaveInGame instance;
+    public List<StartInfo> startInfo;
+    public SaveData saveData;
+    public SaveTemp saveTemp;
+    public int idSelect;
     private void Awake()
     {
         if (instance == null)
@@ -17,19 +21,68 @@ public class SaveInGame : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    public SaveData saveData;
 
     public void SaveGame()
     {
-        SaveLoadJson.SaveToJson(saveData, saveData.idSave);
+        saveTemp.SetSaveData();
     }
 
     public void LoadGame(int id)
     {
-        saveData = SaveLoadJson.LoadFromJson(id);
+        saveTemp.SetLoadData(id);
         if (saveData != null)
         {
             //
+        }
+    }
+    public void SetCharSave(int id)
+    {
+        idSelect = id;
+        if (startInfo[id].isSave)
+        {
+            LoadGame(id);
+        }
+        else
+        {
+            MainMenuManager.Instance.SetNewCharMenu();
+        }
+    }
+    public void NewPlayer()
+    {
+        saveTemp.NewPlayer();
+        MainMenuInstance.instance.statsData.Set();
+        saveTemp.SetSaveData(idSelect);
+        Debug.Log("New Player Success");
+        //load scene thanh`
+    }
+    public void DetelePlayer(int id)
+    {
+        saveData = new SaveData();
+        saveTemp.NewPlayer();
+        saveTemp.SetSaveData(id);
+        Debug.Log("Del Player Success");
+    }
+    public void LoadPanelChar()
+    {
+        for (int i = 0; i < startInfo.Count; i++)
+        {
+            saveData = SaveLoadJson.LoadFromJson(i);
+            if(saveData == null)
+            {
+                Debug.Log($"Data : {i} Error!");
+                continue;
+            }
+            Debug.Log(saveData.level.ToString());
+            startInfo[i].level = saveData.level;
+            startInfo[i].point = saveData.level * 10;
+            if (saveData.maxHP != 0)
+            {
+                startInfo[i].isSave = true;
+            }
+            else
+            {
+                startInfo[i].isSave = false;
+            }
         }
     }
 }

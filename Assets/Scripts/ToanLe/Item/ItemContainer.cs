@@ -30,6 +30,7 @@ public class ItemSlot
         count = 0;
     }
 }
+[System.Serializable]
 [CreateAssetMenu(menuName = "Data/Item Container")]
 public class ItemContainer : ScriptableObject
 {

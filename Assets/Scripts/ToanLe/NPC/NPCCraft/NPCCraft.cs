@@ -9,6 +9,7 @@ public class NPCCraft : MonoBehaviour
     public List<ItemCraftButton> buttons = new();
     public GameObject buttonCraftPrefab;
     public GameObject content;
+    SoundEffect sound;
     private void OnEnable()
     {
         CreateButtons();
@@ -51,11 +52,16 @@ public class NPCCraft : MonoBehaviour
 
     public virtual void OnClick(int id)
     {
+        if (sound == null)
+        {
+            sound = FindObjectOfType<SoundEffect>();
+        }
         CraftData selectedCraft = craftInventory.craftDataList[id];
         if (id >= 0 && id < craftInventory.craftDataList.Count)
         {
             if (GameInstance.instance.itemManager.inventory.CheckCraft(selectedCraft))
             {
+                sound.PlaySound("Craft");
                 for (int i = 0; i < selectedCraft.requiredItems.Count; i++)
                 {
                     GameInstance.instance.itemManager.RemoveItemCraft(selectedCraft.requiredItems[i], selectedCraft.requiredItems[i].count);

@@ -8,6 +8,7 @@ public class NPCShop : MonoBehaviour
     public List<ItemShopButton> buttons = new();
     public GameObject buttonItemShop;
     public GameObject content;
+    SoundEffect sound;
     private void OnEnable()
     {
         CreateButtons();
@@ -48,6 +49,10 @@ public class NPCShop : MonoBehaviour
     }
     public virtual void OnClick(int id)
     {
+        if (sound == null)
+        {
+            sound = FindObjectOfType<SoundEffect>();
+        }
         ItemInShop selectedItem = shopInventory.itemsInShop[id];
         if (id >= 0 && id < shopInventory.itemsInShop.Count)
         {
@@ -55,6 +60,7 @@ public class NPCShop : MonoBehaviour
             {
                 if (GameInstance.instance.itemManager.inventory.CheckFull(selectedItem.itemShop))
                 {
+                    sound.PlaySound("Buy");  
                     GameInstance.instance.itemManager.inventory.Add(selectedItem.itemShop, 1);
                     PlayerInfor.Instance.GetMoney(selectedItem.priceItem);
                     GameInstance.instance.gameReport.SetReport($"Bạn đã mua {selectedItem.itemShop.itemName} với giá {selectedItem.priceItem} vàng!");
