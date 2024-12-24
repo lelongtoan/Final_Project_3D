@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class EnemyInfor : MonoBehaviour
 {
-    public string enemyId;
+    public int enemyId;
     public int level = 1;
     public int coin = 1;
     public int exp = 1;
@@ -22,11 +22,14 @@ public class EnemyInfor : MonoBehaviour
     Animator animator;
     public GameObject canvas;
     public GameObject orb;
+    public delegate void EnemyDeathHandler(GameObject enemy);
+    public event EnemyDeathHandler OnEnemyDeath;
     private void Start()
     {
-        if (PlayerPrefs.GetInt(enemyId, 0) == 1)
+       
+        if (PlayerPrefs.GetInt("EnemyStatus_" + enemyId, 1) == 0)
         {
-            Destroy(gameObject);
+            Destroy(gameObject); 
         }
         else
         {
@@ -62,7 +65,7 @@ public class EnemyInfor : MonoBehaviour
         if (isdead) return;
 
         isdead = true;
-        PlayerPrefs.SetInt(enemyId, 1);
+        //PlayerPrefs.SetInt(enemyId, 1);
         PlayerPrefs.Save();
         animator.SetTrigger("Dead");
         Dropitem();
@@ -70,6 +73,16 @@ public class EnemyInfor : MonoBehaviour
         GetComponent<NavMeshAgent>().enabled = false;
         GetComponent<AIEnemy>().enabled = false;
         canvas.SetActive(false);
+
+        PlayerPrefs.SetInt("EnemyStatus_" + enemyId, 0);
+        PlayerPrefs.Save();
+
+        if (OnEnemyDeath != null)
+        {
+            OnEnemyDeath.Invoke(gameObject);
+        }
+
+        Destroy(gameObject);
     }
     void Dropitem()
     {
@@ -84,5 +97,6 @@ public class EnemyInfor : MonoBehaviour
     public void DestroyEnemy()
     {
         Destroy(gameObject);
+        OnEnemyDeath = null;
     }
 }

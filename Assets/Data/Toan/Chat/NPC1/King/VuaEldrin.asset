@@ -44,4 +44,4 @@ MonoBehaviour:
     l\u1EF1c h\u1EAFc \xE1m, v\xE0 tr\u1EA3 l\u1EA1i \xE1nh s\xE1ng cho Guardian.
     \u0110\xE2y l\xE0 nh\u1EEFng ph\u1EA7n th\u01B0\u1EDFng ng\u01B0\u01A1i x\u1EE9ng
     \u0111\xE1ng c\xF3 \u0111\u01B0\u1EE3c."
-  quest: {fileID: 0}
+  quest: {fileID: 11400000, guid: 28d7d40c5a2a1dd48b0c4f58bac975e6, type: 2}

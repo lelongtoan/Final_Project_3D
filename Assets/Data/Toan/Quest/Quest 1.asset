@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Quest 1
   m_EditorClassIdentifier: 
   questId: 1
-  numberInt: 101
+  numberInt: 1
   numberComplete: 1
   questString: 2
-  isShowQuest: 1
-  stateQuest: 2
-  isCoin: 0
-  exp: 0
+  isShowQuest: 0
+  stateQuest: 0
+  isCoin: 20
+  exp: 100
   isStack: 1
-  itemCheck: {fileID: 11400000, guid: 81c908a33a925f54394e0ddbc551e807, type: 2}
+  itemCheck: {fileID: 11400000, guid: 2b8dcbc951e9fd348b956b1e21be3939, type: 2}
