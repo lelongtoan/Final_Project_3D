@@ -1220,7 +1220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b915b7a53df1c2f4eb688e7e6c22c959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyId: 
+  enemyId: 4
   level: 1
   coin: 1
   exp: 1
