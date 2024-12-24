@@ -15,5 +15,5 @@ MonoBehaviour:
   avatar: {fileID: 21300000, guid: cc8e2be9532fbc543af51c6932181466, type: 3}
   nameChar: Knight
   level: 1
-  point: 0
-  isSave: 0
+  point: 10
+  isSave: 1

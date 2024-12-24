@@ -15,5 +15,5 @@ MonoBehaviour:
   avatar: {fileID: 21300000, guid: acf24f91ea86d2140b7efa39f2011f06, type: 3}
   nameChar: Mage
   level: 1
-  point: 0
+  point: 10
   isSave: 0
