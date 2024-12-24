@@ -14,6 +14,10 @@ public class StartCharPanel : MonoBehaviour
     public TextMeshProUGUI pointText;
     public Button deleteButton;
     public Button button;
+    private void Awake()
+    {
+        Set();
+    }
     private void OnEnable()
     {
         Set();
@@ -50,5 +54,6 @@ public class StartCharPanel : MonoBehaviour
         SaveInGame.instance.DetelePlayer(id);
         startInfo.isSave = false;
         Set();
+        SaveInGame.instance.LoadPanelChar();
     }
 }

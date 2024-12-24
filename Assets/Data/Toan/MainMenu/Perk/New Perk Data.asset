@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d962853061a5024c976de2aea6daa35, type: 3}
-  m_Name: 1
+  m_Name: New Perk Data
   m_EditorClassIdentifier: 
-  id: 0
-  perkName: Heart
-  image: {fileID: 1756937319, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
+  id: 2
+  perkName: 
+  image: {fileID: 0}
   quantity: 0
   rate: 0
-  hp: 15
+  hp: 0
   mp: 0
   dmg: 0
   def: 0
   perkState: 0
-  quality: 0
+  quality: 1

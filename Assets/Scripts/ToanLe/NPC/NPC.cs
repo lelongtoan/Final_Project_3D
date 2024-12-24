@@ -28,6 +28,22 @@ public class NPC : MonoBehaviour
         attack.SetActive(true);
         interact.SetActive(false);
         interactButton.onClick.AddListener(OnInteractButtonClicked);
+
+        shopGO.SetActive(false);
+        craftGO.SetActive(false);
+        questGO.SetActive(false);
+        if(listCraft !=null)
+        {
+            craftGO.SetActive(true);
+        }
+        if(listChat != null)
+        {
+            questGO.SetActive(true);
+        }
+        if(listItemShop != null)
+        {
+            shopGO.SetActive(true);
+        }
     }
 
     private void OnInteractButtonClicked()

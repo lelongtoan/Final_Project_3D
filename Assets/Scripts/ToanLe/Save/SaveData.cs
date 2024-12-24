@@ -50,6 +50,7 @@ public class InventorySave
 [CreateAssetMenu(menuName = "Game/Save Data")]
 public class SaveData : ScriptableObject
 {
+    public bool isSave;
     [Header("Player Stats")]
     public int idSave;
     public float maxHP;

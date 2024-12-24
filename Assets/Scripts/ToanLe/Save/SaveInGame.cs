@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SaveInGame : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class SaveInGame : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        LoadPanelChar();
     }
 
     public void SaveGame()
@@ -32,7 +34,8 @@ public class SaveInGame : MonoBehaviour
         saveTemp.SetLoadData(id);
         if (saveData != null)
         {
-            //
+            Debug.Log("Load Player Success");
+            SceneManager.LoadScene("LobbyMap");
         }
     }
     public void SetCharSave(int id)
@@ -52,8 +55,9 @@ public class SaveInGame : MonoBehaviour
         saveTemp.NewPlayer();
         MainMenuInstance.instance.statsData.Set();
         saveTemp.SetSaveData(idSelect);
+        saveData.isSave = true;
         Debug.Log("New Player Success");
-        //load scene thanh`
+        SceneManager.LoadScene("LobbyMap");
     }
     public void DetelePlayer(int id)
     {

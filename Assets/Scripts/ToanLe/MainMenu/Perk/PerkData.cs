@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum PerkQuality
+{
+    S, A, B
+}
 public enum PerkState
 {
     Lock, Unlock
@@ -10,6 +14,8 @@ public enum PerkState
 [CreateAssetMenu(menuName ="MainMenu/Perk")]
 public class PerkData : ScriptableObject
 {
+    public int id;
+    public int levelPerk;
     public string perkName;
     public Sprite image;
     public int quantity;
@@ -19,4 +25,5 @@ public class PerkData : ScriptableObject
     public int dmg;
     public int def;
     public PerkState perkState;
+    public PerkQuality quality;
 }
