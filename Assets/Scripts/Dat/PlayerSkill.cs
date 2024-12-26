@@ -3,8 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using TMPro;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerSkill : MonoBehaviour
@@ -13,6 +15,7 @@ public class PlayerSkill : MonoBehaviour
     public PlayerSkillData skillData;
     public int pointSkill;
 
+    bool isLooby = false;
 
     public float mana;
     [Header("Skill1")]
@@ -73,6 +76,11 @@ public class PlayerSkill : MonoBehaviour
 
     void Start()
     {
+        if (SceneManager.GetActiveScene().name == "LobbyMap")
+        {
+            isLooby = true;
+        }
+        else isLooby = false;
         if (IsFirstStartGame())
         {
             skillData.Initialize();
@@ -158,6 +166,11 @@ public class PlayerSkill : MonoBehaviour
     }
     public void BuffDameNormal()
     {
+        if (isLooby)
+        {
+            Debug.Log("Khoong thể dùng kĩ năng ở thành");
+            return;
+        }
         if (!endCountDow2)
         {
             Debug.Log("Chưa hồi chiêu");
@@ -211,6 +224,11 @@ public class PlayerSkill : MonoBehaviour
     }
     void SpawmSkillUltimate()
     {
+        if (isLooby)
+        {
+            Debug.Log("Khoong thể dùng kĩ năng ở thành");
+            return;
+        }
         if (!CheckMana(manaskill3))
         {
             return;
@@ -284,6 +302,11 @@ public class PlayerSkill : MonoBehaviour
     }
     void ActiveSkill()
     {
+        if (isLooby)
+        {
+            Debug.Log("Khoong thể dùng kĩ năng ở thành");
+            return;
+        }
         if (!endCountDow1)
         {
             Debug.Log("Chưa hồi chiêu");
