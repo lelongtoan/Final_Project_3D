@@ -12,16 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81aa03357c0454d4c8c635d997863668, type: 3}
   m_Name: SkillNode 10
   m_EditorClassIdentifier: 
-  icon: {fileID: -895623538, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
-  nameSkillNode: "T\u0103ng N\u0103ng L\u01B0\u1EE3ng I"
-  description: "T\u0103ng 5 M\xE1u"
+  icon: {fileID: -1661323728, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
+  nameSkillNode: "T\u0103ng S\xE1t Th\u01B0\u01A1ng III"
+  description: "T\u0103ng 30 S\xE1t Th\u01B0\u01A1ng"
   hp: 0
-  mp: 5
-  dmg: 0
+  mp: 0
+  dmg: 30
   def: 0
-  gold: 100
-  diamond: 0
+  gold: 1000
+  diamond: 3
   listNextSkillNode:
   - {fileID: 11400000, guid: cd29e97c985a70e4798b59240e69bcc1, type: 2}
   - {fileID: 11400000, guid: 9036af0d26435f5479c08c7b2b6248e5, type: 2}
+  - {fileID: 11400000, guid: a3cbe77afebf9884aa9c362c51c9e2ce, type: 2}
   state: 0

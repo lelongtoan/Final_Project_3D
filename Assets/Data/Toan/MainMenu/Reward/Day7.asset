@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95caa1001ed51f448a31d6c6387bc725, type: 3}
   m_Name: Day7
   m_EditorClassIdentifier: 
-  iconReward: {fileID: 0}
+  iconReward: {fileID: 559429178, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
   rewardState: 3
   rewardAmount: 1
   isCheck: 0

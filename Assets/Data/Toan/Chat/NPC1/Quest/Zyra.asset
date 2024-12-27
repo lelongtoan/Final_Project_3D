@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcChat:
   - "Ng\u01B0\u01A1i l\xE0 ng\u01B0\u1EDDi \u0111\u01B0\u1EE3c ch\u1ECDn sao? Th\u1EADt
-    kh\xF3 tin. Nh\u01B0ng ta c\xF3 th\u1EC3 gi\xFAp. Nh\u1EEFng con qu\xE1i v\u1EADt
-    \u1EDF \u0111\xE2y r\u1EA5t m\u1EA1nh, ng\u01B0\u01A1i s\u1EBD c\u1EA7n m\u1ED9t
-    \xEDt kinh nghi\u1EC7m."
+    kh\xF3 tin. Nh\u01B0ng ta c\xF3 th\u1EC3 gi\xFAp, ng\u01B0\u01A1i s\u1EBD c\u1EA7n
+    m\u1ED9t \xEDt kinh nghi\u1EC7m."
   - "Thu th\u1EADp 5 chi\u1EBFc da qu\xE1i v\u1EADt t\u1EEB khu v\u1EF1c n\xE0y.
     Ta s\u1EBD ch\u1EC9 cho ng\u01B0\u01A1i c\xE1ch ch\u1EBF t\u1EA1o v\u0169 kh\xED
     hi\u1EC7u qu\u1EA3 h\u01A1n."
@@ -25,6 +24,6 @@ MonoBehaviour:
     ?"
   questComplete:
   - "Kh\xF4ng t\u1EC7 ch\xFAt n\xE0o! \u0110\xE2y, h\xE3y c\u1EA7m l\u1EA5y v\u1EADt
-    n\xE0y. N\xF3 s\u1EBD gi\xFAp ng\u01B0\u01A1i ch\u1ED1ng l\u1EA1i nh\u1EEFng
-    m\u1ED1i \u0111e d\u1ECDa l\u1EDBn h\u01A1n."
-  quest: {fileID: 0}
+    n\xE0y v\xE0 \u0111i \u0111\u1EBFn Borin \u0111\u1EC3 h\u1ECDc c\xE1ch ch\u1EBF
+    t\u1EA1o n\xE0o."
+  quest: {fileID: 11400000, guid: f2ac9cae2d51e2547bce90c5eae73d43, type: 2}
