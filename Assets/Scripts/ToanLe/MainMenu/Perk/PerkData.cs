@@ -17,6 +17,7 @@ public class PerkData : ScriptableObject
     public int id;
     public int levelPerk;
     public string perkName;
+    public string description;
     public Sprite image;
     public int quantity;
     public int rate;

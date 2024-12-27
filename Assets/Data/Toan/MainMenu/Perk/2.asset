@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d962853061a5024c976de2aea6daa35, type: 3}
   m_Name: 2
   m_EditorClassIdentifier: 
+  id: 0
+  levelPerk: 1
   perkName: Dame
-  image: {fileID: 0}
+  description: 
+  image: {fileID: 1730401510, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
   quantity: 0
   rate: 0
   hp: 0
@@ -21,3 +24,4 @@ MonoBehaviour:
   dmg: 5
   def: 0
   perkState: 0
+  quality: 0

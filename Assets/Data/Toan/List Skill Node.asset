@@ -16,7 +16,7 @@ MonoBehaviour:
   mp: 0
   dmg: 0
   def: 0
-  data:
+  dataSkillNode:
   - {fileID: 11400000, guid: b2878ee3745b9134f9f5c046fff6bcbd, type: 2}
   - {fileID: 11400000, guid: 536264a2774a8084191a458ecaafae9c, type: 2}
   - {fileID: 11400000, guid: d1cfbe1a774616f41b478cec74ac33c0, type: 2}

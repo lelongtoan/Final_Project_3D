@@ -57,8 +57,12 @@ public class MainMenuManager : MonoBehaviour
     {
         characterMenu.SetActive(!characterMenu.activeInHierarchy);
     }
-    public void SetPerkMenu()
+    public void SetPerkMenu(bool equip)
     {
+        if (!equip)
+        {
+            ShowListPerk.instance.DisplayUnlockedPerks(-1,false);
+        }
         perkMenu.SetActive(!perkMenu.activeInHierarchy);
     }
     public void SetShopMenu()
