@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Cinemachine;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
@@ -11,6 +12,7 @@ public class PlayerInfor : MonoBehaviour
 {
     public static PlayerInfor Instance;
 
+    public CameraShake shake;
     [Header("Thông tin nhân vật")]
     public PlayerData playerData;
 
@@ -41,6 +43,7 @@ public class PlayerInfor : MonoBehaviour
 
     private void Awake()
     {
+
         // Đảm bảo rằng chỉ có một instance duy nhất của player
         if (Instance == null)
         {
@@ -72,6 +75,7 @@ public class PlayerInfor : MonoBehaviour
         {
             LoadData();
         }
+        shake = FindObjectOfType<CinemachineVirtualCamera>().GetComponent<CameraShake>();
         hpbar = GameObject.FindWithTag("HPBar").GetComponent<Image>();
         mpbar = GameObject.FindWithTag("MPBar").GetComponent<Image>();  
         Exp_Image = GameObject.FindWithTag("EXP").GetComponent<Image>();
@@ -214,8 +218,16 @@ public class PlayerInfor : MonoBehaviour
         {
             hp = 0;
         }
+        if (hp <= 0)
+        {
+            hp = 1;
+        }
         healthPoint -= hp;
-        Debug.Log("Tru " + hp.ToString() + " mau");
+        shake.ShakeCamera(1.5f, 0.2f);
+        Vector3 hit = -transform.forward;
+        gameObject.GetComponent<PlayerHit>().TakeDamage(hit);
+
+        Debug.Log("Shake");
         SaveData();
     }
     public void PlayerTakeStandanDame(int hp)
