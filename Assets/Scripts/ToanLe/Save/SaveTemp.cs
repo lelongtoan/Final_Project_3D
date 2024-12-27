@@ -92,10 +92,13 @@ public class SaveTemp : MonoBehaviour
         if (id == -1)
         {
             SaveLoadJson.SaveToJson(saveData, saveData.idSave);
+            Debug.Log("111111");
         }
         else
         {
             SaveLoadJson.SaveToJson(saveData, id);
+            Debug.Log("111111 Error");
+
         }
     }
     private void AddEquipmentSave(ItemSlot slot, int idSlot)

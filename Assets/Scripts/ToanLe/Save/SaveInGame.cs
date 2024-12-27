@@ -55,7 +55,7 @@ public class SaveInGame : MonoBehaviour
         saveTemp.NewPlayer();
         MainMenuInstance.instance.statsData.Set();
         saveTemp.SetSaveData(idSelect);
-        saveData.isSave = true;
+        //saveData.isSave = true;
         Debug.Log("New Player Success");
         SceneManager.LoadScene("LobbyMap");
     }
