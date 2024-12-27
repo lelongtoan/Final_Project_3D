@@ -19,5 +19,5 @@ MonoBehaviour:
   def: 5
   dame: 10
   level: 1
-  exp: 0
-  money: 0
+  exp: 2
+  money: 2

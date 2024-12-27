@@ -1295,7 +1295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patrolPoints: []
-  chaseDistance: 10
+  chaseDistance: 13
   attackDistance: 4
   attackCooldown: 1.5
   patrolSpeed: 3

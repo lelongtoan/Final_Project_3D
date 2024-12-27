@@ -19,7 +19,7 @@ MonoBehaviour:
   mp: 0
   dmg: 0
   def: 0
-  gold: 100
+  gold: 200
   diamond: 0
   listNextSkillNode:
   - {fileID: 11400000, guid: d1cfbe1a774616f41b478cec74ac33c0, type: 2}

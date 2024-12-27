@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1fb1b14631b5ab4481225d739ee8807, type: 3}
-  m_Name: Quest
+  m_Name: GronQuest
   m_EditorClassIdentifier: 
-  questId: 0
-  numberInt: 5
+  questId: 3
+  numberInt: 1
   numberComplete: 1
-  questString: 1
-  isShowQuest: 1
-  stateQuest: 2
-  isCoin: 0
-  exp: 0
+  questString: 3
+  isShowQuest: 0
+  stateQuest: 0
+  isCoin: 150
+  exp: 200
   isStack: 1
-  itemCheck: {fileID: 11400000, guid: 81c908a33a925f54394e0ddbc551e807, type: 2}
+  itemCheck: {fileID: 11400000, guid: 8404fd778ef13c14f970fbe47e515918, type: 2}
