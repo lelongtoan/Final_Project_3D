@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class StartCharPanel : MonoBehaviour
 {
     public int id;
-    public StartInfo startInfo;
+    public ListSaveData saveData;
     public Image avatar;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI levelText;
@@ -16,7 +16,8 @@ public class StartCharPanel : MonoBehaviour
     public Button button;
     private void Awake()
     {
-        Set();
+        button.onClick.AddListener(SetPlayer);
+        deleteButton.onClick.AddListener(SetDeletePlayer);
     }
     private void OnEnable()
     {
@@ -29,7 +30,7 @@ public class StartCharPanel : MonoBehaviour
         levelText.gameObject.SetActive(false);
         pointText.gameObject.SetActive(false);
         deleteButton.gameObject.SetActive(false);
-        if (startInfo.isSave)
+        if (saveData.saveDatas[id] != null && saveData.saveDatas[id].isSave) 
         {
             avatar.gameObject.SetActive(true);
             nameText.gameObject.SetActive(true);
@@ -37,13 +38,11 @@ public class StartCharPanel : MonoBehaviour
             pointText.gameObject.SetActive(true);
             deleteButton.gameObject.SetActive(true);
 
-            avatar.sprite = startInfo.avatar;
-            nameText.text = startInfo.nameChar;
-            levelText.text = "Level : " + startInfo.level;
-            pointText.text = "Point : " + startInfo.point;
+            //avatar.sprite = saveData.saveDatas[id].avatar;
+            //nameText.text = saveData.saveDatas[id].nameChar;
+            levelText.text = "Level : " + saveData.saveDatas[id].level;
+            pointText.text = "Point : " + saveData.saveDatas[id].level * 10;
         }
-        button.onClick.AddListener(SetPlayer);
-        deleteButton.onClick.AddListener(SetDeletePlayer);
     }
     public void SetPlayer()
     {
@@ -52,8 +51,7 @@ public class StartCharPanel : MonoBehaviour
     public void SetDeletePlayer()
     {
         SaveInGame.instance.DetelePlayer(id);
-        startInfo.isSave = false;
-        Set();
         SaveInGame.instance.LoadPanelChar();
+        Set();
     }
 }

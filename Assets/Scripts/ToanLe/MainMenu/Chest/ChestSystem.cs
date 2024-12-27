@@ -2,11 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEditor.PackageManager.Requests;
-
 public class ChestSystem : MonoBehaviour
 {
     public ListPerkData data;

@@ -12,7 +12,7 @@ public class Stats : MonoBehaviour
     public void SetListSkillNode()
     {
         list.hp = 0; list.mp = 0; list.dmg = 0; list.def = 0;
-        foreach (SkillNodeData node in list.data)
+        foreach (SkillNodeData node in list.dataSkillNode)
         {
             if (node.state == SkillNodeState.Taked)
             {

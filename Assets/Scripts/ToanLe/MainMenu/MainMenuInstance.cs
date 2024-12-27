@@ -13,7 +13,6 @@ public class MainMenuInstance : MonoBehaviour
     public AchievementCheck check;
     public AchievementManager achieManager;
     public StatsData statsData;
-
     private void Update()
     {
         if (achieManager == null)
