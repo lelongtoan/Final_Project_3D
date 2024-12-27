@@ -341,6 +341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25533778e31d58743a18292f177a4d8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  virtualCamera: {fileID: 0}
 --- !u!1 &2704661121193649632
 GameObject:
   m_ObjectHideFlags: 0
@@ -1630,6 +1631,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f4b049fd990d224448b714a4550d9c68, type: 3}
       insertIndex: -1
       addedObject: {fileID: -2550296197586893360}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f4b049fd990d224448b714a4550d9c68, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2804211289337354256}
   m_SourcePrefab: {fileID: 100100000, guid: f4b049fd990d224448b714a4550d9c68, type: 3}
 --- !u!1 &37135910088586535 stripped
 GameObject:
@@ -1856,6 +1860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77700f41f14e6c44194a3d0a94e24d60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shake: {fileID: 0}
   playerData: {fileID: 11400000, guid: 4a0c7bb7eba4ea24c977a14c0f174428, type: 2}
   maxHP: 100
   healthPoint: 100
@@ -1943,6 +1948,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdcf8436504831444882c1c0d4f50861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2804211289337354256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3043232924716146481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884cd1d21c619b442a2fb9f365f2351e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackDistance: 1
+  reactionDuration: 0.2
 --- !u!4 &8075307869333065369 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -2960109251601355527, guid: f4b049fd990d224448b714a4550d9c68, type: 3}

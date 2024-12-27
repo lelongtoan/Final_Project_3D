@@ -41285,6 +41285,7 @@ GameObject:
   - component: {fileID: 1900873931}
   - component: {fileID: 1900873935}
   - component: {fileID: 1900873936}
+  - component: {fileID: 1900873937}
   m_Layer: 0
   m_Name: MenuManager
   m_TagString: Untagged
@@ -41320,6 +41321,7 @@ MonoBehaviour:
   checkInMenu: {fileID: 1313312167}
   statsTreeMenu: {fileID: 822672872}
   skillNodeDetail: {fileID: 1776580006}
+  sound: {fileID: 1900873937}
 --- !u!4 &1900873932
 Transform:
   m_ObjectHideFlags: 0
@@ -41367,6 +41369,24 @@ MonoBehaviour:
   content: {fileID: 108885108}
   perkPrefab: {fileID: 8461475153298357768, guid: 88075ce2d74ba534faeedd7ff9617296, type: 3}
   equip: {fileID: 11400000, guid: 409dd947a262382499e19d87f9ec4713, type: 2}
+--- !u!114 &1900873937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900873930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b154f51bbdb3634aa9f6e87b19a5f43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Button
+    clip: {fileID: 8300000, guid: b48739c2bcc637c47b98d1d328b1f549, type: 3}
+  audioSource: {fileID: 0}
+  soundEffectVolume: 1
+  musicVolume: 1
 --- !u!1 &1901077343
 GameObject:
   m_ObjectHideFlags: 0
