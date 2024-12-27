@@ -1816,23 +1816,23 @@ MonoBehaviour:
   - name: Drop
     clip: {fileID: 8300000, guid: 072a4581362ccdd4181d02e20d764196, type: 3}
   - name: Bag
-    clip: {fileID: 8300000, guid: 5bcd0a7d6328d5148bc31285cf2ed505, type: 3}
+    clip: {fileID: 8300000, guid: aa6387afcad383f48ace872af08cc25a, type: 3}
   - name: Button
-    clip: {fileID: 8300000, guid: 7b27a59255708214591601f35125a13a, type: 3}
+    clip: {fileID: 8300000, guid: b48739c2bcc637c47b98d1d328b1f549, type: 3}
   - name: Buy
-    clip: {fileID: 8300000, guid: 972a49aa659cb8348b490d235b880f20, type: 3}
+    clip: {fileID: 8300000, guid: 7ff53e01c9843024eafcf5c94e124288, type: 3}
   - name: Cloth
     clip: {fileID: 8300000, guid: 0038a6bb217641c4a88b6dda73797371, type: 3}
   - name: Complete
-    clip: {fileID: 8300000, guid: 65d164b785bd705418d086414e953c47, type: 3}
+    clip: {fileID: 8300000, guid: ade7511b185db0548ba1f8729d512f9d, type: 3}
   - name: Craft
-    clip: {fileID: 8300000, guid: 3440e3e55408c58419723742e4e4034c, type: 3}
+    clip: {fileID: 8300000, guid: 26fb13f48f9643241846f9b146c3bf96, type: 3}
   - name: Drink
-    clip: {fileID: 8300000, guid: 778fe61d8bad02141963c46c77f756bb, type: 3}
+    clip: {fileID: 8300000, guid: 62c09947bc364394ebea7649dfbbf8dc, type: 3}
   - name: Quest
-    clip: {fileID: 8300000, guid: ec01896edf222fb48a21d4ea2201d7fa, type: 3}
+    clip: {fileID: 8300000, guid: b5599b4598c10eb4eba74110e048afe0, type: 3}
   - name: Sell
-    clip: {fileID: 8300000, guid: 972a49aa659cb8348b490d235b880f20, type: 3}
+    clip: {fileID: 8300000, guid: 7ff53e01c9843024eafcf5c94e124288, type: 3}
   - name: Dungeon
     clip: {fileID: 8300000, guid: 827376f2c346e8e489fbee9ca54a25bc, type: 3}
   - name: Dash
@@ -1842,6 +1842,8 @@ MonoBehaviour:
   - name: Dungeon2
     clip: {fileID: 8300000, guid: 44342da3fe91cd44dbe8efb496800512, type: 3}
   audioSource: {fileID: 0}
+  soundEffectVolume: 1
+  musicVolume: 1
 --- !u!114 &2714658418295945862
 MonoBehaviour:
   m_ObjectHideFlags: 0
