@@ -147,6 +147,10 @@ public class SaveTemp : MonoBehaviour
                     inventorySlots.slots[invenSave.idSlot].count = invenSave.quantity;
                     inventorySlots.slots[invenSave.idSlot].toolDurability = invenSave.durality;
                 }
+                else
+                {
+                    inventorySlots.slots[invenSave.idSlot].Clear();
+                }
             }
 
             // Tải dữ liệu trang bị

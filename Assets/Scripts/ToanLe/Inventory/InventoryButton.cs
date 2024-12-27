@@ -36,12 +36,13 @@ public class InventoryButton : MonoBehaviour, IPointerClickHandler
     }
     public void Set(ItemSlot slot)
     {
+        quantity.SetActive(false);
         icon.gameObject.SetActive(true);
         icon.sprite = slot.item.icon;
+        textQ.text = slot.count + "";
         if (slot.item.stackable == true)
         {
             quantity.SetActive(true);
-            textQ.text = slot.count + "";
         }
     }
     public void Clean()
@@ -50,7 +51,7 @@ public class InventoryButton : MonoBehaviour, IPointerClickHandler
 
         icon.gameObject.SetActive(false);
 
-        textQ.gameObject.SetActive(false);
+        quantity.SetActive(false);
     }
 
     public void OnPointerClick(PointerEventData eventData)
