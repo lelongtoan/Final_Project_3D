@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8913034498058974277}
   - component: {fileID: 2729201247907099417}
   - component: {fileID: 4882006150427537418}
+  - component: {fileID: 8916231343329916259}
   m_Layer: 0
   m_Name: CameraFollowPlayer
   m_TagString: Camerafollow
@@ -85,6 +86,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 382acddd0c0b7c14caafc4e0d1ce91c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8916231343329916259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1811974859840727150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25533778e31d58743a18292f177a4d8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  virtualCamera: {fileID: 2729201247907099417}
 --- !u!1 &5107755093471992311
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,6 +110,7 @@ GameObject:
   - component: {fileID: 3405532948606454310}
   - component: {fileID: 4433143961912073748}
   - component: {fileID: 4000338070400561195}
+  - component: {fileID: 154173942066143697}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -173,3 +188,20 @@ MonoBehaviour:
   m_MaximumFOV: 60
   m_MinimumOrthoSize: 1
   m_MaximumOrthoSize: 5000
+--- !u!114 &154173942066143697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5107755093471992311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 0
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
