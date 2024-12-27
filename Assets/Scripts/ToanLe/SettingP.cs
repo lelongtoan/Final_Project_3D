@@ -7,6 +7,18 @@ public class SettingP : MonoBehaviour
 {
 
     [SerializeField] public GameObject soundPanel;
+    [SerializeField] public GameObject saveGame;
+    private void OnEnable()
+    {
+        if (SceneManager.GetActiveScene().name == "LobbyMap")
+        {
+            saveGame.SetActive(true);
+        }
+        else
+        {
+            saveGame.SetActive(false);
+        }
+    }
     public void SetSoundPanel()
     {
         soundPanel.SetActive(!soundPanel.activeInHierarchy);

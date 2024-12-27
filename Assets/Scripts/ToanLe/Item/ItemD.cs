@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ItemD : MonoBehaviour
@@ -76,7 +77,7 @@ public class ItemD : MonoBehaviour
             moveGO.SetActive(true);
             dropGO.SetActive(true);
         }
-        if (itemSlot.item.itemSet != ItemSet.Nope)
+        if (itemSlot.item.itemSet != ItemSet.Nope && SceneManager.GetActiveScene().name == "LobbyMap")
         {
             useGO.SetActive(true);
         }
