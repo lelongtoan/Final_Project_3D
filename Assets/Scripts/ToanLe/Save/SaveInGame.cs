@@ -6,8 +6,7 @@ using UnityEngine.SceneManagement;
 public class SaveInGame : MonoBehaviour
 {
     public static SaveInGame instance;
-    public List<StartInfo> startInfo;
-    public SaveData saveData;
+    public ListSaveData saveData;
     public SaveTemp saveTemp;
     public int idSelect;
     private void Awake()
@@ -32,7 +31,7 @@ public class SaveInGame : MonoBehaviour
     public void LoadGame(int id)
     {
         saveTemp.SetLoadData(id);
-        if (saveData != null)
+        if (saveData.saveDatas[id] != null)
         {
             Debug.Log("Load Player Success");
             SceneManager.LoadScene("LobbyMap");
@@ -41,7 +40,8 @@ public class SaveInGame : MonoBehaviour
     public void SetCharSave(int id)
     {
         idSelect = id;
-        if (startInfo[id].isSave)
+        if (saveData.saveDatas[id] != null 
+            && saveData.saveDatas[id].isSave)
         {
             LoadGame(id);
         }
@@ -55,38 +55,27 @@ public class SaveInGame : MonoBehaviour
         saveTemp.NewPlayer();
         MainMenuInstance.instance.statsData.Set();
         saveTemp.SetSaveData(idSelect);
-        //saveData.isSave = true;
         Debug.Log("New Player Success");
         SceneManager.LoadScene("LobbyMap");
     }
     public void DetelePlayer(int id)
     {
-        saveData = new SaveData();
+        saveData.saveDatas[id] = new SaveDatas();
+        saveData.saveDatas[id].isSave = false;
         saveTemp.NewPlayer();
         saveTemp.SetSaveData(id);
         Debug.Log("Del Player Success");
     }
     public void LoadPanelChar()
     {
-        for (int i = 0; i < startInfo.Count; i++)
+        for (int i = 0; i < saveData.saveDatas.Count; i++)
         {
-            saveData = SaveLoadJson.LoadFromJson(i);
-            if(saveData == null)
+            saveData.saveDatas[i] = SaveLoadJson.LoadFromJson(i);
+            if (saveData.saveDatas[i] == null)
             {
-                Debug.Log($"Data : {i} Error!");
-                continue;
+                Debug.Log($"Data : {i} Khong co!");
             }
-            Debug.Log(saveData.level.ToString());
-            startInfo[i].level = saveData.level;
-            startInfo[i].point = saveData.level * 10;
-            if (saveData.maxHP != 0)
-            {
-                startInfo[i].isSave = true;
-            }
-            else
-            {
-                startInfo[i].isSave = false;
-            }
+            //Debug.Log(saveData.saveDatas[i].level.ToString());
         }
     }
 }

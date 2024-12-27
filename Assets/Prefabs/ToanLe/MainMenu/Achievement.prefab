@@ -35,7 +35,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 430, y: 0}
+  m_AnchoredPosition: {x: 435, y: 0}
   m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2107306681589998364
@@ -456,7 +456,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: eeb5a1346cc816447a895ae12990519c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 050a9f83eca6dbe4d8d36883cf1884af, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -479,7 +479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   idGOQuest: 0
-  completeGO: {fileID: 0}
+  completeGO: {fileID: 3903830017453584766}
   detailQuestGO: {fileID: 5978227381788467647}
   quaCountText: {fileID: 5332671728201898134}
   itemRewardImage: {fileID: 3994999390344657324}
@@ -518,7 +518,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4, y: 0}
+  m_AnchoredPosition: {x: 435, y: 0}
   m_SizeDelta: {x: 225, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4357761984783090263
@@ -729,7 +729,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 430, y: 0}
+  m_AnchoredPosition: {x: 435, y: 0}
   m_SizeDelta: {x: 225, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4917980195784916249
@@ -760,7 +760,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 836892346b992954986e7ebe3900b2e7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8a895bacb67e9a848afee54eec5a6ddb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -918,8 +918,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1060,3 +1060,4 @@ MonoBehaviour:
   detailQuestGO: {fileID: 5978227381788467647}
   quaCountText: {fileID: 5332671728201898134}
   qualityRewardText: {fileID: 115349708334616500}
+  data: {fileID: 0}

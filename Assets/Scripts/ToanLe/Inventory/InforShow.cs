@@ -10,7 +10,8 @@ public class InforShow : MonoBehaviour
     [SerializeField] TextMeshProUGUI dmg;
     [SerializeField] TextMeshProUGUI def;
 
-    private void OnEnable()
+
+    private void Start()
     {
         PlayerInfor pl = GameInstance.instance.playerInfor;
         hp.text = "HP : "+ pl.maxHP;

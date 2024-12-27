@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26a097ea449eb8046aa2d483b9c092b9, type: 3}
   m_Name: Stats Data
   m_EditorClassIdentifier: 
-  HP: 1000
-  MP: 1000
+  HP: 115
+  MP: 100
   DMG: 10
   DEF: 5
   skillnode: {fileID: 11400000, guid: f92c75137ebf5fd4c9960385aa525300, type: 2}
+  perkEquipmentData: {fileID: 11400000, guid: 409dd947a262382499e19d87f9ec4713, type: 2}
   playerData: {fileID: 11400000, guid: 4a0c7bb7eba4ea24c977a14c0f174428, type: 2}

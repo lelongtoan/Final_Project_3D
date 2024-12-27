@@ -62,7 +62,7 @@ public class NPCShop : MonoBehaviour
                 {
                     sound.PlaySound("Buy");  
                     GameInstance.instance.itemManager.inventory.Add(selectedItem.itemShop, 1);
-                    PlayerInfor.Instance.GetMoney(selectedItem.priceItem);
+                    PlayerInfor.Instance.GetMoney(-selectedItem.priceItem);
                     GameInstance.instance.gameReport.SetReport($"Bạn đã mua {selectedItem.itemShop.itemName} với giá {selectedItem.priceItem} vàng!");
                 }
             }

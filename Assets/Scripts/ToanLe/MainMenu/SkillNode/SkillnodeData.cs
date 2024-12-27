@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -5,6 +6,7 @@ public enum SkillNodeState
 {
     Lock, Open ,Taked
 }
+[Serializable]
 [CreateAssetMenu(menuName = "Skill Tree/SkillNode")]
 public class SkillNodeData : ScriptableObject
 {

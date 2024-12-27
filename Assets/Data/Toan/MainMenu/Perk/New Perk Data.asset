@@ -13,13 +13,15 @@ MonoBehaviour:
   m_Name: New Perk Data
   m_EditorClassIdentifier: 
   id: 2
+  levelPerk: 1
   perkName: 
-  image: {fileID: 0}
-  quantity: 0
+  description: 
+  image: {fileID: -802881473, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
+  quantity: 8
   rate: 0
   hp: 0
   mp: 0
   dmg: 0
   def: 0
-  perkState: 0
+  perkState: 1
   quality: 1

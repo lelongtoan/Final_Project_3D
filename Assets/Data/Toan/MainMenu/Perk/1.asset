@@ -13,13 +13,15 @@ MonoBehaviour:
   m_Name: 1
   m_EditorClassIdentifier: 
   id: 0
+  levelPerk: 1
   perkName: Heart
+  description: 
   image: {fileID: 1756937319, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
-  quantity: 0
+  quantity: 3
   rate: 0
   hp: 15
   mp: 0
   dmg: 0
   def: 0
-  perkState: 0
+  perkState: 1
   quality: 0

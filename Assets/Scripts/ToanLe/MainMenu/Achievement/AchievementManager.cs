@@ -19,12 +19,25 @@ public class AchievementManager : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
+        int x = 0;
         for (int i = 0; i < listAchievement.listAchievement.Count; i++)
         {
             GameObject newQuest = Instantiate(quest);
             newQuest.transform.SetParent(content.transform);
             newQuest.GetComponent<AchievementGO>().SetAchievement(listAchievement.listAchievement[i]);
             quests.Add(newQuest);
+            x++;
+        }
+        UpdateContentHeight(x);
+    }
+    private void UpdateContentHeight(int questCount)
+    {
+        RectTransform contentRect = content.GetComponent<RectTransform>();
+        if (contentRect != null)
+        {
+            float totalHeight = questCount * 220;
+
+            contentRect.sizeDelta = new Vector2(contentRect.sizeDelta.x, totalHeight);
         }
     }
     public void CheckAchie(AchievementData ac)

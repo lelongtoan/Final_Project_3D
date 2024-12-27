@@ -40,6 +40,7 @@ public class VerticalMover : MonoBehaviour
 
         // Cập nhật vị trí
         transform.position = new Vector3(transform.position.x, newY, transform.position.z);
+        
     }
 }
 
