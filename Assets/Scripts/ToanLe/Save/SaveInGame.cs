@@ -34,7 +34,7 @@ public class SaveInGame : MonoBehaviour
         if (saveData.saveDatas[id] != null)
         {
             Debug.Log("Load Player Success");
-            SceneManager.LoadScene("LobbyMap");
+            LoadScene.instance.LoadSceneMenu("LobbyMap");
         }
     }
     public void SetCharSave(int id)
@@ -56,7 +56,7 @@ public class SaveInGame : MonoBehaviour
         MainMenuInstance.instance.statsData.Set();
         saveTemp.SetSaveData(idSelect);
         Debug.Log("New Player Success");
-        SceneManager.LoadScene("LobbyMap");
+        LoadScene.instance.LoadSceneMenu("LobbyMap");
     }
     public void DetelePlayer(int id)
     {
