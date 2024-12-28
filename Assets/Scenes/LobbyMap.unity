@@ -5248,6 +5248,14 @@ PrefabInstance:
       propertyPath: saveGame
       value: 
       objectReference: {fileID: 628436600}
+    - target: {fileID: 4332812791351096294, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
+      propertyPath: quests.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4332812791351096294, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
+      propertyPath: quests.Array.data[0]
+      value: 
+      objectReference: {fileID: 1570663179}
     - target: {fileID: 4528473741216319418, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -17975,6 +17983,11 @@ PrefabInstance:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2821884464497278686, guid: fb7c3cfb85812964db803ae9ff23b519, type: 3}
   m_PrefabInstance: {fileID: 265645367}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1570663179 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6711500653328582849, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
+  m_PrefabInstance: {fileID: 620995053}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1575502527
 GameObject:
