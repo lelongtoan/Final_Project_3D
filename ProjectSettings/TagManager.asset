@@ -37,6 +37,7 @@ TagManager:
   - MN3
   - GameMNG
   - Trap
+  - LoadGame
   layers:
   - Default
   - TransparentFX
