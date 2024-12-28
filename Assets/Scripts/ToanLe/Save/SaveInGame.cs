@@ -70,6 +70,7 @@ public class SaveInGame : MonoBehaviour
             saveData.saveDatas[i] = SaveLoadJson.LoadFromJson(i);
             if (saveData.saveDatas[i] == null)
             {
+                saveData.saveDatas[i].idSave = i;
                 Debug.Log($"Data : {i} Khong co!");
             }
             //Debug.Log(saveData.saveDatas[i].level.ToString());

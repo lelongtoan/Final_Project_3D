@@ -40,7 +40,6 @@ public class SaveTemp : MonoBehaviour
             id = temp;
         }
         // Lưu dữ liệu người chơi
-        saveData.saveDatas[id].idSave = id;
         saveData.saveDatas[id].maxHP = playerData.maxHP;
         saveData.saveDatas[id].healthPoint = playerData.healthPoint;
         saveData.saveDatas[id].manaPoint = playerData.manaPoint;
