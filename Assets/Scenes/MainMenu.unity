@@ -15505,7 +15505,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &736391698
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18628,7 +18628,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1900873931}
         m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
-        m_MethodName: SetChestMenu
+        m_MethodName: SetShopMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -37373,7 +37373,7 @@ MonoBehaviour:
   mainMenu: {fileID: 628044512}
   characterMenu: {fileID: 2075985348}
   perkMenu: {fileID: 1249385160}
-  shopMenu: {fileID: 0}
+  shopMenu: {fileID: 1606591314}
   chestMenu: {fileID: 204276455}
   achievementMenu: {fileID: 1460816870}
   settingMenu: {fileID: 290400225}

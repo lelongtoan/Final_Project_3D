@@ -6,6 +6,14 @@ public class CameraShake : MonoBehaviour
     public CinemachineVirtualCamera virtualCamera;
     private float shakeTimer;
 
+    private void Start()
+    {
+        if(virtualCamera == null)
+        {
+            virtualCamera = GetComponent<CinemachineVirtualCamera>();
+        }
+        virtualCamera.m_Lens.NearClipPlane = -100;
+    }
     public void ShakeCamera(float intensity, float time)
     {
         Debug.Log("Shake");

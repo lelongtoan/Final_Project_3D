@@ -148,6 +148,10 @@ public class ItemD : MonoBehaviour
         if (GameInstance.instance.itemManager.inventory.CheckFull(itemSlot.item))
         {
             GameInstance.instance.itemManager.inventory.Add(itemSlot.item);
+            if (sound == null)
+            {
+                sound = FindObjectOfType<SoundEffect>();
+            }
             sound.PlaySound("Cloth");
             this.itemSlot.Clear();
         }

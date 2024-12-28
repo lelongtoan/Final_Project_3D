@@ -45,11 +45,19 @@ public class InGameMenu : MonoBehaviour
     }
     public void SetCharPanel()
     {
+        if (sound == null)
+        {
+            sound = FindObjectOfType<SoundEffect>();
+        }
         characterPanel.SetActive(!characterPanel.activeInHierarchy);
         sound.PlaySound("Bag");
     }
     public void SetShopPanel()
     {
+        if (sound == null)
+        {
+            sound = FindObjectOfType<SoundEffect>();
+        }
         sound.PlaySound("Button");
         shopNPCPanel.SetActive(!shopNPCPanel.activeInHierarchy);
     }
