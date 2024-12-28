@@ -10,11 +10,18 @@ public class InforShow : MonoBehaviour
     [SerializeField] TextMeshProUGUI dmg;
     [SerializeField] TextMeshProUGUI def;
 
-
     private void Start()
     {
+        Set();
+    }
+    private void Update()
+    {
+        Set();
+    }
+    public void Set()
+    {
         PlayerInfor pl = GameInstance.instance.playerInfor;
-        hp.text = "HP : "+ pl.maxHP;
+        hp.text = "HP : " + pl.maxHP;
         mp.text = "MP : " + pl.maxMP;
         dmg.text = "DMG : " + pl.dame;
         def.text = "DEF : " + pl.def;
