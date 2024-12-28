@@ -23,7 +23,7 @@ public class QuestManager : MonoBehaviour
         int x = 0;
         for (int i = 0; i < questContainer.questList.Count; i++)
         {
-            if (questContainer.questList[i].isShowQuest)
+            if (questContainer.questList[i] != null && questContainer.questList[i].isShowQuest)
             {
                 GameObject newQuest = Instantiate(quest);
                 newQuest.transform.SetParent(content.transform);

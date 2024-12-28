@@ -148,6 +148,9 @@ public class ItemD : MonoBehaviour
         if (GameInstance.instance.itemManager.inventory.CheckFull(itemSlot.item))
         {
             GameInstance.instance.itemManager.inventory.Add(itemSlot.item);
+            GameInstance.instance.playerInfor.UpMaxHP(-itemSlot.item.HP);
+            GameInstance.instance.playerInfor.UpMaxMP(-itemSlot.item.MP);
+            GameInstance.instance.playerInfor.UpDame((int)-itemSlot.item.Dmg);
             if (sound == null)
             {
                 sound = FindObjectOfType<SoundEffect>();
