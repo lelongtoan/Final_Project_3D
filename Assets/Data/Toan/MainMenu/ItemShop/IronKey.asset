@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2882ac6f75ee2504ab4ffb338a3800ad, type: 3}
+  m_Name: IronKey
+  m_EditorClassIdentifier: 
+  itemName: Iron Key
+  imageItemBuy: {fileID: 0}
+  imagePrice: {fileID: 0}
+  quanlity: 1
+  price: 200
+  priceType: 1
+  buyType: 1
+  perkData: {fileID: 0}

@@ -24,4 +24,4 @@ MonoBehaviour:
   dmg: 0
   def: 0
   perkState: 0
-  quality: 0
+  quality: 2
