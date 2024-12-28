@@ -74,7 +74,7 @@ public class EnemyInfor : MonoBehaviour
         GetComponent<AIEnemy>().enabled = false;
         canvas.SetActive(false);
 
-        PlayerPrefs.SetInt("EnemyStatus_" + enemyId, 0);
+        PlayerPrefs.SetInt("EnemyStatus_" + enemyId, 1);
         PlayerPrefs.Save();
 
         if (OnEnemyDeath != null)
