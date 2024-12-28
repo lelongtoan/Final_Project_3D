@@ -1196,4 +1196,4 @@ MonoBehaviour:
   quantityText: {fileID: 8907678398153924852}
   levelText: {fileID: 3444535662323160245}
   buttonPerk: {fileID: 7386534599807160184}
-  equipData: {fileID: 11400000, guid: 409dd947a262382499e19d87f9ec4713, type: 2}
+  equipData: {fileID: 11400000, guid: c0decddccdc3da64ab1dee7f22012888, type: 2}
