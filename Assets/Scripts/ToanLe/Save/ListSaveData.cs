@@ -87,4 +87,5 @@ public class SaveDatas
 public class ListSaveData : ScriptableObject
 {
     public List<SaveDatas> saveDatas = new List<SaveDatas>();
+
 }

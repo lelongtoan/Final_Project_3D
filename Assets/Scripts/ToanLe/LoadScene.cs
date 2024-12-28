@@ -21,21 +21,36 @@ public class LoadScene : MonoBehaviour
     }
     private void Update()
     {
-
+        if (loadingScene == null)
+        {
+            Transform parent = gameObject.transform;
+            Transform loadingTransform = parent.Find("Loading");
+            if (loadingTransform != null)
+            {
+                loadingScene = loadingTransform.gameObject;
+            }
+            else
+            {
+                Debug.LogError("Loading object not found!");
+            }
+        }
         if (SceneManager.GetActiveScene().name == nameScene)
         {
             loadingScene.SetActive(false);
             nameScene = "";
+            StopAllCoroutines();
         }
     }
+
     public void LoadSceneMenu(string scene)
     {
+        nameScene = scene;
+        Debug.Log("-----------------");
         loadingScene.SetActive(true);
         StartCoroutine(LoadSceneASync(scene));
     }
     IEnumerator LoadSceneASync(string scene)
     {
-        nameScene = scene;
         loadOp = SceneManager.LoadSceneAsync(scene);
         loadOp.allowSceneActivation = false;
         while (loadOp.progress < 0.9f)
