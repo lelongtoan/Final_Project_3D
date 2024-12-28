@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: SkillNode 15
   m_EditorClassIdentifier: 
   icon: {fileID: -895623538, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
-  nameSkillNode: "T\u0103ng M\xE1u II"
-  description: "T\u0103ng 5 M\xE1u"
-  hp: 5
+  nameSkillNode: "T\u0103ng M\xE1u V"
+  description: "T\u0103ng 50 M\xE1u"
+  hp: 50
   mp: 0
   dmg: 0
   def: 0
-  gold: 100
+  gold: 500
   diamond: 0
   listNextSkillNode:
-  - {fileID: 11400000, guid: 1940c03bc9653724ba858193a22add0c, type: 2}
+  - {fileID: 11400000, guid: 2114706e6c5caed4985456c01a73d2b9, type: 2}
   state: 0

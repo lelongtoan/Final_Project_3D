@@ -25,19 +25,18 @@ public class InGameMenu : MonoBehaviour
 
     private void Start()
     {
-        sound = FindObjectOfType<SoundEffect>();
     }
     public void SetSetting(bool on)
     {
         if(on)
         {
             Time.timeScale = 0;
-            gameReportPanel.SetActive(true);
+            settingPanel.SetActive(true);
         }
         else
         {
             Time.timeScale = 1;
-            gameReportPanel.SetActive(false);
+            settingPanel.SetActive(false);
         }
     }
     public void SetGameReport()
@@ -56,6 +55,10 @@ public class InGameMenu : MonoBehaviour
     }
     public void SetCraftPanel()
     {
+        if (sound == null)
+        {
+            sound = FindObjectOfType<SoundEffect>();
+        }
         sound.PlaySound("Button");
         SetShopPanel();
         buyNPCPanel.SetActive(false);
@@ -63,6 +66,10 @@ public class InGameMenu : MonoBehaviour
     }
     public void SetBuyPanel()
     {
+        if (sound == null)
+        {
+            sound = FindObjectOfType<SoundEffect>();
+        }
         sound.PlaySound("Button");
         SetShopPanel();
         buyNPCPanel.SetActive(true);
@@ -70,16 +77,28 @@ public class InGameMenu : MonoBehaviour
     }
     public void SetQuestPanel()
     {
+        if (sound == null)
+        {
+            sound = FindObjectOfType<SoundEffect>();
+        }
         sound.PlaySound("Quest");
         questPanel.SetActive(!questPanel.activeInHierarchy);
     }
     public void SetInfoItem()
     {
+        if (sound == null)
+        {
+            sound = FindObjectOfType<SoundEffect>();
+        }
         sound.PlaySound("Button");
         infoItem.SetActive(!infoItem.activeInHierarchy);
     }
     public void SetDragAndDrop(bool i)
     {
+        if (sound == null)
+        {
+            sound = FindObjectOfType<SoundEffect>();
+        }
         sound.PlaySound("Button");
         dragAndDrop.SetActive(i);
         ItemD.Instance.isMoving = i;
@@ -90,6 +109,10 @@ public class InGameMenu : MonoBehaviour
     }
     public void SetNPC()
     {
+        if (sound == null)
+        {
+            sound = FindObjectOfType<SoundEffect>();
+        }
         sound.PlaySound("Button");
         npcPanel.SetActive(!npcPanel.activeInHierarchy);
     }

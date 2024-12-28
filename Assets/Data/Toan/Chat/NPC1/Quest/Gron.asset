@@ -15,11 +15,10 @@ MonoBehaviour:
   npcChat:
   - "Kailen! Ta c\xF3 m\u1ED9t c\xF4ng vi\u1EC7c \u0111\u01A1n gi\u1EA3n cho ng\u01B0\u01A1i,
     n\u1EBFu ng\u01B0\u01A1i kh\xF4ng ng\u1EA1i b\u1EA9n tay ch\xFAt."
-  - "Ta \u0111ang c\u1EA7n m\u1ED9t m\xF3n v\u1EADt ph\u1EA9m r\u1EA5t qu\xFD hi\u1EBFm
-    \u0111\xF3 l\xE0 Ruby, \u0111\u01B0\u1EE3c c\u1EA5t gi\u1EA5u s\xE2u trong l\u1ED1i
-    m\xF2n \u1EDF ph\xEDa t\xE2y \u0111\u01B0\u1EDDng h\u1EA7m. Ch\u1EC9 c\xF3 \u0111i\u1EC1u,
-    n\u01A1i \u0111\xF3 \u0111\u1EA7y r\u1EABy b\u1EABy r\u1EADp v\xE0 nh\u1EEFng
-    sinh v\u1EADt b\u1EA3o v\u1EC7."
+  - "T\u1ED1t l\u1EAFm. Ta \u0111ang c\u1EA7n m\u1ED9t m\xF3n v\u1EADt ph\u1EA9m
+    \u0111\xF3 l\xE0 Ruby, n\xF3 \u1EDF ph\xEDa t\xE2y \u0111\u01B0\u1EDDng h\u1EA7m.
+    N\u01A1i \u0111\xF3 \u0111\u1EA7y r\u1EABy b\u1EABy v\xE0 nh\u1EEFng sinh v\u1EADt
+    nguy hi\u1EC3m."
   questNope:
   - "Mu\u1ED1n b\u1ECF cu\u1ED9c b\xE2y gi\u1EDD c\u0169ng kh\xF4ng qu\xE1 mu\u1ED9n
     \u0111\xE2u (C\u01B0\u1EDDi m\u1EC9a)"

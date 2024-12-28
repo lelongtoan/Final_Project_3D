@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d962853061a5024c976de2aea6daa35, type: 3}
+  m_Name: a2
+  m_EditorClassIdentifier: 
+  id: 5
+  levelPerk: 13
+  perkName: Iron Will
+  description: "T\u0103ng s\u1EE9c ch\u1ECBu \u0111\u1EF1ng(25Def)"
+  image: {fileID: -1470200957, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
+  quantity: 0
+  rate: 0
+  hp: 0
+  mp: 0
+  dmg: 0
+  def: 25
+  perkState: 0
+  quality: 1

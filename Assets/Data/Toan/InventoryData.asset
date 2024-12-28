@@ -13,78 +13,78 @@ MonoBehaviour:
   m_Name: InventoryData
   m_EditorClassIdentifier: 
   slots:
+  - item: {fileID: 0}
+    toolDurability: 0
+    count: 0
+  - item: {fileID: 0}
+    toolDurability: 0
+    count: 0
+  - item: {fileID: 0}
+    toolDurability: 0
+    count: 0
+  - item: {fileID: 0}
+    toolDurability: 0
+    count: 0
+  - item: {fileID: 0}
+    toolDurability: 0
+    count: 0
   - item: {fileID: 11400000, guid: 81c908a33a925f54394e0ddbc551e807, type: 2}
     toolDurability: 100
-    count: 6
-  - item: {fileID: 11400000, guid: 6eda1781bd003e349b2a8cc76e86abe3, type: 2}
+    count: 1
+  - item: {fileID: 0}
     toolDurability: 0
-    count: 5
+    count: 0
   - item: {fileID: 0}
     toolDurability: 0
     count: 0
   - item: {fileID: 0}
     toolDurability: 0
     count: 0
-  - item: {fileID: 11400000, guid: d26709e28ae9faa4abff80569f89e6c2, type: 2}
-    toolDurability: 0
-    count: 12
   - item: {fileID: 0}
     toolDurability: 0
     count: 0
-  - item: {fileID: 11400000, guid: e35a369cceb075c4db22d2fdcbb76fb3, type: 2}
-    toolDurability: 0
-    count: 22
-  - item: {fileID: 11400000, guid: c3af34225e0195c4cb35ff898a268fd6, type: 2}
-    toolDurability: 0
-    count: 23
-  - item: {fileID: 11400000, guid: 8f6264f078d4fd64e99aabc393b637c5, type: 2}
-    toolDurability: 0
-    count: 23
   - item: {fileID: 0}
     toolDurability: 0
     count: 0
-  - item: {fileID: 11400000, guid: 2b8dcbc951e9fd348b956b1e21be3939, type: 2}
-    toolDurability: 0
-    count: 1
-  - item: {fileID: 11400000, guid: d26709e28ae9faa4abff80569f89e6c2, type: 2}
-    toolDurability: 0
-    count: 1
-  - item: {fileID: 11400000, guid: 4911cef762d36a14fb430a5607659c19, type: 2}
-    toolDurability: 0
-    count: 1
-  - item: {fileID: 11400000, guid: be37074c5ad83204caba66eec379791b, type: 2}
-    toolDurability: 0
-    count: 1
-  - item: {fileID: 11400000, guid: e35a369cceb075c4db22d2fdcbb76fb3, type: 2}
-    toolDurability: 0
-    count: 1
-  - item: {fileID: 11400000, guid: c3af34225e0195c4cb35ff898a268fd6, type: 2}
-    toolDurability: 0
-    count: 1
-  - item: {fileID: 11400000, guid: 8f6264f078d4fd64e99aabc393b637c5, type: 2}
-    toolDurability: 0
-    count: 1
-  - item: {fileID: 11400000, guid: c397753c7b287ca4f945b8ef1fba34a3, type: 2}
-    toolDurability: 0
-    count: 1
-  - item: {fileID: 11400000, guid: 2bda2dcdefc3a8a4f801b541d51500f4, type: 2}
-    toolDurability: 0
-    count: 1
-  - item: {fileID: 11400000, guid: 2bda2dcdefc3a8a4f801b541d51500f4, type: 2}
-    toolDurability: 0
-    count: 1
-  - item: {fileID: 11400000, guid: 2bda2dcdefc3a8a4f801b541d51500f4, type: 2}
-    toolDurability: 0
-    count: 1
-  - item: {fileID: 11400000, guid: 2bda2dcdefc3a8a4f801b541d51500f4, type: 2}
-    toolDurability: 0
-    count: 1
-  - item: {fileID: 11400000, guid: f38e5cf5ecbec8044b417368db0de21a, type: 2}
-    toolDurability: 0
-    count: 1
   - item: {fileID: 0}
     toolDurability: 0
     count: 0
-  - item: {fileID: 11400000, guid: 0045e73bfd6a14840b72fc8a14bc831e, type: 2}
+  - item: {fileID: 0}
     toolDurability: 0
-    count: 1
+    count: 0
+  - item: {fileID: 0}
+    toolDurability: 0
+    count: 0
+  - item: {fileID: 0}
+    toolDurability: 0
+    count: 0
+  - item: {fileID: 0}
+    toolDurability: 0
+    count: 0
+  - item: {fileID: 0}
+    toolDurability: 0
+    count: 0
+  - item: {fileID: 0}
+    toolDurability: 0
+    count: 0
+  - item: {fileID: 0}
+    toolDurability: 0
+    count: 0
+  - item: {fileID: 0}
+    toolDurability: 0
+    count: 0
+  - item: {fileID: 0}
+    toolDurability: 0
+    count: 0
+  - item: {fileID: 0}
+    toolDurability: 0
+    count: 0
+  - item: {fileID: 0}
+    toolDurability: 0
+    count: 0
+  - item: {fileID: 0}
+    toolDurability: 0
+    count: 0
+  - item: {fileID: 0}
+    toolDurability: 0
+    count: 0
