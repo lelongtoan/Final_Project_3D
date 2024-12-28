@@ -87,7 +87,6 @@ public class SaveTemp : MonoBehaviour
         AddEquipmentSave(equipments.armourSlot, 3, saveData.saveDatas[id]);
         AddEquipmentSave(equipments.glovesSlot, 4, saveData.saveDatas[id]);
         AddEquipmentSave(equipments.bootSlot, 5, saveData.saveDatas[id]);
-
         // Lưu vào file
         SaveLoadJson.SaveToJson(saveData.saveDatas[id], id);
     }

@@ -1477,6 +1477,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8511486831225168850, guid: e230728435a5e0e4199e30e1b83ec327, type: 3}
   m_PrefabInstance: {fileID: 197370894}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &206379137 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6456987864345656269, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
+  m_PrefabInstance: {fileID: 620995053}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &210503370
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5939,8 +5944,8 @@ MonoBehaviour:
   listCraft: {fileID: 0}
   listChat: {fileID: 11400000, guid: a7a41979453ee1c48998ed07b703005a, type: 2}
   listItemShop: {fileID: 0}
-  shopGO: {fileID: 0}
-  craftGO: {fileID: 0}
+  shopGO: {fileID: 1721987493}
+  craftGO: {fileID: 206379137}
   questGO: {fileID: 620995057}
   attack: {fileID: 620995056}
   interact: {fileID: 620995055}
@@ -19177,6 +19182,11 @@ MeshCollider:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ed9e57cabdced8d4bbe87459722b5af9, type: 3}
   m_PrefabInstance: {fileID: 1719365778}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1721987493 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4287443669858818414, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
+  m_PrefabInstance: {fileID: 620995053}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1724978941
 PrefabInstance:

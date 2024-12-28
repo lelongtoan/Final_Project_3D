@@ -60,10 +60,7 @@ public class SaveInGame : MonoBehaviour
     }
     public void DetelePlayer(int id)
     {
-        saveData.saveDatas[id] = new SaveDatas();
-        saveData.saveDatas[id].isSave = false;
-        saveTemp.NewPlayer();
-        saveTemp.SetSaveData(id);
+        SaveLoadJson.DeleteSaveFile(id);
         Debug.Log("Del Player Success");
     }
     public void LoadPanelChar()
