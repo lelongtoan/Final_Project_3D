@@ -19134,6 +19134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LoadScene
       objectReference: {fileID: 0}
+    - target: {fileID: 469390278899792996, guid: b38e382f587dc984d9051148237113ad, type: 3}
+      propertyPath: m_TagString
+      value: LoadScene
+      objectReference: {fileID: 0}
     - target: {fileID: 5763050121208126093, guid: b38e382f587dc984d9051148237113ad, type: 3}
       propertyPath: m_LocalPosition.x
       value: 343.6205
