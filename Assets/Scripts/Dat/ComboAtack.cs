@@ -73,7 +73,6 @@ public class ComboAtack : MonoBehaviour
         {
             playerController.freeze = true;
             isAttack = true;
-            atackCollider.enabled = true;
             MoveForwardDuringAttack();
             ani.SetTrigger("Attack" + combo);
             comboDelay = comboTiming;
@@ -82,7 +81,6 @@ public class ComboAtack : MonoBehaviour
         {
             playerController.freeze = true;
             isAttack = true;
-            atackCollider.enabled = true;
             MoveForwardDuringAttack();
             combo++;
             if (combo > combonum)
@@ -135,6 +133,10 @@ public class ComboAtack : MonoBehaviour
         // Di chuyển nhân vật khi tấn công
         Vector3 moveDirection = transform.forward * attackmove;
         rb.MovePosition(rb.position + moveDirection);
+    }
+    public void SetColider()
+    {
+        atackCollider.enabled = true;
     }
     public void SetEndCoiler()
     {
