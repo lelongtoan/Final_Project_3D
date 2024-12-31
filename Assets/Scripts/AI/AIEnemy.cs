@@ -34,8 +34,9 @@ public class AIEnemy : MonoBehaviour
     public GameObject magicBall;
     public GameObject coliBall;
     public float ballSpawnHeight = 5f;
+    public float stopDistance = 0.5f;
 
-    protected enum State { Patrolling, Chasing, Attacking, Reload }
+    protected enum State {Idle, Patrolling, Chasing, Attacking, Reload }
     protected State currentState;
 
     public SoundEffect soundEffect;
@@ -70,20 +71,26 @@ public class AIEnemy : MonoBehaviour
             if (player == null) return;
         }
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-        if (agent.velocity.sqrMagnitude < 0.01f && !agent.pathPending)
-        {
-            animator.SetTrigger("NotPatrol");
-        }
-        else if (agent.velocity.sqrMagnitude > 0.01f && agent.pathPending)
-        {
-            animator.SetTrigger("Patrol");
-        }
         if (gameObject.CompareTag("MinionEnemy"))
         {
             switch (currentState)
             {
+                case State.Idle:
+                    {
+                        Idle();
+                        if (distanceToPlayer < chaseDistance)
+                        {
+                            StartChasing();
+                        }
+                    }
+                    break;
+
                 case State.Patrolling:
                     Patrol();
+                    if (agent.velocity.sqrMagnitude < 0.01f && !agent.pathPending)
+                    {
+                        currentState = State.Idle;
+                    }
                     if (distanceToPlayer < chaseDistance)
                     {
                         StartChasing();
@@ -111,8 +118,6 @@ public class AIEnemy : MonoBehaviour
                     }
                     if (distanceToPlayer > attackDistance)
                     {
-                        
-                        agent.speed = 0;
                         currentState = distanceToPlayer < chaseDistance ? State.Chasing : State.Patrolling;
                     }
                     break;
@@ -260,6 +265,10 @@ public class AIEnemy : MonoBehaviour
             }
         }
 
+    }
+    void Idle()
+    {
+        animator.SetTrigger("NotPatrol");
     }
     IEnumerator WaitToAttack()
     {
@@ -421,5 +430,31 @@ public class AIEnemy : MonoBehaviour
     public void OnOk()
     {
         oke = false;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("PatrolPoint"))
+        {
+            if (patrolPoints.Length > 0)
+            {
+                return;
+            }
+            else if (patrolPoints.Length < 1)
+            {
+                Transform point = other.transform;
+                AddPointToArray(point);
+            }
+        }
+    }
+    private void AddPointToArray(Transform point)
+    {
+        int newSize = patrolPoints.Length + 1;
+        Transform[] newArray = new Transform[newSize]; // Tạo mảng mới với kích thước lớn hơn
+        for (int i = 0; i < patrolPoints.Length; i++)
+        {
+            newArray[i] = patrolPoints[i]; // Sao chép dữ liệu từ mảng cũ
+        }
+        newArray[newSize - 1] = point; // Thêm điểm mới vào cuối mảng
+        patrolPoints = newArray; // Gán mảng mới lại cho mảng gốc
     }
 }

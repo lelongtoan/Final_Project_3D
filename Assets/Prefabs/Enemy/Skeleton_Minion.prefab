@@ -1429,7 +1429,7 @@ NavMeshAgent:
   m_Acceleration: 5
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -1468,6 +1468,7 @@ MonoBehaviour:
   magicBall: {fileID: 0}
   coliBall: {fileID: 0}
   ballSpawnHeight: 5
+  stopDistance: 0.5
   soundEffect: {fileID: 0}
   dame: 0
 --- !u!136 &2280416751966527697
