@@ -70,7 +70,14 @@ public class AIEnemy : MonoBehaviour
             if (player == null) return;
         }
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-
+        if (agent.velocity.sqrMagnitude < 0.01f && !agent.pathPending)
+        {
+            animator.SetTrigger("NotPatrol");
+        }
+        else if (agent.velocity.sqrMagnitude > 0.01f && agent.pathPending)
+        {
+            animator.SetTrigger("Patrol");
+        }
         if (gameObject.CompareTag("MinionEnemy"))
         {
             switch (currentState)
@@ -104,7 +111,8 @@ public class AIEnemy : MonoBehaviour
                     }
                     if (distanceToPlayer > attackDistance)
                     {
-
+                        
+                        agent.speed = 0;
                         currentState = distanceToPlayer < chaseDistance ? State.Chasing : State.Patrolling;
                     }
                     break;
@@ -293,6 +301,11 @@ public class AIEnemy : MonoBehaviour
     }
     protected virtual void Patrol()
     {
+        if (patrolPoints.Length <= 0)
+        {
+            animator.SetTrigger("NotPatrol");
+            return;
+        }
         animator.SetTrigger("Patrol");
         agent.speed = patrolSpeed;
         animator.ResetTrigger("Chase");
@@ -305,7 +318,10 @@ public class AIEnemy : MonoBehaviour
 
     protected void GoToNextPatrolPoint()
     {
-        if (patrolPoints.Length == 0) return;
+        if (patrolPoints.Length <= 0)
+        {
+            return;
+        }
         agent.destination = patrolPoints[currentPatrolIndex].position;
         currentPatrolIndex = (currentPatrolIndex + 1) % patrolPoints.Length;
     }

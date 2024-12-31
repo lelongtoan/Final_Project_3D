@@ -25,8 +25,6 @@ public class PlayerHit : MonoBehaviour
         originalPosition = transform.localPosition;
         Vector3 knockbackPosition = originalPosition + damageDirection.normalized * knockbackDistance;
 
-        // Bắt đầu hiệu ứng giật và quay về
-        animator.SetTrigger("Hit");
         StartCoroutine(ReactToHit(knockbackPosition));
     }
 
@@ -52,7 +50,7 @@ public class PlayerHit : MonoBehaviour
 
         // Kết thúc phản ứng
         transform.localPosition = originalPosition;
-        animator.ResetTrigger("Hit");
+        SetHit();
     }
 
     public void SetHit()
