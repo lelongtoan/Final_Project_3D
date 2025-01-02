@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Data/Toan/Save/New Start Data.asset.meta
 guid: 92bcfb2ea5ad3b8448df91a9dacb80fe
 NativeFormatImporter:
+========
+guid: 1786c81f4aff4eb43b34504cde32aa93
+DefaultImporter:
+>>>>>>>> main:Assets/JMO Assets/Cartoon FX FREE (old legacy effects).unitypackage.meta
   externalObjects: {}
   mainObjectFileID: 11400000
   userData: 

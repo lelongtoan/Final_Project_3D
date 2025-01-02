@@ -37,6 +37,8 @@ TagManager:
   - MN3
   - GameMNG
   - Trap
+  - LoadGame
+  - PatrolPoint
   layers:
   - Default
   - TransparentFX

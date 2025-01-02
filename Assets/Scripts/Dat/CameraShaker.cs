@@ -1,5 +1,6 @@
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class CameraShake : MonoBehaviour
 {
@@ -12,7 +13,14 @@ public class CameraShake : MonoBehaviour
         {
             virtualCamera = GetComponent<CinemachineVirtualCamera>();
         }
-        virtualCamera.m_Lens.NearClipPlane = -100;
+        if (SceneManager.GetActiveScene().name == "LobbyMap")
+        {
+            virtualCamera.m_Lens.NearClipPlane = -100;
+        }
+        else
+        {
+            virtualCamera.m_Lens.NearClipPlane = 0.5f; ;
+        }
     }
     public void ShakeCamera(float intensity, float time)
     {

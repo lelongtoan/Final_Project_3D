@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Data/Toan/Save/New Save Data.asset.meta
 guid: 69dac515596b06d4287bca68e38b228f
 NativeFormatImporter:
+========
+guid: 42bd953392dc223438bb8a2a52086904
+DefaultImporter:
+>>>>>>>> main:Assets/Travis Game Assets/Status Effects/Pipeline Upgrade/Status Effects FREE - URP.unitypackage.meta
   externalObjects: {}
   mainObjectFileID: 11400000
   userData: 
