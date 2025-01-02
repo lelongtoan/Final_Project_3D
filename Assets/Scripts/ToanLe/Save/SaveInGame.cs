@@ -6,14 +6,20 @@ using UnityEngine.SceneManagement;
 public class SaveInGame : MonoBehaviour
 {
     public static SaveInGame instance;
-    public SaveData saveData;
+    public ListSaveData saveData;
     public SaveTemp saveTemp;
     public int idSelect;
-
-    public StartData startData;
     private void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         LoadPanelChar();
     }
 
@@ -25,19 +31,18 @@ public class SaveInGame : MonoBehaviour
     public void LoadGame(int id)
     {
         saveTemp.SetLoadData(id);
-        if (saveData != null) 
+        if (saveData.saveDatas[id] != null)
         {
             Debug.Log("Load Player Success");
             LoadScene.instance.LoadSceneMenu("LobbyMap");
         }
-        Debug.Log("Load fail");
     }
     public void SetCharSave(int id)
     {
         idSelect = id;
-        if (startData.data[id].isSave == true)
+        if (saveData.saveDatas[id] != null 
+            && saveData.saveDatas[id].isSave)
         {
-            Debug.Log("Loading Char");
             LoadGame(id);
         }
         else
@@ -60,19 +65,14 @@ public class SaveInGame : MonoBehaviour
     }
     public void LoadPanelChar()
     {
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < saveData.saveDatas.Count; i++)
         {
-            saveData = SaveLoadJson.LoadFromJson(i);
-            if (saveData== null)
+            saveData.saveDatas[i] = SaveLoadJson.LoadFromJson(i);
+            if (saveData.saveDatas[i] == null)
             {
-                saveData = ScriptableObject.CreateInstance<SaveData>();
-                startData.data[i].isSave = false;
+                saveData.saveDatas[i].idSave = i;
                 Debug.Log($"Data : {i} Khong co!");
-                continue;
             }
-            startData.data[i].isSave = true;
-            startData.data[i].level = saveData.level;
-            startData.data[i].point = saveData.level * 10;
             //Debug.Log(saveData.saveDatas[i].level.ToString());
         }
     }

@@ -29,7 +29,11 @@ public class ItemShopDetail : MonoBehaviour
         quanPriceTxt.text = data.price.ToString();
         if (shopData.buyType == ItemBuy.Nope)
         {
-            iconImg.sprite = data.perkData.image;
+            iconPriceImg.sprite = data.perkData.image;
+        }
+        else
+        {
+            iconPriceImg.sprite = data.imagePrice;
         }
     }
     public void Buy()

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class StartCharPanel : MonoBehaviour
 {
     public int id;
-    public StartData startData;
+    public ListSaveData saveData;
     public Image avatar;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI levelText;
@@ -30,7 +30,7 @@ public class StartCharPanel : MonoBehaviour
         levelText.gameObject.SetActive(false);
         pointText.gameObject.SetActive(false);
         deleteButton.gameObject.SetActive(false);
-        if (startData.data[id] != null && startData.data[id].isSave) 
+        if (saveData.saveDatas[id] != null && saveData.saveDatas[id].isSave) 
         {
             avatar.gameObject.SetActive(true);
             nameText.gameObject.SetActive(true);
@@ -40,8 +40,8 @@ public class StartCharPanel : MonoBehaviour
 
             //avatar.sprite = saveData.saveDatas[id].avatar;
             //nameText.text = saveData.saveDatas[id].nameChar;
-            levelText.text = "Level : " + startData.data[id].level;
-            pointText.text = "Point : " + startData.data[id].point;
+            levelText.text = "Level : " + saveData.saveDatas[id].level;
+            pointText.text = "Point : " + saveData.saveDatas[id].level * 10;
         }
     }
     public void SetPlayer()

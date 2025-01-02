@@ -29,7 +29,6 @@ public class SettingP : MonoBehaviour
     }
     public void BackToMenu()
     {
-        Time.timeScale = 1.0f;
         SceneManager.LoadScene("MainMenu");
     }
 }

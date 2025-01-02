@@ -6,14 +6,16 @@ using System;
 
 public static class SaveLoadJson
 {
-    public static void SaveToJson(SaveData saveData, int id)
+    public static void SaveToJson(SaveDatas saveData, int id)
     {
+        saveData.idSave = id;
+        saveData.isSave = true;
         string filePath = GetSaveFilePath(id);
         string json = JsonUtility.ToJson(saveData, true); 
         File.WriteAllText(filePath, json);
     }
 
-    public static SaveData LoadFromJson(int id)
+    public static SaveDatas LoadFromJson(int id)
     {
         string filePath = GetSaveFilePath(id);
         if (File.Exists(filePath))
@@ -23,7 +25,7 @@ public static class SaveLoadJson
             {
                 try
                 {
-                    SaveData saveData = new SaveData();
+                    SaveDatas saveData = new SaveDatas();
                     JsonUtility.FromJsonOverwrite(json, saveData);
                     return saveData;
                 }
