@@ -22,15 +22,7 @@ public class GameInstance : MonoBehaviour
     public PickUpItem pickUpItem;
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        instance = this;
     }
     private void Update()
     {
