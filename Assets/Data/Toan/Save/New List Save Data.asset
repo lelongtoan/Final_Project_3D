@@ -14,6 +14,147 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   saveDatas:
   - idSave: 0
+    maxHP: 115
+    healthPoint: 100
+    manaPoint: 100
+    maxMP: 100
+    def: 5
+    dame: 10
+    level: 1
+    exp: 0
+    money: 0
+    levelSkill1: 1
+    levelSkill2: 1
+    levelSkill3: 1
+    quests: []
+    inventory:
+    - idSlot: 0
+      idItem: 
+      quantity: 0
+      durality: 0
+    - idSlot: 1
+      idItem: 
+      quantity: 0
+      durality: 0
+    - idSlot: 2
+      idItem: 
+      quantity: 0
+      durality: 0
+    - idSlot: 3
+      idItem: 
+      quantity: 0
+      durality: 0
+    - idSlot: 4
+      idItem: 
+      quantity: 0
+      durality: 0
+    - idSlot: 5
+      idItem: 
+      quantity: 0
+      durality: 0
+    - idSlot: 6
+      idItem: 
+      quantity: 0
+      durality: 0
+    - idSlot: 7
+      idItem: 
+      quantity: 0
+      durality: 0
+    - idSlot: 8
+      idItem: 
+      quantity: 0
+      durality: 0
+    - idSlot: 9
+      idItem: 
+      quantity: 0
+      durality: 0
+    - idSlot: 10
+      idItem: 
+      quantity: 0
+      durality: 0
+    - idSlot: 11
+      idItem: 
+      quantity: 0
+      durality: 0
+    - idSlot: 12
+      idItem: 
+      quantity: 0
+      durality: 0
+    - idSlot: 13
+      idItem: 
+      quantity: 0
+      durality: 0
+    - idSlot: 14
+      idItem: 
+      quantity: 0
+      durality: 0
+    - idSlot: 15
+      idItem: 
+      quantity: 0
+      durality: 0
+    - idSlot: 16
+      idItem: 
+      quantity: 0
+      durality: 0
+    - idSlot: 17
+      idItem: 
+      quantity: 0
+      durality: 0
+    - idSlot: 18
+      idItem: 
+      quantity: 0
+      durality: 0
+    - idSlot: 19
+      idItem: 
+      quantity: 0
+      durality: 0
+    - idSlot: 20
+      idItem: 
+      quantity: 0
+      durality: 0
+    - idSlot: 21
+      idItem: 
+      quantity: 0
+      durality: 0
+    - idSlot: 22
+      idItem: 
+      quantity: 0
+      durality: 0
+    - idSlot: 23
+      idItem: 
+      quantity: 0
+      durality: 0
+    - idSlot: 24
+      idItem: 
+      quantity: 0
+      durality: 0
+    equipment:
+    - idSlot: 0
+      idItem: 
+      quantity: 0
+      durality: 0
+    - idSlot: 1
+      idItem: 
+      quantity: 0
+      durality: 0
+    - idSlot: 2
+      idItem: 
+      quantity: 0
+      durality: 0
+    - idSlot: 3
+      idItem: 
+      quantity: 0
+      durality: 0
+    - idSlot: 4
+      idItem: 
+      quantity: 0
+      durality: 0
+    - idSlot: 5
+      idItem: 
+      quantity: 0
+      durality: 0
+    isSave: 1
+  - idSave: 0
     maxHP: 0
     healthPoint: 0
     manaPoint: 0
@@ -30,285 +171,20 @@ MonoBehaviour:
     inventory: []
     equipment: []
     isSave: 0
-  - idSave: 1
-    maxHP: 115
-    healthPoint: 100
-    manaPoint: 100
-    maxMP: 100
-    def: 5
-    dame: 10
-    level: 1
+  - idSave: 0
+    maxHP: 0
+    healthPoint: 0
+    manaPoint: 0
+    maxMP: 0
+    def: 0
+    dame: 0
+    level: 0
     exp: 0
     money: 0
-    levelSkill1: 1
-    levelSkill2: 1
-    levelSkill3: 1
+    levelSkill1: 0
+    levelSkill2: 0
+    levelSkill3: 0
     quests: []
-    inventory:
-    - idSlot: 0
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 1
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 2
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 3
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 4
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 5
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 6
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 7
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 8
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 9
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 10
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 11
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 12
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 13
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 14
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 15
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 16
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 17
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 18
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 19
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 20
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 21
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 22
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 23
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 24
-      idItem: 
-      quantity: 0
-      durality: 0
-    equipment:
-    - idSlot: 0
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 1
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 2
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 3
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 4
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 5
-      idItem: 
-      quantity: 0
-      durality: 0
-    isSave: 1
-  - idSave: 2
-    maxHP: 115
-    healthPoint: 100
-    manaPoint: 100
-    maxMP: 100
-    def: 5
-    dame: 10
-    level: 1
-    exp: 0
-    money: 0
-    levelSkill1: 1
-    levelSkill2: 1
-    levelSkill3: 1
-    quests: []
-    inventory:
-    - idSlot: 0
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 1
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 2
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 3
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 4
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 5
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 6
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 7
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 8
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 9
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 10
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 11
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 12
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 13
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 14
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 15
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 16
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 17
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 18
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 19
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 20
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 21
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 22
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 23
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 24
-      idItem: 
-      quantity: 0
-      durality: 0
-    equipment:
-    - idSlot: 0
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 1
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 2
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 3
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 4
-      idItem: 
-      quantity: 0
-      durality: 0
-    - idSlot: 5
-      idItem: 
-      quantity: 0
-      durality: 0
-    isSave: 1
+    inventory: []
+    equipment: []
+    isSave: 0
