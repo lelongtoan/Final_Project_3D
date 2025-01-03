@@ -13439,11 +13439,6 @@ RectTransform:
   m_AnchoredPosition: {x: 275, y: 0}
   m_SizeDelta: {x: 400, y: 740}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &626224378 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7710302961883104627, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
-  m_PrefabInstance: {fileID: 9178579043882227269}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &628044512
 GameObject:
   m_ObjectHideFlags: 0
@@ -16130,7 +16125,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 1442017194}
   m_HandleRect: {fileID: 0}
@@ -25802,7 +25797,7 @@ GameObject:
   - component: {fileID: 1304376971}
   m_Layer: 5
   m_Name: Loading
-  m_TagString: LoadGame
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44417,10 +44412,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -225
       objectReference: {fileID: 0}
-    - target: {fileID: 4234967798587568256, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
-      propertyPath: saveGame
-      value: 
-      objectReference: {fileID: 626224378}
     - target: {fileID: 4528473741216319418, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
