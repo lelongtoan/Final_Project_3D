@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using JetBrains.Annotations;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,10 +14,11 @@ public class GameManager : MonoBehaviour
     public Transform spwanPointPlayer;
     public SoundEffect sound;
     public string soundName;
+    private GameObject playerInstance;
     void Start()
     {
         
-        GameObject playerInstance = Instantiate(playerPrefab,new Vector3(spwanPointPlayer.position.x,0.5f,spwanPointPlayer.position.z), Quaternion.identity);
+        playerInstance = Instantiate(playerPrefab,new Vector3(spwanPointPlayer.position.x,0.5f,spwanPointPlayer.position.z), Quaternion.identity);
 
         GameObject cameraInstance = Instantiate(virtualCameraPrefab, new Vector3(0, 1, 0), Quaternion.identity);
         //GameObject enemy=Instantiate(enemyPrefab, new Vector3(7,3, 0), Quaternion.identity);
@@ -38,7 +40,7 @@ public class GameManager : MonoBehaviour
             sound = FindObjectOfType<SoundEffect>();
             if(sound != null )
             {
-                sound.Playmusic(soundName) ;
+                sound.PlayMusic(soundName) ;
             }
         }
         
