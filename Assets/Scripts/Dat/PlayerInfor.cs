@@ -25,6 +25,7 @@ public class PlayerInfor : MonoBehaviour
     public int level = 1;
     public float exp = 0;
     public int money = 0;
+    public int point = 0;
     Animator animator;
     public bool isDead = false;
     public Image hpbar;
@@ -140,6 +141,7 @@ public class PlayerInfor : MonoBehaviour
         level = playerData.level;
         exp = playerData.exp;
         money = playerData.money;
+        point = playerData.point;
     }
     private void LoadDataByDie()
     {
@@ -176,6 +178,7 @@ public class PlayerInfor : MonoBehaviour
         playerData.level = level;
         playerData.exp = exp;
         playerData.money = money;
+        playerData.point = point;
 
         #if UNITY_EDITOR
             UnityEditor.EditorUtility.SetDirty(playerData);
