@@ -35,11 +35,11 @@ public class SaveTemp : MonoBehaviour
 
     public void SetSaveData(int id = -1)
     {
-        Debug.Log($"{id} save");
         if (id == -1)
         {
             id = temp;
         }
+        Debug.Log($"{id} save");
         SaveDatas saveDatas = saveData.saveDatas[id];
         // Lưu dữ liệu người chơi
         saveDatas.maxHP = playerData.maxHP;
