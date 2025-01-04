@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class SettingP : MonoBehaviour
 {
 
-    [SerializeField] public GameObject soundPanel;
     [SerializeField] public GameObject saveGame;
     private void OnEnable()
     {
@@ -18,10 +17,6 @@ public class SettingP : MonoBehaviour
         {
             saveGame.SetActive(false);
         }
-    }
-    public void SetSoundPanel()
-    {
-        soundPanel.SetActive(!soundPanel.activeInHierarchy);
     }
     public void SaveGame()
     {
