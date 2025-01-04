@@ -32,7 +32,27 @@ public class MainMenuManager : MonoBehaviour
     {
         Instance = this;
     }
-
+    private void Start()
+    {
+        CloseAll();
+    }
+    public void CloseAll()
+    {
+        //mainMenu.SetActive(false);
+        characterMenu.SetActive(false);
+        perkMenu.SetActive(false);
+        shopMenu.SetActive(false);
+        chestMenu.SetActive(false);
+        achievementMenu.SetActive(false);
+        settingMenu.SetActive(false);
+        loginMenu.SetActive(false);
+        languageMenu.SetActive(false);
+        startGameMenu.SetActive(false);
+        newCharMenu.SetActive(false);
+        checkInMenu.SetActive(false);
+        statsTreeMenu.SetActive(false);
+        skillNodeDetail.SetActive(false);
+    }
     void Update()
     {
         moneyText.text = MainMenuInstance.instance.inforMenu.money.ToString();

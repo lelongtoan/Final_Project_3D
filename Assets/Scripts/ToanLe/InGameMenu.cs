@@ -9,6 +9,7 @@ public class InGameMenu : MonoBehaviour
     [SerializeField] public GameObject characterPanel;
     [SerializeField] public GameObject questPanel;
     [SerializeField] public GameObject gameOver;
+    [SerializeField] public GameObject soundPanel;
     [Header("NPC")]
     [SerializeField] public GameObject npcPanel;
     [SerializeField] public GameObject shopNPCPanel;
@@ -25,6 +26,23 @@ public class InGameMenu : MonoBehaviour
 
     private void Start()
     {
+        CloseAll();
+    }
+    public void CloseAll()
+    {
+        settingPanel.SetActive(false);
+        characterPanel.SetActive(false);
+        questPanel.SetActive(false);
+        gameOver.SetActive(false);
+        soundPanel.SetActive(false);
+        npcPanel.SetActive(false);
+        shopNPCPanel.SetActive(false);
+        buyNPCPanel.SetActive(false);
+        craftNPCPanel.SetActive(false);
+        npcChatPanel.SetActive(false);
+        infoItem.SetActive(false);
+        dragAndDrop.SetActive(false);
+        gameReportPanel.SetActive(false);
     }
     public void SetSetting(bool on)
     {
@@ -42,6 +60,10 @@ public class InGameMenu : MonoBehaviour
     public void SetGameReport()
     {
         gameReportPanel.SetActive(!gameReportPanel.activeInHierarchy);
+    }
+    public void SetSoundPanel()
+    {
+        soundPanel.SetActive(!soundPanel.activeInHierarchy);
     }
     public void SetCharPanel()
     {
