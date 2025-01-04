@@ -1,5 +1,4 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/Data/Toan/Save/New Start Data.asset.meta
 <<<<<<<< HEAD:Assets/Data/Toan/Save/New Start Data.asset.meta
 guid: 92bcfb2ea5ad3b8448df91a9dacb80fe
 NativeFormatImporter:
@@ -7,11 +6,8 @@ NativeFormatImporter:
 guid: 1786c81f4aff4eb43b34504cde32aa93
 DefaultImporter:
 >>>>>>>> main:Assets/JMO Assets/Cartoon FX FREE (old legacy effects).unitypackage.meta
-=======
-guid: bd960d1781917284bb89077cf66b65fe
-DefaultImporter:
->>>>>>> parent of 699bf7d1 (upup):Assets/MapsAsset/Polytope Studio/Lowpoly_Environments/SRP/PT_Nature_Free_URP_14.0.9.unitypackage.meta
   externalObjects: {}
+  mainObjectFileID: 11400000
   userData: 
   assetBundleName: 
   assetBundleVariant: 
