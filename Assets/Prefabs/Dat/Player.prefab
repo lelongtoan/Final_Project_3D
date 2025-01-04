@@ -1859,6 +1859,7 @@ MonoBehaviour:
   level: 1
   exp: 0
   money: 0
+  point: 0
   isDead: 0
   hpbar: {fileID: 0}
   mpbar: {fileID: 0}
