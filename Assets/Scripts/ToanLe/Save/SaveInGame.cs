@@ -16,7 +16,11 @@ public class SaveInGame : MonoBehaviour
         instance = this;
         LoadPanelChar();
     }
-
+    private void Start()
+    {
+        idSelect = PlayerPrefs.GetInt("SelectedID", -1);
+        Debug.Log($"Selected ID: {idSelect}");
+    }
     public void SaveGame()
     {
         saveTemp.SetSaveData();
@@ -28,6 +32,8 @@ public class SaveInGame : MonoBehaviour
         if (saveData != null) 
         {
             Debug.Log("Load Player Success");
+            PlayerPrefs.SetInt("SelectedID", id);
+            PlayerPrefs.Save();
             LoadScene.instance.LoadSceneMenu("LobbyMap");
         }
         Debug.Log("Load fail");
@@ -50,12 +56,21 @@ public class SaveInGame : MonoBehaviour
         saveTemp.NewPlayer();
         MainMenuInstance.instance.statsData.Set();
         saveTemp.SetSaveData(idSelect);
+        PlayerPrefs.SetInt("SelectedID", idSelect);
+        PlayerPrefs.Save();
         Debug.Log("New Player Success");
         LoadScene.instance.LoadSceneMenu("LobbyMap");
     }
     public void DetelePlayer(int id)
     {
-        SaveLoadJson.DeleteSaveFile(id);
+        if(id == -1)
+        {
+            SaveLoadJson.DeleteSaveFile(idSelect);
+        }
+        else
+        {
+            SaveLoadJson.DeleteSaveFile(id);
+        }
         Debug.Log("Del Player Success");
     }
     public void LoadPanelChar()

@@ -11,6 +11,7 @@ public static class SaveLoadJson
         string filePath = GetSaveFilePath(id);
         string json = JsonUtility.ToJson(saveData, true); 
         File.WriteAllText(filePath, json);
+        Debug.Log("Saved Json");
     }
 
     public static SaveData LoadFromJson(int id)

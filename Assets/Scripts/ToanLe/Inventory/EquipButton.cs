@@ -5,17 +5,20 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class EquipButton : MonoBehaviour  , IPointerClickHandler
+public class EquipButton : MonoBehaviour, IPointerClickHandler
 
 {
     [SerializeField] Image _sprite;
-    Button x;
+    //[SerializeField] Button x;
     public int myIndex;
-    private void Awake()
-    {
-        x = _sprite.gameObject.GetComponent<Button>();
-        //x.onClick.AddListener(OnEquip);
-    }
+    //private void Awake()
+    //{
+    //    x = _sprite.gameObject.GetComponentInChildren<Button>();
+    //}
+    //private void Start()
+    //{
+    //    x.onClick.AddListener(OnEquip);
+    //}
     public void SetIndex(int index)
     {
         myIndex = index;

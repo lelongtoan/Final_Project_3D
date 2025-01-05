@@ -21,14 +21,14 @@ public class InventoryButton : MonoBehaviour, IPointerClickHandler
     }
     private void Update()
     {
-        //if (GameInstance.instance.itemD.idSelect == myIndex && GameInstance.instance.gameMenu.dragAndDrop.activeInHierarchy)
-        //{
-        //   select.gameObject.SetActive(true);
-        //}
-        //else
-        //{
-        //    select.gameObject.SetActive(false);
-        //}
+        if (GameInstance.instance.itemD.idSelect == myIndex && GameInstance.instance.gameMenu.dragAndDrop.activeInHierarchy)
+        {
+            select.gameObject.SetActive(true);
+        }
+        else
+        {
+            select.gameObject.SetActive(false);
+        }
     }
     public void SetIndex(int index)
     {
