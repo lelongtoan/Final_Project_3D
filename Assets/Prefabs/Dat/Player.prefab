@@ -1832,9 +1832,10 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: e756b5730e4d6bc4b8ff2a5b142d56e3, type: 3}
   - name: Dungeon2
     clip: {fileID: 8300000, guid: 44342da3fe91cd44dbe8efb496800512, type: 3}
-  audioSource: {fileID: 0}
-  soundEffectVolume: 1
-  musicVolume: 1
+  musicAudioSource: {fileID: 0}
+  effectsAudioSource: {fileID: 0}
+  soundEffectVolume: 0
+  musicVolume: 0
 --- !u!114 &2714658418295945862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1858,6 +1859,7 @@ MonoBehaviour:
   level: 1
   exp: 0
   money: 0
+  point: 0
   isDead: 0
   hpbar: {fileID: 0}
   mpbar: {fileID: 0}

@@ -14,6 +14,7 @@ public class PlayerData : ScriptableObject
     public int level = 1;
     public float exp = 0;
     public int money = 0;
+    public int point = 0;
 
     public void Initialaze()
     {
@@ -26,5 +27,6 @@ public class PlayerData : ScriptableObject
         level = 1;
         exp = 0;
         money = 0;
+        point = 0;
     }
 }

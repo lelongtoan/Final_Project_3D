@@ -18,5 +18,5 @@ MonoBehaviour:
   quanlity: 1
   price: 500
   priceType: 1
-  buyType: 3
+  buyType: 0
   perkData: {fileID: 11400000, guid: 3e10e7799f17c9044aa8001c1e4ce223, type: 2}

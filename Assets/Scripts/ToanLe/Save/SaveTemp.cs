@@ -18,8 +18,7 @@ public class SaveTemp : MonoBehaviour
     public EquipmentGenerator equipments;
     public SetIdItem setIdItem;
 
-    public ListSaveData saveData;
-
+    public SaveData saveData;
     private void OnEnable()
     {
         SetIDItem();
@@ -39,21 +38,19 @@ public class SaveTemp : MonoBehaviour
         {
             id = temp;
         }
-        Debug.Log($"{id} save");
-        SaveDatas saveDatas = saveData.saveDatas[id];
         // Lưu dữ liệu người chơi
-        saveDatas.maxHP = playerData.maxHP;
-        saveDatas.healthPoint = playerData.healthPoint;
-        saveDatas.manaPoint = playerData.manaPoint;
-        saveDatas.maxMP = playerData.maxMP;
-        saveDatas.def = playerData.def;
-        saveDatas.dame = playerData.dame;
-        saveDatas.level = playerData.level;
-        saveDatas.exp = playerData.exp;
-        saveDatas.money = playerData.money;
-        saveDatas.levelSkill1 = skillData.levelSkill1;
-        saveDatas.levelSkill2 = skillData.levelSkill2;
-        saveDatas.levelSkill3 = skillData.levelSkill3;
+        saveData.maxHP = playerData.maxHP;
+        saveData.healthPoint = playerData.healthPoint;
+        saveData.manaPoint = playerData.manaPoint;
+        saveData.maxMP = playerData.maxMP;
+        saveData.def = playerData.def;
+        saveData.dame = playerData.dame;
+        saveData.level = playerData.level;
+        saveData.exp = playerData.exp;
+        saveData.money = playerData.money;
+        saveData.levelSkill1 = skillData.levelSkill1;
+        saveData.levelSkill2 = skillData.levelSkill2;
+        saveData.levelSkill3 = skillData.levelSkill3;
 
         // Lưu dữ liệu nhiệm vụ
         for (int i = 0; i < quests.Count; i++)
@@ -62,7 +59,7 @@ public class SaveTemp : MonoBehaviour
                         (quests[i].stateQuest == StateQuest.Taked) ? 2 : 0;
             QuestSave questSave = new QuestSave();
             questSave.Set(quests[i].questId, quests[i].isShowQuest, state);
-            saveDatas.quests.Add(questSave);
+            saveData.quests.Add(questSave);
         }
 
         // Lưu dữ liệu đồ vật
@@ -77,22 +74,22 @@ public class SaveTemp : MonoBehaviour
             {
                 invenSave.Set(i);
             }
-            saveDatas.inventory.Add(invenSave);
+            saveData.inventory.Add(invenSave);
         }
 
         // Lưu dữ liệu trang bị
-        saveDatas.equipment.Clear();
-        AddEquipmentSave(equipments.swordSlot, 0, saveDatas);
-        AddEquipmentSave(equipments.shieldSlot, 1, saveDatas);
-        AddEquipmentSave(equipments.helmetSlot, 2, saveDatas);
-        AddEquipmentSave(equipments.armourSlot, 3, saveDatas);
-        AddEquipmentSave(equipments.glovesSlot, 4, saveDatas);
-        AddEquipmentSave(equipments.bootSlot, 5, saveDatas);
+        saveData.equipment.Clear();
+        AddEquipmentSave(equipments.swordSlot, 0, saveData);
+        AddEquipmentSave(equipments.shieldSlot, 1, saveData);
+        AddEquipmentSave(equipments.helmetSlot, 2, saveData);
+        AddEquipmentSave(equipments.armourSlot, 3, saveData);
+        AddEquipmentSave(equipments.glovesSlot, 4, saveData);
+        AddEquipmentSave(equipments.bootSlot, 5, saveData);
         // Lưu vào file
-        SaveLoadJson.SaveToJson(saveDatas, saveDatas.idSave);
+        SaveLoadJson.SaveToJson(saveData, id);
     }
 
-    private void AddEquipmentSave(ItemSlot slot, int idSlot, SaveDatas saveD)
+    private void AddEquipmentSave(ItemSlot slot, int idSlot, SaveData saveD)
     {
         EquipmentSave equipSave = new EquipmentSave();
         if (slot != null && slot.item != null)
@@ -110,66 +107,59 @@ public class SaveTemp : MonoBehaviour
     public void SetLoadData(int idLoad)
     {
         temp = idLoad;
-        if (idLoad >= 0 && idLoad < saveData.saveDatas.Count)
+        saveData = SaveLoadJson.LoadFromJson(idLoad);
+        // Tải dữ liệu người chơi
+        playerData.maxHP = saveData.maxHP;
+        playerData.healthPoint = saveData.healthPoint;
+        playerData.manaPoint = saveData.manaPoint;
+        playerData.maxMP = saveData.maxMP;
+        playerData.def = saveData.def;
+        playerData.dame = saveData.dame;
+        playerData.level = saveData.level;
+        playerData.exp = saveData.exp;
+        playerData.money = saveData.money;
+
+        skillData.levelSkill1 = saveData.levelSkill1;
+        skillData.levelSkill2 = saveData.levelSkill2;
+        skillData.levelSkill3 = saveData.levelSkill3;
+
+        // Tải dữ liệu nhiệm vụ
+        for (int i = 0; i < saveData.quests.Count; i++)
         {
-            saveData.saveDatas[idLoad] = SaveLoadJson.LoadFromJson(idLoad);
-            // Tải dữ liệu người chơi
-            playerData.maxHP = saveData.saveDatas[idLoad].maxHP;
-            playerData.healthPoint = saveData.saveDatas[idLoad].healthPoint;
-            playerData.manaPoint = saveData.saveDatas[idLoad].manaPoint;
-            playerData.maxMP = saveData.saveDatas[idLoad].maxMP;
-            playerData.def = saveData.saveDatas[idLoad].def;
-            playerData.dame = saveData.saveDatas[idLoad].dame;
-            playerData.level = saveData.saveDatas[idLoad].level;
-            playerData.exp = saveData.saveDatas[idLoad].exp;
-            playerData.money = saveData.saveDatas[idLoad].money;
-
-            skillData.levelSkill1 = saveData.saveDatas[idLoad].levelSkill1;
-            skillData.levelSkill2 = saveData.saveDatas[idLoad].levelSkill2;
-            skillData.levelSkill3 = saveData.saveDatas[idLoad].levelSkill3;
-
-            // Tải dữ liệu nhiệm vụ
-            for (int i = 0; i < saveData.saveDatas[idLoad].quests.Count; i++)
-            {
-                int state = saveData.saveDatas[idLoad].quests[i].state;
-                quests[i].isShowQuest = saveData.saveDatas[idLoad].quests[i].isShow;
-                quests[i].stateQuest = (StateQuest)state;
-            }
-
-            // Tải dữ liệu đồ vật
-            for (int i = 0; i < saveData.saveDatas[idLoad].inventory.Count; i++)
-            {
-                InventorySave invenSave = saveData.saveDatas[idLoad].inventory[i];
-                Item inventoryItem = setIdItem.idItemSlots.Find(s => s.id == invenSave.idItem);
-                if (inventoryItem != null)
-                {
-                    inventorySlots.slots[invenSave.idSlot].item = inventoryItem;
-                    inventorySlots.slots[invenSave.idSlot].count = invenSave.quantity;
-                    inventorySlots.slots[invenSave.idSlot].toolDurability = invenSave.durality;
-                }
-                else
-                {
-                    inventorySlots.slots[invenSave.idSlot].Clear();
-                }
-            }
-
-            // Tải dữ liệu trang bị
-            LoadEquipment(equipments.swordSlot, 0);
-            LoadEquipment(equipments.shieldSlot, 1);
-            LoadEquipment(equipments.helmetSlot, 2);
-            LoadEquipment(equipments.armourSlot, 3);
-            LoadEquipment(equipments.glovesSlot, 4);
-            LoadEquipment(equipments.bootSlot, 5);
+            int state = saveData.quests[i].state;
+            quests[i].isShowQuest = saveData.quests[i].isShow;
+            quests[i].stateQuest = (StateQuest)state;
         }
-        else
+
+        // Tải dữ liệu đồ vật
+        for (int i = 0; i < saveData.inventory.Count; i++)
         {
-            Debug.LogError("Invalid save ID");
+            InventorySave invenSave = saveData.inventory[i];
+            Item inventoryItem = setIdItem.idItemSlots.Find(s => s.id == invenSave.idItem);
+            if (inventoryItem != null)
+            {
+                inventorySlots.slots[invenSave.idSlot].item = inventoryItem;
+                inventorySlots.slots[invenSave.idSlot].count = invenSave.quantity;
+                inventorySlots.slots[invenSave.idSlot].toolDurability = invenSave.durality;
+            }
+            else
+            {
+                inventorySlots.slots[invenSave.idSlot].Clear();
+            }
         }
+
+        // Tải dữ liệu trang bị
+        LoadEquipment(equipments.swordSlot, 0);
+        LoadEquipment(equipments.shieldSlot, 1);
+        LoadEquipment(equipments.helmetSlot, 2);
+        LoadEquipment(equipments.armourSlot, 3);
+        LoadEquipment(equipments.glovesSlot, 4);
+        LoadEquipment(equipments.bootSlot, 5);
     }
 
     private void LoadEquipment(ItemSlot slot, int idSlot)
     {
-        EquipmentSave equipSave = saveData.saveDatas[0].equipment.Find(e => e.idSlot == idSlot); // Sửa từ saveData.saveDatas[idLoad] thành saveData.saveDatas[0] khi lấy dữ liệu
+        EquipmentSave equipSave = saveData.equipment.Find(e => e.idSlot == idSlot); // Sửa từ saveData.saveDatas[idLoad] thành saveData.saveDatas[0] khi lấy dữ liệu
         if (equipSave != null)
         {
             Item equipmentItem = setIdItem.idItemSlots.Find(s => s.id == equipSave.idItem);
