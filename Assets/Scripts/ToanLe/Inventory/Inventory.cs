@@ -6,7 +6,15 @@ using static UnityEditor.Progress;
 
 public class Inventory : ItemManager
 {
+    private void Start()
+    {
+        ShowInven();
+    }
     private void Update()
+    {
+        ShowInven();
+    }
+    public void ShowInven()
     {
         SetIndex();
         ShowInventory();
@@ -52,6 +60,7 @@ public class Inventory : ItemManager
                 Debug.Log("Equip Info");
             }
         }
+        //ShowInven();
     }
 
 }
