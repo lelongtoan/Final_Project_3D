@@ -5,17 +5,17 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public List<GameObject> enemyPrefabs; 
+    public List<GameObject> enemyPrefabs;
     public Transform[] spawnPoints; 
-    public List<GameObject> activeEnemies = new List<GameObject>(); 
-    public int maxEnemies = 10;  
-    public float respawnDelay = 5f; 
-    public float minSpawnDistance = 3f; 
+    public int maxEnemies = 10; 
+    public float respawnDelay = 5f;
 
-    private int enemyID = 0;  
+    private GameObject[] spawnedEnemies; 
+    private int enemyID = 0; 
 
     void Start()
     {
+        spawnedEnemies = new GameObject[spawnPoints.Length];
         StartCoroutine(SpawnLoop());
     }
 
@@ -23,78 +23,61 @@ public class EnemySpawner : MonoBehaviour
     {
         while (true)
         {
-            CleanActiveEnemies();  
-
-            if (activeEnemies.Count < maxEnemies)
+            for (int i = 0; i < spawnPoints.Length; i++)
             {
-                SpawnEnemy();  
+                // Nếu điểm spawn này chưa có quái hoặc quái đã bị phá hủy
+                if (spawnedEnemies[i] == null)
+                {
+                    if (CountActiveEnemies() < maxEnemies)
+                    {
+                        SpawnEnemyAtPoint(i);
+                    }
+                }
             }
 
             yield return new WaitForSeconds(respawnDelay);
         }
     }
 
-    void CleanActiveEnemies()
+    void SpawnEnemyAtPoint(int index)
     {
-        activeEnemies.RemoveAll(enemy => enemy == null); 
-        Debug.Log("Cleaned missing enemies. Active count: " + activeEnemies.Count);
-    }
-
-    // Hàm spawn quái
-    void SpawnEnemy()
-    {
-        if (enemyPrefabs.Count == 0 || spawnPoints.Length == 0)
+        if (enemyPrefabs.Count == 0 || spawnPoints.Length == 0 || index < 0 || index >= spawnPoints.Length)
         {
-            Debug.LogWarning("No enemies or spawn points defined!");
+            Debug.LogWarning("Invalid spawn point or no enemy prefabs defined!");
             return;
         }
 
-        Transform spawnPoint = GetValidSpawnPoint();
-        if (spawnPoint == null)
-        {
-            Debug.LogWarning("No valid spawn points available.");
-            return;
-        }
-
+        Transform spawnPoint = spawnPoints[index];
         GameObject randomEnemy = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];
-
         GameObject enemy = Instantiate(randomEnemy, spawnPoint.position, spawnPoint.rotation);
+
         if (enemy != null)
         {
-            // Gán ID cho quái vừa spawn
-            EnemyInfor enemyScript = enemy.GetComponent<EnemyInfor>();
-            if (enemyScript != null)
-            {
-                enemyScript.enemyId = enemyID;
-                enemyID++; 
-            }
-
-            activeEnemies.Add(enemy); 
-            Debug.Log("Enemy spawned at: " + spawnPoint.position + " with ID: " + enemyID);
+            AssignEnemyID(enemy);
+            spawnedEnemies[index] = enemy; // Lưu tham chiếu quái vào mảng
+            Debug.Log($"Enemy spawned at: {spawnPoint.position} with ID: {enemyID - 1}");
         }
     }
 
-    Transform GetValidSpawnPoint()
+    void AssignEnemyID(GameObject enemy)
     {
-        foreach (var spawnPoint in spawnPoints)
+        EnemyInfor enemyScript = enemy.GetComponent<EnemyInfor>();
+        if (enemyScript != null)
         {
-            bool isValid = true;
+            enemyScript.enemyId = enemyID++;
+        }
+    }
 
-            foreach (var enemy in activeEnemies)
+    int CountActiveEnemies()
+    {
+        int count = 0;
+        foreach (var enemy in spawnedEnemies)
+        {
+            if (enemy != null)
             {
-                if (Vector3.Distance(spawnPoint.position, enemy.transform.position) < minSpawnDistance)
-                {
-                    isValid = false;  
-                    break;
-                }
-            }
-
-            if (isValid)
-            {
-                return spawnPoint;
+                count++;
             }
         }
-
-        return null;
+        return count;
     }
 }
