@@ -2,11 +2,18 @@
 using System.Collections.Generic;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 public class Inventory : ItemManager
 {
+    private void Start()
+    {
+        ShowInven();
+    }
     private void Update()
+    {
+        ShowInven();
+    }
+    public void ShowInven()
     {
         SetIndex();
         ShowInventory();
@@ -52,6 +59,7 @@ public class Inventory : ItemManager
                 Debug.Log("Equip Info");
             }
         }
+        //ShowInven();
     }
 
 }

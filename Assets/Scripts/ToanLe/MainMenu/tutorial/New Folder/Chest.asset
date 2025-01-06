@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cff601e3b7d204541b7fc99daa4bb9f7, type: 3}
+  m_Name: Chest
+  m_EditorClassIdentifier: 
+  data:
+  - "S\u1ED1 L\u01B0\u1EE3ng Ch\xECa Kh\xF3a C\xF3"
+  - "T\xEAn Lo\u1EA1i R\u01B0\u01A1ng"
+  - "Lo\u1EA1i R\u01B0\u01A1ng"
+  - "Lo\u1EA1i Ch\xECa C\u1EA7n \u0110\u1EC3 M\u1EDF R\u01B0\u01A1ng"
+  - "S\u1ED1 L\u01B0\u1EE3ng C\u1EA7n \u0110\u1EC3 M\u1EDF R\u01B0\u01A1ng"

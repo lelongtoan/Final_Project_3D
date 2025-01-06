@@ -77,9 +77,16 @@ public class ItemD : MonoBehaviour
             moveGO.SetActive(true);
             dropGO.SetActive(true);
         }
-        if (itemSlot.item.itemSet != ItemSet.Nope && SceneManager.GetActiveScene().name == "LobbyMap")
+        if (itemSlot.item.itemSet != ItemSet.Nope)
         {
-            useGO.SetActive(true);
+            if (SceneManager.GetActiveScene().name != "LobbyMap")
+            {
+                useGO.SetActive(true);
+            }
+            else if(itemSlot.item.itemSet == ItemSet.Equippable)
+            {
+                useGO.SetActive(true);
+            }
         }
         if (itemSlot.item.stackable)
         {
@@ -107,6 +114,10 @@ public class ItemD : MonoBehaviour
         if (itemSlot.item.itemSet == ItemSet.Equippable)
         {
             GameInstance.instance.itemManager.equipment.UseEquipment(itemSlot);
+            if (sound == null)
+            {
+                sound = FindObjectOfType<SoundEffect>();
+            }
             sound.PlaySound("Cloth");
             itemSlot = new ItemSlot();
             return;
@@ -115,11 +126,19 @@ public class ItemD : MonoBehaviour
         else if (itemSlot.item.itemSet == ItemSet.Heal)
         {
             GameInstance.instance.playerInfor.HealthRecovery((int)itemSlot.item.HP);
+            if (sound == null)
+            {
+                sound = FindObjectOfType<SoundEffect>();
+            }
             sound.PlaySound("Drink");
         }
         else if (itemSlot.item.itemSet == ItemSet.Mana)
         {
             GameInstance.instance.playerInfor.ManaRecover((int)itemSlot.item.MP);
+            if (sound == null)
+            {
+                sound = FindObjectOfType<SoundEffect>();
+            }
             sound.PlaySound("Drink");
         }
         else
@@ -127,6 +146,10 @@ public class ItemD : MonoBehaviour
             if (itemSlot.item.buff != Buff.Nope)
             {
                 GameInstance.instance.buffManager.ActivateBuff(itemSlot.item);
+                if (sound == null)
+                {
+                    sound = FindObjectOfType<SoundEffect>();
+                }
                 sound.PlaySound("Drink");
             }
             else

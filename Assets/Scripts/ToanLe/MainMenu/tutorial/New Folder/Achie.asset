@@ -9,7 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e6b64d89526a9d40810eb282988194f, type: 3}
-  m_Name: 11
+  m_Script: {fileID: 11500000, guid: cff601e3b7d204541b7fc99daa4bb9f7, type: 3}
+  m_Name: Achie
   m_EditorClassIdentifier: 
-  idItemSlots: []
+  data:
+  - "Ph\u1EA7n Th\u01B0\u1EDFng"
+  - "S\u1ED1 L\u01B0\u1EE3ng Th\u01B0\u1EDFng"
+  - "Tr\u1EA1ng Th\xE1i Th\xE0nh T\u1EF1u"
+  - "Th\xF4ng Tin Nhi\u1EC7m V\u1EE5"

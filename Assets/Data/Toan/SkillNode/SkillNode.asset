@@ -22,4 +22,4 @@ MonoBehaviour:
   gold: 100
   diamond: 0
   listNextSkillNode: []
-  state: 1
+  state: 2

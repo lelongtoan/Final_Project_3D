@@ -21,6 +21,7 @@ public class SettingP : MonoBehaviour
     public void SaveGame()
     {
         SaveInGame.instance.SaveGame();
+        Debug.Log("Saved");
     }
     public void BackToMenu()
     {

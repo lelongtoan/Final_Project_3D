@@ -62,6 +62,7 @@ public class SaveTemp : MonoBehaviour
             saveData.quests.Add(questSave);
         }
 
+        saveData.inventory.Clear();
         // Lưu dữ liệu đồ vật
         for (int i = 0; i < inventorySlots.slots.Count; i++)
         {
@@ -95,13 +96,12 @@ public class SaveTemp : MonoBehaviour
         if (slot != null && slot.item != null)
         {
             equipSave.Set(idSlot, slot.item.id, slot.count, slot.toolDurability);
-            saveD.equipment.Add(equipSave);
         }
         else
         {
             equipSave.Set(idSlot);
-            saveD.equipment.Add(equipSave);
         }
+        saveD.equipment.Add(equipSave);
     }
 
     public void SetLoadData(int idLoad)
