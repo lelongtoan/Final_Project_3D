@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 public class Inventory : ItemManager
 {

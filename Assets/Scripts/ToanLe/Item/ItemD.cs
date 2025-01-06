@@ -77,9 +77,16 @@ public class ItemD : MonoBehaviour
             moveGO.SetActive(true);
             dropGO.SetActive(true);
         }
-        if (itemSlot.item.itemSet != ItemSet.Nope && SceneManager.GetActiveScene().name == "LobbyMap")
+        if (itemSlot.item.itemSet != ItemSet.Nope)
         {
-            useGO.SetActive(true);
+            if (SceneManager.GetActiveScene().name != "LobbyMap")
+            {
+                useGO.SetActive(true);
+            }
+            else if(itemSlot.item.itemSet == ItemSet.Equippable)
+            {
+                useGO.SetActive(true);
+            }
         }
         if (itemSlot.item.stackable)
         {
