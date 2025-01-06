@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 7
   levelPerk: 17
   perkName: Unstoppable
-  description: "Kh\xF4ng th\u1EC3 c\u1EA3n ph\xE1 (50HP&30DEF)"
+  description: "Kh\xF4ng th\u1EC3 c\u1EA3n ph\xE1 "
   image: {fileID: 2117922318, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
   quantity: 0
   rate: 0

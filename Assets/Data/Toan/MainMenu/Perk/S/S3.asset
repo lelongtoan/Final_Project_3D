@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 9
   levelPerk: 21
   perkName: Titan Spirit
-  description: "T\u0103ng m\u1EA1nh 100HP & 50MP"
+  description: "T\u0103ng m\u1EA1nh "
   image: {fileID: -816475600, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
   quantity: 0
   rate: 0

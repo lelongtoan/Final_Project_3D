@@ -27,4 +27,3 @@ MonoBehaviour:
   quests: []
   inventory: []
   equipment: []
-  isSave: 0

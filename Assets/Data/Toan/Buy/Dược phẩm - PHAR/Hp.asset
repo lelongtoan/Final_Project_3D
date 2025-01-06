@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemsInShop:
   - itemShop: {fileID: 11400000, guid: c34d11372e66d5f4d98fa85a113e7831, type: 2}
-    priceItem: 30
+    priceItem: 200
     locked: 0
     questShop: {fileID: 0}
   - itemShop: {fileID: 11400000, guid: f51bccb8db383294c898ffe947078937, type: 2}
-    priceItem: 70
+    priceItem: 700
     locked: 0
     questShop: {fileID: 0}
   - itemShop: {fileID: 11400000, guid: 83c1018c8ef1ab744b5d3cad575465f3, type: 2}
-    priceItem: 90
+    priceItem: 1150
     locked: 0
     questShop: {fileID: 0}

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecfb61cf871b5b4ca71f5d68442280e, type: 3}
+  m_Name: ShopThuoc
+  m_EditorClassIdentifier: 
+  craftDataList:
+  - {fileID: 11400000, guid: 7e71ddcbaf6fffb42974a24996f78d32, type: 2}
+  - {fileID: 11400000, guid: a2efa2c65b2ef7140807546503857f00, type: 2}
+  - {fileID: 11400000, guid: 479e0f2bb9409554c8580ff734d298dd, type: 2}
+  - {fileID: 11400000, guid: 4bbc2afa7bf9a45478c1c85e0ed5b0d2, type: 2}
+  - {fileID: 11400000, guid: 91e642c242ee6bb40a7e4c9d36144ee2, type: 2}
+  - {fileID: 11400000, guid: 9e023f086c305ec478c8411228975801, type: 2}
+  - {fileID: 11400000, guid: 5247e731a26063a42934cb480f6bfbcc, type: 2}
+  - {fileID: 11400000, guid: 646a1f0feb6a5bb41bda8d2d81429697, type: 2}
+  - {fileID: 11400000, guid: 197753315def05a42bffba449a3aeac6, type: 2}

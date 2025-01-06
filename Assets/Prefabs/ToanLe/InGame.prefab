@@ -25497,7 +25497,12 @@ MonoBehaviour:
   temp: 0
   playerData: {fileID: 11400000, guid: 4a0c7bb7eba4ea24c977a14c0f174428, type: 2}
   skillData: {fileID: 11400000, guid: 945c8e7b287b3284fbb757c853d018eb, type: 2}
-  quests: []
+  quests:
+  - {fileID: 11400000, guid: fa7d85dec35b73245b1ff1ee4e3520b1, type: 2}
+  - {fileID: 11400000, guid: b7797d344c7270f4f9e6e12853848695, type: 2}
+  - {fileID: 11400000, guid: 28d7d40c5a2a1dd48b0c4f58bac975e6, type: 2}
+  - {fileID: 11400000, guid: 0d2ee027769e5d5408bbe607831a94fa, type: 2}
+  - {fileID: 11400000, guid: f2ac9cae2d51e2547bce90c5eae73d43, type: 2}
   inventorySlots: {fileID: 11400000, guid: 072922a72bea53942964f7c71f20b362, type: 2}
   equipments: {fileID: 11400000, guid: efc68d7b58a3562458041f291fa1b319, type: 2}
   setIdItem: {fileID: 11400000, guid: 3b912c76c43c64d47b5ebc6402f0a334, type: 2}

@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 1
   levelPerk: 5
   perkName: Power Up
-  description: "T\u0103ng 5 s\u1EE9c m\u1EA1nh"
+  description: "T\u0103ng s\u1EE9c m\u1EA1nh"
   image: {fileID: 1001500363, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
   quantity: 0
   rate: 0
