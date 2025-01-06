@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 3
   levelPerk: 9
   perkName: Mana Up
-  description: "T\u0103ng 10 Mana t\u1ED1i \u0111a"
+  description: "T\u0103ng Mana t\u1ED1i \u0111a"
   image: {fileID: 2047035002, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
   quantity: 0
   rate: 0

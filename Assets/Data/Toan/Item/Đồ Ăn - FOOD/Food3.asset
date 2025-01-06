@@ -19,7 +19,7 @@ MonoBehaviour:
   MP: 0
   Dmg: 0
   buffD: 0
-  gold: 7
+  gold: 75
   rateDrop: 25
   description: "Th\u1ECBt \u0111\u1ED9ng v\u1EADt ! S\u1EED d\u1EE5ng h\u1ED3i 30HP"
   buff: 0

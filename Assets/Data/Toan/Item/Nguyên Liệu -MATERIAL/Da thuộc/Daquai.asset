@@ -19,7 +19,7 @@ MonoBehaviour:
   MP: 0
   Dmg: 0
   buffD: 0
-  gold: 3
+  gold: 30
   rateDrop: 75
   description: "Da qu\xE1i th\xFA, c\xF3 th\u1EC3 d\xF9ng \u0111\u1EC3 ch\u1EBF t\u1EA1o
     v\u0169 kh\xED."

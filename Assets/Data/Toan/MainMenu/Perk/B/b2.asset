@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 2
   levelPerk: 7
   perkName: Heart Up
-  description: "T\u0103ng 30 m\xE1u t\u1ED1i \u0111a"
+  description: "T\u0103ng m\xE1u t\u1ED1i \u0111a"
   image: {fileID: -895623538, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
   quantity: 0
   rate: 0

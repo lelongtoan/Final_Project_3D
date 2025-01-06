@@ -14,22 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemsInShop:
   - itemShop: {fileID: 11400000, guid: 22ac03f5d88cd0a49a4db9ed58f0d8ce, type: 2}
-    priceItem: 35
+    priceItem: 250
     locked: 0
     questShop: {fileID: 0}
   - itemShop: {fileID: 11400000, guid: 91f6c8e42547acf4ca128b7af3e6d119, type: 2}
-    priceItem: 60
+    priceItem: 500
     locked: 0
     questShop: {fileID: 0}
   - itemShop: {fileID: 11400000, guid: 58b7fbed99625114d953e123804dec43, type: 2}
-    priceItem: 120
+    priceItem: 1000
     locked: 0
     questShop: {fileID: 0}
   - itemShop: {fileID: 11400000, guid: f119c26ceb7da65418c202bd7a7609cd, type: 2}
-    priceItem: 150
+    priceItem: 1500
     locked: 0
     questShop: {fileID: 0}
   - itemShop: {fileID: 11400000, guid: 486a37206aadaaf4f898f9bffe1588d8, type: 2}
-    priceItem: 200
+    priceItem: 2000
     locked: 0
     questShop: {fileID: 0}

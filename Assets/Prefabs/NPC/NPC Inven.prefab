@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 60a28c371f045ea419e8512fbc931b23, type: 3}
       propertyPath: m_Name
-      value: Pirate3final
+      value: NPC Inven
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -65,9 +65,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 60a28c371f045ea419e8512fbc931b23, type: 3}
       insertIndex: -1
       addedObject: {fileID: -7528431776972813677}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 60a28c371f045ea419e8512fbc931b23, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: -8812364065475143183}
   m_SourcePrefab: {fileID: 100100000, guid: 60a28c371f045ea419e8512fbc931b23, type: 3}
 --- !u!1 &2651513063798029304 stripped
 GameObject:
@@ -145,27 +142,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6.1322956, y: 3.3467147, z: 7.1067734}
   m_Center: {x: -0.2458334, y: 1.1733574, z: 1.3450108}
---- !u!114 &-8812364065475143183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2651513063798029304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 579df1a38e457ab48833bc58ed5a49b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chat: {fileID: 0}
-  craft: {fileID: 0}
-  shop: {fileID: 0}
-  listCraft: {fileID: 0}
-  listChat: {fileID: 0}
-  listItemShop: {fileID: 0}
-  shopGO: {fileID: 0}
-  craftGO: {fileID: 0}
-  questGO: {fileID: 0}
-  attack: {fileID: 0}
-  interact: {fileID: 0}
-  interactButton: {fileID: 0}
