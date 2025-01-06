@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PotionButton : MonoBehaviour
 {
@@ -30,19 +31,25 @@ public class PotionButton : MonoBehaviour
         {
             if (healingPotion && inventory.slots[i].item.itemSet == ItemSet.Heal && countItem > 0)
             {
-                ItemD.Instance.itemSlot = inventory.slots[i];
-                ItemD.Instance.UseItem(inventory.slots[i]);
-                SetItemCount();
-                sound.PlaySound("Drink");
-                return;
+                if(SceneManager.GetActiveScene().name != "LobbyMap")
+                {
+                    ItemD.Instance.itemSlot = inventory.slots[i];
+                    ItemD.Instance.UseItem(inventory.slots[i]);
+                    SetItemCount();
+                    sound.PlaySound("Drink");
+                    return;
+                }
             }
             else if (!healingPotion && inventory.slots[i].item.itemSet == ItemSet.Mana && countItem > 0)
             {
-                ItemD.Instance.itemSlot = inventory.slots[i];
-                ItemD.Instance.UseItem(inventory.slots[i]);
-                SetItemCount();
-                sound.PlaySound("Drink");
-                return;
+                if (SceneManager.GetActiveScene().name != "LobbyMap")
+                {
+                    ItemD.Instance.itemSlot = inventory.slots[i];
+                    ItemD.Instance.UseItem(inventory.slots[i]);
+                    SetItemCount();
+                    sound.PlaySound("Drink");
+                    return;
+                }
             }
         }
     }

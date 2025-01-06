@@ -24,6 +24,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] GameObject newCharMenu;
     [SerializeField] GameObject checkInMenu;
     [SerializeField] GameObject statsTreeMenu;
+    [SerializeField] GameObject tutorialPanel;
     [Header("Detail")]
     [SerializeField] GameObject skillNodeDetail;
 
@@ -52,11 +53,16 @@ public class MainMenuManager : MonoBehaviour
         checkInMenu.SetActive(false);
         statsTreeMenu.SetActive(false);
         skillNodeDetail.SetActive(false);
+        tutorialPanel.SetActive(false);
     }
     void Update()
     {
         moneyText.text = MainMenuInstance.instance.inforMenu.money.ToString();
         diamondText.text = MainMenuInstance.instance.inforMenu.diamond.ToString();
+    }
+    public void SetTutorialPanel()
+    {
+        tutorialPanel.SetActive(!tutorialPanel.activeInHierarchy);
     }
     public void SetStatsTreeMenu()
     {

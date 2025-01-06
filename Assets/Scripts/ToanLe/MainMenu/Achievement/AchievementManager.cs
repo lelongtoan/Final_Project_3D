@@ -9,7 +9,7 @@ public class AchievementManager : MonoBehaviour
     public GameObject content;
     public GameObject quest;
     public AchievementCheck achieCheck;
-    private void Start()
+    private void OnEnable()
     {
         UpdateQuest();
     }
