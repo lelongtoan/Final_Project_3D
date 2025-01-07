@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cff601e3b7d204541b7fc99daa4bb9f7, type: 3}
   m_Name: Shop
   m_EditorClassIdentifier: 
+  nameTutorial: "C\u1EEDa H\xE0ng"
   data:
   - "V\u1EADt Ph\u1EA9m C\u1EA7n Tr\u1EA3"
   - "S\u1ED1 L\u01B0\u1EE3ng C\u1EA7n Tr\u1EA3"
   - "T\xEAn V\u1EADt Ph\u1EA9m B\xE1n"
   - "V\u1EADt Ph\u1EA9m B\xE1n"
   - "S\u1ED1 L\u01B0\u1EE3ng C\u1EE7a V\u1EADt Ph\u1EA9m"
+  image: {fileID: 21300000, guid: 37d2f5c61b1f3ac4f83092422a63bf98, type: 3}

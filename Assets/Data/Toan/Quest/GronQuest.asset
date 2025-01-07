@@ -13,11 +13,13 @@ MonoBehaviour:
   m_Name: GronQuest
   m_EditorClassIdentifier: 
   questId: 3
-  numberInt: 1
+  questName: 
+  questDes: 
+  numberInt: 0
   numberComplete: 1
   questString: 3
-  isShowQuest: 0
-  stateQuest: 0
+  isShowQuest: 1
+  stateQuest: 2
   isCoin: 150
   exp: 200
   isStack: 1

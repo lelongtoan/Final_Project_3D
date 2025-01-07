@@ -12,6 +12,8 @@ public enum StateQuest
 public class Quest : ScriptableObject
 {
     public int questId;
+    public string questName;
+    public string questDes;
     public int numberInt;
     public int numberComplete;
     public string questString;

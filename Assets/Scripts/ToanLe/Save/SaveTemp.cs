@@ -178,10 +178,16 @@ public class SaveTemp : MonoBehaviour
         {
             inventorySlots.slots[i].Clear();
         }
-        equipments.Clear();
+        equipments.helmetSlot.Clear();
+        equipments.armourSlot.Clear();
+        equipments.glovesSlot.Clear();
+        equipments.bootSlot.Clear();
+        equipments.swordSlot.Clear();
+        equipments.shieldSlot.Clear();
         for (int i = 0; i < quests.Count; i++)
         {
-            quests[i].Clear();
+            quests[i].isShowQuest = false;
+            quests[i].stateQuest = StateQuest.Nope;
         }
         skillData.Initialize();
     }

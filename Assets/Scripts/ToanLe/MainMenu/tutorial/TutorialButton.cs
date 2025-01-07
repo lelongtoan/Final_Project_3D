@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -7,8 +7,7 @@ using UnityEngine.UI;
 public class TutorialButton : MonoBehaviour
 {
     [SerializeField] GameObject tutorialPanel;
-    [SerializeField] TutorialData tutorialData;
-    [SerializeField] Sprite tutorialImg;
+    [SerializeField] List<TutorialData> tutorialData;
     Button button;
     private void Start()
     {
@@ -17,9 +16,17 @@ public class TutorialButton : MonoBehaviour
     }
     public void SetDataTuto()
     {
-        tutorialPanel.GetComponent<Tutorial>().data = tutorialData;
-        tutorialPanel.GetComponent<Tutorial>()
-            .image.gameObject.GetComponent<Image>().sprite = tutorialImg;
-        tutorialPanel.SetActive(true);
+        var tutorialScript = tutorialPanel.GetComponent<Tutorial>();
+        if (tutorialScript != null)
+        {
+            tutorialScript.dataList = tutorialData;
+            tutorialScript.currentIndex = 0;
+            tutorialScript.TutorialSet();
+            tutorialPanel.SetActive(true);
+        }
+        else
+        {
+            Debug.LogWarning("Tutorial script không được tìm thấy trên panel!");
+        }
     }
 }
