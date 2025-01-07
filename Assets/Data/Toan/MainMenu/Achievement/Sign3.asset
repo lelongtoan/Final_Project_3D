@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88a160f614ebf2d48ad4caaf4b0081d4, type: 3}
-  m_Name: Achie 1
+  m_Name: Sign3
   m_EditorClassIdentifier: 
   questId: 0
-  icon: {fileID: 21300042, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
-  nameAchivement: "Ki\u1EBFm 1000 Gold"
+  icon: {fileID: 0}
+  nameAchivement: "\u0110\u0103ng nh\u1EADp 3 ng\xE0y"
   countAchievement: 0
-  completeAchivement: 1000
-  rewardAchievement: 200
-  stateAchievement: 2
-  checkAchievement: 0
+  completeAchivement: 3
+  rewardAchievement: 300
+  stateAchievement: 0
+  checkAchievement: 4
   rewardAchie: 0

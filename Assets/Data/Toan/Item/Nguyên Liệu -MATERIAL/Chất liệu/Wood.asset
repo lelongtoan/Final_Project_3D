@@ -19,7 +19,7 @@ MonoBehaviour:
   MP: 0
   Dmg: 0
   buffD: 0
-  gold: 1
+  gold: 15
   rateDrop: 50
   description: "G\u1ED7 l\xE0 ch\u1EA5t li\u1EC7u ph\u1ED5 bi\u1EBFn th\u01B0\u1EDDng
     xu\u1EA5t hi\u1EC7n th\xF4ng quan ti\xEAu di\u1EC7t qu\xE1i v\u1EADt. Th\u01B0\u1EDDng

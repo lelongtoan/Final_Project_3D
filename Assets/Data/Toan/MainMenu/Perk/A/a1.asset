@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 4
   levelPerk: 11
   perkName: Power & Mana
-  description: "S\u1EF1 pha tr\u1ED9n tr\u1EAFng t\u0103ng 15 Dame & 15 Mana"
+  description: "S\u1EF1 pha tr\u1ED9n tr\u1EAFng"
   image: {fileID: -1356054371, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
   quantity: 0
   rate: 0

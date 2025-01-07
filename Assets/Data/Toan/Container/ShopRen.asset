@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5272ff46bba89804c9da6df50ccae579, type: 3}
+  m_Name: ShopRen
+  m_EditorClassIdentifier: 
+  itemsInShop:
+  - itemShop: {fileID: 11400000, guid: eb8c4c52af65fe346ae15510aa580e09, type: 2}
+    priceItem: 300
+    locked: 1
+    questShop: {fileID: 11400000, guid: fa7d85dec35b73245b1ff1ee4e3520b1, type: 2}
+  - itemShop: {fileID: 11400000, guid: 4b056bd42f7c44a40bedc9f8248dd0bb, type: 2}
+    priceItem: 600
+    locked: 1
+    questShop: {fileID: 11400000, guid: fa7d85dec35b73245b1ff1ee4e3520b1, type: 2}
+  - itemShop: {fileID: 11400000, guid: b01c18a9e777f4e48a5681380a00a650, type: 2}
+    priceItem: 300
+    locked: 1
+    questShop: {fileID: 11400000, guid: fa7d85dec35b73245b1ff1ee4e3520b1, type: 2}
+  - itemShop: {fileID: 11400000, guid: 99cfa5f6c9f6b1941a165b89d72846b2, type: 2}
+    priceItem: 500
+    locked: 1
+    questShop: {fileID: 11400000, guid: fa7d85dec35b73245b1ff1ee4e3520b1, type: 2}
+  - itemShop: {fileID: 11400000, guid: 0045e73bfd6a14840b72fc8a14bc831e, type: 2}
+    priceItem: 1700
+    locked: 1
+    questShop: {fileID: 11400000, guid: fa7d85dec35b73245b1ff1ee4e3520b1, type: 2}
+  - itemShop: {fileID: 11400000, guid: 98e40597a7d10f949a89170ae3752626, type: 2}
+    priceItem: 300
+    locked: 1
+    questShop: {fileID: 11400000, guid: fa7d85dec35b73245b1ff1ee4e3520b1, type: 2}
+  - itemShop: {fileID: 11400000, guid: 10452e013ae8bd945bfca37bd34cd77f, type: 2}
+    priceItem: 600
+    locked: 1
+    questShop: {fileID: 11400000, guid: fa7d85dec35b73245b1ff1ee4e3520b1, type: 2}
+  - itemShop: {fileID: 11400000, guid: 0d66c5c10c3b3ba4bba4d4c3f97f9b43, type: 2}
+    priceItem: 250
+    locked: 1
+    questShop: {fileID: 11400000, guid: fa7d85dec35b73245b1ff1ee4e3520b1, type: 2}
+  - itemShop: {fileID: 11400000, guid: ba90f2c3170b1374cbd2c9479504a9b7, type: 2}
+    priceItem: 650
+    locked: 1
+    questShop: {fileID: 11400000, guid: fa7d85dec35b73245b1ff1ee4e3520b1, type: 2}
+  - itemShop: {fileID: 11400000, guid: c2ea9f7e09847ad4babcd3661b83c2a0, type: 2}
+    priceItem: 1700
+    locked: 1
+    questShop: {fileID: 11400000, guid: fa7d85dec35b73245b1ff1ee4e3520b1, type: 2}
+  - itemShop: {fileID: 11400000, guid: 22ac03f5d88cd0a49a4db9ed58f0d8ce, type: 2}
+    priceItem: 250
+    locked: 1
+    questShop: {fileID: 11400000, guid: fa7d85dec35b73245b1ff1ee4e3520b1, type: 2}
+  - itemShop: {fileID: 11400000, guid: 91f6c8e42547acf4ca128b7af3e6d119, type: 2}
+    priceItem: 500
+    locked: 1
+    questShop: {fileID: 11400000, guid: fa7d85dec35b73245b1ff1ee4e3520b1, type: 2}
+  - itemShop: {fileID: 11400000, guid: 58b7fbed99625114d953e123804dec43, type: 2}
+    priceItem: 1000
+    locked: 1
+    questShop: {fileID: 11400000, guid: fa7d85dec35b73245b1ff1ee4e3520b1, type: 2}
+  - itemShop: {fileID: 11400000, guid: f119c26ceb7da65418c202bd7a7609cd, type: 2}
+    priceItem: 1500
+    locked: 1
+    questShop: {fileID: 11400000, guid: fa7d85dec35b73245b1ff1ee4e3520b1, type: 2}
+  - itemShop: {fileID: 11400000, guid: 486a37206aadaaf4f898f9bffe1588d8, type: 2}
+    priceItem: 2000
+    locked: 1
+    questShop: {fileID: 11400000, guid: fa7d85dec35b73245b1ff1ee4e3520b1, type: 2}
+  - itemShop: {fileID: 11400000, guid: 935a56a020eb978449142f6c89e53132, type: 2}
+    priceItem: 300
+    locked: 1
+    questShop: {fileID: 11400000, guid: fa7d85dec35b73245b1ff1ee4e3520b1, type: 2}
+  - itemShop: {fileID: 11400000, guid: e8d3114aa309c34429f0bc1097f9e660, type: 2}
+    priceItem: 600
+    locked: 1
+    questShop: {fileID: 11400000, guid: fa7d85dec35b73245b1ff1ee4e3520b1, type: 2}
+  - itemShop: {fileID: 11400000, guid: c9571f4bc2c710a4bb6fc9b799bac569, type: 2}
+    priceItem: 1500
+    locked: 1
+    questShop: {fileID: 11400000, guid: fa7d85dec35b73245b1ff1ee4e3520b1, type: 2}

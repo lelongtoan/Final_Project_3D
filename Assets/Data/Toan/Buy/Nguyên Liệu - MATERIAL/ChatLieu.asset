@@ -13,28 +13,23 @@ MonoBehaviour:
   m_Name: ChatLieu
   m_EditorClassIdentifier: 
   itemsInShop:
-  - idItem: DBMCLWOOD
-    nameItem: Wood
-    priceItem: 5
+  - itemShop: {fileID: 11400000, guid: d0cf7f61413060848ba4985a3b9e78bc, type: 2}
+    priceItem: 50
     locked: 0
-    itemShop: {fileID: 11400000, guid: d0cf7f61413060848ba4985a3b9e78bc, type: 2}
-  - idItem: DBMCLIRON
-    nameItem: Iron
-    priceItem: 10
+    questShop: {fileID: 0}
+  - itemShop: {fileID: 11400000, guid: 9fcc2c022848eb145a360bf8d05406c4, type: 2}
+    priceItem: 100
     locked: 0
-    itemShop: {fileID: 11400000, guid: 9fcc2c022848eb145a360bf8d05406c4, type: 2}
-  - idItem: DBMCLGOLD
-    nameItem: Gold
-    priceItem: 20
+    questShop: {fileID: 0}
+  - itemShop: {fileID: 11400000, guid: 9d7199e5b79fa6a46887743fbb1919e8, type: 2}
+    priceItem: 200
     locked: 0
-    itemShop: {fileID: 11400000, guid: 9d7199e5b79fa6a46887743fbb1919e8, type: 2}
-  - idItem: DBMCLRUBY
-    nameItem: Ruby
-    priceItem: 30
+    questShop: {fileID: 0}
+  - itemShop: {fileID: 11400000, guid: 8404fd778ef13c14f970fbe47e515918, type: 2}
+    priceItem: 300
     locked: 0
-    itemShop: {fileID: 11400000, guid: 8404fd778ef13c14f970fbe47e515918, type: 2}
-  - idItem: DBMCLDIAMOND
-    nameItem: Diamond
-    priceItem: 40
+    questShop: {fileID: 0}
+  - itemShop: {fileID: 11400000, guid: f38e5cf5ecbec8044b417368db0de21a, type: 2}
+    priceItem: 400
     locked: 0
-    itemShop: {fileID: 11400000, guid: f38e5cf5ecbec8044b417368db0de21a, type: 2}
+    questShop: {fileID: 0}

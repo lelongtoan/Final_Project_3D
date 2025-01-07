@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: Dathuoc
   m_EditorClassIdentifier: 
   itemsInShop:
-  - idItem: DBDA
-    nameItem: Daquai
-    priceItem: 10
+  - itemShop: {fileID: 11400000, guid: 2bda2dcdefc3a8a4f801b541d51500f4, type: 2}
+    priceItem: 100
     locked: 0
-    itemShop: {fileID: 11400000, guid: 2bda2dcdefc3a8a4f801b541d51500f4, type: 2}
+    questShop: {fileID: 0}

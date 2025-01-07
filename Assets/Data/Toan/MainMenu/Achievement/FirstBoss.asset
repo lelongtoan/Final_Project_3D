@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88a160f614ebf2d48ad4caaf4b0081d4, type: 3}
-  m_Name: Achie 3
+  m_Name: FirstBoss
   m_EditorClassIdentifier: 
   questId: 0
-  icon: {fileID: 21300042, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
-  nameAchivement: "Ki\u1EBFm 1000 Gold"
+  icon: {fileID: 0}
+  nameAchivement: "Ti\xEAu di\u1EC7t Boss l\u1EA7n \u0111\u1EA7u"
   countAchievement: 0
-  completeAchivement: 1000
-  rewardAchievement: 0
+  completeAchivement: 1
+  rewardAchievement: 5
   stateAchievement: 0
-  checkAchievement: 0
-  rewardAchie: 0
+  checkAchievement: 2
+  rewardAchie: 3
