@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class InGameMenu : MonoBehaviour
 {
+    public static InGameMenu Instance;
     [SerializeField] public GameObject settingPanel;
     [SerializeField] public GameObject characterPanel;
     [SerializeField] public GameObject questPanel;
@@ -23,7 +24,10 @@ public class InGameMenu : MonoBehaviour
     [Header("Game Report")]
     [SerializeField] public GameObject gameReportPanel;
     SoundEffect sound;
-
+    private void Awake()
+    {
+        Instance = this;
+    }
     private void Start()
     {
         CloseAll();

@@ -214,6 +214,10 @@ public class ItemD : MonoBehaviour
     }
     public void SetSell()
     {
+        if (sound == null)
+        {
+            sound = FindObjectOfType<SoundEffect>();
+        }
         sound.PlaySound("Sell");
         ValueSell valueSell = GameInstance.instance.valueSell;
         GameInstance.instance.playerInfor.GetMoney((int)valueSell.price);

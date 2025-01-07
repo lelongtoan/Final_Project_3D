@@ -37,7 +37,10 @@ public class NPCChat : MonoBehaviour
     {
 
         nameText.text = npcChats.npcName;
-        avatarImage.sprite = npcChats.npcImage;
+        if(npcChats.npcImage != null)
+        {
+            avatarImage.sprite = npcChats.npcImage;
+        }
     }
     public void ShowDialogueLine()
     {
