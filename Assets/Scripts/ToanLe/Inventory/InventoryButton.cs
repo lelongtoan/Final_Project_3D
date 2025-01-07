@@ -16,7 +16,7 @@ public class InventoryButton : MonoBehaviour, IPointerClickHandler
     public int myIndex;
     private void Start()
     {
-        select.enabled = false;
+        select.gameObject.SetActive(false);
         quantity.SetActive(false);
     }
     private void Update()

@@ -61,9 +61,6 @@ public class NPC : MonoBehaviour
     }
     public void SetNPCInteract()
     {
-        chat.npcChats = listChat;
-        craft.craftInventory = listCraft;
-        shop.shopInventory = listItemShop;
         if(listChat!=null)
         {
             chat.npcChats = listChat;
@@ -80,7 +77,7 @@ public class NPC : MonoBehaviour
         }
         else
         {
-            chat.npcChats = null;
+            craft.craftInventory = null;
         }
         if(listItemShop != null)
         {
@@ -89,8 +86,9 @@ public class NPC : MonoBehaviour
         }
         else
         {
-            chat.npcChats = null;
+            shop.shopInventory = null;
         }
+        InGameMenu.Instance.SetNPC();
         Debug.Log($"Tương tác với NPC: {gameObject.name}");
     }
 
