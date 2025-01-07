@@ -13,26 +13,26 @@ MonoBehaviour:
   m_Name: Equipment
   m_EditorClassIdentifier: 
   swordSlot:
-    item: {fileID: 11400000, guid: 486a37206aadaaf4f898f9bffe1588d8, type: 2}
+    item: {fileID: 11400000, guid: 22ac03f5d88cd0a49a4db9ed58f0d8ce, type: 2}
     toolDurability: 100
     count: 1
   shieldSlot:
-    item: {fileID: 11400000, guid: c2ea9f7e09847ad4babcd3661b83c2a0, type: 2}
+    item: {fileID: 11400000, guid: 0d66c5c10c3b3ba4bba4d4c3f97f9b43, type: 2}
     toolDurability: 0
-    count: 1
+    count: 0
   helmetSlot:
-    item: {fileID: 11400000, guid: 935a56a020eb978449142f6c89e53132, type: 2}
-    toolDurability: 100
-    count: 1
-  armourSlot:
-    item: {fileID: 11400000, guid: 0045e73bfd6a14840b72fc8a14bc831e, type: 2}
+    item: {fileID: 0}
     toolDurability: 0
-    count: 1
+    count: 0
+  armourSlot:
+    item: {fileID: 0}
+    toolDurability: 0
+    count: 0
   glovesSlot:
-    item: {fileID: 11400000, guid: 4b056bd42f7c44a40bedc9f8248dd0bb, type: 2}
-    toolDurability: 100
-    count: 1
+    item: {fileID: 0}
+    toolDurability: 0
+    count: 0
   bootSlot:
-    item: {fileID: 11400000, guid: 98e40597a7d10f949a89170ae3752626, type: 2}
-    toolDurability: 100
-    count: 1
+    item: {fileID: 0}
+    toolDurability: 0
+    count: 0

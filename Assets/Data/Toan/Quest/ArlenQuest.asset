@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: ArlenQuest
   m_EditorClassIdentifier: 
   questId: 2
-  numberInt: 1
+  questName: 
+  questDes: 
+  numberInt: 0
   numberComplete: 5
   questString: 2
-  isShowQuest: 0
+  isShowQuest: 1
   stateQuest: 0
   isCoin: 200
   exp: 150
