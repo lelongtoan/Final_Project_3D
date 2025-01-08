@@ -1,3 +1,5 @@
+﻿using Firebase.Auth;
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -19,6 +21,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] GameObject achievementMenu;
     [SerializeField] GameObject settingMenu;
     [SerializeField] GameObject loginMenu;
+    [SerializeField] GameObject accouuntMenu;
     [SerializeField] GameObject languageMenu;
     [SerializeField] GameObject startGameMenu;
     [SerializeField] GameObject newCharMenu;
@@ -27,10 +30,11 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] GameObject tutorialPanel;
     [Header("Detail")]
     [SerializeField] GameObject skillNodeDetail;
-
+    private FirebaseAuth auth;
     public SoundEffect sound;
     private void Awake()
     {
+        auth = FirebaseAuth.DefaultInstance;
         Instance = this;
     }
     private void Start()
@@ -118,12 +122,13 @@ public class MainMenuManager : MonoBehaviour
         sound.PlaySound("Button");
         settingMenu.SetActive(!settingMenu.activeInHierarchy);
     }
-    public void SetLoginMenu()
+    public void SetLoginMenu(int i = 0)
     {
-        bool checkLogin = false;//Check Login
-        if(checkLogin)
-        {
 
+        if (auth.CurrentUser != null && i == 0)
+        {
+            sound.PlaySound("Button");
+            accouuntMenu.SetActive(!accouuntMenu.activeInHierarchy);  // Kiểm tra biến đúng tên
         }
         else
         {

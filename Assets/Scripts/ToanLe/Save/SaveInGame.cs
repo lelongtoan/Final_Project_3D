@@ -78,16 +78,15 @@ public class SaveInGame : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             saveData = SaveLoadJson.LoadFromJson(i);
-            if (saveData== null)
+            if (saveData == null)
             {
-                saveData = ScriptableObject.CreateInstance<SaveData>();
                 startData.data[i].isSave = false;
                 Debug.Log($"Data : {i} Khong co!");
                 continue;
             }
             startData.data[i].isSave = true;
-            startData.data[i].level = saveData.level;
-            startData.data[i].point = saveData.level * 10;
+            startData.data[i].level = saveData._07_level;
+            startData.data[i].point = saveData._07_level * 10;
             //Debug.Log(saveData.saveDatas[i].level.ToString());
         }
     }

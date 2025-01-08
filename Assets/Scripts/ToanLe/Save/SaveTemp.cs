@@ -39,20 +39,20 @@ public class SaveTemp : MonoBehaviour
             id = temp;
         }
         // Lưu dữ liệu người chơi
-        saveData.maxHP = playerData.maxHP;
-        saveData.healthPoint = playerData.healthPoint;
-        saveData.manaPoint = playerData.manaPoint;
-        saveData.maxMP = playerData.maxMP;
-        saveData.def = playerData.def;
-        saveData.dame = playerData.dame;
-        saveData.level = playerData.level;
-        saveData.exp = playerData.exp;
-        saveData.money = playerData.money;
-        saveData.levelSkill1 = skillData.levelSkill1;
-        saveData.levelSkill2 = skillData.levelSkill2;
-        saveData.levelSkill3 = skillData.levelSkill3;
+        saveData._01_maxHP = playerData.maxHP;
+        saveData._02_healthPoint = playerData.healthPoint;
+        saveData._03_manaPoint = playerData.manaPoint;
+        saveData._04_maxMP = playerData.maxMP;
+        saveData._05_def = playerData.def;
+        saveData._06_dame = playerData.dame;
+        saveData._07_level = playerData.level;
+        saveData._08_exp = playerData.exp;
+        saveData._09_money = playerData.money;
+        saveData._10_levelSkill1 = skillData.levelSkill1;
+        saveData._11_levelSkill2 = skillData.levelSkill2;
+        saveData._12_levelSkill3 = skillData.levelSkill3;
 
-        saveData.quests.Clear();
+        saveData._13_quests.Clear();
         // Lưu dữ liệu nhiệm vụ
         for (int i = 0; i < quests.Count; i++)
         {
@@ -60,10 +60,10 @@ public class SaveTemp : MonoBehaviour
                         (quests[i].stateQuest == StateQuest.Taked) ? 2 : 0;
             QuestSave questSave = new QuestSave();
             questSave.Set(i,quests[i].questId, quests[i].isShowQuest, state);
-            saveData.quests.Add(questSave);
+            saveData._13_quests.Add(questSave);
         }
 
-        saveData.inventory.Clear();
+        saveData._14_inventory.Clear();
         // Lưu dữ liệu đồ vật
         for (int i = 0; i < inventorySlots.slots.Count; i++)
         {
@@ -76,11 +76,11 @@ public class SaveTemp : MonoBehaviour
             {
                 invenSave.Set(i);
             }
-            saveData.inventory.Add(invenSave);
+            saveData._14_inventory.Add(invenSave);
         }
 
         // Lưu dữ liệu trang bị
-        saveData.equipment.Clear();
+        saveData._15_equipment.Clear();
         AddEquipmentSave(equipments.swordSlot, 0, saveData);
         AddEquipmentSave(equipments.shieldSlot, 1, saveData);
         AddEquipmentSave(equipments.helmetSlot, 2, saveData);
@@ -102,7 +102,7 @@ public class SaveTemp : MonoBehaviour
         {
             equipSave.Set(idSlot);
         }
-        saveD.equipment.Add(equipSave);
+        saveD._15_equipment.Add(equipSave);
     }
 
     public void SetLoadData(int idLoad)
@@ -110,42 +110,42 @@ public class SaveTemp : MonoBehaviour
         temp = idLoad;
         saveData = SaveLoadJson.LoadFromJson(idLoad);
         // Tải dữ liệu người chơi
-        playerData.maxHP = saveData.maxHP;
-        playerData.healthPoint = saveData.healthPoint;
-        playerData.manaPoint = saveData.manaPoint;
-        playerData.maxMP = saveData.maxMP;
-        playerData.def = saveData.def;
-        playerData.dame = saveData.dame;
-        playerData.level = saveData.level;
-        playerData.exp = saveData.exp;
-        playerData.money = saveData.money;
+        playerData.maxHP = saveData._01_maxHP;
+        playerData.healthPoint = saveData._02_healthPoint;
+        playerData.manaPoint = saveData._03_manaPoint;
+        playerData.maxMP = saveData._04_maxMP;
+        playerData.def = saveData._05_def;
+        playerData.dame = saveData._06_dame;
+        playerData.level = saveData._07_level;
+        playerData.exp = saveData._08_exp;
+        playerData.money = saveData._09_money;
 
-        skillData.levelSkill1 = saveData.levelSkill1;
-        skillData.levelSkill2 = saveData.levelSkill2;
-        skillData.levelSkill3 = saveData.levelSkill3;
+        skillData.levelSkill1 = saveData._10_levelSkill1;
+        skillData.levelSkill2 = saveData._11_levelSkill2;
+        skillData.levelSkill3 = saveData._12_levelSkill3;
 
         // Tải dữ liệu nhiệm vụ
-        for (int i = 0; i < saveData.quests.Count; i++)
+        for (int i = 0; i < saveData._13_quests.Count; i++)
         {
-            int state = saveData.quests[i].state;
-            quests[i].isShowQuest = saveData.quests[i].isShow;
+            int state = saveData._13_quests[i]._04_state;
+            quests[i].isShowQuest = saveData._13_quests[i]._03_isShow;
             quests[i].stateQuest = (StateQuest)state;
         }
 
         // Tải dữ liệu đồ vật
-        for (int i = 0; i < saveData.inventory.Count; i++)
+        for (int i = 0; i < saveData._14_inventory.Count; i++)
         {
-            InventorySave invenSave = saveData.inventory[i];
-            Item inventoryItem = setIdItem.idItemSlots.Find(s => s.id == invenSave.idItem);
+            InventorySave invenSave = saveData._14_inventory[i];
+            Item inventoryItem = setIdItem.idItemSlots.Find(s => s.id == invenSave._02_idItem);
             if (inventoryItem != null)
             {
-                inventorySlots.slots[invenSave.idSlot].item = inventoryItem;
-                inventorySlots.slots[invenSave.idSlot].count = invenSave.quantity;
-                inventorySlots.slots[invenSave.idSlot].toolDurability = invenSave.durality;
+                inventorySlots.slots[invenSave._01_idSlot].item = inventoryItem;
+                inventorySlots.slots[invenSave._01_idSlot].count = invenSave._03_quantity;
+                inventorySlots.slots[invenSave._01_idSlot].toolDurability = invenSave._04_durality;
             }
             else
             {
-                inventorySlots.slots[invenSave.idSlot].Clear();
+                inventorySlots.slots[invenSave._01_idSlot].Clear();
             }
         }
 
@@ -160,15 +160,15 @@ public class SaveTemp : MonoBehaviour
 
     private void LoadEquipment(ItemSlot slot, int idSlot)
     {
-        EquipmentSave equipSave = saveData.equipment.Find(e => e.idSlot == idSlot); // Sửa từ saveData.saveDatas[idLoad] thành saveData.saveDatas[0] khi lấy dữ liệu
+        EquipmentSave equipSave = saveData._15_equipment.Find(e => e._01_idSlot == idSlot); // Sửa từ saveData.saveDatas[idLoad] thành saveData.saveDatas[0] khi lấy dữ liệu
         if (equipSave != null)
         {
-            Item equipmentItem = setIdItem.idItemSlots.Find(s => s.id == equipSave.idItem);
+            Item equipmentItem = setIdItem.idItemSlots.Find(s => s.id == equipSave._02_idItem);
             if (equipmentItem != null)
             {
                 slot.item = equipmentItem;
-                slot.count = equipSave.quantity;
-                slot.toolDurability = equipSave.durality;
+                slot.count = equipSave._03_quantity;
+                slot.toolDurability = equipSave._04_durality;
             }
         }
     }
