@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d690ab03900124439ed5e618aa451db, type: 3}
   m_Name: Khien1
   m_EditorClassIdentifier: 
-  id: ICKHIEN01
-  itemName: Khien1
+  id: 34
+  itemName: "Khi\xEAn g\u1ED7"
   stackable: 0
   HP: 10
   MP: 0

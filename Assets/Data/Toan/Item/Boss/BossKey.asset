@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d690ab03900124439ed5e618aa451db, type: 3}
   m_Name: BossKey
   m_EditorClassIdentifier: 
-  id: DIB01
+  id: 1
   itemName: Boss Key
   stackable: 0
   HP: 0
@@ -21,7 +21,7 @@ MonoBehaviour:
   buffD: 0
   gold: 0
   rateDrop: 0
-  description: "Ch\xECa kho\xE1 \u0111\u1EC3 v\xF4 khu v\u1EF1c Boss"
+  description: "Ch\xECa kho\xE1 v\xE0o khu v\u1EF1c Boss"
   buff: 0
   itemSet: 0
   itemType: 0

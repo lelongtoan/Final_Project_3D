@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d690ab03900124439ed5e618aa451db, type: 3}
   m_Name: Bottrang
   m_EditorClassIdentifier: 
-  id: INBWHITE
-  itemName: Bottrang
+  id: 13
+  itemName: "B\u1ED9t tr\u1EAFng"
   stackable: 1
   HP: 0
   MP: 0
@@ -22,7 +22,7 @@ MonoBehaviour:
   gold: 30
   rateDrop: 60
   description: "B\u1ED9t tr\u1EAFng d\xF9ng \u0111\u1EC3 ch\u1EBF t\u1EA1o c\xE1c
-    lo\u1EA1i b\xECnh t\u0103ng s\u1EE9c m\u1EA1nh."
+    lo\u1EA1i b\xECnh t\u0103ng s\u1EE9c m\u1EA1nh"
   buff: 0
   itemSet: 0
   itemType: 0

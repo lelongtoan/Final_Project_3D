@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d690ab03900124439ed5e618aa451db, type: 3}
   m_Name: Giay2
   m_EditorClassIdentifier: 
-  id: ICGIAY02
-  itemName: Giay2
+  id: 28
+  itemName: "Gi\xE0y chi\u1EBFn binh"
   stackable: 0
   HP: 30
   MP: 0
