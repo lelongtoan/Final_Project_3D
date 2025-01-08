@@ -11,7 +11,6 @@ public class TutorialP : MonoBehaviour
         desText.text = des;
         numberText.text = number;
 
-        EnableWordWrap(desText);
         EnableWordWrap(numberText);
 
         AutoSizeText(desText);

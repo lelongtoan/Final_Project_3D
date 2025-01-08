@@ -52,13 +52,14 @@ public class SaveTemp : MonoBehaviour
         saveData.levelSkill2 = skillData.levelSkill2;
         saveData.levelSkill3 = skillData.levelSkill3;
 
+        saveData.quests.Clear();
         // Lưu dữ liệu nhiệm vụ
         for (int i = 0; i < quests.Count; i++)
         {
             int state = (quests[i].stateQuest == StateQuest.Completed) ? 1 :
                         (quests[i].stateQuest == StateQuest.Taked) ? 2 : 0;
             QuestSave questSave = new QuestSave();
-            questSave.Set(quests[i].questId, quests[i].isShowQuest, state);
+            questSave.Set(i,quests[i].questId, quests[i].isShowQuest, state);
             saveData.quests.Add(questSave);
         }
 

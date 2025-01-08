@@ -9,6 +9,7 @@ public class RewardUI : MonoBehaviour
     public Image iconReward;
     public TextMeshProUGUI rewardAmout;
     public Image stateReward;
+    public Image takedReward;
     public RewardCIData reward;
 
     void Start()
@@ -16,11 +17,11 @@ public class RewardUI : MonoBehaviour
         iconReward.sprite = reward.iconReward;
         rewardAmout.text = reward.rewardAmount.ToString();
     }
-    private void Update()
-    {
-        if (reward.isCheck)
-        {
-            stateReward.color = Color.green;
-        }
-    }
+    //private void Update()
+    //{
+    //    if (reward.isCheck)
+    //    {
+    //        stateReward.color = Color.green;
+    //    }
+    //}
 }

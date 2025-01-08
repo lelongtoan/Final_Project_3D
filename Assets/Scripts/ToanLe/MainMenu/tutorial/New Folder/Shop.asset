@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cff601e3b7d204541b7fc99daa4bb9f7, type: 3}
   m_Name: Shop
   m_EditorClassIdentifier: 
-  nameTutorial: "C\u1EEDa H\xE0ng"
+  description: "Mua v\u1EADt ph\u1EA9m theo c\xE1c b\u01B0\u1EDBc : D\xF9ng \"3\"
+    c\u1EE7a \"1\" \u0111\u1EC3 mua \"4\" v\u1EDBi s\u1ED1 l\u01B0\u1EE3ng \"5\"."
   data:
   - "V\u1EADt Ph\u1EA9m C\u1EA7n Tr\u1EA3"
   - "S\u1ED1 L\u01B0\u1EE3ng C\u1EA7n Tr\u1EA3"

@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cff601e3b7d204541b7fc99daa4bb9f7, type: 3}
   m_Name: Achie
   m_EditorClassIdentifier: 
-  nameTutorial: "Th\xE0nh T\u1EF1u"
+  description: "Khi ho\xE0n th\xE0nh th\xE0nh t\u1EF1u theo \"4\" khi ch\u01A1i s\u1EBD
+    thay \u0111\u1ED5i tr\u1EA1ng th\xE1i \"3\" v\xE0 c\xF3 th\u1EC3 nh\u1EADn ph\u1EA7n
+    th\u01B0\u1EDFng \"1\" c\xF3 s\u1ED1 l\u01B0\u1EE3ng \"2\"."
   data:
   - "Ph\u1EA7n Th\u01B0\u1EDFng"
   - "S\u1ED1 L\u01B0\u1EE3ng Th\u01B0\u1EDFng"

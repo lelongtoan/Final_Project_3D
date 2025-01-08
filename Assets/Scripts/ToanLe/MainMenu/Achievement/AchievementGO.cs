@@ -12,26 +12,24 @@ public class AchievementGO : MonoBehaviour
     [SerializeField] public Image itemRewardImage;
     [SerializeField] public GameObject completeGO;
     [SerializeField] public GameObject takeGO;
-    [SerializeField] public TextMeshProUGUI detailQuestGO;
-    [SerializeField] public TextMeshProUGUI quaCountText;
-    [SerializeField] public TextMeshProUGUI qualityRewardText;
+    [SerializeField] public GameObject quaCountGO;
+    [SerializeField] public Text detailQuestGO;
+    [SerializeField] public Text quaCountText;
+    [SerializeField] public Text qualityRewardText;
     [SerializeField] public AchievementData data;
-    private void Start()
-    {
-        SetClose();
-    }
+    [SerializeField] AchievementCheck check;
     void SetClose()
     {
         completeGO.SetActive(false);
         takeGO.SetActive(false);
-        quaCountText.gameObject.SetActive(false);
+        quaCountGO.SetActive(false);
     }
     private void Update()
     {
         if (data.stateAchievement == StateAchie.Nope)
         {
             SetClose();
-            quaCountText.gameObject.SetActive(true);
+            quaCountGO.SetActive(true);
         }
         else if (data.stateAchievement == StateAchie.Completed)
         {
@@ -48,16 +46,59 @@ public class AchievementGO : MonoBehaviour
     public void SetAchievement(AchievementData qc)
     {
         data = qc;
-        //qc.numberInt = numberInt;
         idGoAchiement = qc.questId;
         itemRewardImage.sprite = qc.icon;
         detailQuestGO.text = qc.nameAchivement.ToString();
         qualityRewardText.text = qc.rewardAchievement.ToString();
-        quaCountText.text = data.countAchievement + " / " + data.completeAchivement;
-        //Debug.Log(idGOQuest.ToString() + " + " + completeGO.activeInHierarchy + " + "
-        //    + detailQuestGO.text + " + "
-        //    + quaCountText.text + " + "
-        //    + qualityRewardText.text + " + ");
+        quaCountText.text = qc.countAchievement + " / " + qc.completeAchivement;
+        AutoSizeText(detailQuestGO);
+        AutoSizeText(qualityRewardText);
+        AutoSizeText(quaCountText);
+        if (qc.checkAchievement == CheckAchievement.Gold)
+        {
+            if(data.stateAchievement == StateAchie.Nope && check.countGold >= qc.completeAchivement)
+            {
+                data.stateAchievement = StateAchie.Completed;
+            }
+        }
+        else if(qc.checkAchievement == CheckAchievement.Level)
+        {
+            if (data.stateAchievement == StateAchie.Nope && check.countLevel >= qc.completeAchivement)
+            {
+                data.stateAchievement = StateAchie.Completed;
+            }
+        } 
+        else if(qc.checkAchievement == CheckAchievement.Boss)
+        {
+            if (data.stateAchievement == StateAchie.Nope && check.countBoss >= qc.completeAchivement)
+            {
+                data.stateAchievement = StateAchie.Completed;
+            }
+        }
+        else if(qc.checkAchievement == CheckAchievement.Enemy)
+        {
+            if (data.stateAchievement == StateAchie.Nope && check.countEnemy >= qc.completeAchivement)
+            {
+                data.stateAchievement = StateAchie.Completed;
+            }
+        }
+        else
+        {
+            if (data.stateAchievement == StateAchie.Nope && check.countSignIn >= qc.completeAchivement)
+            {
+                data.stateAchievement = StateAchie.Completed;
+            }
+        }
+    }
+    private void AutoSizeText(Text text)
+    {
+        RectTransform rect = text.GetComponent<RectTransform>();
+        int minFontSize = 36;
+
+        while ((text.preferredWidth > rect.rect.width || text.preferredHeight > rect.rect.height) && text.fontSize > minFontSize)
+        {
+            text.fontSize--;
+        }
     }
     public void TakeReward()
     {

@@ -16,7 +16,6 @@ public class Quest : ScriptableObject
     public string questDes;
     public int numberInt;
     public int numberComplete;
-    public string questString;
     public bool isShowQuest;
     public StateQuest stateQuest;
     public int isCoin;

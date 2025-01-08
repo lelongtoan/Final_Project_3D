@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,7 +10,7 @@ public class LoadScene : MonoBehaviour
     [SerializeField] GameObject loadingScene;
 
     [SerializeField] Slider loadingSlider;
-    [SerializeField] TextMeshProUGUI loadingText;
+    [SerializeField] Text loadingText;
     AsyncOperation loadOp;
     public string nameScene;
     private void Awake()
@@ -59,7 +59,7 @@ public class LoadScene : MonoBehaviour
             yield return null;
         }
         loadingSlider.value = 1f;
-        loadingText.text = "Nhan Chuot De Tiep Tuc";
+        loadingText.text = "Ấn Vào Để Tiếp Tục.";
         while (!Input.GetMouseButtonDown(0))
         {
             yield return null;
