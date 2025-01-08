@@ -82,7 +82,7 @@ public class ItemManager : MonoBehaviour
         }
         int startIndex = inventory.slots.Count;
         var equipButtons = new EquipButton[] { equipSword, equipShield, equipHelmet, equipArmour, equipGloves, equipBoot };
-
+        if (equipButtons != null)
         for (int i = 0; i < equipButtons.Length; i++)
         {
             equipButtons[i].SetIndex(startIndex + i);

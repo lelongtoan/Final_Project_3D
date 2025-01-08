@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cff601e3b7d204541b7fc99daa4bb9f7, type: 3}
   m_Name: Perk
   m_EditorClassIdentifier: 
-  nameTutorial: "K\u1EF9 N\u0103ng H\u1ED7 Tr\u1EE3"
+  description: "Khi c\xF3 k\u1EF9 n\u0103ng s\u1EBD \u0111\u1ED5i \"4\" th\xE0nh
+    \u0111\xE3 m\u1EDF. Khi s\u1ED1 l\u01B0\u1EE3ng c\xF3 l\u1EDBn h\u01A1n s\u1ED1
+    l\u01B0\u1EE3ng c\u1EA7n c\xF3 th\u1EC3 n\xE2ng c\u1EA5p k\u1EF9 n\u0103ng."
   data:
   - "C\u1EA5p K\u0129 N\u0103ng"
   - "Th\xF4ng Tin K\u0129 N\u0103ng"

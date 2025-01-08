@@ -9,6 +9,7 @@ public class GOQuest : MonoBehaviour
 {
     public int idGOQuest;
     [SerializeField] public GameObject completeGO;
+    [SerializeField] public Text nameQuestGO;
     [SerializeField] public TextMeshProUGUI detailQuestGO;
     [SerializeField] public TextMeshProUGUI quaCountText;
     [SerializeField] public Image itemRewardImage;
@@ -21,9 +22,10 @@ public class GOQuest : MonoBehaviour
         {
             numberInt += itemSlot.count;
         }
+        nameQuestGO.text = qc.questName;
         qc.numberInt = numberInt;
         idGOQuest = qc.questId;
-        detailQuestGO.text = qc.questString.ToString();
+        detailQuestGO.text = qc.questDes.ToString();
         if(qc.stateQuest == StateQuest.Nope)
         {
             completeGO.SetActive(false);

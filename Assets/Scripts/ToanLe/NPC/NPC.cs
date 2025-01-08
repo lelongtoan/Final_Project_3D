@@ -29,21 +29,6 @@ public class NPC : MonoBehaviour
         interact.SetActive(false);
         interactButton.onClick.AddListener(OnInteractButtonClicked);
 
-        shopGO.SetActive(false);
-        craftGO.SetActive(false);
-        questGO.SetActive(false);
-        if(listCraft !=null)
-        {
-            craftGO.SetActive(true);
-        }
-        if(listChat != null)
-        {
-            questGO.SetActive(true);
-        }
-        if(listItemShop != null)
-        {
-            shopGO.SetActive(true);
-        }
     }
 
     private void OnInteractButtonClicked()
@@ -61,7 +46,10 @@ public class NPC : MonoBehaviour
     }
     public void SetNPCInteract()
     {
-        if(listChat!=null)
+        shopGO.SetActive(false);
+        craftGO.SetActive(false);
+        questGO.SetActive(false);
+        if (listChat!=null)
         {
             chat.npcChats = listChat;
             questGO.SetActive(true);
@@ -73,7 +61,7 @@ public class NPC : MonoBehaviour
         if(listCraft != null)
         {
             craft.craftInventory = listCraft;
-            questGO.SetActive(true);
+            craftGO.SetActive(true);
         }
         else
         {
@@ -82,14 +70,14 @@ public class NPC : MonoBehaviour
         if(listItemShop != null)
         {
             shop.shopInventory = listItemShop;
-            questGO.SetActive(true);
+            shopGO.SetActive(true);
         }
         else
         {
             shop.shopInventory = null;
         }
-        InGameMenu.Instance.SetNPC();
         Debug.Log($"Tương tác với NPC: {gameObject.name}");
+        InGameMenu.Instance.SetNPC();
     }
 
     private void OnTriggerEnter(Collider other)

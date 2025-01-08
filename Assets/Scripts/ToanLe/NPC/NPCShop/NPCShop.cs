@@ -21,7 +21,7 @@ public class NPCShop : MonoBehaviour
             Destroy(child.gameObject);
         }
         buttons.Clear();
-
+        int x = 0;
         foreach (var item in shopInventory.itemsInShop)
         {
             GameObject newButton = Instantiate(buttonItemShop, content.transform);
@@ -29,7 +29,19 @@ public class NPCShop : MonoBehaviour
             if (buttonComponent != null)
             {
                 buttons.Add(buttonComponent);
+                x++;
             }
+        }
+        UpdateContentHeight(x);
+    }
+    private void UpdateContentHeight(int questCount)
+    {
+        RectTransform contentRect = content.GetComponent<RectTransform>();
+        if (contentRect != null)
+        {
+            float totalHeight = questCount * 135;
+
+            contentRect.sizeDelta = new Vector2(contentRect.sizeDelta.x, totalHeight);
         }
     }
     public virtual void ShowShopInventory()

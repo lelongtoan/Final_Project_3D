@@ -8,7 +8,7 @@ public class GameReport : MonoBehaviour
     public TextMeshProUGUI reportText;
     public Image reportImage;
 
-    public void SetReport(string reportContent, string playerName = "", Sprite reportImageSprite = null)
+    public void SetReport(string reportContent, string playerName = "Knight", Sprite reportImageSprite = null)
     {
         GameInstance.instance.gameMenu.SetGameReport();
         playerNameText.text = playerName;
@@ -18,10 +18,6 @@ public class GameReport : MonoBehaviour
         if (reportImageSprite != null)
         {
             reportImage.sprite = reportImageSprite;
-        }
-        else
-        {
-            Debug.LogWarning("No image assigned to the report.");
         }
     }
 }

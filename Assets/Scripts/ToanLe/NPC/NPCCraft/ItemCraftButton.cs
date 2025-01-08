@@ -63,5 +63,7 @@ public class ItemCraftButton : MonoBehaviour
     public void CraftButton()
     {
         GameInstance.instance.npcCraft.OnClick(index);
+        InGameMenu.Instance.SetCraftPanel();
+        InGameMenu.Instance.SetCraftPanel();
     }
 }

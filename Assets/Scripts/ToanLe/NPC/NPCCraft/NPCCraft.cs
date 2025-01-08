@@ -22,7 +22,7 @@ public class NPCCraft : MonoBehaviour
             Destroy(child.gameObject);
         }
         buttons.Clear();
-
+        int x = 0;
         foreach (var craft in craftInventory.craftDataList)
         {
             GameObject newButton = Instantiate(buttonCraftPrefab, content.transform);
@@ -30,10 +30,22 @@ public class NPCCraft : MonoBehaviour
             if (buttonComponent != null)
             {
                 buttons.Add(buttonComponent);
+                x++;
             }
         }
+        UpdateContentHeight(x);
     }
 
+    private void UpdateContentHeight(int questCount)
+    {
+        RectTransform contentRect = content.GetComponent<RectTransform>();
+        if (contentRect != null)
+        {
+            float totalHeight = questCount * 165;
+
+            contentRect.sizeDelta = new Vector2(contentRect.sizeDelta.x, totalHeight);
+        }
+    }
     public virtual void ShowCraftInventory()
     {
         for (int i = 0; i < craftInventory.craftDataList.Count && i < buttons.Count; i++)

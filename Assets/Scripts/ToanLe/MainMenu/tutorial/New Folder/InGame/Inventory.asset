@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cff601e3b7d204541b7fc99daa4bb9f7, type: 3}
   m_Name: Inventory
   m_EditorClassIdentifier: 
-  nameTutorial: "Kho \u0110\u1ED3"
+  description: "\u1EA4n v\xE0o \"1\",\"2\",\"3\",\"4\",\"5\",\"6\" \u0111\u1EC3 xem
+    trang b\u1ECB (N\u1EBFu c\xF3). Nh\u1EA5n v\xE0o c\xE1c \xF4 v\u1EADt ph\u1EA9m
+    \"10\" trong kho \u0111\u1ED3 \"9\" \u0111\u1EC3 xem chi ti\u1EBFt v\u1EADt ph\xE2m(N\u1EBFu
+    c\xF3)."
   data:
   - "Xem Trang B\u1ECB Gi\xE1p"
   - "Xem Trang B\u1ECB N\xF3n"

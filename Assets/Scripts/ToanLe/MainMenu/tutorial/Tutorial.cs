@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,7 +23,7 @@ public class Tutorial : MonoBehaviour
         if (currentIndex < dataList.Count)
         {
             var currentData = dataList[currentIndex];
-            nameTxt.text = currentData.nameTutorial;
+            nameTxt.text = currentData.description;
             image.sprite = currentData.image;
 
             RectTransform imageRect = image.GetComponent<RectTransform>();
@@ -38,10 +39,27 @@ public class Tutorial : MonoBehaviour
 
                 imageRect.sizeDelta = adjustedSize;
             }
+            EnableWordWrap(nameTxt);
+            AutoSizeText(nameTxt);
         }
     }
 
+    private void AutoSizeText(Text text)
+    {
+        RectTransform rect = text.GetComponent<RectTransform>();
+        int minFontSize = 48;
 
+        while ((text.preferredWidth > rect.rect.width || text.preferredHeight > rect.rect.height) && text.fontSize > minFontSize)
+        {
+            text.fontSize--;
+        }
+    }
+
+    private void EnableWordWrap(Text text)
+    {
+        text.horizontalOverflow = HorizontalWrapMode.Wrap;
+        text.verticalOverflow = VerticalWrapMode.Truncate;
+    }
     public void TutorialSet()
     {
         if (currentIndex >= dataList.Count)

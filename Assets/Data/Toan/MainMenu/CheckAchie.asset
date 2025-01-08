@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: CheckAchie
   m_EditorClassIdentifier: 
   countBoss: 0
-  countGold: 0
+  countEnemy: 0
+  countGold: 1555
   countSignIn: 0
+  countLevel: 0

@@ -6,11 +6,13 @@ using UnityEngine;
 [Serializable]
 public class QuestSave
 {
+    public int idSlot;
     public int id;
     public bool isShow;
     public int state;
-    public void Set(int id, bool isShow, int state)
+    public void Set(int idSlot, int id, bool isShow, int state)
     {
+        this.idSlot = idSlot;
         this.id = id;
         this.isShow = isShow;
         this.state = state;

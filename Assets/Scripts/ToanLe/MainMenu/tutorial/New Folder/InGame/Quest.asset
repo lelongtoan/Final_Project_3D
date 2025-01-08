@@ -9,16 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9055cb94f485a894f8a95161b5ca46fa, type: 3}
-  m_Name: PlayerData
+  m_Script: {fileID: 11500000, guid: cff601e3b7d204541b7fc99daa4bb9f7, type: 3}
+  m_Name: Quest
   m_EditorClassIdentifier: 
-  maxHP: 100
-  healthPoint: 100
-  manaPoint: 100
-  maxMP: 100
-  def: 5
-  dame: 10
-  level: 1
-  exp: 0
-  money: 0
-  point: 0
+  nameTutorial: "Nhi\u1EC7m V\u1EE5"
+  data: []
+  image: {fileID: 21300000, guid: 0d5493db0cfc6ee418ca22e0bd7bd81e, type: 3}

@@ -23,7 +23,7 @@ public class SaveInGame : MonoBehaviour
     }
     public void SaveGame()
     {
-        saveTemp.SetSaveData();
+        saveTemp.SetSaveData(idSelect);
     }
 
     public void LoadGame(int id)
