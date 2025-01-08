@@ -9072,7 +9072,7 @@ GameObject:
   - component: {fileID: 6172613487466291259}
   m_Layer: 5
   m_Name: Image
-  m_TagString: Untagged
+  m_TagString: RIMG
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26942,7 +26942,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea5dca01b91d91e4bac1c78dce0aa3c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saveData: {fileID: 11400000, guid: 69dac515596b06d4287bca68e38b228f, type: 2}
+  saveData:
+    _01_maxHP: 0
+    _02_healthPoint: 0
+    _03_manaPoint: 0
+    _04_maxMP: 0
+    _05_def: 0
+    _06_dame: 0
+    _07_level: 0
+    _08_exp: 0
+    _09_money: 0
+    _10_levelSkill1: 0
+    _11_levelSkill2: 0
+    _12_levelSkill3: 0
+    _13_quests: []
+    _14_inventory: []
+    _15_equipment: []
   saveTemp: {fileID: 9129717162957452035}
   idSelect: 0
   startData: {fileID: 11400000, guid: 92bcfb2ea5ad3b8448df91a9dacb80fe, type: 2}
@@ -26970,7 +26985,22 @@ MonoBehaviour:
   inventorySlots: {fileID: 11400000, guid: 072922a72bea53942964f7c71f20b362, type: 2}
   equipments: {fileID: 11400000, guid: efc68d7b58a3562458041f291fa1b319, type: 2}
   setIdItem: {fileID: 11400000, guid: 3b912c76c43c64d47b5ebc6402f0a334, type: 2}
-  saveData: {fileID: 11400000, guid: 69dac515596b06d4287bca68e38b228f, type: 2}
+  saveData:
+    _01_maxHP: 0
+    _02_healthPoint: 0
+    _03_manaPoint: 0
+    _04_maxMP: 0
+    _05_def: 0
+    _06_dame: 0
+    _07_level: 0
+    _08_exp: 0
+    _09_money: 0
+    _10_levelSkill1: 0
+    _11_levelSkill2: 0
+    _12_levelSkill3: 0
+    _13_quests: []
+    _14_inventory: []
+    _15_equipment: []
 --- !u!114 &8876180020116730541
 MonoBehaviour:
   m_ObjectHideFlags: 0
