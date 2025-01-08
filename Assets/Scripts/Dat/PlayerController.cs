@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
         manaDash = GetComponent<PlayerInfor>().maxMP * 0.1f;
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        runimage = GameObject.FindWithTag("RIMG").GetComponent<Image>();
 
         joystick = GameObject.Find("Fixed Joystick").GetComponent<Joystick>();
         runButton = GameObject.Find("Run").GetComponent<Button>();
@@ -52,7 +53,6 @@ public class PlayerController : MonoBehaviour
         runEff = Instantiate(speedEff, transform.position, Quaternion.identity);
         runEff.SetActive(false);
         runEff.transform.SetParent(transform);
-        runimage = GameObject.FindWithTag("RIMG").GetComponent<Image>();
     }
 
     private void FixedUpdate()
