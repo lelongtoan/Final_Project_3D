@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 5000Gold
   m_EditorClassIdentifier: 
   questId: 0
-  icon: {fileID: 0}
+  icon: {fileID: 575765876, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
   nameAchivement: "Ki\u1EBFm 5000 Gold"
   countAchievement: 0
   completeAchivement: 5000

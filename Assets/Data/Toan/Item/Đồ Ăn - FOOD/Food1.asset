@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d690ab03900124439ed5e618aa451db, type: 3}
   m_Name: Food1
   m_EditorClassIdentifier: 
-  id: IFF01
-  itemName: Food1
+  id: 45
+  itemName: "Tr\xE1i t\xE1o"
   stackable: 1
   HP: 10
   MP: 0

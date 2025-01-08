@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d690ab03900124439ed5e618aa451db, type: 3}
   m_Name: BuffMana
   m_EditorClassIdentifier: 
-  id: IBMA01
-  itemName: BuffMana
+  id: 3
+  itemName: "D\u01B0\u1EE3c ph\u1EA9m t\u0103ng mana"
   stackable: 1
   HP: 0
   MP: 0
@@ -21,8 +21,7 @@ MonoBehaviour:
   buffD: 20
   gold: 225
   rateDrop: 25
-  description: "D\u01B0\u1EE3c ph\u1EA9m t\u0103ng mana. C\xF4ng d\u1EE5ng t\u0103ng
-    20 \u0111i\u1EC3m mana."
+  description: "D\u01B0\u1EE3c ph\u1EA9m t\u0103ng 20 \u0111i\u1EC3m mana"
   buff: 2
   itemSet: 2
   itemType: 0

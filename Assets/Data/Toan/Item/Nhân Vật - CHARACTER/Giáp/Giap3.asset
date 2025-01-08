@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d690ab03900124439ed5e618aa451db, type: 3}
   m_Name: Giap3
   m_EditorClassIdentifier: 
-  id: ICGIAP03
-  itemName: Giap3
+  id: 31
+  itemName: "Gi\xE1p kim c\u01B0\u01A1ng"
   stackable: 0
   HP: 30
   MP: 0

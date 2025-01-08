@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d690ab03900124439ed5e618aa451db, type: 3}
   m_Name: Ruby
   m_EditorClassIdentifier: 
-  id: INMRUBY
-  itemName: Ruby
+  id: 18
+  itemName: "H\u1ED3ng ng\u1ECDc"
   stackable: 1
   HP: 0
   MP: 0
@@ -21,10 +21,8 @@ MonoBehaviour:
   buffD: 0
   gold: 90
   rateDrop: 10
-  description: "Ruby (H\u1ED3ng Ng\u1ECDc) l\xE0 ch\u1EA5t li\u1EC7u hi\u1EBFm th\u1EE9
-    3 \u1EDF th\u1EBF gi\u1EDBi n\xE0y. C\xF3 th\u1EC3 t\xECm th\u1EA5y th\xF4ng
-    qua ti\xEAu di\u1EC7t qu\xE1i v\u1EADt v\xE0 th\u01B0\u1EDDng \u0111\u01B0\u1EE3c
-    d\xF9ng \u0111\u1EC3 ch\u1EBF t\u1EA1o v\u0169 kh\xED."
+  description: "H\u1ED3ng Ng\u1ECDc l\xE0 ch\u1EA5t li\u1EC7u hi\u1EBFm, \u0111\u01B0\u1EE3c
+    d\xF9ng \u0111\u1EC3 ch\u1EBF t\u1EA1o v\u0169 kh\xED"
   buff: 0
   itemSet: 0
   itemType: 0
