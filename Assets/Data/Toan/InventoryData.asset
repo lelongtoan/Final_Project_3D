@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slots:
   - item: {fileID: 11400000, guid: 2b8dcbc951e9fd348b956b1e21be3939, type: 2}
+    toolDurability: 1
+    count: 99
+  - item: {fileID: 11400000, guid: 2b8dcbc951e9fd348b956b1e21be3939, type: 2}
+    toolDurability: 1
+    count: 21
+  - item: {fileID: 0}
     toolDurability: 0
-    count: 20
-  - item: {fileID: 11400000, guid: d26709e28ae9faa4abff80569f89e6c2, type: 2}
-    toolDurability: 0
-    count: 23
-  - item: {fileID: 11400000, guid: 8f6264f078d4fd64e99aabc393b637c5, type: 2}
-    toolDurability: 100
-    count: 1
+    count: 0
   - item: {fileID: 0}
     toolDurability: 0
     count: 0
