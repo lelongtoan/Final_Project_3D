@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d690ab03900124439ed5e618aa451db, type: 3}
   m_Name: BuffDmg
   m_EditorClassIdentifier: 
-  id: IBDAME01
-  itemName: BuffDmg
+  id: 2
+  itemName: "D\u01B0\u1EE3c ph\u1EA9m t\u0103ng t\u1EA5n c\xF4ng"
   stackable: 1
   HP: 0
   MP: 0
@@ -21,8 +21,7 @@ MonoBehaviour:
   buffD: 15
   gold: 300
   rateDrop: 25
-  description: "D\u01B0\u1EE3c ph\u1EA9m t\u0103ng s\u1EE9c m\u1EA1nh. C\xF4ng d\u1EE5ng
-    t\u0103ng 15 \u0111i\u1EC3m t\u1EA5n c\xF4ng."
+  description: "D\u01B0\u1EE3c ph\u1EA9m t\u0103ng 15 \u0111i\u1EC3m t\u1EA5n c\xF4ng"
   buff: 3
   itemSet: 2
   itemType: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 10Diamond
   m_EditorClassIdentifier: 
   questId: 0
-  icon: {fileID: 0}
+  icon: {fileID: 40750794, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
   nameAchivement: "Ki\u1EBFm 10 Diamond "
   countAchievement: 0
   completeAchivement: 10

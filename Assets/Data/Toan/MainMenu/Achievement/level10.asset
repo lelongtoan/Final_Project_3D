@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: level10
   m_EditorClassIdentifier: 
   questId: 0
-  icon: {fileID: 0}
+  icon: {fileID: 2016169216, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
   nameAchivement: "\u0110\u1EA1t c\u1EA5p 10"
   countAchievement: 0
   completeAchivement: 10

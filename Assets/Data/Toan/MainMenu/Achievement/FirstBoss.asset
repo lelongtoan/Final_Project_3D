@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FirstBoss
   m_EditorClassIdentifier: 
   questId: 0
-  icon: {fileID: 0}
+  icon: {fileID: -1150650850, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
   nameAchivement: "Ti\xEAu di\u1EC7t Boss l\u1EA7n \u0111\u1EA7u"
   countAchievement: 0
   completeAchivement: 1
