@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cff601e3b7d204541b7fc99daa4bb9f7, type: 3}
+  m_Name: Craft
+  m_EditorClassIdentifier: 
+  description: "Mu\u1ED1n ch\u1EBF t\u1EA1o v\u1EADt ph\u1EA9m th\xEC ph\u1EA3i c\xF3
+    \u0111\u1EE7 c\xE1c v\u1EADt ph\u1EA9m trong \"3\" v\xE0 s\u1ED1 l\u01B0\u1EE3ng
+    \"4\" n\u1EB1m trong kho \"5\" v\xE0 \u1EA5n \"6\" \u0111\u1EC3 ch\u1EBF t\u1EA1o."
+  data:
+  - "T\xEAn V\u1EADt Ph\u1EA9m Ch\u1EBF T\u1EA1o"
+  - "\u1EA2nh V\u1EADt Ph\u1EA9m Ch\u1EBF T\u1EA1o"
+  - "Danh S\xE1ch V\u1EADt Ph\u1EA9m C\u1EA7n "
+  - "S\u1ED1 L\u01B0\u1EE3ng C\xF3/C\u1EA7n"
+  - "Kho \u0110\u1ED3"
+  - "N\xFAt Ch\u1EBF T\u1EA1o "
+  image: {fileID: 21300000, guid: 934301723a972df4cbbaf11314a45552, type: 3}

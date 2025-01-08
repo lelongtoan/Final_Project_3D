@@ -27,7 +27,7 @@ public class ItemShopButton : MonoBehaviour
         {
             itemImage.enabled = false;
         }
-        if (item.questShop != null && item.questShop.stateQuest == StateQuest.Taked)
+        if (item.questShop != null && item.questShop.stateQuest == StateQuest.Taked || item.questShop == null)
         {
             item.locked = false;
         }

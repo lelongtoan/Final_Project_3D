@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cff601e3b7d204541b7fc99daa4bb9f7, type: 3}
   m_Name: Chest
   m_EditorClassIdentifier: 
-  nameTutorial: "R\u01B0\u01A1ng"
+  description: "Khi m\u1EDF r\u01B0\u01A1ng c\u1EA7n ch\xECa kh\xF3a v\xE0 s\u1ED1
+    l\u01B0\u1EE3ng ph\xF9 h\u1EE3p \u0111\u1EC3 m\u1EDF r\u01B0\u01A1ng. R\u01B0\u01A1ng
+    c\xF3 th\u1EC3 m\u1EDF ra v\xE0ng, kim c\u01B0\u01A1ng v\xE0 k\u1EF9 n\u0103ng
+    h\u1ED7 tr\u1EE3."
   data:
   - "S\u1ED1 L\u01B0\u1EE3ng Ch\xECa Kh\xF3a C\xF3"
   - "T\xEAn Lo\u1EA1i R\u01B0\u01A1ng"

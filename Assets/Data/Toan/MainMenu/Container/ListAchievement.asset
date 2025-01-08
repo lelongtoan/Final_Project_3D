@@ -13,27 +13,22 @@ MonoBehaviour:
   m_Name: ListAchievement
   m_EditorClassIdentifier: 
   listAchievement:
-  - {fileID: 11400000, guid: 7cd264c7871c21e4682071bdeba0e160, type: 2}
-  - {fileID: 11400000, guid: 658626be4f6289b4797c73613313839a, type: 2}
-  - {fileID: 11400000, guid: bd453c6f99a1d7e40ae2a00cc7903c44, type: 2}
-  - {fileID: 11400000, guid: 294d860f563fd9f47a51d73486a6ab28, type: 2}
-  - {fileID: 11400000, guid: 3a6714ccccc55ed49a25d6290baf6902, type: 2}
   - {fileID: 11400000, guid: 5f2e26a61350ab3498e6af3fa3d74525, type: 2}
   - {fileID: 11400000, guid: 713b6de9903c4d0498566b2ef22ef98e, type: 2}
   - {fileID: 11400000, guid: 9f4e254659e34f146acb3a7d1eaee34f, type: 2}
   - {fileID: 11400000, guid: cd77fe1d4ec75734b845ab7de1461691, type: 2}
   - {fileID: 11400000, guid: 3a866755f5abdba46989d6e9c92b74a1, type: 2}
-  - {fileID: 11400000, guid: 342d8a55e507ee04b980be22d69d116e, type: 2}
   - {fileID: 11400000, guid: 21c2831018ad3f042b2e9da1b07fbb01, type: 2}
+  - {fileID: 11400000, guid: 342d8a55e507ee04b980be22d69d116e, type: 2}
   - {fileID: 11400000, guid: 790bfd8eb9d396643bbf8e4ae4ea18a9, type: 2}
   - {fileID: 11400000, guid: 73eed7193e2f15243b0e1d5816fd8258, type: 2}
-  - {fileID: 11400000, guid: 771aa8118ba3a6647bd16db5c790ff5f, type: 2}
   - {fileID: 11400000, guid: 8568cd92fdb65a146a09487fff9d67ab, type: 2}
   - {fileID: 11400000, guid: 0245baa03d7982b43b3c67fa6f1d9975, type: 2}
   - {fileID: 11400000, guid: 029bacb05fe94a84da2460f60b97bffd, type: 2}
   - {fileID: 11400000, guid: 4d765b7d3f3cdf546b35bff1bf035076, type: 2}
   - {fileID: 11400000, guid: 063190ba3e3e32647a2735be2f7c59c0, type: 2}
-  - {fileID: 11400000, guid: 55c9193dc9aaa9f4fbf440141b260358, type: 2}
   - {fileID: 11400000, guid: f94b1217f6fcc4741b71f984cff6330b, type: 2}
   - {fileID: 11400000, guid: 7e4889510671ce14fb04869fd118378b, type: 2}
   - {fileID: 11400000, guid: c5447896c7f9215479f73edbcf10fbde, type: 2}
+  - {fileID: 11400000, guid: 771aa8118ba3a6647bd16db5c790ff5f, type: 2}
+  - {fileID: 11400000, guid: 55c9193dc9aaa9f4fbf440141b260358, type: 2}

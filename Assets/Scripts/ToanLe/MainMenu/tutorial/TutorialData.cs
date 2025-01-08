@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Tutorial")]
 public class TutorialData : ScriptableObject
 {
-    public string nameTutorial;
+    public string description;
     public List<string> data = new List<string>();
     public Sprite image;
 }

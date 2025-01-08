@@ -19,6 +19,7 @@ public class AchievementManager : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
+        listAchievement.Set();
         int x = 0;
         for (int i = 0; i < listAchievement.listAchievement.Count; i++)
         {
