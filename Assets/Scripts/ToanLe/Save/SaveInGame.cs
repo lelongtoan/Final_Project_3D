@@ -29,13 +29,10 @@ public class SaveInGame : MonoBehaviour
     public void LoadGame(int id)
     {
         saveTemp.SetLoadData(id);
-        if (saveData != null) 
-        {
-            Debug.Log("Load Player Success");
-            PlayerPrefs.SetInt("SelectedID", id);
-            PlayerPrefs.Save();
-            LoadScene.instance.LoadSceneMenu("LobbyMap");
-        }
+        Debug.Log("Load Player Success");
+        PlayerPrefs.SetInt("SelectedID", id);
+        PlayerPrefs.Save();
+        LoadScene.instance.LoadSceneMenu("LobbyMap");
         Debug.Log("Load fail");
     }
     public void SetCharSave(int id)
