@@ -4,8 +4,8 @@ using UnityEngine.UI;
 
 public class ItemShopButton : MonoBehaviour
 {
-    public TextMeshProUGUI itemNameText; 
-    public TextMeshProUGUI itemDes; 
+    public Text itemNameText; 
+    public Text itemDes; 
     public TextMeshProUGUI itemPriceText; 
     public Image itemImage;
     public TextMeshProUGUI buyText;
@@ -18,6 +18,8 @@ public class ItemShopButton : MonoBehaviour
         itemNameText.text = item.itemShop.itemName;
         itemPriceText.text = $"{item.priceItem}";
         itemDes.text = item.itemShop.description;
+        AutoSizeText(itemDes);
+        AutoSizeText(itemNameText);
         if (item.itemShop != null && item.itemShop.icon != null)
         {
             itemImage.sprite = item.itemShop.icon;
@@ -41,6 +43,16 @@ public class ItemShopButton : MonoBehaviour
             buyText.text = "Buy";
         }
         locked = item.locked;
+    }
+    private void AutoSizeText(Text text)
+    {
+        RectTransform rect = text.GetComponent<RectTransform>();
+        int minFontSize = 28;
+
+        while ((text.preferredWidth > rect.rect.width || text.preferredHeight > rect.rect.height) && text.fontSize > minFontSize)
+        {
+            text.fontSize--;
+        }
     }
     public void Clean()
     {
