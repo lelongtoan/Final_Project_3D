@@ -32,6 +32,9 @@ public class PlayerInfor : MonoBehaviour
     public Image mpbar;
     public Image Exp_Image;
     public TMP_Text text;
+    public TMP_Text hp_Text;
+    public TMP_Text mp_Text;
+    public TMP_Text gold_Text;
 
     public Transform parent;
     public GameObject deadPanel;
@@ -81,6 +84,9 @@ public class PlayerInfor : MonoBehaviour
         mpbar = GameObject.FindWithTag("MPBar").GetComponent<Image>();  
         Exp_Image = GameObject.FindWithTag("EXP").GetComponent<Image>();
         text= GameObject.FindWithTag("Exp_Text").GetComponent<TMP_Text>();
+        hp_Text = GameObject.FindWithTag("HPText").GetComponent<TMP_Text>();
+        mp_Text = GameObject.FindWithTag("MPText").GetComponent<TMP_Text>();
+        gold_Text = GameObject.FindWithTag("GoldText").GetComponent<TMP_Text>();
         isDead = false;
         animator = gameObject.GetComponent<Animator>();
         parent = GameObject.Find("UIGame").transform;
@@ -111,7 +117,7 @@ public class PlayerInfor : MonoBehaviour
         }
         UpdateLevel();
         UpdateExp();
-        UpdateHpMP();
+        UpdateHpMpGold();
         CheckLevelUp();
         CheclDead();
         //UpdateInfor();
@@ -120,8 +126,11 @@ public class PlayerInfor : MonoBehaviour
     {
         text.text = "Lv : " + level.ToString();
     }
-    void UpdateHpMP()
+    void UpdateHpMpGold()
     {
+        gold_Text.text = money.ToString();
+        hp_Text.text = healthPoint + " / " + maxHP.ToString();
+        mp_Text.text = manaPoint.ToString() + " / " + maxMP.ToString();
         mpbar.fillAmount = manaPoint / maxMP;
         hpbar.fillAmount = healthPoint / maxHP;
     }
