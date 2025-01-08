@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,14 +27,24 @@ public class PlayerController : MonoBehaviour
     private GameObject runEff;
     public Button runButton;
 
+    public Image runimage;
+
     [SerializeField] private Joystick joystick;
     public Camera playerCam;
 
+    private void Update()
+    {
+        if (!isCound)
+        {
+            runimage.fillAmount = 1;
+        }
+    }
     private void Start()
     {
         manaDash = GetComponent<PlayerInfor>().maxMP * 0.1f;
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        runimage = GameObject.FindWithTag("RIMG").GetComponent<Image>();
 
         joystick = GameObject.Find("Fixed Joystick").GetComponent<Joystick>();
         runButton = GameObject.Find("Run").GetComponent<Button>();
@@ -120,7 +131,7 @@ public class PlayerController : MonoBehaviour
                 {
                     GetComponent<PlayerInfor>().manaPoint -= manaDash;
                     isCound = true;
-                    StartCoroutine(CounDown());
+                    StartCoroutine(CounDown(8));
                     dashTime = dashDuration;
                     isDashing = true;
                     GetComponent<SoundEffect>().PlaySound("Dash");
@@ -161,9 +172,17 @@ public class PlayerController : MonoBehaviour
         return ipVertical != 0 || ipHorizontal != 0;
     }
 
-    IEnumerator CounDown()
+    IEnumerator CounDown(float time)
     {
-        yield return new WaitForSeconds(8);
+        float elapsedTime = 0f;
+        while (elapsedTime < time)
+        {
+            elapsedTime += Time.deltaTime;
+            float fill = 0f;
+            fill += elapsedTime / time;
+            runimage.fillAmount = fill;
+            yield return null;
+        }
         isCound = false;
     }
 }

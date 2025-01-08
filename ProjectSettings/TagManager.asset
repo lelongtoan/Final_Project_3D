@@ -39,6 +39,13 @@ TagManager:
   - Trap
   - LoadGame
   - PatrolPoint
+  - HPText
+  - MPText
+  - GoldText
+  - IMG1
+  - IMG2
+  - IMG3
+  - RIMG
   layers:
   - Default
   - TransparentFX

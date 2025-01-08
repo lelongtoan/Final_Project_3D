@@ -71,6 +71,10 @@ public class PlayerSkill : MonoBehaviour
     public Button skill3;
     PlayerController playerController;
 
+    public Image imageSkill1;
+    public Image imageSkill2;
+    public Image imageSkill3;
+
     public int dame = 0;
     ComboAtack comboAtack;
 
@@ -99,6 +103,9 @@ public class PlayerSkill : MonoBehaviour
         mn1 = GameObject.FindWithTag("MN1").GetComponent<TMP_Text>();
         mn2 = GameObject.FindWithTag("MN2").GetComponent<TMP_Text>();
         mn3 = GameObject.FindWithTag("MN3").GetComponent<TMP_Text>();
+        imageSkill1 = GameObject.FindWithTag("IMG1").GetComponent<Image>();
+        imageSkill2 = GameObject.FindWithTag("IMG2").GetComponent<Image>();
+        imageSkill3 = GameObject.FindWithTag("IMG3").GetComponent<Image>();
         LoadSkill();
         skill1.onClick.AddListener(ActiveSkill);
         skill2.onClick.AddListener(BuffDameNormal);
@@ -118,13 +125,15 @@ public class PlayerSkill : MonoBehaviour
     }
     void Update()
     {
-        
         mana = playerInfor.manaPoint;
         dame = playerInfor.dame;
         if (activeSkill)
         {
             RotateSwords();
         }
+        if (endCountDow1) imageSkill1.fillAmount = 1;
+        if (endCountDow2) imageSkill2.fillAmount = 1;
+        if (endCountDow3) imageSkill3.fillAmount = 1;
     }
 
     public void LoadSkill()
@@ -204,7 +213,7 @@ public class PlayerSkill : MonoBehaviour
         Debug.Log("buff");
         while (elapsedTime < duration)
         {
-            yield return new WaitForSeconds(ameInterval); // Chờ 1 giây
+            yield return new WaitForSeconds(ameInterval);
             elapsedTime += ameInterval;
         }
         Debug.Log("0 buff");
@@ -331,7 +340,26 @@ public class PlayerSkill : MonoBehaviour
 
     IEnumerator CountDown(float time, int skill)
     {
-        yield return new WaitForSeconds(time);
+        float elapsedTime = 0f;
+        while (elapsedTime < time)
+        {
+            elapsedTime += Time.deltaTime;
+            float fill = 0f;
+            fill += elapsedTime / time;
+            if (skill == 1)
+            {
+                imageSkill1.fillAmount = fill;
+            }
+            else if (skill == 2)
+            {
+                imageSkill2.fillAmount = fill;
+            }
+            else if(skill == 3)
+            {
+                imageSkill3.fillAmount = fill;
+            }
+            yield return null;
+        }
         SetSkillReady(skill, true);
     }
     private void SetSkillReady(int skillIndex, bool isReady)
