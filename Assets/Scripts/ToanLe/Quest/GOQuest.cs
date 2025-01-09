@@ -15,54 +15,56 @@ public class GOQuest : MonoBehaviour
     [SerializeField] public Image itemRewardImage;
     [SerializeField] public TextMeshProUGUI qualityRewardText;
     Quest qcQuest;
-    private void OnEnable()
+    private void Start()
     {
         SetQuest(qcQuest);
     }
     public void SetQuest(Quest qc)
     {
-        qcQuest = qc;
-        List<ItemSlot> itemTemp = GameInstance.instance.questManager.itemContainer.inventory.slots.Where(c => c.item == qc.itemCheck).ToList();
-        int numberInt = 0;
-        foreach (ItemSlot itemSlot in itemTemp)
+        if (qc != null)
         {
-            numberInt += itemSlot.count;
+            qcQuest = qc;
+            List<ItemSlot> itemTemp = GameInstance.instance.itemManager.inventory.slots.Where(c => c.item == qc.itemCheck).ToList();
+            int numberInt = 0;
+            if (itemTemp != null)
+            {
+                foreach (ItemSlot itemSlot in itemTemp)
+                {
+                    numberInt += itemSlot.count;
+                }
+            }
+            nameQuestGO.text = qc.questName;
+            qc.numberInt = numberInt;
+            idGOQuest = qc.questId;
+            detailQuestGO.text = qc.questDes.ToString();
+            if (qc.stateQuest == StateQuest.Nope)
+            {
+                completeGO.SetActive(false);
+                quaCountText.gameObject.SetActive(true);
+                quaCountText.text = qc.numberInt + " / " + qc.numberComplete;
+            }
+            else
+            {
+                completeGO.SetActive(true);
+                quaCountText.gameObject.SetActive(false);
+            }
+            if (qc.isCoin != 0)
+            {
+                qualityRewardText.gameObject.SetActive(true);
+                qualityRewardText.text = qc.isCoin.ToString();
+            }
+            else
+            {
+                itemRewardImage.sprite = null;
+            }
+            if (qc.isStack)
+            {
+                qualityRewardText.gameObject.SetActive(true);
+            }
+            else
+            {
+                qualityRewardText.gameObject.SetActive(false);
+            }
         }
-        nameQuestGO.text = qc.questName;
-        qc.numberInt = numberInt;
-        idGOQuest = qc.questId;
-        detailQuestGO.text = qc.questDes.ToString();
-        if(qc.stateQuest == StateQuest.Nope)
-        {
-            completeGO.SetActive(false);
-            quaCountText.gameObject.SetActive(true);
-            quaCountText.text = qc.numberInt + " / " + qc.numberComplete;
-        }
-        else
-        {
-            completeGO.SetActive(true);
-            quaCountText.gameObject.SetActive(false);
-        }
-        if (qc.isCoin != 0) 
-        {
-            qualityRewardText.gameObject.SetActive(true);
-            qualityRewardText.text = qc.isCoin.ToString();
-        }
-        else
-        {
-            itemRewardImage.sprite = null;
-        }
-        if(qc.isStack)
-        {
-            qualityRewardText.gameObject.SetActive(true);
-        }
-        else
-        {
-            qualityRewardText.gameObject.SetActive(false);
-        }
-        //Debug.Log(idGOQuest.ToString() + " + " + completeGO.activeInHierarchy + " + "
-        //    + detailQuestGO.text + " + "
-        //    + quaCountText.text + " + "
-        //    + qualityRewardText.text + " + ");
     }
 }

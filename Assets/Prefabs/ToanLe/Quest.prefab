@@ -344,7 +344,6 @@ GameObject:
   - component: {fileID: 3972413601074224581}
   - component: {fileID: 5466566806309096853}
   - component: {fileID: 2857259586351054064}
-  - component: {fileID: 3278842286035818134}
   m_Layer: 5
   m_Name: Reward
   m_TagString: Untagged
@@ -411,25 +410,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3278842286035818134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3188522731859961709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a63cbe95207cb514589a9efc29e517a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  idGOQuest: 0
-  completeGO: {fileID: 0}
-  nameQuestGO: {fileID: 0}
-  detailQuestGO: {fileID: 5978227381788467647}
-  quaCountText: {fileID: 5332671728201898134}
-  itemRewardImage: {fileID: 3994999390344657324}
-  qualityRewardText: {fileID: 115349708334616500}
 --- !u!1 &3226766967156383098
 GameObject:
   m_ObjectHideFlags: 0

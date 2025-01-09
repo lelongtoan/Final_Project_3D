@@ -14440,6 +14440,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 953341018865308426, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3179485541525066481, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
       propertyPath: m_Name
       value: InGame
@@ -14499,6 +14503,10 @@ PrefabInstance:
     - target: {fileID: 7660858329565900990, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8189227065983203515, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 31.599976
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -47061,6 +47069,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LoadScene(Dungeon)
       objectReference: {fileID: 0}
+    - target: {fileID: 469390278899792996, guid: b38e382f587dc984d9051148237113ad, type: 3}
+      propertyPath: m_TagString
+      value: LoadScene
+      objectReference: {fileID: 0}
     - target: {fileID: 5763050121208126093, guid: b38e382f587dc984d9051148237113ad, type: 3}
       propertyPath: m_LocalPosition.x
       value: 55.11
@@ -51665,11 +51677,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3812774321604583230, guid: 14044dd8958a8c947bfe4173d8453763, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3812774321604583230, guid: 14044dd8958a8c947bfe4173d8453763, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 109.81
+      value: 109.19
       objectReference: {fileID: 0}
     - target: {fileID: 3812774321604583230, guid: 14044dd8958a8c947bfe4173d8453763, type: 3}
       propertyPath: m_LocalRotation.w
@@ -53313,6 +53325,10 @@ PrefabInstance:
     - target: {fileID: 469390278899792996, guid: b38e382f587dc984d9051148237113ad, type: 3}
       propertyPath: m_Name
       value: LoadScene - LobbyMap
+      objectReference: {fileID: 0}
+    - target: {fileID: 469390278899792996, guid: b38e382f587dc984d9051148237113ad, type: 3}
+      propertyPath: m_TagString
+      value: LoadScene
       objectReference: {fileID: 0}
     - target: {fileID: 4262614176124253918, guid: b38e382f587dc984d9051148237113ad, type: 3}
       propertyPath: nameScene

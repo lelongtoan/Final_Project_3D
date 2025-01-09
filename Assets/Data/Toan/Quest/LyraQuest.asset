@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: LyraQuest
   m_EditorClassIdentifier: 
   questId: 4
-  numberInt: 1
+  questName: "V\u01B0\u1EE3t l\u1EA1i qu\xE1 kh\u1EE9"
+  questDes: "Ti\xEAu di\u1EC7t Boss l\u1EA7n n\u1EEFa"
+  numberInt: 0
   numberComplete: 1
-  questString: 4
-  isShowQuest: 0
+  isShowQuest: 1
   stateQuest: 0
   isCoin: 300
   exp: 500

@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: KingQuest
   m_EditorClassIdentifier: 
   questId: 1
+  questName: "H\xE0nh tr\xECnh c\u1EE9u th\u1EBF gi\u1EDBi"
+  questDes: "Nhi\u1EC7m v\u1EE5 ti\xEAu di\u1EC7t Boss"
   numberInt: 1
   numberComplete: 1
-  questString: 1
   isShowQuest: 0
   stateQuest: 0
   isCoin: 3000
