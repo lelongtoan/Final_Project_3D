@@ -19,6 +19,7 @@ public class GameInstance : MonoBehaviour
     public NPCChat chat;
     public ItemD itemD;
     public ValueSell valueSell;
+    public AchievementCheck achieCheck;
     public PickUpItem pickUpItem;
     private void Awake()
     {

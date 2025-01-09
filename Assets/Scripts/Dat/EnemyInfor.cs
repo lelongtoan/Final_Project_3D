@@ -73,7 +73,16 @@ public class EnemyInfor : MonoBehaviour
         GetComponent<NavMeshAgent>().enabled = false;
         GetComponent<AIEnemy>().enabled = false;
         canvas.SetActive(false);
-
+        if(gameObject.CompareTag("WarriorEnemy"))
+        {
+            GameInstance.instance.achieCheck.countBoss++;
+            PlayerInfor.Instance.GetPoint(5);
+        } 
+        else
+        {
+            PlayerInfor.Instance.GetPoint(1);
+            GameInstance.instance.achieCheck.countEnemy++;
+        }
         PlayerPrefs.SetInt("EnemyStatus_" + enemyId, 1);
         PlayerPrefs.Save();
 
@@ -91,6 +100,7 @@ public class EnemyInfor : MonoBehaviour
         Drop dr = item.GetComponent<Drop>();
         ItemEnemyDrop itemDrop = GetComponent<ItemEnemyDrop>();
         itemDrop.Set(dr);
+        GameInstance.instance.achieCheck.countGold += coin;
         dr.money = coin;
         dr.exp = exp;
     }
