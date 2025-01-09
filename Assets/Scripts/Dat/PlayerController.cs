@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
@@ -10,6 +11,8 @@ public class PlayerController : MonoBehaviour
     public float Wallspeed = 5f;
     public float dashSpeed = 15f;
     public float dashDuration = 0.5f;
+
+    bool isLobby = false;
 
     public float dashTime;
     public bool isDashing = false;
@@ -41,6 +44,14 @@ public class PlayerController : MonoBehaviour
     }
     private void Start()
     {
+        if(SceneManager.GetActiveScene().name == "LobbyMap")
+        {
+            Wallspeed = 10;
+        }
+        else
+        {
+            Wallspeed = 7f;
+        }
         manaDash = GetComponent<PlayerInfor>().maxMP * 0.1f;
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
