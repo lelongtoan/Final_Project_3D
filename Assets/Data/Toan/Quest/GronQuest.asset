@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: GronQuest
   m_EditorClassIdentifier: 
   questId: 3
-  questName: abc
-  questDes: xxxxxxxxxxx
+  questName: "T\xECm ki\u1EBFm h\u1ED3ng ng\u1ECDc"
+  questDes: "H\u1ED3ng ng\u1ECDc n\u1EB1m \u1EDF \u0111\xE2u \u0111\xE2y th\xF4i"
   numberInt: 0
   numberComplete: 1
-  isShowQuest: 1
-  stateQuest: 2
+  isShowQuest: 0
+  stateQuest: 0
   isCoin: 150
   exp: 200
   isStack: 1

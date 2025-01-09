@@ -6,7 +6,6 @@ using UnityEngine;
 public class QuestManager : MonoBehaviour
 {
     public QuestContainer questContainer;
-    public List<GameObject> quests;
     public GameObject content;
     public GameObject quest;
     public ItemManager itemContainer;
@@ -28,7 +27,6 @@ public class QuestManager : MonoBehaviour
                 GameObject newQuest = Instantiate(quest);
                 newQuest.transform.SetParent(content.transform);
                 newQuest.GetComponent<GOQuest>().SetQuest(questContainer.questList[i]);
-                quests.Add(newQuest);
                 x++;
             }
         }
@@ -51,7 +49,7 @@ public class QuestManager : MonoBehaviour
         {
             return false;
         }
-        if(itemSlot.count >= quest.numberComplete)
+        if (itemSlot.count >= quest.numberComplete)
         {
             return true;
         }

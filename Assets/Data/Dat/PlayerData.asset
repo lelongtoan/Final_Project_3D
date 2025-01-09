@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   maxHP: 150
-  healthPoint: 150
-  manaPoint: 100
+  healthPoint: 60
+  manaPoint: 65
   maxMP: 100
   def: 5
   dame: 10
   level: 1
-  exp: 0
-  money: 0
-  point: 11
+  exp: 3
+  money: 3
+  point: 14

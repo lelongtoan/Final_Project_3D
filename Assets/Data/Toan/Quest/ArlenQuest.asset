@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: ArlenQuest
   m_EditorClassIdentifier: 
   questId: 2
-  questName: "T\xEAn Nhi\u1EC7m V\u1EE5"
-  questDes: Mo Ta Mo TaMo TaMo Ta
-  numberInt: 25
+  questName: "H\u1ED7 tr\u1EE3 l\xE3o l\xE0ng"
+  questDes: "Nhi\u1EC7m v\u1EE5 t\xECm b\u1ED9t \u0111\u1ECF"
+  numberInt: 0
   numberComplete: 5
   isShowQuest: 1
   stateQuest: 0
