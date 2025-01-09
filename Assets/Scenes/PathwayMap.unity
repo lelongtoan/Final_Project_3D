@@ -3877,7 +3877,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &150786403
 Transform:
   m_ObjectHideFlags: 0
@@ -28327,6 +28327,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: LoadScene(Lobby)
       objectReference: {fileID: 0}
+    - target: {fileID: 469390278899792996, guid: b38e382f587dc984d9051148237113ad, type: 3}
+      propertyPath: m_TagString
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 4262614176124253918, guid: b38e382f587dc984d9051148237113ad, type: 3}
+      propertyPath: nameScene
+      value: Lobby
+      objectReference: {fileID: 0}
     - target: {fileID: 5763050121208126093, guid: b38e382f587dc984d9051148237113ad, type: 3}
       propertyPath: m_LocalPosition.x
       value: -61.95
@@ -47554,6 +47562,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LoadScene(Dungeon)
       objectReference: {fileID: 0}
+    - target: {fileID: 469390278899792996, guid: b38e382f587dc984d9051148237113ad, type: 3}
+      propertyPath: m_TagString
+      value: LoadScene
+      objectReference: {fileID: 0}
     - target: {fileID: 5763050121208126093, guid: b38e382f587dc984d9051148237113ad, type: 3}
       propertyPath: m_LocalPosition.x
       value: 55.11
@@ -52178,6 +52190,10 @@ PrefabInstance:
     - target: {fileID: 3868563189374187535, guid: 14044dd8958a8c947bfe4173d8453763, type: 3}
       propertyPath: m_Name
       value: GameManger
+      objectReference: {fileID: 0}
+    - target: {fileID: 7599103554716338346, guid: 14044dd8958a8c947bfe4173d8453763, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.71
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
