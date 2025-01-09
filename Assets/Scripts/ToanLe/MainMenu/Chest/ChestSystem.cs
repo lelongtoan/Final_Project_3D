@@ -50,7 +50,6 @@ public class ChestSystem : MonoBehaviour
     }
     public void OpenChest()
     {
-        SetItemTakePanel();
         int gold = 0;
         int selectedItem = -1;
         bool hasDiamond = false;
@@ -160,9 +159,80 @@ public class ChestSystem : MonoBehaviour
                 Debug.Log("take perk Error!");
             }
         }
+        SetItemTakePanel();
 
     }
+    public void OpenTenChests()
+    {
+        int totalGold = 0;
+        int totalDiamonds = 0;
+        Dictionary<int, int> itemCounts = new Dictionary<int, int>();
 
+        for (int i = 0; i < 10; i++)
+        {
+            int gold = 0;
+            int selectedItem = -1;
+            bool hasDiamond = false;
+
+            if (mainMenu.silverKey > 9)
+            {
+                diamondDropRate = 20f;
+                gold = Random.Range(minGold, maxGold + 1);
+                mainMenu.money += gold;
+
+                hasDiamond = Random.value <= (diamondDropRate / 100);
+                if (hasDiamond)
+                {
+                    totalDiamonds++;
+                    mainMenu.diamond++;
+                }
+
+                selectedItem = GetRandomItem();
+                if (selectedItem != -1)
+                {
+                    if (!itemCounts.ContainsKey(selectedItem))
+                    {
+                        itemCounts[selectedItem] = 0;
+                    }
+                    itemCounts[selectedItem]++;
+                }
+
+                mainMenu.silverKey--;
+                totalGold += gold;
+            }
+        }
+
+        foreach (Transform child in content.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        if (totalGold > 0)
+        {
+            GameObject go = Instantiate(itemTake);
+            go.transform.SetParent(content.transform);
+            go.gameObject.GetComponent<ItemTake>().Set(goldImg, totalGold);
+        }
+
+        if (totalDiamonds > 0)
+        {
+            GameObject dia = Instantiate(itemTake);
+            dia.transform.SetParent(content.transform);
+            dia.gameObject.GetComponent<ItemTake>().Set(diaImg, totalDiamonds);
+        }
+
+        foreach (var item in itemCounts)
+        {
+            PerkData perkData = data.listPerk.Find(c => c.id == item.Key);
+            if (perkData != null)
+            {
+                GameObject perk = Instantiate(itemTake);
+                perk.transform.SetParent(content.transform);
+                perk.gameObject.GetComponent<ItemTake>().Set(perkData.image, item.Value);
+            }
+        }
+        SetItemTakePanel();
+    }
     private int GetRandomItem()
     {
         float totalRate = 0;

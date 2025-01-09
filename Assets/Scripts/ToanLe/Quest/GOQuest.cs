@@ -14,8 +14,14 @@ public class GOQuest : MonoBehaviour
     [SerializeField] public TextMeshProUGUI quaCountText;
     [SerializeField] public Image itemRewardImage;
     [SerializeField] public TextMeshProUGUI qualityRewardText;
+    Quest qcQuest;
+    private void OnEnable()
+    {
+        SetQuest(qcQuest);
+    }
     public void SetQuest(Quest qc)
     {
+        qcQuest = qc;
         List<ItemSlot> itemTemp = GameInstance.instance.questManager.itemContainer.inventory.slots.Where(c => c.item == qc.itemCheck).ToList();
         int numberInt = 0;
         foreach (ItemSlot itemSlot in itemTemp)

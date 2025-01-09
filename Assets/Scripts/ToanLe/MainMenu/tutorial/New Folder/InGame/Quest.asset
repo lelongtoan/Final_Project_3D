@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cff601e3b7d204541b7fc99daa4bb9f7, type: 3}
   m_Name: Quest
   m_EditorClassIdentifier: 
-  nameTutorial: "Nhi\u1EC7m V\u1EE5"
-  data: []
+  description: "Khi n\xF3i chuy\u1EC7n v\u1EDBi npc \u0111\u1EC3 tr\u1EA3 nhi\u1EC7m
+    v\u1EE5 n\u1EBFu ho\xE0n th\xE0nh s\u1EBD nh\u1EADn \u0111\u01B0\u1EE3c \"1\"
+    theo s\u1ED1 lu\u1ECDng \"2\" v\xE0 thay \u0111\u1ED5i \"5\"."
+  data:
+  - "V\u1EADt ph\u1EA9m nh\u1EADn \u0111\u01B0\u1EE3c"
+  - "S\u1ED1 l\u01B0\u1EE3ng nh\u1EADn \u0111\u01B0\u1EE3c"
+  - "T\xEAn nhi\u1EC7m v\u1EE5"
+  - "M\xF4 t\u1EA3 nhi\u1EC7m v\u1EE5"
+  - "Tr\u1EA1ng th\xE1i nhi\u1EC7m v\u1EE5"
   image: {fileID: 21300000, guid: 0d5493db0cfc6ee418ca22e0bd7bd81e, type: 3}
