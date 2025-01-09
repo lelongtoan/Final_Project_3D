@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cff601e3b7d204541b7fc99daa4bb9f7, type: 3}
+  m_Name: Main
+  m_EditorClassIdentifier: 
+  description: "\"5\" d\xF9ng \u0111\u1EC3 di chuy\u1EC3n nh\xE2n v\u1EADt.\"8\"
+    \u0111\u1EBFm s\u1ED1 l\u01B0\u1EE3ng c\xF3 trong kho.\"12\" s\u1ED1 n\u0103ng
+    l\u01B0\u1EE3ng c\u1EA7n \u0111\u1EC3 d\xF9ng k\u1EF9 n\u0103ng."
+  data:
+  - "M\xE1u v\xE0 ch\u1EC9 s\u1ED1 hi\u1EC7n t\u1EA1i"
+  - "N\u0103ng l\u01B0\u1EE3ng v\xE0 ch\u1EC9 s\u1ED1 hi\u1EC7n t\u1EA1i"
+  - "S\u1ED1 l\u01B0\u1EE3ng ti\u1EC1n s\u1EDF h\u1EEFu"
+  - "\u1EA4n \u0111\u1EC3 m\u1EDF nhi\u1EC7m v\u1EE5"
+  - Joystick
+  - "C\u1EA5p nh\xE2n v\u1EADt"
+  - "Thanh kinh nghi\u1EC7m"
+  - "S\u1ED1 l\u01B0\u1EE3ng b\xECnh"
+  - "B\xECnh m\xE1u v\xE0 n\u0103ng l\u01B0\u1EE3ng"
+  - "N\xFAt k\u1EF9 n\u0103ng"
+  - "C\u1EA5p k\u1EF9 n\u0103ng"
+  - "N\u0103ng l\u01B0\u1EE3ng k\u1EF9 n\u0103ng"
+  image: {fileID: 21300000, guid: a2fea9301c7c43745bdb4e93293789c7, type: 3}

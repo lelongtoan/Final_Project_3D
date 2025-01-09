@@ -29,7 +29,7 @@ public class PotionButton : MonoBehaviour
     {
         for (int i = 0; i < inventory.slots.Count; i++)
         {
-            if (healingPotion && inventory.slots[i].item.itemSet == ItemSet.Heal && countItem > 0)
+            if (countItem > 0 && healingPotion && inventory.slots[i].item.itemSet == ItemSet.Heal )
             {
                 if(SceneManager.GetActiveScene().name != "LobbyMap")
                 {
@@ -40,7 +40,7 @@ public class PotionButton : MonoBehaviour
                     return;
                 }
             }
-            else if (!healingPotion && inventory.slots[i].item.itemSet == ItemSet.Mana && countItem > 0)
+            else if (countItem > 0 && !healingPotion && inventory.slots[i].item.itemSet == ItemSet.Mana)
             {
                 if (SceneManager.GetActiveScene().name != "LobbyMap")
                 {

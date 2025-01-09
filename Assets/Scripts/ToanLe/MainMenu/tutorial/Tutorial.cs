@@ -32,7 +32,7 @@ public class Tutorial : MonoBehaviour
                 Vector2 spriteSize = new Vector2(currentData.image.texture.width, currentData.image.texture.height);
 
                 float widthRatio = 1300f / spriteSize.x;
-                float heightRatio = 650f / spriteSize.y;
+                float heightRatio = 600f / spriteSize.y;
                 float scaleRatio = Mathf.Min(widthRatio, heightRatio, 1f);
 
                 Vector2 adjustedSize = new Vector2(spriteSize.x * scaleRatio, spriteSize.y * scaleRatio);
