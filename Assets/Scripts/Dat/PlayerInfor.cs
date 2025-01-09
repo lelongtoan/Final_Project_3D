@@ -256,6 +256,11 @@ public class PlayerInfor : MonoBehaviour
         Debug.Log("Tru " + hp.ToString() + " mau");
         SaveData();
     }
+    public void GetPoint(int moneyCollect)
+    {
+        point += moneyCollect;
+        SaveData();
+    }
     public void GetMoney(int moneyCollect)
     {
         money += moneyCollect;
@@ -280,11 +285,16 @@ public class PlayerInfor : MonoBehaviour
     }
     void CheckLevelUp()
     {
+        AchievementCheck check = GameInstance.instance.achieCheck;
         while(exp >= XPToLevelUp)
         {
             exp -= XPToLevelUp;
             level++;
             OnLevelUp();
+            if (check.countLevel < level)
+            {
+                check.countLevel = level;
+            }
             SaveData();
         }
     }

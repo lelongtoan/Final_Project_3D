@@ -9,16 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9055cb94f485a894f8a95161b5ca46fa, type: 3}
-  m_Name: PlayerData
+  m_Script: {fileID: 11500000, guid: 97c054bc827eeb142b6241532cce3b53, type: 3}
+  m_Name: New Taked Data 1
   m_EditorClassIdentifier: 
-  maxHP: 120
-  healthPoint: 120
-  manaPoint: 100
-  maxMP: 100
-  def: 5
-  dame: 10
-  level: 1
-  exp: 0
-  money: 0
-  point: 11
+  point: 1
+  sprite: {fileID: 559429178, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
+  quantity: 1
+  stateTake: 2
