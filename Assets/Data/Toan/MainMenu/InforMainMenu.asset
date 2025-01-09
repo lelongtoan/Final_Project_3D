@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e68ee737b47778a4081fec525adcc49b, type: 3}
   m_Name: InforMainMenu
   m_EditorClassIdentifier: 
-  money: 201
-  diamond: 0
+  money: 17711
+  diamond: 8
   ironKey: 991
   silverKey: 99
