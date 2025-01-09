@@ -149,12 +149,12 @@ public class InGameMenu : MonoBehaviour
     }
     public void SetNPC()
     {
+        npcPanel.SetActive(!npcPanel.activeInHierarchy);
         if (sound == null)
         {
             sound = FindObjectOfType<SoundEffect>();
         }
         sound.PlaySound("Button");
-        npcPanel.SetActive(!npcPanel.activeInHierarchy);
     }
     public void SetNPCChat()
     {
