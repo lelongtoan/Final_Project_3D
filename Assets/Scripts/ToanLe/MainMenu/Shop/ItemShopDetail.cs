@@ -13,10 +13,12 @@ public class ItemShopDetail : MonoBehaviour
     [SerializeField] Image iconPriceImg;
     [SerializeField] TextMeshProUGUI quanPriceTxt;
     [SerializeField] Button buttonBuy;
+    //[SerializeField] Button buttonWatch;
 
     private void Awake()
     {
         buttonBuy.onClick.AddListener(Buy);
+        //buttonWatch.onClick.AddListener(WatchVideoAds);
     }
     public void Set(ShopData data)
     {
@@ -30,6 +32,15 @@ public class ItemShopDetail : MonoBehaviour
         {
             iconImg.sprite = data.perkData.image;
         }
+        if(data.priceType == StatePrice.Nope)
+        {
+            buttonBuy.gameObject.SetActive(false);
+            //buttonWatch.gameObject.SetActive(true);
+        }
+    }
+    public void WatchVideoAds()
+    {
+
     }
     public void Buy()
     {
