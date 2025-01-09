@@ -358,4 +358,10 @@ public class PlayerInfor : MonoBehaviour
         def+= defen;
         SaveData();
     }
+
+    public void GetPoint(int p)
+    {
+        point = p;
+        SaveData();
+    }
 }
