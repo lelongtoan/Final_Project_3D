@@ -12176,7 +12176,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -1120, y: -590}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &7853423815838572008
 MonoBehaviour:
@@ -20551,6 +20551,7 @@ GameObject:
   - component: {fileID: 3729085493009582416}
   - component: {fileID: 7709565891091178962}
   - component: {fileID: 576372603014388466}
+  - component: {fileID: 5608691329857059861}
   m_Layer: 5
   m_Name: GameOver
   m_TagString: Untagged
@@ -20616,6 +20617,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5608691329857059861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6171506955127762260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32c4dc959056298438214418c10f5161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  takeData: {fileID: 11400000, guid: 238450159da9e784aa5b22965bf60f51, type: 2}
+  playerData: {fileID: 11400000, guid: 4a0c7bb7eba4ea24c977a14c0f174428, type: 2}
 --- !u!1 &6193410017270591555
 GameObject:
   m_ObjectHideFlags: 0
@@ -21200,10 +21215,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5587680528613999018}
-        m_TargetAssemblyTypeName: SaveInGame, Assembly-CSharp
-        m_MethodName: DetelePlayer
-        m_Mode: 3
+      - m_Target: {fileID: 5608691329857059861}
+        m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
+        m_MethodName: SetGameOver
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -23924,6 +23939,7 @@ MonoBehaviour:
   chat: {fileID: 0}
   itemD: {fileID: 0}
   valueSell: {fileID: 0}
+  achieCheck: {fileID: 11400000, guid: 9f15b5a1a92772a4baf1bef2fde45ee2, type: 2}
   pickUpItem: {fileID: 77214271276831315}
 --- !u!1 &7862374662707752194
 GameObject:
@@ -25671,7 +25687,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6201828757409374213
 RectTransform:
   m_ObjectHideFlags: 0

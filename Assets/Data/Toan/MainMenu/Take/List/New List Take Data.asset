@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91217aa4c3efa7042baf98ceb7ca5648, type: 3}
+  m_Name: New List Take Data
+  m_EditorClassIdentifier: 
+  point: 11
+  takedDatas:
+  - {fileID: 11400000, guid: 9756f2bd201a91b40ae8459329cc7693, type: 2}
+  - {fileID: 11400000, guid: 9e1aa0d5080ef69428ee9e8ca29fcbc5, type: 2}
+  - {fileID: 11400000, guid: 7b5468c6825b18b4e9c26a8410dcc078, type: 2}
+  - {fileID: 11400000, guid: c9b06bf5fcc1c8a42be060769b35df6e, type: 2}
+  isTake: 0
