@@ -76,7 +76,7 @@ public class NPC : MonoBehaviour
         {
             shop.shopInventory = null;
         }
-        Debug.Log($"Tương tác với NPC: {gameObject.name}");
+        Debug.Log($"Tương tác với NPC: {gameObject.name}"); 
         InGameMenu.Instance.SetNPC();
     }
 

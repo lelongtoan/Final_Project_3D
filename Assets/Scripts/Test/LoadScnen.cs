@@ -9,6 +9,7 @@ public class LoadScnen : MonoBehaviour
     PlayerInfor inf;
     PlayerData playerData;
     SceneTransition gameManager;
+
     private void Start()
     {
         player = GetComponent<PlayerSkill>();

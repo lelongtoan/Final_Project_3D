@@ -13,7 +13,7 @@ public class CameraShake : MonoBehaviour
         {
             virtualCamera = GetComponent<CinemachineVirtualCamera>();
         }
-        if (SceneManager.GetActiveScene().name == "LobbyMap")
+        if (SceneManager.GetActiveScene().name == "LobbyMap" || SceneManager.GetActiveScene().name == "PathwayMap")
         {
             virtualCamera.m_Lens.NearClipPlane = -100;
         }

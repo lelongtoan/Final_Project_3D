@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public float manaDash;
     bool isCound = false;
 
+    bool notDash = false;
     public bool freeze = false;
     private Rigidbody rb;
     private Animator animator;
@@ -39,21 +40,28 @@ public class PlayerController : MonoBehaviour
         {
             runimage.fillAmount = 1;
         }
+        if (notDash)
+        {
+            runimage.fillAmount = 0;
+        }
+        else runimage.fillAmount = 1;
     }
     private void Start()
     {
+        runimage = GameObject.FindWithTag("RIMG").GetComponent<Image>();
         if(SceneManager.GetActiveScene().name == "LobbyMap")
         {
+            notDash = true;
             Wallspeed = 10;
         }
         else
         {
+            notDash = false;
             Wallspeed = 7f;
         }
         manaDash = GetComponent<PlayerInfor>().maxMP * 0.1f;
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
-        runimage = GameObject.FindWithTag("RIMG").GetComponent<Image>();
 
         joystick = GameObject.Find("Fixed Joystick").GetComponent<Joystick>();
         runButton = GameObject.Find("Run").GetComponent<Button>();
@@ -132,6 +140,10 @@ public class PlayerController : MonoBehaviour
 
     public void StartDash()
     {
+        if (notDash)
+        {
+            return;
+        }
         if (!isCound)
         {
             if (!isDashing)
