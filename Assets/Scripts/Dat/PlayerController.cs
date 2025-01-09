@@ -12,8 +12,6 @@ public class PlayerController : MonoBehaviour
     public float dashSpeed = 15f;
     public float dashDuration = 0.5f;
 
-    bool isLobby = false;
-
     public float dashTime;
     public bool isDashing = false;
     public Vector3 dashDirection;
