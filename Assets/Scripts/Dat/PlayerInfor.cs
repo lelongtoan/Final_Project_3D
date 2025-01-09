@@ -79,9 +79,12 @@ public class PlayerInfor : MonoBehaviour
         {
             LoadData();
         }
-        healthPoint = maxHP;
-        manaPoint = maxMP;
-        SaveData();
+        if(SceneManager.GetActiveScene().name == "LobbyMap")
+        {
+            healthPoint = maxHP;
+            manaPoint = maxMP;
+            SaveData();
+        }
         shake = FindObjectOfType<CinemachineVirtualCamera>().GetComponent<CameraShake>();
         hpbar = GameObject.FindWithTag("HPBar").GetComponent<Image>();
         mpbar = GameObject.FindWithTag("MPBar").GetComponent<Image>();  
