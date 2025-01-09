@@ -358,5 +358,4 @@ public class PlayerInfor : MonoBehaviour
         def+= defen;
         SaveData();
     }
-
 }
