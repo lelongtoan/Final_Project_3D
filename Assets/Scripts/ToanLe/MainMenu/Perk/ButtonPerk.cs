@@ -13,7 +13,6 @@ public class ButtonPerk : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        buttonPerk.onClick.AddListener(EquipmentPerk);
     }
     private void OnEnable()
     {

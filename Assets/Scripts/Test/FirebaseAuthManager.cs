@@ -68,7 +68,7 @@ public class FirebaseAuthManager : MonoBehaviour
             Debug.Log($"Đăng nhập thành công! Chào {auth.CurrentUser.Email}");
             if (statusText != null)
                 statusText.text = $"Chào mừng, {auth.CurrentUser.Email}!";
-            MainMenuManager.Instance.SetLoginMenu(1);
+            gameObject.SetActive(false);
         }
 
         else

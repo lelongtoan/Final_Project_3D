@@ -11,7 +11,7 @@ public class MainMenuManager : MonoBehaviour
     [Header("Infor")]
     [SerializeField] TextMeshProUGUI moneyText;
     [SerializeField] TextMeshProUGUI diamondText;
-
+    public InforMainMenu inforMenu;
     [Header("Panel")]
     [SerializeField] GameObject mainMenu;
     [SerializeField] GameObject characterMenu;
@@ -39,7 +39,9 @@ public class MainMenuManager : MonoBehaviour
     }
     private void Start()
     {
-        CloseAll();
+        CloseAll(); 
+        moneyText.text = inforMenu.money.ToString();
+        diamondText.text = inforMenu.diamond.ToString();
     }
     public void CloseAll()
     {
@@ -59,10 +61,10 @@ public class MainMenuManager : MonoBehaviour
         skillNodeDetail.SetActive(false);
         tutorialPanel.SetActive(false);
     }
-    void Update()
+    private void Update()
     {
-        moneyText.text = MainMenuInstance.instance.inforMenu.money.ToString();
-        diamondText.text = MainMenuInstance.instance.inforMenu.diamond.ToString();
+        moneyText.text = inforMenu.money.ToString();
+        diamondText.text = inforMenu.diamond.ToString();
     }
     public void SetTutorialPanel()
     {
@@ -122,10 +124,10 @@ public class MainMenuManager : MonoBehaviour
         sound.PlaySound("Button");
         settingMenu.SetActive(!settingMenu.activeInHierarchy);
     }
-    public void SetLoginMenu(int i = 0)
+    public void SetLoginMenu()
     {
 
-        if (auth.CurrentUser != null && i == 0)
+        if (auth.CurrentUser != null)
         {
             sound.PlaySound("Button");
             accouuntMenu.SetActive(!accouuntMenu.activeInHierarchy);  // Kiểm tra biến đúng tên
