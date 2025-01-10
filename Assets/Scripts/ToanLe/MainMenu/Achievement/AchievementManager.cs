@@ -14,33 +14,42 @@ public class AchievementManager : MonoBehaviour
         UpdateQuest();
     }
     public void UpdateQuest()
-    {   
+    {
         foreach (Transform child in content.transform)
         {
             Destroy(child.gameObject);
         }
         listAchievement.Set();
+        RectTransform contentRect = content.GetComponent<RectTransform>();
+        float contentWidth = contentRect.rect.width;
+        Debug.Log(contentWidth);
+        float scaleFactor = contentWidth / 1120f;
         int x = 0;
         for (int i = 0; i < listAchievement.listAchievement.Count; i++)
         {
             GameObject newQuest = Instantiate(quest);
             newQuest.transform.SetParent(content.transform);
-            newQuest.GetComponent<AchievementGO>().SetAchievement(listAchievement.listAchievement[i]);
+            newQuest.GetComponent<AchievementGO>().SetAchievement(listAchievement.listAchievement[i], contentWidth, 200 * scaleFactor);
             quests.Add(newQuest);
             x++;
         }
-        UpdateContentHeight(x);
+        UpdateContentHeight(x, scaleFactor);
     }
-    private void UpdateContentHeight(int questCount)
+
+    private void UpdateContentHeight(int questCount,float scaleFactor)
     {
         RectTransform contentRect = content.GetComponent<RectTransform>();
         if (contentRect != null)
         {
-            float totalHeight = questCount * 220;
+            float totalHeight = questCount * (200 * scaleFactor) + 20; // Chiều cao từng item theo tỷ lệ
 
             contentRect.sizeDelta = new Vector2(contentRect.sizeDelta.x, totalHeight);
         }
     }
+
+
+
+
     public void CheckAchie(AchievementData ac)
     {
         if (ac.stateAchievement == StateAchie.Nope)
