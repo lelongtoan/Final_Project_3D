@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,14 +19,22 @@ public class AchievementGO : MonoBehaviour
     [SerializeField] public Text qualityRewardText;
     [SerializeField] public AchievementData data;
     [SerializeField] AchievementCheck check;
+    [SerializeField] float width;
+    [SerializeField] float height;
+    RectTransform rectTransform;
     void SetClose()
     {
         completeGO.SetActive(false);
         takeGO.SetActive(false);
         quaCountGO.SetActive(false);
     }
+    private void Awake()
+    {
+        rectTransform = GetComponent<RectTransform>();
+    }
     private void Update()
     {
+        rectTransform.sizeDelta = new Vector2(width, height);
         if (data.stateAchievement == StateAchie.Nope)
         {
             SetClose();
@@ -43,17 +52,19 @@ public class AchievementGO : MonoBehaviour
             takeGO.SetActive(true);
         }
     }
-    public void SetAchievement(AchievementData qc)
+    public void SetAchievement(AchievementData qc,float width, float height)
     {
         data = qc;
+        this.width = width;
+        this.height = height;
         idGoAchiement = qc.questId;
         itemRewardImage.sprite = qc.icon;
         detailQuestGO.text = qc.nameAchivement.ToString();
         qualityRewardText.text = qc.rewardAchievement.ToString();
         quaCountText.text = qc.countAchievement + " / " + qc.completeAchivement;
-        AutoSizeText(detailQuestGO);
-        AutoSizeText(qualityRewardText);
-        AutoSizeText(quaCountText);
+        //AutoSizeText(detailQuestGO);
+        //AutoSizeText(qualityRewardText);
+        //AutoSizeText(quaCountText);
         if (qc.checkAchievement == CheckAchievement.Gold)
         {
             if(data.stateAchievement == StateAchie.Nope && check.countGold >= qc.completeAchivement)
@@ -90,16 +101,16 @@ public class AchievementGO : MonoBehaviour
             }
         }
     }
-    private void AutoSizeText(Text text)
-    {
-        RectTransform rect = text.GetComponent<RectTransform>();
-        int minFontSize = 36;
-
-        while ((text.preferredWidth > rect.rect.width || text.preferredHeight > rect.rect.height) && text.fontSize > minFontSize)
-        {
-            text.fontSize--;
-        }
-    }
+    //private void AutoSizeText(Text text)
+    //{
+    //    RectTransform rect = text.GetComponent<RectTransform>();
+    //    int minFontSize = 8;
+    //    text.fontSize = 128;
+    //    while ((text.preferredWidth > rect.rect.width || text.preferredHeight > rect.rect.height) && text.fontSize > minFontSize)
+    //    {
+    //        text.fontSize--;
+    //    }
+    //}
     public void TakeReward()
     {
         AchievementData data = MainMenuInstance.instance.achieManager.listAchievement.listAchievement.Find(c => c.questId == idGoAchiement);
