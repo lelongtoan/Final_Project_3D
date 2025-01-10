@@ -24,5 +24,4 @@ MonoBehaviour:
   listNextSkillNode:
   - {fileID: 11400000, guid: cd29e97c985a70e4798b59240e69bcc1, type: 2}
   - {fileID: 11400000, guid: 9036af0d26435f5479c08c7b2b6248e5, type: 2}
-  - {fileID: 11400000, guid: a3cbe77afebf9884aa9c362c51c9e2ce, type: 2}
   state: 0

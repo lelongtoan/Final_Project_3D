@@ -12,6 +12,7 @@ public class StartCharPanel : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI levelText;
     public TextMeshProUGUI pointText;
+    public GameObject newPlayer;
     public Button deleteButton;
     public Button button;
     private void Awake()
@@ -26,26 +27,30 @@ public class StartCharPanel : MonoBehaviour
     public void Set()
     {
         avatar.gameObject.SetActive(false);
-        nameText.gameObject.SetActive(false);
         levelText.gameObject.SetActive(false);
         pointText.gameObject.SetActive(false);
         deleteButton.gameObject.SetActive(false);
+        nameText.text = "New Game";
+
         if (startData.data[id] != null && startData.data[id].isSave) 
         {
             avatar.gameObject.SetActive(true);
-            nameText.gameObject.SetActive(true);
             levelText.gameObject.SetActive(true);
             pointText.gameObject.SetActive(true);
             deleteButton.gameObject.SetActive(true);
 
             //avatar.sprite = saveData.saveDatas[id].avatar;
-            //nameText.text = saveData.saveDatas[id].nameChar;
+            nameText.text = "Knight";
             levelText.text = "Level : " + startData.data[id].level;
             pointText.text = "Point : " + startData.data[id].point;
         }
     }
     public void SetPlayer()
     {
+        if (startData.data[id].isSave == false)
+        {
+            newPlayer.SetActive(true);
+        }
         SaveInGame.instance.SetCharSave(id);
     }
     public void SetDeletePlayer()

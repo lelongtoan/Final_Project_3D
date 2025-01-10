@@ -22,5 +22,7 @@ MonoBehaviour:
   gold: 400
   diamond: 0
   listNextSkillNode:
+  - {fileID: 11400000, guid: a3cbe77afebf9884aa9c362c51c9e2ce, type: 2}
   - {fileID: 11400000, guid: 9910d4cd1794e21419d914bc335efd3d, type: 2}
+  - {fileID: 11400000, guid: 77391a80cd29e1645a3962b0942016dd, type: 2}
   state: 0

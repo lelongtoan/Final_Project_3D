@@ -9,8 +9,6 @@ public class MainMenuManager : MonoBehaviour
 {
     public static MainMenuManager Instance;
     [Header("Infor")]
-    [SerializeField] TextMeshProUGUI moneyText;
-    [SerializeField] TextMeshProUGUI diamondText;
     public InforMainMenu inforMenu;
     [Header("Panel")]
     [SerializeField] GameObject mainMenu;
@@ -21,7 +19,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] GameObject achievementMenu;
     [SerializeField] GameObject settingMenu;
     [SerializeField] GameObject loginMenu;
-    [SerializeField] GameObject accouuntMenu;
+    [SerializeField] GameObject accountMenu;
     [SerializeField] GameObject languageMenu;
     [SerializeField] GameObject startGameMenu;
     [SerializeField] GameObject newCharMenu;
@@ -30,18 +28,16 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] GameObject tutorialPanel;
     [Header("Detail")]
     [SerializeField] GameObject skillNodeDetail;
-    private FirebaseAuth auth;
     public SoundEffect sound;
+
+    [SerializeField] SettingPanel settingPanel;
     private void Awake()
     {
-        auth = FirebaseAuth.DefaultInstance;
-        Instance = this;
+        Instance = this; CloseAll();
     }
     private void Start()
     {
         CloseAll(); 
-        moneyText.text = inforMenu.money.ToString();
-        diamondText.text = inforMenu.diamond.ToString();
     }
     public void CloseAll()
     {
@@ -60,11 +56,6 @@ public class MainMenuManager : MonoBehaviour
         statsTreeMenu.SetActive(false);
         skillNodeDetail.SetActive(false);
         tutorialPanel.SetActive(false);
-    }
-    private void Update()
-    {
-        moneyText.text = inforMenu.money.ToString();
-        diamondText.text = inforMenu.diamond.ToString();
     }
     public void SetTutorialPanel()
     {
@@ -95,13 +86,9 @@ public class MainMenuManager : MonoBehaviour
         sound.PlaySound("Button");
         characterMenu.SetActive(!characterMenu.activeInHierarchy);
     }
-    public void SetPerkMenu(bool equip)
+    public void SetPerkMenu()
     {
         sound.PlaySound("Button");
-        if (!equip)
-        {
-            ShowListPerk.instance.DisplayUnlockedPerks(-1,false);
-        }
         perkMenu.SetActive(!perkMenu.activeInHierarchy);
     }
     public void SetShopMenu()
@@ -127,10 +114,10 @@ public class MainMenuManager : MonoBehaviour
     public void SetLoginMenu()
     {
 
-        if (auth.CurrentUser != null)
+        if (settingPanel.isLogin == true)
         {
             sound.PlaySound("Button");
-            accouuntMenu.SetActive(!accouuntMenu.activeInHierarchy);  // Kiểm tra biến đúng tên
+            accountMenu.SetActive(!accountMenu.activeInHierarchy);  // Kiểm tra biến đúng tên
         }
         else
         {
