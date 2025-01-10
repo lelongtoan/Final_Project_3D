@@ -540,6 +540,8 @@ MonoBehaviour:
   quaCountText: {fileID: 0}
   itemRewardImage: {fileID: 3994999390344657324}
   qualityRewardText: {fileID: 0}
+  width: 0
+  height: 0
 --- !u!1 &3556465228640811923
 GameObject:
   m_ObjectHideFlags: 0
@@ -1048,6 +1050,8 @@ MonoBehaviour:
   qualityRewardText: {fileID: 8169811787066442176}
   data: {fileID: 0}
   check: {fileID: 11400000, guid: 9f15b5a1a92772a4baf1bef2fde45ee2, type: 2}
+  width: 0
+  height: 0
 --- !u!1 &8178940517014407943
 GameObject:
   m_ObjectHideFlags: 0
