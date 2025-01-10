@@ -4538,6 +4538,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 620995055}
     - target: {fileID: 8464939872226481876, guid: eab495feb39b36846a07fee1e06a41aa, type: 3}
+      propertyPath: listChat
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8464939872226481876, guid: eab495feb39b36846a07fee1e06a41aa, type: 3}
       propertyPath: listCraft
       value: 
       objectReference: {fileID: 0}
@@ -7513,7 +7517,7 @@ PrefabInstance:
     - target: {fileID: 3966934374049839532, guid: a8d64b1d47e57104c8b6f74911f52308, type: 3}
       propertyPath: listChat
       value: 
-      objectReference: {fileID: 11400000, guid: 96bb62e770eeafd419269f3ab5fdb55b, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 3966934374049839532, guid: a8d64b1d47e57104c8b6f74911f52308, type: 3}
       propertyPath: listCraft
       value: 
@@ -22137,6 +22141,10 @@ PrefabInstance:
       propertyPath: interact
       value: 
       objectReference: {fileID: 620995055}
+    - target: {fileID: -3225967703053262664, guid: 7b9c6b629899db640ac414bb011a4a38, type: 3}
+      propertyPath: listChat
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: -3225967703053262664, guid: 7b9c6b629899db640ac414bb011a4a38, type: 3}
       propertyPath: listCraft
       value: 
