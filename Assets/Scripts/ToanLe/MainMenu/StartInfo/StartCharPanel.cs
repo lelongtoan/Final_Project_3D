@@ -12,6 +12,7 @@ public class StartCharPanel : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI levelText;
     public TextMeshProUGUI pointText;
+    public GameObject newPlayer;
     public Button deleteButton;
     public Button button;
     private void Awake()
@@ -46,6 +47,10 @@ public class StartCharPanel : MonoBehaviour
     }
     public void SetPlayer()
     {
+        if (startData.data[id].isSave == false)
+        {
+            newPlayer.SetActive(true);
+        }
         SaveInGame.instance.SetCharSave(id);
     }
     public void SetDeletePlayer()

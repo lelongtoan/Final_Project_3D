@@ -5,6 +5,7 @@ public class TextAutoSizer : MonoBehaviour
 {
     public int minFontSize = 6; // Kích thước font nhỏ nhất
     public int maxFontSize = 72; // Kích thước font lớn nhất
+
     private void Update()
     {
         Text[] allTexts = FindObjectsOfType<Text>(true);
@@ -15,6 +16,7 @@ public class TextAutoSizer : MonoBehaviour
             AutoSizeText(text);
         }
     }
+
     private void AutoSizeText(Text text)
     {
         if (text == null) return;
@@ -22,11 +24,22 @@ public class TextAutoSizer : MonoBehaviour
         RectTransform rect = text.GetComponent<RectTransform>();
         if (rect == null) return;
 
+        // Bật chế độ xuống dòng tự động nếu chưa bật
+        if (text.horizontalOverflow != HorizontalWrapMode.Wrap)
+        {
+            text.horizontalOverflow = HorizontalWrapMode.Wrap;
+        }
+
+        if (text.verticalOverflow != VerticalWrapMode.Truncate)
+        {
+            text.verticalOverflow = VerticalWrapMode.Truncate;
+        }
+
         // Đặt kích thước font bắt đầu từ maxFontSize
         text.fontSize = maxFontSize;
 
         // Điều chỉnh kích thước font cho đến khi nó vừa với khung hoặc đạt minFontSize
-        while ((text.preferredWidth > rect.rect.width || text.preferredHeight > rect.rect.height) && text.fontSize > minFontSize)
+        while (text.preferredHeight > rect.rect.height && text.fontSize > minFontSize)
         {
             text.fontSize--;
         }

@@ -90,9 +90,8 @@ public class PerkDetail : MonoBehaviour
         if (idEquip != -1) 
         {
             equipData.equippedPerks[idEquip] = perk;
-            MainMenuManager.Instance.SetPerkMenu(false);
-            MainMenuManager.Instance.SetCharMenu();
-            MainMenuManager.Instance.SetCharMenu();
+            ShowListPerk.instance.DisplayUnlockedPerks(-1, false);
+            MainMenuManager.Instance.SetPerkMenu();
             Debug.Log($"Trang bị {perk.perkName} vào slot {idEquip}.");
         }
     }
@@ -101,9 +100,8 @@ public class PerkDetail : MonoBehaviour
         if (idEquip != -1 && equipData.equippedPerks[idEquip] == perk)
         {
             equipData.equippedPerks[idEquip] = null;
-            MainMenuManager.Instance.SetPerkMenu(false);
-            MainMenuManager.Instance.SetCharMenu();
-            MainMenuManager.Instance.SetCharMenu();
+            ShowListPerk.instance.DisplayUnlockedPerks(-1, false);
+            MainMenuManager.Instance.SetPerkMenu();
             Debug.Log($"Gỡ {perk.perkName} khỏi slot {idEquip}.");
         }
     }
