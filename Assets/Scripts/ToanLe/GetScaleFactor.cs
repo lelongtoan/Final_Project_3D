@@ -25,13 +25,25 @@ public class GetScaleFactor : MonoBehaviour
             Debug.LogError("CanvasScaler component is missing!");
         }
     }
+
     private void Update()
     {
-        AdjustUIScale(canvasScaler.scaleFactor);
+        if (canvasScaler != null)
+        {
+            AdjustUIScale(canvasScaler.scaleFactor);
+        }
     }
+
     private void AdjustUIScale(float scaleFactor)
     {
-        RectTransform[] rectTransforms = FindObjectsOfType<RectTransform>();
+        Canvas parentCanvas = canvasScaler.GetComponent<Canvas>();
+        if (parentCanvas == null)
+        {
+            Debug.LogError("CanvasScaler is not attached to a Canvas!");
+            return;
+        }
+
+        RectTransform[] rectTransforms = parentCanvas.GetComponentsInChildren<RectTransform>();
 
         foreach (RectTransform rect in rectTransforms)
         {
