@@ -21,7 +21,7 @@ public class FirebaseAuthManager : MonoBehaviour
     {
         auth = FirebaseAuth.DefaultInstance;
     }
-    private void OnEnable()
+    private void Start()
     {
         aBtn.onClick.RemoveAllListeners();
         bBtn.onClick.RemoveAllListeners();
@@ -41,7 +41,6 @@ public class FirebaseAuthManager : MonoBehaviour
         // Ẩn nút "seeOff" khi bắt đầu vì mật khẩu đang được ẩn
         seeOffButton.gameObject.SetActive(false);
     }
-
     // Hàm đăng nhập
     public void Login()
     {
@@ -55,7 +54,7 @@ public class FirebaseAuthManager : MonoBehaviour
             {
                 if (task.IsCanceled || task.IsFaulted)
                 {
-                    
+                    return;
                 }
                 else
                 {

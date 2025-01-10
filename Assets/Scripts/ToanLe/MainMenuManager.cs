@@ -19,7 +19,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] GameObject achievementMenu;
     [SerializeField] GameObject settingMenu;
     [SerializeField] GameObject loginMenu;
-    [SerializeField] GameObject accouuntMenu;
+    [SerializeField] GameObject accountMenu;
     [SerializeField] GameObject languageMenu;
     [SerializeField] GameObject startGameMenu;
     [SerializeField] GameObject newCharMenu;
@@ -28,12 +28,12 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] GameObject tutorialPanel;
     [Header("Detail")]
     [SerializeField] GameObject skillNodeDetail;
-    private FirebaseAuth auth;
     public SoundEffect sound;
+
+    [SerializeField] SettingPanel settingPanel;
     private void Awake()
     {
-        auth = FirebaseAuth.DefaultInstance;
-        Instance = this;
+        Instance = this; CloseAll();
     }
     private void Start()
     {
@@ -114,10 +114,10 @@ public class MainMenuManager : MonoBehaviour
     public void SetLoginMenu()
     {
 
-        if (auth.CurrentUser != null)
+        if (settingPanel.isLogin == true)
         {
             sound.PlaySound("Button");
-            accouuntMenu.SetActive(!accouuntMenu.activeInHierarchy);  // Kiểm tra biến đúng tên
+            accountMenu.SetActive(!accountMenu.activeInHierarchy);  // Kiểm tra biến đúng tên
         }
         else
         {
