@@ -16,7 +16,7 @@ public class ItemEnemyDrop : MonoBehaviour
             {
                 ItemSlot slot = new ItemSlot();
                 slot.item = itemSlots[i].item;
-                slot.toolDurability = Random.Range(1, itemSlots[i].count);
+                slot.count = Random.Range(1, itemSlots[i].count);
                 drop.itemSlots.Add(itemSlots[i]);
             }
         }

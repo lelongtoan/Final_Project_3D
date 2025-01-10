@@ -5,7 +5,6 @@ using UnityEngine;
 public class AchievementManager : MonoBehaviour
 {
     public ListAchievement listAchievement;
-    public List<GameObject> quests;
     public GameObject content;
     public GameObject quest;
     public AchievementCheck achieCheck;
@@ -30,7 +29,6 @@ public class AchievementManager : MonoBehaviour
             GameObject newQuest = Instantiate(quest);
             newQuest.transform.SetParent(content.transform);
             newQuest.GetComponent<AchievementGO>().SetAchievement(listAchievement.listAchievement[i], contentWidth, 200 * scaleFactor);
-            quests.Add(newQuest);
             x++;
         }
         UpdateContentHeight(x, scaleFactor);

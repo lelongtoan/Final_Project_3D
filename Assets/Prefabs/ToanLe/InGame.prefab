@@ -23812,6 +23812,8 @@ GameObject:
   - component: {fileID: 7652394785318142819}
   - component: {fileID: 7968659244251749483}
   - component: {fileID: 1848950350864492865}
+  - component: {fileID: 2239727068599140615}
+  - component: {fileID: 481196196815354987}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -23940,6 +23942,33 @@ MonoBehaviour:
   valueSell: {fileID: 0}
   achieCheck: {fileID: 11400000, guid: 9f15b5a1a92772a4baf1bef2fde45ee2, type: 2}
   pickUpItem: {fileID: 77214271276831315}
+--- !u!114 &2239727068599140615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7818077438531179660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cc453382fba0f349aa4f305bdf3448f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minFontSize: 6
+  maxFontSize: 36
+--- !u!114 &481196196815354987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7818077438531179660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abadd8c879d25e0468415154df30791f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasScaler: {fileID: 3440770884925500486}
 --- !u!1 &7862374662707752194
 GameObject:
   m_ObjectHideFlags: 0
