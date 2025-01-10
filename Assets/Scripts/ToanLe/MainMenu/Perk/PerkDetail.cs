@@ -93,6 +93,8 @@ public class PerkDetail : MonoBehaviour
             ShowListPerk.instance.DisplayUnlockedPerks(-1, false);
             MainMenuManager.Instance.SetPerkMenu();
             Debug.Log($"Trang bị {perk.perkName} vào slot {idEquip}.");
+            MainMenuManager.Instance.SetCharMenu();
+            MainMenuManager.Instance.SetCharMenu();
         }
     }
     public void UnEquipPerk()
@@ -103,6 +105,8 @@ public class PerkDetail : MonoBehaviour
             ShowListPerk.instance.DisplayUnlockedPerks(-1, false);
             MainMenuManager.Instance.SetPerkMenu();
             Debug.Log($"Gỡ {perk.perkName} khỏi slot {idEquip}.");
+            MainMenuManager.Instance.SetCharMenu();
+            MainMenuManager.Instance.SetCharMenu();
         }
     }
     
