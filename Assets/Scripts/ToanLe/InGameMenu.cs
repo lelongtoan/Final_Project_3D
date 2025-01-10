@@ -54,12 +54,22 @@ public class InGameMenu : MonoBehaviour
     {
         if(on)
         {
+            if (sound == null)
+            {
+                sound = FindObjectOfType<SoundEffect>();
+            }
+            sound.PlaySound("Button");
             Time.timeScale = 0;
             settingPanel.SetActive(true);
         }
         else
         {
             Time.timeScale = 1;
+            if (sound == null)
+            {
+                sound = FindObjectOfType<SoundEffect>();
+            }
+            sound.PlaySound("Button");
             settingPanel.SetActive(false);
         }
     }
@@ -69,10 +79,20 @@ public class InGameMenu : MonoBehaviour
     }
     public void SetHelpPanel()
     {
+        if (sound == null)
+        {
+            sound = FindObjectOfType<SoundEffect>();
+        }
+        sound.PlaySound("Button");
         helpPanel.SetActive(!helpPanel.activeInHierarchy);
     }
     public void SetSoundPanel()
     {
+        if (sound == null)
+        {
+            sound = FindObjectOfType<SoundEffect>();
+        }
+        sound.PlaySound("Button");
         soundPanel.SetActive(!soundPanel.activeInHierarchy);
     }
     public void SetCharPanel()

@@ -27,4 +27,4 @@ MonoBehaviour:
     l\xE0 ph\u1EA7n th\u01B0\u1EDFng, nh\u01B0 \u0111\xE3 h\u1EE9a. H\xE3y d\xF9ng
     n\xF3 \u0111\u1EC3 chu\u1EA9n b\u1ECB cho nh\u1EEFng th\u1EED th\xE1ch l\u1EDBn
     h\u01A1n."
-  quest: {fileID: 0}
+  quest: {fileID: 11400000, guid: b7797d344c7270f4f9e6e12853848695, type: 2}

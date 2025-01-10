@@ -52,6 +52,7 @@ public class InventorySave
 public class SaveData
 {
     [Header("Player Stats")]
+    public int _00_point;
     public float _01_maxHP;
     public float _02_healthPoint;
     public float _03_manaPoint;

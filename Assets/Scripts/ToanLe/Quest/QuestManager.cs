@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -19,6 +19,10 @@ public class QuestManager : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
+        RectTransform contentRect = content.GetComponent<RectTransform>();
+        float contentWidth = contentRect.rect.width;
+        Debug.Log(contentWidth);
+        float scaleFactor = contentWidth / 1120f;
         int x = 0;
         for (int i = 0; i < questContainer.questList.Count; i++)
         {
@@ -26,18 +30,18 @@ public class QuestManager : MonoBehaviour
             {
                 GameObject newQuest = Instantiate(quest);
                 newQuest.transform.SetParent(content.transform);
-                newQuest.GetComponent<GOQuest>().SetQuest(questContainer.questList[i]);
+                newQuest.GetComponent<GOQuest>().SetQuest(questContainer.questList[i], contentWidth, 200 * scaleFactor);
                 x++;
             }
         }
-        UpdateContentHeight(x);
+        UpdateContentHeight(x, scaleFactor);
     }
-    private void UpdateContentHeight(int questCount)
+    private void UpdateContentHeight(int questCount, float scaleFactor)
     {
         RectTransform contentRect = content.GetComponent<RectTransform>();
         if (contentRect != null)
         {
-            float totalHeight = questCount * 220;
+            float totalHeight = questCount * (200 * scaleFactor) + 20; // Chiều cao từng item theo tỷ lệ
 
             contentRect.sizeDelta = new Vector2(contentRect.sizeDelta.x, totalHeight);
         }

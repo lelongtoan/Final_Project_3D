@@ -9,8 +9,8 @@ public class PerkDetail : MonoBehaviour
     public int idEquip;
     [SerializeField] PerkData perk;
     [SerializeField] Image perkImage;
-    [SerializeField] TextMeshProUGUI nameText;
-    [SerializeField] TextMeshProUGUI desText;
+    [SerializeField] Text nameText;
+    [SerializeField] Text desText;
     [SerializeField] TextMeshProUGUI quantityText;
     [SerializeField] TextMeshProUGUI levelText;
     [SerializeField] Button buttonPerk;
@@ -25,11 +25,11 @@ public class PerkDetail : MonoBehaviour
         buttonPerk.interactable = false;
         if (data.perkState == PerkState.Lock)
         {
-            buttonPerk.GetComponentInChildren<TextMeshProUGUI>().text = "Đã Khóa";
+            buttonPerk.GetComponentInChildren<Text>().text = "Đã Khóa";
         }
         else
         {
-            buttonPerk.GetComponentInChildren<TextMeshProUGUI>().text = "Đã Mở";
+            buttonPerk.GetComponentInChildren<Text>().text = "Đã Mở";
             if (isEquip)
             {
                 buttonPerk.interactable = true;
@@ -40,7 +40,7 @@ public class PerkDetail : MonoBehaviour
             {
                 buttonPerk.interactable = true;
                 buttonPerk.onClick.AddListener(UpLevelPerk);
-                buttonPerk.GetComponentInChildren<TextMeshProUGUI>().text = "Tăng Cấp";
+                buttonPerk.GetComponentInChildren<Text>().text = "Tăng Cấp";
             }
         }
         
@@ -51,12 +51,12 @@ public class PerkDetail : MonoBehaviour
             && equipData.equippedPerks[idEquip] == perk)
         {
             buttonPerk.onClick.AddListener(UnEquipPerk);
-            buttonPerk.GetComponentInChildren<TextMeshProUGUI>().text = "Gỡ";
+            buttonPerk.GetComponentInChildren<Text>().text = "Gỡ";
         }
         else
         {
             buttonPerk.onClick.AddListener(EquipPerk);
-            buttonPerk.GetComponentInChildren<TextMeshProUGUI>().text = "Trang Bị";
+            buttonPerk.GetComponentInChildren<Text>().text = "Trang Bị";
         }
     }
     private void UpdateUI()
@@ -93,6 +93,8 @@ public class PerkDetail : MonoBehaviour
             ShowListPerk.instance.DisplayUnlockedPerks(-1, false);
             MainMenuManager.Instance.SetPerkMenu();
             Debug.Log($"Trang bị {perk.perkName} vào slot {idEquip}.");
+            MainMenuManager.Instance.SetCharMenu();
+            MainMenuManager.Instance.SetCharMenu();
         }
     }
     public void UnEquipPerk()
@@ -103,6 +105,8 @@ public class PerkDetail : MonoBehaviour
             ShowListPerk.instance.DisplayUnlockedPerks(-1, false);
             MainMenuManager.Instance.SetPerkMenu();
             Debug.Log($"Gỡ {perk.perkName} khỏi slot {idEquip}.");
+            MainMenuManager.Instance.SetCharMenu();
+            MainMenuManager.Instance.SetCharMenu();
         }
     }
     

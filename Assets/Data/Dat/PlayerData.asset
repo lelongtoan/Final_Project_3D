@@ -17,8 +17,8 @@ MonoBehaviour:
   manaPoint: 100
   maxMP: 100
   def: 5
-  dame: 15
+  dame: 10
   level: 1
   exp: 0
   money: 0
-  point: 14
+  point: 15

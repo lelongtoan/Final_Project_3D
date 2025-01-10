@@ -6,138 +6,133 @@ using UnityEngine.UI;
 public class FirebaseAuthManager : MonoBehaviour
 {
     private FirebaseAuth auth;
-    [Header("Login")]
-    public Text nameTxt;
+
+    [Header("UI Elements")]
+    public TextMeshProUGUI nameTxt;
     public InputField emailInput;
     public InputField passwordInput;
-    public Button seeOnButton;  // Nút để hiển thị mật khẩu
+    public Button seeOnButton;
     public Button seeOffButton;
-    public Button aBtn;  // Nút để hiển thị mật khẩu
-    public Button bBtn; // Nút để ẩn mật khẩu
-    public Text statusText; // Hiển thị trạng thái (tùy chọn)
-    public bool isLogin;
+    public Button primaryButton;
+    public Button secondaryButton;
+    public TextMeshProUGUI statusText;
+
+    private bool isLoginMode = true;
 
     private void Awake()
     {
         auth = FirebaseAuth.DefaultInstance;
     }
+
     private void Start()
     {
-        aBtn.onClick.RemoveAllListeners();
-        bBtn.onClick.RemoveAllListeners();
-        aBtn.onClick.AddListener(Login);
-        bBtn.onClick.AddListener(CreateAccount);
-        aBtn.GetComponentInChildren<Text>().text = "Đăng Nhập";
-        bBtn.GetComponentInChildren<Text>().text = "Đăng Ký";
-        isLogin = true;
-        statusText.text = " ";
-        // Khởi tạo Firebase Authentication
-        passwordInput.contentType = InputField.ContentType.Password;
-
-        // Đăng ký sự kiện cho các nút
-        seeOnButton.onClick.AddListener(ShowPassword);
-        seeOffButton.onClick.AddListener(HidePassword);
-
-        // Ẩn nút "seeOff" khi bắt đầu vì mật khẩu đang được ẩn
-        seeOffButton.gameObject.SetActive(false);
+        InitializeUI();
     }
-    // Hàm đăng nhập
-    public void Login()
+
+    private void Update()
     {
-        if(isLogin)
-{
-            string email = emailInput.text; // Lấy email từ InputField
-            string password = passwordInput.text; // Lấy mật khẩu từ InputField
-
-            statusText.text = "Đăng nhập thất bại. Vui lòng thử lại!";
-            auth.SignInWithEmailAndPasswordAsync(email, password).ContinueWith(task =>
-            {
-                if (task.IsCanceled || task.IsFaulted)
-                {
-                    return;
-                }
-                else
-                {
-                    // Nếu không có lỗi
-                    Firebase.Auth.AuthResult authResult = task.Result;
-                    FirebaseUser user = authResult.User;
-
-                }
-            });
-            Debug.Log($"Đăng nhập thành công! Chào {auth.CurrentUser.Email}");
-            if (statusText != null)
-                statusText.text = $"Chào mừng, {auth.CurrentUser.Email}!";
+        if (auth.CurrentUser != null)
+        {
             gameObject.SetActive(false);
         }
+    }
 
+    private void InitializeUI()
+    {
+        // Setup button listeners
+        primaryButton.onClick.AddListener(HandlePrimaryAction);
+        secondaryButton.onClick.AddListener(ToggleMode);
+
+        // Setup password visibility buttons
+        seeOnButton.onClick.AddListener(() => SetPasswordVisibility(true));
+        seeOffButton.onClick.AddListener(() => SetPasswordVisibility(false));
+
+        // Set default states
+        SetPasswordVisibility(false);
+        UpdateUIForMode();
+
+        statusText.text = string.Empty;
+    }
+
+    private void UpdateUIForMode()
+    {
+        nameTxt.text = isLoginMode ? "Đăng Nhập" : "Đăng Ký";
+        primaryButton.GetComponentInChildren<Text>().text = isLoginMode ? "Đăng Nhập" : "Đăng Ký";
+        secondaryButton.GetComponentInChildren<Text>().text = isLoginMode ? "Đăng Ký" : "Đăng Nhập";
+    }
+
+    private void HandlePrimaryAction()
+    {
+        string email = emailInput.text;
+        string password = passwordInput.text;
+
+        if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+        {
+            statusText.text = "Vui lòng nhập email và mật khẩu.";
+            return;
+        }
+
+        if (isLoginMode)
+        {
+            Login(email, password);
+        }
         else
         {
-            aBtn.onClick.RemoveAllListeners();
-            bBtn.onClick.RemoveAllListeners();
-            nameTxt.text = "Đăng Nhập";
-            aBtn.onClick.AddListener(Login);
-            bBtn.onClick.AddListener(CreateAccount);
-            aBtn.GetComponentInChildren<Text>().text = "Đăng Nhập";
-            bBtn.GetComponentInChildren<Text>().text = "Đăng Ký";
-            isLogin = true;
+            CreateAccount(email, password);
         }
     }
 
-    public void CreateAccount()
+    private void ToggleMode()
     {
-        if(!isLogin)
-        {
-            string email = emailInput.text; // Lấy email từ InputField
-            string password = passwordInput.text; // Lấy mật khẩu từ InputField
+        isLoginMode = !isLoginMode;
+        UpdateUIForMode();
+    }
 
-            statusText.text = "Tạo tài khoản thất bại. Vui lòng thử lại!";
-            auth.CreateUserWithEmailAndPasswordAsync(email, password).ContinueWith(task =>
+    private void Login(string email, string password)
+    {
+        statusText.text = "Đang đăng nhập...";
+
+        auth.SignInWithEmailAndPasswordAsync(email, password).ContinueWith(task =>
+        {
+            if (task.IsCanceled || task.IsFaulted)
             {
-                if (task.IsCanceled || task.IsFaulted)
-                {
-                    return;
-                }
-                else
-                {
-                    Firebase.Auth.AuthResult authResult = task.Result;
-                    FirebaseUser user = authResult.User;
-                }
-            });
-            if (statusText != null)
-                statusText.text = $"Tạo tài khoản thành công!";
-        }
-        else
+                Debug.LogError("Login failed: " + task.Exception?.Message);
+                statusText.text = "Đăng nhập thất bại. Vui lòng thử lại!";
+                return;
+            }
+
+            FirebaseUser user = task.Result.User;
+            Debug.Log("Login Success! User ID: " + user.UserId);
+            statusText.text = "Đăng nhập thành công!";
+        });
+    }
+
+    private void CreateAccount(string email, string password)
+    {
+        statusText.text = "Đang tạo tài khoản...";
+
+        auth.CreateUserWithEmailAndPasswordAsync(email, password).ContinueWith(task =>
         {
-            aBtn.onClick.RemoveAllListeners();
-            bBtn.onClick.RemoveAllListeners();
-            nameTxt.text = "Đăng Ký";
-            bBtn.onClick.AddListener(Login);
-            aBtn.onClick.AddListener(CreateAccount);
-            bBtn.GetComponentInChildren<Text>().text = "Đăng Nhập";
-            aBtn.GetComponentInChildren<Text>().text = "Đăng Ký";
-            isLogin = false;
-        }
+            if (task.IsCanceled || task.IsFaulted)
+            {
+                Debug.LogError("Account creation failed: " + task.Exception?.Message);
+                statusText.text = "Tạo tài khoản thất bại. Vui lòng thử lại!";
+                return;
+            }
+
+            FirebaseUser user = task.Result.User;
+            Debug.Log("Account Created! User ID: " + user.UserId);
+            statusText.text = "Tạo tài khoản thành công!";
+            ToggleMode();
+        });
     }
 
-    // Hiển thị mật khẩu
-    public void ShowPassword()
+    private void SetPasswordVisibility(bool visible)
     {
-        passwordInput.contentType = InputField.ContentType.Standard; // Hiển thị mật khẩu
-        passwordInput.ActivateInputField(); // Cập nhật UI ngay lập tức
+        passwordInput.contentType = visible ? InputField.ContentType.Standard : InputField.ContentType.Password;
+        passwordInput.ForceLabelUpdate();
 
-        // Ẩn nút "seeOn" và hiển thị nút "seeOff"
-        seeOnButton.gameObject.SetActive(false);
-        seeOffButton.gameObject.SetActive(true);
-    }
-
-    // Ẩn mật khẩu
-    public void HidePassword()
-    {
-        passwordInput.contentType = InputField.ContentType.Password; // Ẩn mật khẩu
-        passwordInput.ActivateInputField(); // Cập nhật UI ngay lập tức
-
-        // Ẩn nút "seeOff" và hiển thị nút "seeOn"
-        seeOnButton.gameObject.SetActive(true);
-        seeOffButton.gameObject.SetActive(false);
+        seeOnButton.gameObject.SetActive(!visible);
+        seeOffButton.gameObject.SetActive(visible);
     }
 }

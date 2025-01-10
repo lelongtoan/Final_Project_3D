@@ -10,17 +10,26 @@ public class GOQuest : MonoBehaviour
     public int idGOQuest;
     [SerializeField] public GameObject completeGO;
     [SerializeField] public Text nameQuestGO;
-    [SerializeField] public TextMeshProUGUI detailQuestGO;
+    [SerializeField] public Text detailQuestGO;
     [SerializeField] public TextMeshProUGUI quaCountText;
     [SerializeField] public Image itemRewardImage;
     [SerializeField] public TextMeshProUGUI qualityRewardText;
     Quest qcQuest;
-    private void Start()
+    RectTransform rectTransform;
+    public float width;
+    public float height;
+    private void Awake()
     {
-        SetQuest(qcQuest);
+        rectTransform = GetComponent<RectTransform>();
     }
-    public void SetQuest(Quest qc)
+    private void Update()
     {
+        rectTransform.sizeDelta = new Vector2(width, height);
+    }
+    public void SetQuest(Quest qc, float width, float height)
+    {
+        this.width = width;
+        this.height = height;
         if (qc != null)
         {
             qcQuest = qc;
