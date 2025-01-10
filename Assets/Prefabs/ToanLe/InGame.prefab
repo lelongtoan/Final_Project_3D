@@ -3791,6 +3791,7 @@ MonoBehaviour:
   brg_slider: {fileID: 7119056140978376638}
   vfx_slider: {fileID: 3809881896990814899}
   sound: {fileID: 0}
+  save: {fileID: 0}
 --- !u!1 &1537645317828947905
 GameObject:
   m_ObjectHideFlags: 0
@@ -18815,6 +18816,7 @@ MonoBehaviour:
   brg_slider: {fileID: 7119056140978376638}
   vfx_slider: {fileID: 3809881896990814899}
   sound: {fileID: 0}
+  save: {fileID: 9051895226199844306}
 --- !u!1 &5666629971754169669
 GameObject:
   m_ObjectHideFlags: 0

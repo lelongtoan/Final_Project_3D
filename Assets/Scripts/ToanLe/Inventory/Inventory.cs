@@ -52,7 +52,7 @@ public class Inventory : ItemManager
             equipment.bootSlot
             };
 
-            if (equipSlots[equipIndex] != null)
+            if (equipSlots[equipIndex].item != null)
             {
                 GameInstance.instance.gameMenu.SetInfoItem();
                 ItemD.Instance.SetItem(equipSlots[equipIndex],id,1);
