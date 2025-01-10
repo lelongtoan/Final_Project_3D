@@ -13,6 +13,10 @@ public class ButtonPerk : MonoBehaviour
     {
         Set();
     }
+    private void Update()
+    {
+        Set();
+    }
     public void Set()
     {
         if (PerkEquipmentData.equippedPerks[id] != null)

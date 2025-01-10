@@ -18926,7 +18926,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &813009313
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19807,10 +19807,10 @@ RectTransform:
   - {fileID: 983930823}
   m_Father: {fileID: 1613056793}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1300, y: -500}
+  m_SizeDelta: {x: 400, y: 650}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &875790703
 MonoBehaviour:
@@ -22817,7 +22817,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1047082685
 RectTransform:
   m_ObjectHideFlags: 0
@@ -31849,7 +31849,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listAchievement: {fileID: 11400000, guid: 21a7e283c705b024f86e1265ff9e7039, type: 2}
-  quests: []
   content: {fileID: 1674999174}
   quest: {fileID: 6766769812817084503, guid: e3d517f6f8d90be4da4f6f0df57da42d, type: 3}
   achieCheck: {fileID: 11400000, guid: 9f15b5a1a92772a4baf1bef2fde45ee2, type: 2}
@@ -33644,7 +33643,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1900873931}
         m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
         m_MethodName: SetPerkMenu
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -37132,10 +37131,10 @@ RectTransform:
   - {fileID: 735245971}
   m_Father: {fileID: 1613056793}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 800, y: -500}
+  m_SizeDelta: {x: 400, y: 650}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1777368398
 MonoBehaviour:
@@ -40053,7 +40052,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minFontSize: 6
-  maxFontSize: 72
+  maxFontSize: 36
 --- !u!114 &1900873940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40663,7 +40662,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1900873931}
         m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
         m_MethodName: SetPerkMenu
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -43762,10 +43761,10 @@ RectTransform:
   - {fileID: 1288001241}
   m_Father: {fileID: 1613056793}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 300, y: -500}
+  m_SizeDelta: {x: 400, y: 650}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2039171365
 MonoBehaviour:
