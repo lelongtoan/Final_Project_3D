@@ -61,7 +61,6 @@ public class AchievementGO : MonoBehaviour
         itemRewardImage.sprite = qc.icon;
         detailQuestGO.text = qc.nameAchivement.ToString();
         qualityRewardText.text = qc.rewardAchievement.ToString();
-        quaCountText.text = qc.countAchievement + " / " + qc.completeAchivement;
         //AutoSizeText(detailQuestGO);
         //AutoSizeText(qualityRewardText);
         //AutoSizeText(quaCountText);
@@ -71,6 +70,7 @@ public class AchievementGO : MonoBehaviour
             {
                 data.stateAchievement = StateAchie.Completed;
             }
+            data.countAchievement = check.countGold;
         }
         else if(qc.checkAchievement == CheckAchievement.Level)
         {
@@ -78,6 +78,7 @@ public class AchievementGO : MonoBehaviour
             {
                 data.stateAchievement = StateAchie.Completed;
             }
+            data.countAchievement = check.countLevel;
         } 
         else if(qc.checkAchievement == CheckAchievement.Boss)
         {
@@ -85,6 +86,7 @@ public class AchievementGO : MonoBehaviour
             {
                 data.stateAchievement = StateAchie.Completed;
             }
+            data.countAchievement = check.countBoss;
         }
         else if(qc.checkAchievement == CheckAchievement.Enemy)
         {
@@ -92,6 +94,7 @@ public class AchievementGO : MonoBehaviour
             {
                 data.stateAchievement = StateAchie.Completed;
             }
+            data.countAchievement = check.countEnemy;
         }
         else
         {
@@ -99,7 +102,9 @@ public class AchievementGO : MonoBehaviour
             {
                 data.stateAchievement = StateAchie.Completed;
             }
+            data.countAchievement = check.countSignIn;
         }
+        quaCountText.text = data.countAchievement + " / " + data.completeAchivement;
     }
     //private void AutoSizeText(Text text)
     //{

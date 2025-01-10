@@ -39,6 +39,7 @@ public class SaveTemp : MonoBehaviour
             id = temp;
         }
         // Lưu dữ liệu người chơi
+        saveData._00_point = playerData.point;
         saveData._01_maxHP = playerData.maxHP;
         saveData._02_healthPoint = playerData.healthPoint;
         saveData._03_manaPoint = playerData.manaPoint;
@@ -110,6 +111,7 @@ public class SaveTemp : MonoBehaviour
         temp = idLoad;
         saveData = SaveLoadJson.LoadFromJson(idLoad);
         // Tải dữ liệu người chơi
+        playerData.point = saveData._00_point;
         playerData.maxHP = saveData._01_maxHP;
         playerData.healthPoint = saveData._02_healthPoint;
         playerData.manaPoint = saveData._03_manaPoint;
