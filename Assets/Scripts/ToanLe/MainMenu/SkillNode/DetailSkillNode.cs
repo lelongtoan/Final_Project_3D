@@ -13,27 +13,10 @@ public class DetailSkillNode : MonoBehaviour
     [SerializeField] GameObject iconCoin;
     [SerializeField] GameObject iconDiamond;
     SkillNodeData data;
-    private void Start()
+    public void Set(SkillNodeData data)
     {
         iconCoin.SetActive(false);
         iconDiamond.SetActive(false);
-    }
-    private void Update()
-    {
-        if(data!=null)
-        {
-            if (data.gold != 0)
-            {
-                iconCoin.SetActive(true);
-            }
-            else
-            {
-                iconDiamond.SetActive(true);
-            }
-        }
-    }
-    public void Set(SkillNodeData data)
-    {
         this.data = data;
         image.sprite = data.icon;
         nameText.text = data.nameSkillNode;

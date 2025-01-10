@@ -43,10 +43,6 @@ public class SaveInGame : MonoBehaviour
             Debug.Log("Loading Char");
             LoadGame(id);
         }
-        else
-        {
-            MainMenuManager.Instance.SetNewCharMenu();
-        }
     }
     public void NewPlayer()
     {

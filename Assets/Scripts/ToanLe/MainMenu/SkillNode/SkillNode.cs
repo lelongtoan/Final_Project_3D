@@ -8,6 +8,7 @@ public class SkillNode : MonoBehaviour
 {
     [SerializeField] Image iconNode;
     [SerializeField] TextMeshProUGUI textState;
+    [SerializeField] GameObject skillUp;
     public SkillNodeData skillNodeData;
     public DetailSkillNode skillNode;
     private void Update()
@@ -52,7 +53,7 @@ public class SkillNode : MonoBehaviour
     {
         if(skillNodeData.state == SkillNodeState.Open)
         {
-            MainMenuManager.Instance.SetSkillNodeDetail();
+            skillUp.SetActive(true);
             skillNode = FindAnyObjectByType<DetailSkillNode>();
             skillNode.Set(skillNodeData);
         }

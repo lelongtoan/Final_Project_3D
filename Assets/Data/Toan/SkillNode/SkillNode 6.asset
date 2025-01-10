@@ -23,6 +23,4 @@ MonoBehaviour:
   diamond: 1
   listNextSkillNode:
   - {fileID: 11400000, guid: 643937ae1b8cde9479c5c5d7e2512bd5, type: 2}
-  - {fileID: 11400000, guid: e5483b2030623da45ae658c87fc37482, type: 2}
-  - {fileID: 11400000, guid: fc375d5345a2e7f43a06bb5244798848, type: 2}
   state: 0

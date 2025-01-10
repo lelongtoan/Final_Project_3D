@@ -5,15 +5,10 @@ using UnityEngine.UI;
 
 public class ButtonPerk : MonoBehaviour
 {
-    public static ButtonPerk instance;
     public int id;
     [SerializeField] Image image;
-    [SerializeField] Button buttonPerk;
     [SerializeField] PerkEquipmentData PerkEquipmentData;
-    private void Awake()
-    {
-        instance = this;
-    }
+    [SerializeField] GameObject gameObjectPerk;
     private void OnEnable()
     {
         Set();
@@ -35,7 +30,7 @@ public class ButtonPerk : MonoBehaviour
     }
     public void EquipmentPerk()
     {
-        MainMenuManager.Instance.SetPerkMenu(true);
+        gameObjectPerk.SetActive(true);
         ShowListPerk.instance.DisplayUnlockedPerks(id, true);
     }
 }
