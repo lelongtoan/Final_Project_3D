@@ -134,6 +134,11 @@ public class PlayerInfor : MonoBehaviour
     }
     void UpdateHpMpGold()
     {
+        if (healthPoint > maxHP)
+        {
+            healthPoint = maxHP;
+            SaveData();
+        }
         gold_Text.text = money.ToString();
         hp_Text.text = healthPoint + " / " + maxHP.ToString();
         mp_Text.text = manaPoint.ToString() + " / " + maxMP.ToString();
