@@ -9014,7 +9014,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 724929666, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -18124,7 +18124,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 8cd1835d87c58e04c89d6624c4d9da86, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -19096,7 +19096,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 0e4690dee50935f4a81959699efce380, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -26883,6 +26883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   saveData:
+    _00_point: 0
     _01_maxHP: 0
     _02_healthPoint: 0
     _03_manaPoint: 0
@@ -26926,6 +26927,7 @@ MonoBehaviour:
   equipments: {fileID: 11400000, guid: efc68d7b58a3562458041f291fa1b319, type: 2}
   setIdItem: {fileID: 11400000, guid: 3b912c76c43c64d47b5ebc6402f0a334, type: 2}
   saveData:
+    _00_point: 0
     _01_maxHP: 0
     _02_healthPoint: 0
     _03_manaPoint: 0
