@@ -5,9 +5,11 @@ using UnityEngine;
 public class Stats : MonoBehaviour
 {
     public ListSkillNode list;
+    public StatsData stats;
     private void OnEnable()
     {
         SetListSkillNode();
+        stats.Set();
     }
     public void SetListSkillNode()
     {

@@ -73,7 +73,7 @@ public class EnemyInfor : MonoBehaviour
         GetComponent<NavMeshAgent>().enabled = false;
         GetComponent<AIEnemy>().enabled = false;
         canvas.SetActive(false);
-        if(gameObject.CompareTag("WarriorEnemy"))
+        if(gameObject.CompareTag("WarriorBoss"))
         {
             GameInstance.instance.achieCheck.countBoss++;
             PlayerInfor.Instance.GetPoint(5);
