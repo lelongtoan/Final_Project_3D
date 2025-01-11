@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Lyra
   m_EditorClassIdentifier: 
   npcName: Lyra
-  npcImage: {fileID: 0}
+  npcImage: {fileID: 21300000, guid: e70459c2ed8b2f840bc599f9d77211d1, type: 3}
   list:
   - {fileID: 11400000, guid: c3ae730e184f58d499e588ba8513d677, type: 2}
