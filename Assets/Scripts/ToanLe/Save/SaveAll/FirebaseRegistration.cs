@@ -10,9 +10,6 @@ public class FirebaseRegistration : MonoBehaviour
     [Header("UI Elements")]
     public InputField emailInput;
     public InputField passwordInput;
-    public Button seeOnButton;
-    public Button seeOffButton;
-    public Button registerButton;
     public TextMeshProUGUI statusText;
 
     bool isRes = true; 
@@ -34,19 +31,11 @@ public class FirebaseRegistration : MonoBehaviour
     }
     private void InitializeUI()
     {
-        // Setup button listeners
-        registerButton.onClick.AddListener(HandleRegistration);
-
-        // Setup password visibility buttons
-        seeOnButton.onClick.AddListener(() => SetPasswordVisibility(true));
-        seeOffButton.onClick.AddListener(() => SetPasswordVisibility(false));
-
-        // Set default password visibility
         SetPasswordVisibility(false);
         statusText.text = string.Empty;
     }
 
-    private void HandleRegistration()
+    public void HandleRegistration()
     {
         string email = emailInput.text;
         string password = passwordInput.text;
@@ -60,7 +49,7 @@ public class FirebaseRegistration : MonoBehaviour
         CreateAccount(email, password);
     }
 
-    private void CreateAccount(string email, string password)
+    public void CreateAccount(string email, string password)
     {
         statusText.text = "Đang tạo tài khoản...";
 
@@ -79,12 +68,9 @@ public class FirebaseRegistration : MonoBehaviour
         });
     }
 
-    private void SetPasswordVisibility(bool visible)
+    public void SetPasswordVisibility(bool visible)
     {
         passwordInput.contentType = visible ? InputField.ContentType.Standard : InputField.ContentType.Password;
         passwordInput.ForceLabelUpdate();
-
-        seeOnButton.gameObject.SetActive(!visible);
-        seeOffButton.gameObject.SetActive(visible);
     }
 }

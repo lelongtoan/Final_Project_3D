@@ -520,10 +520,10 @@ RectTransform:
   - {fileID: 1437205175}
   m_Father: {fileID: 820146133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 250, y: -260}
-  m_SizeDelta: {x: 450, y: 120}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &12156966
 MonoBehaviour:
@@ -1795,7 +1795,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 50657911}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 780979965}
+        m_TargetAssemblyTypeName: FirebaseLogin, Assembly-CSharp
+        m_MethodName: HandleLogin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &50657911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3885,10 +3897,10 @@ RectTransform:
   - {fileID: 1944014449}
   m_Father: {fileID: 820146133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 250, y: -680}
-  m_SizeDelta: {x: 450, y: 120}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &143538130
 MonoBehaviour:
@@ -7780,7 +7792,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &290400226
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11610,7 +11622,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 473986058}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 780979965}
+        m_TargetAssemblyTypeName: FirebaseLogin, Assembly-CSharp
+        m_MethodName: SetPasswordVisibility
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &473986058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13101,7 +13125,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 532408115}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2074079003}
+        m_TargetAssemblyTypeName: FirebaseRegistration, Assembly-CSharp
+        m_MethodName: SetPasswordVisibility
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &532893705
 GameObject:
   m_ObjectHideFlags: 0
@@ -16866,7 +16902,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 709738402}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2074079003}
+        m_TargetAssemblyTypeName: FirebaseRegistration, Assembly-CSharp
+        m_MethodName: HandleRegistration
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &709738402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19027,6 +19075,7 @@ GameObject:
   - component: {fileID: 780979964}
   - component: {fileID: 780979963}
   - component: {fileID: 780979965}
+  - component: {fileID: 780979966}
   m_Layer: 5
   m_Name: LoginPanel
   m_TagString: Untagged
@@ -19106,10 +19155,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   emailInput: {fileID: 596658925}
   passwordInput: {fileID: 721430805}
-  seeOnButton: {fileID: 473986057}
-  seeOffButton: {fileID: 1668848912}
-  loginButton: {fileID: 50657910}
   statusText: {fileID: 896111408}
+--- !u!114 &780979966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780979961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26e84a1bc27655f4a8d6f12cbad51cbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seeOn: {fileID: 473986056}
+  seeOff: {fileID: 1668848911}
+  password: {fileID: 721430805}
 --- !u!1 &781165146
 GameObject:
   m_ObjectHideFlags: 0
@@ -20819,7 +20880,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 876589495}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2074079003}
+        m_TargetAssemblyTypeName: FirebaseRegistration, Assembly-CSharp
+        m_MethodName: SetPasswordVisibility
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &883017988
 GameObject:
   m_ObjectHideFlags: 0
@@ -33889,10 +33962,10 @@ RectTransform:
   - {fileID: 673897135}
   m_Father: {fileID: 820146133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 250, y: -400}
-  m_SizeDelta: {x: 450, y: 120}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1485856305
 MonoBehaviour:
@@ -37716,7 +37789,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1668848913}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 780979965}
+        m_TargetAssemblyTypeName: FirebaseLogin, Assembly-CSharp
+        m_MethodName: SetPasswordVisibility
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1668848913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40395,10 +40480,10 @@ RectTransform:
   - {fileID: 180996578}
   m_Father: {fileID: 820146133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 250, y: -120}
-  m_SizeDelta: {x: 450, y: 120}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1840189023
 MonoBehaviour:
@@ -41722,10 +41807,10 @@ RectTransform:
   - {fileID: 1383033354}
   m_Father: {fileID: 820146133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 250, y: -540}
-  m_SizeDelta: {x: 450, y: 120}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1901077345
 MonoBehaviour:
@@ -46851,6 +46936,7 @@ GameObject:
   - component: {fileID: 2074079005}
   - component: {fileID: 2074079004}
   - component: {fileID: 2074079003}
+  - component: {fileID: 2074079007}
   m_Layer: 5
   m_Name: Res
   m_TagString: Untagged
@@ -46872,9 +46958,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   emailInput: {fileID: 83796618}
   passwordInput: {fileID: 1300210200}
-  seeOnButton: {fileID: 532408117}
-  seeOffButton: {fileID: 876589497}
-  registerButton: {fileID: 709738401}
   statusText: {fileID: 328271612}
 --- !u!114 &2074079004
 MonoBehaviour:
@@ -46934,6 +47017,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2074079007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074079002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26e84a1bc27655f4a8d6f12cbad51cbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seeOn: {fileID: 532408113}
+  seeOff: {fileID: 876589493}
+  password: {fileID: 1300210200}
 --- !u!1 &2075985348
 GameObject:
   m_ObjectHideFlags: 0

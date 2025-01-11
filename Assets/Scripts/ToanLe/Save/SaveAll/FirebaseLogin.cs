@@ -10,9 +10,6 @@ public class FirebaseLogin : MonoBehaviour
     [Header("UI Elements")]
     public InputField emailInput;
     public InputField passwordInput;
-    public Button seeOnButton;
-    public Button seeOffButton;
-    public Button loginButton;
     public TextMeshProUGUI statusText;
     bool isLog = true;
     private void Awake()
@@ -36,16 +33,11 @@ public class FirebaseLogin : MonoBehaviour
     }
     private void InitializeUI()
     {
-        loginButton.onClick.AddListener(HandleLogin);
-
-        seeOnButton.onClick.AddListener(() => SetPasswordVisibility(true));
-        seeOffButton.onClick.AddListener(() => SetPasswordVisibility(false));
-
         SetPasswordVisibility(false);
         statusText.text = string.Empty;
     }
 
-    private void HandleLogin()
+    public void HandleLogin()
     {
         string email = emailInput.text;
         string password = passwordInput.text;
@@ -66,7 +58,7 @@ public class FirebaseLogin : MonoBehaviour
         Login(email, password);
     }
 
-    private void Login(string email, string password)
+    public void Login(string email, string password)
     {
         statusText.text = "Đang đăng nhập...";
 
@@ -85,12 +77,9 @@ public class FirebaseLogin : MonoBehaviour
         });
     }
 
-    private void SetPasswordVisibility(bool visible)
+    public void SetPasswordVisibility(bool visible)
     {
         passwordInput.contentType = visible ? InputField.ContentType.Standard : InputField.ContentType.Password;
         passwordInput.ForceLabelUpdate();
-
-        seeOnButton.gameObject.SetActive(!visible);
-        seeOffButton.gameObject.SetActive(visible);
     }
 }
