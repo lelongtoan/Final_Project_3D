@@ -19,6 +19,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] GameObject achievementMenu;
     [SerializeField] GameObject settingMenu;
     [SerializeField] GameObject loginMenu;
+    [SerializeField] GameObject resMenu;
     [SerializeField] GameObject accountMenu;
     [SerializeField] GameObject languageMenu;
     [SerializeField] GameObject startGameMenu;
@@ -113,19 +114,21 @@ public class MainMenuManager : MonoBehaviour
         sound.PlaySound("Button");
         settingMenu.SetActive(!settingMenu.activeInHierarchy);
     }
+    public void SetAccount()
+    {
+        sound.PlaySound("Button");
+        accountMenu.SetActive(!accountMenu.activeInHierarchy);
+    }
     public void SetLoginMenu()
     {
-
-        if (settingPanel.isLogin == true)
-        {
-            sound.PlaySound("Button");
-            accountMenu.SetActive(!accountMenu.activeInHierarchy);  // Kiểm tra biến đúng tên
-        }
-        else
-        {
-            sound.PlaySound("Button");
-            loginMenu.SetActive(!loginMenu.activeInHierarchy);
-        }
+        sound.PlaySound("Button");
+        loginMenu.SetActive(!loginMenu.activeInHierarchy);
+    }
+    
+    public void SetResMenu()
+    {
+        sound.PlaySound("Button");
+        resMenu.SetActive(!resMenu.activeInHierarchy);
     }
     public void SetLanguageMenu()
     {
