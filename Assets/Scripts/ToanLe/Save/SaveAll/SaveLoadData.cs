@@ -18,6 +18,11 @@ public class SaveLoadData : MonoBehaviour
     }
     void Start()
     {
+        if (auth.CurrentUser != null)
+        {
+            SaveData();
+            LoadData();
+        }
         // Khởi tạo Firebase
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task =>
         {
