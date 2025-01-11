@@ -86,7 +86,7 @@ public class SaveInGame : MonoBehaviour
             }
             startData.data[i].isSave = true;
             startData.data[i].level = saveData._07_level;
-            startData.data[i].point = saveData._07_level * 10;
+            startData.data[i].point = saveData._00_point;
             //Debug.Log(saveData.saveDatas[i].level.ToString());
         }
     }
