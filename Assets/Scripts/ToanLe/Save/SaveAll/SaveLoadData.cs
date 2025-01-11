@@ -15,14 +15,10 @@ public class SaveLoadData : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        auth = FirebaseAuth.DefaultInstance;
     }
     void Start()
     {
-        if (auth.CurrentUser != null)
-        {
-            SaveData();
-            LoadData();
-        }
         // Khởi tạo Firebase
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task =>
         {
@@ -30,6 +26,11 @@ public class SaveLoadData : MonoBehaviour
             auth = FirebaseAuth.DefaultInstance; // Khởi tạo Firebase Auth
             reference = FirebaseDatabase.DefaultInstance.RootReference;
         });
+        if (auth.CurrentUser != null)
+        {
+            SaveData();
+            LoadData();
+        }
     }
 
     // Lưu dữ liệu lên Firebase
