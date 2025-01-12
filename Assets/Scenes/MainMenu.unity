@@ -520,10 +520,10 @@ RectTransform:
   - {fileID: 1437205175}
   m_Father: {fileID: 820146133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 250, y: -260}
-  m_SizeDelta: {x: 450, y: 120}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &12156966
 MonoBehaviour:
@@ -3897,10 +3897,10 @@ RectTransform:
   - {fileID: 1944014449}
   m_Father: {fileID: 820146133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 250, y: -680}
-  m_SizeDelta: {x: 450, y: 120}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &143538130
 MonoBehaviour:
@@ -5614,7 +5614,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &204276456
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7792,7 +7792,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &290400226
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8037,10 +8037,10 @@ RectTransform:
   - {fileID: 2066962755}
   m_Father: {fileID: 250088249}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 800, y: -500}
+  m_SizeDelta: {x: 400, y: 650}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &303227617
 MonoBehaviour:
@@ -18598,10 +18598,10 @@ RectTransform:
   - {fileID: 550209274}
   m_Father: {fileID: 250088249}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1300, y: -500}
+  m_SizeDelta: {x: 400, y: 650}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &774829560
 MonoBehaviour:
@@ -18903,7 +18903,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &780979962
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19706,13 +19706,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 813009312}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c04b0f0fb55fe84cb46ed7c150e697b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  list: {fileID: 11400000, guid: f92c75137ebf5fd4c9960385aa525300, type: 2}
-  perkEquipment: {fileID: 11400000, guid: c0decddccdc3da64ab1dee7f22012888, type: 2}
+  stats: {fileID: 11400000, guid: 5d729e226f472e749b2218f573329a0b, type: 2}
 --- !u!1 &814600069
 GameObject:
   m_ObjectHideFlags: 0
@@ -21419,6 +21418,7 @@ GameObject:
   - component: {fileID: 910309108}
   - component: {fileID: 910309110}
   - component: {fileID: 910309109}
+  - component: {fileID: 910309111}
   m_Layer: 0
   m_Name: SaveGame
   m_TagString: Untagged
@@ -21543,20 +21543,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40550e2ea64e17b48a24e17e4f6058b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saveAllData:
-    _01_countBoss: 0
-    _02_countEnemy: 0
-    _03_countGold: 0
-    _04_countSignIn: 0
-    _05_maxLevel: 0
-    _06_money: 0
-    _07_diamond: 0
-    _08_ironKey: 0
-    _09_silverKey: 0
-    _10_perks: []
-    _11_listPerk: []
-    _12_skillNode: []
-    _13_achies: []
   temp: {fileID: 910309110}
 --- !u!114 &910309110
 MonoBehaviour:
@@ -21590,6 +21576,18 @@ MonoBehaviour:
   listPerkData: {fileID: 11400000, guid: b632495c1126eb045a5945770e8507f2, type: 2}
   listSkillNode: {fileID: 11400000, guid: f92c75137ebf5fd4c9960385aa525300, type: 2}
   listAchievement: {fileID: 11400000, guid: 21a7e283c705b024f86e1265ff9e7039, type: 2}
+--- !u!114 &910309111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910309104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: add43d719ae265348b29b7b843e700c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &911862786
 GameObject:
   m_ObjectHideFlags: 0
@@ -23683,10 +23681,10 @@ RectTransform:
   - {fileID: 1341761486}
   m_Father: {fileID: 250088249}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 300, y: -500}
+  m_SizeDelta: {x: 400, y: 650}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &996824326
 MonoBehaviour:
@@ -33863,10 +33861,10 @@ RectTransform:
   - {fileID: 673897135}
   m_Father: {fileID: 820146133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 250, y: -400}
-  m_SizeDelta: {x: 450, y: 120}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1485856305
 MonoBehaviour:
@@ -40381,10 +40379,10 @@ RectTransform:
   - {fileID: 180996578}
   m_Father: {fileID: 820146133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 250, y: -120}
-  m_SizeDelta: {x: 450, y: 120}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1840189023
 MonoBehaviour:
@@ -40563,9 +40561,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 910309109}
-        m_TargetAssemblyTypeName: SaveLoadData, Assembly-CSharp
-        m_MethodName: SaveData
+      - m_Target: {fileID: 910309110}
+        m_TargetAssemblyTypeName: SaveAllTemp, Assembly-CSharp
+        m_MethodName: SaveMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -41708,10 +41706,10 @@ RectTransform:
   - {fileID: 1383033354}
   m_Father: {fileID: 820146133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 250, y: -540}
-  m_SizeDelta: {x: 450, y: 120}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1901077345
 MonoBehaviour:
