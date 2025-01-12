@@ -7,7 +7,7 @@ public class Account : MonoBehaviour
     private FirebaseAuth auth;
     public Text accounTxt;
 
-    private void Awake()
+    private void Start()
     {
         auth = FirebaseAuth.DefaultInstance;
     }

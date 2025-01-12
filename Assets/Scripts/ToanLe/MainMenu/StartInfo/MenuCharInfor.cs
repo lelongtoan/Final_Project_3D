@@ -11,10 +11,6 @@ public class MenuCharInfor : MonoBehaviour
     [SerializeField] TextMeshProUGUI mpText;
     [SerializeField] TextMeshProUGUI defText;
     [SerializeField] TextMeshProUGUI dmgText;
-    private void Awake()
-    {
-        Set();
-    }
     private void Update()
     {
         Set();

@@ -24,29 +24,41 @@ public class SaveAllTemp : MonoBehaviour
         saveAllData._07_diamond = inforMenu.diamond;
         saveAllData._08_ironKey = inforMenu.ironKey;
         saveAllData._09_silverKey = inforMenu.silverKey;
+        saveAllData._10_perks.Clear();
         for (int i = 0; i < equipPerk.equippedPerks.Count; i++)
         {
-            saveAllData._10_perks[i]._01_id = i;
-            saveAllData._10_perks[i]._02_idPerk = equipPerk.equippedPerks[i] != null ? equipPerk.equippedPerks[i].id : -1;
+            EquipPerk data = new EquipPerk();
+            data._01_id = i;
+            data._02_idPerk = equipPerk.equippedPerks[i] != null ? equipPerk.equippedPerks[i].id : -1;
+            saveAllData._10_perks.Add(data);
         }
         listPerkData.Set();
+        saveAllData._11_listPerk.Clear();
         for (int i = 0; i < listPerkData.listPerk.Count; i++)
         {
-            saveAllData._11_listPerk[i]._01_id = i;
-            saveAllData._11_listPerk[i]._02_idPerk = listPerkData.listPerk[i].id;
-            saveAllData._11_listPerk[i]._03_statePerk = (int)listPerkData.listPerk[i].perkState;
-            saveAllData._11_listPerk[i]._04_levelPerk = listPerkData.listPerk[i].levelPerk;
-            saveAllData._11_listPerk[i]._05_quantityPerk = listPerkData.listPerk[i].quantity;
+            Perks data = new Perks();
+            data._01_id = i;
+            data._02_idPerk = listPerkData.listPerk[i].id;
+            data._03_statePerk = (int)listPerkData.listPerk[i].perkState;
+            data._04_levelPerk = listPerkData.listPerk[i].levelPerk;
+            data._05_quantityPerk = listPerkData.listPerk[i].quantity;
+            saveAllData._11_listPerk.Add(data);
         }
+        saveAllData._12_skillNode.Clear();
         for (int i = 0; i < listSkillNode.dataSkillNode.Count; i++)
         {
-            saveAllData._12_skillNode[i]._01_id = i;
-            saveAllData._12_skillNode[i]._02_state = (int)listSkillNode.dataSkillNode[i].state;
+            SkillNodes data = new SkillNodes();
+            data._01_id = i;
+            data._02_state = (int)listSkillNode.dataSkillNode[i].state;
+            saveAllData._12_skillNode.Add(data);
         }
+        saveAllData._13_achies.Clear();
         for (int i = 0; i < listAchievement.listAchievement.Count; i++)
         {
-            saveAllData._13_achies[i]._01_id = i;
-            saveAllData._13_achies[i]._02_state = (int)listAchievement.listAchievement[i].stateAchievement;
+            Achies data = new Achies();
+            data._01_id = i;
+            data._02_state = (int)listAchievement.listAchievement[i].stateAchievement;
+            saveAllData._13_achies.Add(data);
         }
         SaveLoadData.instance.SaveData();
     }
