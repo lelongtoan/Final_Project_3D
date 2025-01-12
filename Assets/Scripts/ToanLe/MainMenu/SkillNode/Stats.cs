@@ -5,12 +5,13 @@ using UnityEngine;
 public class Stats : MonoBehaviour
 {
     public ListSkillNode list;
-    public PerkEquipmentData perkEquipment;
+    public StatsData stats;
     private void OnEnable()
     {
-        Set();
+        SetListSkillNode();
+        stats.Set();
     }
-    public void Set()
+    public void SetListSkillNode()
     {
         list.hp = 0; list.mp = 0; list.dmg = 0; list.def = 0;
         foreach (SkillNodeData node in list.dataSkillNode)
@@ -22,14 +23,6 @@ public class Stats : MonoBehaviour
                 list.dmg += node.dmg;
                 list.def += node.def;
             }
-        }
-        perkEquipment.HP = perkEquipment.MP = perkEquipment.DEF = perkEquipment.DMG = 0;
-        foreach (PerkData data in perkEquipment.equippedPerks)
-        {
-            perkEquipment.HP += data.hp;
-            perkEquipment.MP += data.mp;
-            perkEquipment.DEF += data.def;
-            perkEquipment.DMG += data.dmg;
         }
     }
 
