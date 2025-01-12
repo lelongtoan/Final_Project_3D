@@ -4,9 +4,24 @@ using UnityEngine;
 
 public class Stats : MonoBehaviour
 {
-    public StatsData stats;
-    private void Start()
+    public ListSkillNode list;
+    private void OnEnable()
     {
-        stats.Set();
+        SetListSkillNode();
     }
+    public void SetListSkillNode()
+    {
+        list.hp = 0; list.mp = 0; list.dmg = 0; list.def = 0;
+        foreach (SkillNodeData node in list.dataSkillNode)
+        {
+            if (node.state == SkillNodeState.Taked)
+            {
+                list.hp += node.hp;
+                list.mp += node.mp;
+                list.dmg += node.dmg;
+                list.def += node.def;
+            }
+        }
+    }
+
 }

@@ -77,6 +77,23 @@ public class PerkDetail : MonoBehaviour
         {
             perk.quantity -= (int)Mathf.Pow(2, perk.levelPerk);
             perk.levelPerk++;
+            if (perk.hp > 0)
+            {
+                perk.hp++;
+            }
+            if (perk.mp > 0)
+            {
+                perk.mp++;
+            }
+            if (perk.def > 0)
+            {
+                perk.def++;
+            }
+            if (perk.dmg > 0)
+            {
+                perk.dmg++;
+            }
+            Set(perk, false);
             UpdateUI();
         }
         else

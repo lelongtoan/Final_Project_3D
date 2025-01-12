@@ -33,7 +33,6 @@ public class SaveInGame : MonoBehaviour
         PlayerPrefs.SetInt("SelectedID", id);
         PlayerPrefs.Save();
         LoadScene.instance.LoadSceneMenu("LobbyMap");
-        Debug.Log("Load fail");
     }
     public void SetCharSave(int id)
     {

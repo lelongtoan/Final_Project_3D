@@ -59,7 +59,7 @@ public class ChestSystem : MonoBehaviour
             {
                 diamondDropRate = 20f;
                 gold = Random.Range(minGold, maxGold + 1);
-                mainMenu.money += gold;
+                mainMenu.money = gold;
                 Debug.Log($"Bạn nhận được: {gold} vàng");
 
                 hasDiamond = Random.value <= (diamondDropRate / 100);
@@ -79,10 +79,7 @@ public class ChestSystem : MonoBehaviour
                         {
                             dataPerk.perkState = PerkState.Unlock;
                         }
-                        else
-                        {
-                            dataPerk.quantity++;
-                        }
+                        dataPerk.quantity++;
                     }
                     Debug.Log($"Bạn nhận được vật phẩm: {selectedItem}");
                 }
@@ -136,7 +133,6 @@ public class ChestSystem : MonoBehaviour
             GameObject go = Instantiate(itemTake);
             go.transform.SetParent(content.transform);
             go.gameObject.GetComponent<ItemTake>().Set(goldImg, gold);
-            SetItemTakePanel();
         }
         if(hasDiamond)
         {
@@ -160,6 +156,7 @@ public class ChestSystem : MonoBehaviour
                 Debug.Log("take perk Error!");
             }
         }
+        SetItemTakePanel();
 
     }
     public void OpenTenChests()
@@ -212,7 +209,6 @@ public class ChestSystem : MonoBehaviour
             GameObject go = Instantiate(itemTake);
             go.transform.SetParent(content.transform);
             go.gameObject.GetComponent<ItemTake>().Set(goldImg, totalGold);
-            SetItemTakePanel();
         }
 
         if (totalDiamonds > 0)
@@ -230,8 +226,11 @@ public class ChestSystem : MonoBehaviour
                 GameObject perk = Instantiate(itemTake);
                 perk.transform.SetParent(content.transform);
                 perk.gameObject.GetComponent<ItemTake>().Set(perkData.image, item.Value);
+                perkData.perkState = PerkState.Unlock;
+                perkData.quantity += item.Value;
             }
         }
+        SetItemTakePanel();
     }
     private int GetRandomItem()
     {

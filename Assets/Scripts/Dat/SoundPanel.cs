@@ -7,6 +7,7 @@ public class SoundPanel : MonoBehaviour
     public Slider brg_slider;
     public Slider vfx_slider;
     public SoundEffect sound;
+    public Button save;
 
     private void Start()
     {
@@ -14,6 +15,7 @@ public class SoundPanel : MonoBehaviour
         brg_slider.value = PlayerPrefs.GetFloat("MusicVolume", 1.0f);
         vfx_slider.value = PlayerPrefs.GetFloat("SFXVolume", 1.0f);
         StartCoroutine(FindPlayerSound());
+        save.onClick.AddListener(OnButtonSave);
     }
 
     IEnumerator FindPlayerSound()
@@ -44,15 +46,18 @@ public class SoundPanel : MonoBehaviour
         Debug.Log("SoundEffect initialized successfully.");
     }
 
-    public void OnButtonSave()
+    void OnButtonSave()
     {
         Time.timeScale = 1;
-        if (sound == null)
+        if (save != null)
         {
-            sound = FindObjectOfType<SoundEffect>();
+            if (sound == null)
+            {
+                sound = FindObjectOfType<SoundEffect>();
+            }
+            gameObject.SetActive(false);
+            sound.PlaySound("Button");
         }
-        gameObject.SetActive(false);
-        sound.PlaySound("Button");
     }
 
     void OnToggleMusicChaged(bool b)

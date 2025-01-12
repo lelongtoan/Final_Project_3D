@@ -1,5 +1,4 @@
 ﻿using Firebase.Auth;
-using Firebase.Extensions;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,8 +12,11 @@ public class FirebaseLogin : MonoBehaviour
     public InputField passwordInput;
     public TextMeshProUGUI statusText;
     bool isLog = true;
-    private void Awake()
+
+    
+    private void Start()
     {
+        InitializeUI();
         auth = FirebaseAuth.DefaultInstance;
     }
     private void Update()
@@ -28,10 +30,6 @@ public class FirebaseLogin : MonoBehaviour
             statusText.text = "Đăng nhập thất bại. Vui lòng thử lại!";
         }
     }
-    private void Start()
-    {
-        InitializeUI();
-    }
     private void InitializeUI()
     {
         SetPasswordVisibility(false);
@@ -43,16 +41,16 @@ public class FirebaseLogin : MonoBehaviour
         string email = emailInput.text;
         string password = passwordInput.text;
 
-        if (string.IsNullOrEmpty(email) && string.IsNullOrEmpty(password))
+        if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
         {
             statusText.text = "Vui lòng nhập email và mật khẩu.";
             return;
         }
-        if (string.IsNullOrEmpty(email))
+        else if (string.IsNullOrEmpty(email))
         {
             statusText.text = "Vui lòng nhập email.";
         }
-        if(string.IsNullOrEmpty(password))
+        else if(string.IsNullOrEmpty(password))
         {
             statusText.text = "Vui lòng nhập mật khẩu.";
         }
@@ -63,7 +61,7 @@ public class FirebaseLogin : MonoBehaviour
     {
         statusText.text = "Đang đăng nhập...";
 
-        FirebaseAuth.DefaultInstance.SignInWithEmailAndPasswordAsync(email, password).ContinueWithOnMainThread(task =>
+        auth.SignInWithEmailAndPasswordAsync(email, password).ContinueWith(task =>
         {
             if (task.IsCanceled || task.IsFaulted)
             {
