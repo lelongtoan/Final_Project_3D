@@ -1,4 +1,5 @@
 ﻿using Firebase.Auth;
+using Firebase.Extensions;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -42,16 +43,16 @@ public class FirebaseLogin : MonoBehaviour
         string email = emailInput.text;
         string password = passwordInput.text;
 
-        if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+        if (string.IsNullOrEmpty(email) && string.IsNullOrEmpty(password))
         {
             statusText.text = "Vui lòng nhập email và mật khẩu.";
             return;
         }
-        else if (string.IsNullOrEmpty(email))
+        if (string.IsNullOrEmpty(email))
         {
             statusText.text = "Vui lòng nhập email.";
         }
-        else if(string.IsNullOrEmpty(password))
+        if(string.IsNullOrEmpty(password))
         {
             statusText.text = "Vui lòng nhập mật khẩu.";
         }
@@ -62,7 +63,7 @@ public class FirebaseLogin : MonoBehaviour
     {
         statusText.text = "Đang đăng nhập...";
 
-        auth.SignInWithEmailAndPasswordAsync(email, password).ContinueWith(task =>
+        FirebaseAuth.DefaultInstance.SignInWithEmailAndPasswordAsync(email, password).ContinueWithOnMainThread(task =>
         {
             if (task.IsCanceled || task.IsFaulted)
             {

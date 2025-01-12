@@ -1,4 +1,5 @@
 ﻿using Firebase.Auth;
+using Firebase.Extensions;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -40,10 +41,18 @@ public class FirebaseRegistration : MonoBehaviour
         string email = emailInput.text;
         string password = passwordInput.text;
 
-        if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+        if (string.IsNullOrEmpty(email) && string.IsNullOrEmpty(password))
         {
             statusText.text = "Vui lòng nhập email và mật khẩu.";
             return;
+        }
+        else if (string.IsNullOrEmpty(email))
+        {
+            statusText.text = "Vui lòng nhập email.";
+        }
+        else if (string.IsNullOrEmpty(password))
+        {
+            statusText.text = "Vui lòng nhập mật khẩu.";
         }
 
         CreateAccount(email, password);
@@ -53,7 +62,7 @@ public class FirebaseRegistration : MonoBehaviour
     {
         statusText.text = "Đang tạo tài khoản...";
 
-        auth.CreateUserWithEmailAndPasswordAsync(email, password).ContinueWith(task =>
+        auth.CreateUserWithEmailAndPasswordAsync(email, password).ContinueWithOnMainThread(task =>
         {
             if (task.IsCanceled || task.IsFaulted)
             {

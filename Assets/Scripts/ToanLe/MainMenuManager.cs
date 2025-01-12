@@ -84,12 +84,10 @@ public class MainMenuManager : MonoBehaviour
     }
     public void SetCharMenu()
     {
-        sound.PlaySound("Button");
         characterMenu.SetActive(!characterMenu.activeInHierarchy);
     }
     public void SetPerkMenu(int i = 1)
     {
-        sound.PlaySound("Button");
         if (i != 1) 
             ShowListPerk.instance.DisplayUnlockedPerks(-1,false);
         perkMenu.SetActive(!perkMenu.activeInHierarchy);
