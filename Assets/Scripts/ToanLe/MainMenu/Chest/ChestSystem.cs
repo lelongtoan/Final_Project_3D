@@ -85,6 +85,10 @@ public class ChestSystem : MonoBehaviour
                 }
                 mainMenu.silverKey--;
             }
+            else
+            {
+                ReportMain.instance.SetReport("Không Đủ Chìa Khóa.");
+            }
         }
         else
         {
@@ -121,6 +125,10 @@ public class ChestSystem : MonoBehaviour
                 }
                 mainMenu.ironKey--;
             }
+            else
+            {
+                ReportMain.instance.SetReport("Không Đủ Chìa Khóa.");
+            }
         }
         foreach (Transform child in content.transform)
         {
@@ -150,13 +158,13 @@ public class ChestSystem : MonoBehaviour
                 perk.transform.SetParent(content.transform);
                 perk.gameObject.GetComponent<ItemTake>().Set(perkData.image, 1);
 
+                SetItemTakePanel();
             }
             else
             {
                 Debug.Log("take perk Error!");
             }
         }
-        SetItemTakePanel();
 
     }
     public void OpenTenChests()
@@ -228,9 +236,9 @@ public class ChestSystem : MonoBehaviour
                 perk.gameObject.GetComponent<ItemTake>().Set(perkData.image, item.Value);
                 perkData.perkState = PerkState.Unlock;
                 perkData.quantity += item.Value;
+                SetItemTakePanel();
             }
         }
-        SetItemTakePanel();
     }
     private int GetRandomItem()
     {

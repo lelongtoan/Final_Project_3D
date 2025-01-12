@@ -22,12 +22,6 @@ public class AchievementGO : MonoBehaviour
     [SerializeField] float width;
     [SerializeField] float height;
     RectTransform rectTransform;
-    void SetClose()
-    {
-        completeGO.SetActive(false);
-        takeGO.SetActive(false);
-        quaCountGO.SetActive(false);
-    }
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -37,18 +31,22 @@ public class AchievementGO : MonoBehaviour
         rectTransform.sizeDelta = new Vector2(width, height);
         if (data.stateAchievement == StateAchie.Nope)
         {
-            SetClose();
+
+            completeGO.SetActive(false);
+            takeGO.SetActive(false);
             quaCountGO.SetActive(true);
         }
         else if (data.stateAchievement == StateAchie.Completed)
         {
-            SetClose();
+            takeGO.SetActive(false);
+            quaCountGO.SetActive(false);
             completeGO.SetActive(true);
             
         }
         else
         {
-            SetClose();
+            completeGO.SetActive(false);
+            quaCountGO.SetActive(false);
             takeGO.SetActive(true);
         }
     }

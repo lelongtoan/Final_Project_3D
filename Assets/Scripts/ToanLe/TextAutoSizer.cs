@@ -5,10 +5,14 @@ public class TextAutoSizer : MonoBehaviour
 {
     public int minFontSize = 6; // Kích thước font nhỏ nhất
     public int maxFontSize = 72; // Kích thước font lớn nhất
+    public CanvasScaler canvasScaler; // CanvasScaler cần kiểm soát
 
     private void Update()
     {
-        Text[] allTexts = FindObjectsOfType<Text>(true);
+        if (canvasScaler == null) return;
+
+        // Lấy tất cả các Text trong Canvas được quản lý bởi CanvasScaler
+        Text[] allTexts = canvasScaler.GetComponentInParent<Canvas>().GetComponentsInChildren<Text>(true);
 
         // Áp dụng AutoSizeText cho từng Text
         foreach (Text text in allTexts)

@@ -33,7 +33,9 @@ public class FirebaseLogin : MonoBehaviour
     private void InitializeUI()
     {
         SetPasswordVisibility(false);
-        statusText.text = string.Empty;
+        statusText.text = "";
+        emailInput.text = "";
+        passwordInput.text = "";
     }
 
     public void HandleLogin()
