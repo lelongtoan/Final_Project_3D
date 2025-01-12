@@ -79,10 +79,7 @@ public class ChestSystem : MonoBehaviour
                         {
                             dataPerk.perkState = PerkState.Unlock;
                         }
-                        else
-                        {
-                            dataPerk.quantity++;
-                        }
+                        dataPerk.quantity++;
                     }
                     Debug.Log($"Bạn nhận được vật phẩm: {selectedItem}");
                 }
@@ -229,6 +226,8 @@ public class ChestSystem : MonoBehaviour
                 GameObject perk = Instantiate(itemTake);
                 perk.transform.SetParent(content.transform);
                 perk.gameObject.GetComponent<ItemTake>().Set(perkData.image, item.Value);
+                perkData.perkState = PerkState.Unlock;
+                perkData.quantity += item.Value;
             }
         }
         SetItemTakePanel();
