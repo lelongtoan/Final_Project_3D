@@ -14,7 +14,11 @@ public class ItemShopDetail : MonoBehaviour
     [SerializeField] TextMeshProUGUI quanPriceTxt;
     [SerializeField] Button buttonBuy;
     //[SerializeField] Button buttonWatch;
-
+    SoundEffect sound;
+    private void Start()
+    {
+        sound = FindObjectOfType<SoundEffect>();
+    }
     private void Awake()
     {
         buttonBuy.onClick.AddListener(Buy);
@@ -50,6 +54,7 @@ public class ItemShopDetail : MonoBehaviour
                 return;
             MainMenuInstance.instance.inforMenu.money -= shopData.price;
             ReportMain.instance.SetReport("Đã Mua Thành Công.");
+            sound.PlaySound("Coin");
         }
         else if(shopData.priceType == StatePrice.Diamond)
         {
@@ -57,6 +62,7 @@ public class ItemShopDetail : MonoBehaviour
                 return;
             MainMenuInstance.instance.inforMenu.diamond -= shopData.price;
             ReportMain.instance.SetReport("Đã Mua Thành Công.");
+            sound.PlaySound("Coin");
         }
 
         if (shopData.buyType == ItemBuy.Nope)
@@ -86,5 +92,6 @@ public class ItemShopDetail : MonoBehaviour
                 MainMenuInstance.instance.inforMenu.diamond += shopData.quanlity;
             }
         }
+        
     }
 }
