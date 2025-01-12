@@ -20715,7 +20715,7 @@ MonoBehaviour:
   npcChats: {fileID: 11400000, guid: 8918ec1e9d043fb47a5683a1f938204f, type: 2}
   nameText: {fileID: 3830459674678574843}
   avatarImage: {fileID: 7975084279230326704}
-  dialogueText: {fileID: 2598593836766959104}
+  dialogueText: {fileID: 0}
   currentChatIndex: 0
   currentLine: 0
 --- !u!1 &6411144386678012689

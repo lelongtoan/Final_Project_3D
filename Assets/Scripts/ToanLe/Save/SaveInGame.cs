@@ -1,5 +1,4 @@
-﻿using Firebase.Auth;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,10 +11,8 @@ public class SaveInGame : MonoBehaviour
     public int idSelect;
 
     public StartData startData;
-    private FirebaseAuth auth;
     private void Awake()
     {
-        auth = FirebaseAuth.DefaultInstance;
         instance = this;
         LoadPanelChar();
     }
@@ -54,10 +51,6 @@ public class SaveInGame : MonoBehaviour
         PlayerPrefs.SetInt("SelectedID", idSelect);
         PlayerPrefs.Save();
         Debug.Log("New Player Success");
-        if (auth.CurrentUser != null)
-        {
-            SaveLoadData.instance.SaveData();
-        }
         LoadScene.instance.LoadSceneMenu("LobbyMap");
     }
     public void DetelePlayer(int id)
