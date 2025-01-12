@@ -10,6 +10,7 @@ public class SaveLoadData : MonoBehaviour
     public static SaveLoadData instance;
     private DatabaseReference reference;
     private FirebaseAuth auth;
+    [SerializeField] SaveAllData saveAllData;
     [SerializeField] SaveAllTemp temp;
     private void Awake()
     {
@@ -38,10 +39,8 @@ public class SaveLoadData : MonoBehaviour
         if (auth.CurrentUser != null)
         {
             string email = auth.CurrentUser.Email; // Lấy email người dùng
-            Debug.Log(email);
             string safeEmail = email.Replace("@", "_").Replace(".", "_"); // Firebase không cho phép dấu @ và . trong tên đường dẫn, thay bằng dấu _
-            Debug.Log(safeEmail);
-            string json = JsonUtility.ToJson(temp.saveAllData); // Chuyển đổi dữ liệu thành JSON
+            string json = JsonUtility.ToJson(saveAllData); // Chuyển đổi dữ liệu thành JSON
 
             // Lưu dữ liệu vào Firebase theo email của người dùng
             reference.Child("users").Child(safeEmail).Child("saveData").SetRawJsonValueAsync(json)
@@ -130,8 +129,8 @@ public class SaveLoadData : MonoBehaviour
                         else
                         {
                             Debug.Log("Dữ liệu chính đã được tải thành công!");
-                            temp.saveAllData = loadedData;
-                            temp.LoadMenu(temp.saveAllData); // Cập nhật dữ liệu hiện tại với dữ liệu đã tải
+                            saveAllData = loadedData;
+                            temp.LoadMenu(saveAllData); // Cập nhật dữ liệu hiện tại với dữ liệu đã tải
                         }
                     }
                     else

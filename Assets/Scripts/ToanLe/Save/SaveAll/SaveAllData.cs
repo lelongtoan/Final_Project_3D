@@ -67,7 +67,7 @@ public class SaveAllData
     public int _08_ironKey;
     public int _09_silverKey;
 
-    public List<EquipPerk> _10_perks = new List<EquipPerk>();
+    public List<EquipPerk> _10_perks = new List<EquipPerk>();//max 3
     public List<Perks> _11_listPerk = new List<Perks>();
     public List<SkillNodes> _12_skillNode = new List<SkillNodes>();
     public List<Achies> _13_achies = new List<Achies>();
