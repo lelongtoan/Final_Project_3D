@@ -23,6 +23,17 @@ public class Account : MonoBehaviour
             accounTxt.text = "Chưa đăng nhập";
         }
     }
+    private void Update()
+    {
+        if (auth.CurrentUser != null)
+        {
+            accounTxt.text = auth.CurrentUser.Email;
+        }
+        else
+        {
+            accounTxt.text = "Chưa đăng nhập";
+        }
+    }
     public void Logout()
     {
         auth.SignOut();  // Đăng xuất người dùng

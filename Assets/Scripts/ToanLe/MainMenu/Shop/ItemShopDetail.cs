@@ -85,6 +85,10 @@ public class ItemShopDetail : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSho
                 }
             }
             // Cấp phần thưởng cho người chơi (có thể là tiền, vật phẩm,...)
+            buttonWatch.onClick.AddListener(ShowAd);
+            // Bật nút để người dùng có thể nhấn vào:
+            buttonWatch.interactable = true;
+            LoadAd();
         }
     }
 
@@ -140,14 +144,21 @@ public class ItemShopDetail : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSho
         if(shopData.priceType == StatePrice.Money)
         {
             if (MainMenuInstance.instance.inforMenu.money < shopData.price)
+            {
+                ReportMain.instance.SetReport("Không đủ tiền .");
                 return;
+            }
             MainMenuInstance.instance.inforMenu.money -= shopData.price;
             ReportMain.instance.SetReport("Đã Mua Thành Công.");
         }
         else if(shopData.priceType == StatePrice.Diamond)
         {
             if (MainMenuInstance.instance.inforMenu.diamond < shopData.price)
+            {
+                ReportMain.instance.SetReport("Không đủ tiền .");
                 return;
+            }
+
             MainMenuInstance.instance.inforMenu.diamond -= shopData.price;
             ReportMain.instance.SetReport("Đã Mua Thành Công.");
         }

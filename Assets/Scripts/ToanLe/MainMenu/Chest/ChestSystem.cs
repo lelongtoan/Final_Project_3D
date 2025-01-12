@@ -178,6 +178,7 @@ public class ChestSystem : MonoBehaviour
     {
         if (mainMenu.silverKey < 10)
         {
+            ReportMain.instance.SetReport("Không Đủ Chìa Khóa.");
             return;
         }
         sound.PlaySound("Coin");
