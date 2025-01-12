@@ -22,7 +22,12 @@ public class ChestSystem : MonoBehaviour
     public GameObject itemTake;
     public GameObject itemTakePanel;
     public GameObject content;
+    SoundEffect sound;
 
+    private void Start()
+    {
+        sound = FindObjectOfType<SoundEffect>();
+    }
     private void Awake()
     {
         sPerk = new List<PerkData>();
@@ -84,6 +89,7 @@ public class ChestSystem : MonoBehaviour
                     Debug.Log($"Bạn nhận được vật phẩm: {selectedItem}");
                 }
                 mainMenu.silverKey--;
+                sound.PlaySound("Coin");
             }
             else
             {
@@ -124,6 +130,7 @@ public class ChestSystem : MonoBehaviour
                     Debug.Log($"Bạn nhận được vật phẩm: {selectedItem}");
                 }
                 mainMenu.ironKey--;
+                sound.PlaySound("Coin");
             }
             else
             {
@@ -169,6 +176,11 @@ public class ChestSystem : MonoBehaviour
     }
     public void OpenTenChests()
     {
+        if (mainMenu.silverKey < 10)
+        {
+            return;
+        }
+        sound.PlaySound("Coin");
         int totalGold = 0;
         int totalDiamonds = 0;
         Dictionary<int, int> itemCounts = new Dictionary<int, int>();
