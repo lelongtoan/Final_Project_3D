@@ -10,7 +10,7 @@ public class NPCChat : MonoBehaviour
     public ListNPCChat npcChats;
     public TextMeshProUGUI nameText;
     public Image avatarImage;
-    public Text dialogueText;
+    public TextMeshProUGUI dialogueText;
 
     public int currentChatIndex = 0;
     public int currentLine = 0;
