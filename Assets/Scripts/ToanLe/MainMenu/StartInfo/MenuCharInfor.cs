@@ -16,10 +16,6 @@ public class MenuCharInfor : MonoBehaviour
     {
         Set();
     }
-    private void Update()
-    {
-        Set();
-    }
     public void Set()
     {
         statsData.Set();
