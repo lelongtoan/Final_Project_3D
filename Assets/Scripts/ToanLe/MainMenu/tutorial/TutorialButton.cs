@@ -9,8 +9,10 @@ public class TutorialButton : MonoBehaviour
     [SerializeField] GameObject tutorialPanel;
     [SerializeField] List<TutorialData> tutorialData;
     Button button;
+    SoundEffect soundEffect;
     private void Start()
     {
+        soundEffect = FindObjectOfType<SoundEffect>();
         button = GetComponent<Button>();
         button.onClick.AddListener(SetDataTuto);
     }
@@ -23,6 +25,7 @@ public class TutorialButton : MonoBehaviour
             tutorialScript.currentIndex = 0;
             tutorialScript.TutorialSet();
             tutorialPanel.SetActive(true);
+            soundEffect.PlaySound("Button");
         }
         else
         {

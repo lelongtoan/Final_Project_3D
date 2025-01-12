@@ -40266,6 +40266,14 @@ MonoBehaviour:
   sounds:
   - name: Button
     clip: {fileID: 8300000, guid: b48739c2bcc637c47b98d1d328b1f549, type: 3}
+  - name: Cloth
+    clip: {fileID: 8300000, guid: 0038a6bb217641c4a88b6dda73797371, type: 3}
+  - name: UpPeak
+    clip: {fileID: 8300000, guid: 62c09947bc364394ebea7649dfbbf8dc, type: 3}
+  - name: Coin
+    clip: {fileID: 8300000, guid: 7ff53e01c9843024eafcf5c94e124288, type: 3}
+  - name: Complete
+    clip: {fileID: 8300000, guid: ade7511b185db0548ba1f8729d512f9d, type: 3}
   musicAudioSource: {fileID: 0}
   effectsAudioSource: {fileID: 0}
   soundEffectVolume: 1

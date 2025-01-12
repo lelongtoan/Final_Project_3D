@@ -9,6 +9,7 @@ using UnityEngine.UI;
 
 public class AchievementGO : MonoBehaviour
 {
+    SoundEffect sound;
     public int idGoAchiement;
     [SerializeField] public Image itemRewardImage;
     [SerializeField] public GameObject completeGO;
@@ -22,6 +23,10 @@ public class AchievementGO : MonoBehaviour
     [SerializeField] float width;
     [SerializeField] float height;
     RectTransform rectTransform;
+    private void Start()
+    {
+        sound = FindObjectOfType<SoundEffect>();
+    }
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();

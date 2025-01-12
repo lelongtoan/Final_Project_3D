@@ -14,8 +14,12 @@ public class PerkDetail : MonoBehaviour
     [SerializeField] TextMeshProUGUI quantityText;
     [SerializeField] TextMeshProUGUI levelText;
     [SerializeField] Button buttonPerk;
-
+    SoundEffect sound;
     [SerializeField] PerkEquipmentData equipData;
+    private void Start()
+    {
+        sound = FindObjectOfType<SoundEffect>();
+    }
     public void Set(PerkData data,bool isEquip,int idEquip = -1)
     {
         this.idEquip = idEquip;
@@ -95,6 +99,7 @@ public class PerkDetail : MonoBehaviour
             }
             Set(perk, false);
             UpdateUI();
+            sound.PlaySound("UpPeak");
         }
         else
         {
