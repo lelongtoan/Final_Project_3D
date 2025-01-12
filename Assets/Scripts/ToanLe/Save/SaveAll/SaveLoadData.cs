@@ -29,7 +29,6 @@ public class SaveLoadData : MonoBehaviour
         if (auth.CurrentUser != null)
         {
             SaveData();
-            LoadData();
         }
     }
 

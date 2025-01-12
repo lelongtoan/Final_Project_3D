@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -49,12 +49,14 @@ public class ItemShopDetail : MonoBehaviour
             if (MainMenuInstance.instance.inforMenu.money < shopData.price)
                 return;
             MainMenuInstance.instance.inforMenu.money -= shopData.price;
+            ReportMain.instance.SetReport("Đã Mua Thành Công.");
         }
         else if(shopData.priceType == StatePrice.Diamond)
         {
             if (MainMenuInstance.instance.inforMenu.diamond < shopData.price)
                 return;
             MainMenuInstance.instance.inforMenu.diamond -= shopData.price;
+            ReportMain.instance.SetReport("Đã Mua Thành Công.");
         }
 
         if (shopData.buyType == ItemBuy.Nope)

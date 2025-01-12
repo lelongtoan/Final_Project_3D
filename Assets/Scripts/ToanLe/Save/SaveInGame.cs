@@ -51,6 +51,7 @@ public class SaveInGame : MonoBehaviour
         PlayerPrefs.SetInt("SelectedID", idSelect);
         PlayerPrefs.Save();
         Debug.Log("New Player Success");
+        SaveLoadData.instance.SaveData();
         LoadScene.instance.LoadSceneMenu("LobbyMap");
     }
     public void DetelePlayer(int id)

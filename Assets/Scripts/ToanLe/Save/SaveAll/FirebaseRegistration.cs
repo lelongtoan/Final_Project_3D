@@ -29,6 +29,8 @@ public class FirebaseRegistration : MonoBehaviour
     {
         SetPasswordVisibility(false);
         statusText.text = string.Empty;
+        emailInput.text = "";
+        passwordInput.text = "";
     }
 
     public void HandleRegistration()
