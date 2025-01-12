@@ -40165,6 +40165,7 @@ GameObject:
   - component: {fileID: 1900873939}
   - component: {fileID: 1900873940}
   - component: {fileID: 1900873941}
+  - component: {fileID: 1900873942}
   m_Layer: 0
   m_Name: MenuManager
   m_TagString: Untagged
@@ -40195,7 +40196,6 @@ MonoBehaviour:
   loginMenu: {fileID: 780979961}
   resMenu: {fileID: 2074079002}
   accountMenu: {fileID: 86664503}
-  languageMenu: {fileID: 0}
   startGameMenu: {fileID: 813009312}
   newCharMenu: {fileID: 1385740435}
   checkInMenu: {fileID: 1313312167}
@@ -40340,6 +40340,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reportText: {fileID: 1166136988}
   reportGameObject: {fileID: 963609613}
+--- !u!114 &1900873942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900873930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12070745677c4034fa79bc45ce0c1e73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _androidGameId: 5772067
+  _iOSGameId: 
+  _testMode: 1
 --- !u!1 &1901077343
 GameObject:
   m_ObjectHideFlags: 0

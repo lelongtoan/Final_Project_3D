@@ -64,7 +64,7 @@ public class ChestSystem : MonoBehaviour
             {
                 diamondDropRate = 20f;
                 gold = Random.Range(minGold, maxGold + 1);
-                mainMenu.money = gold;
+                mainMenu.money += gold;
                 Debug.Log($"Bạn nhận được: {gold} vàng");
 
                 hasDiamond = Random.value <= (diamondDropRate / 100);
