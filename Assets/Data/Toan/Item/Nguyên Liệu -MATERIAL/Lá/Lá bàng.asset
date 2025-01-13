@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d690ab03900124439ed5e618aa451db, type: 3}
+  m_Name: "L\xE1 b\xE0ng"
+  m_EditorClassIdentifier: 
+  id: 25
+  itemName: "L\xE1 b\xE0ng"
+  stackable: 1
+  HP: 0
+  MP: 0
+  Dmg: 0
+  buffD: 0
+  gold: 45
+  rateDrop: 35
+  description: "Ch\u1EBF t\u1EA1o d\u01B0\u1EE3c ph\u1EA9m"
+  buff: 0
+  itemSet: 0
+  itemType: 0
+  icon: {fileID: 681729330, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}

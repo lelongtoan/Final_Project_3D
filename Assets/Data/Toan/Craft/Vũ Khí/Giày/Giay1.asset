@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40abad5b0bd37894fa7585439dd7a1dd, type: 3}
   m_Name: Giay1
   m_EditorClassIdentifier: 
-  nameCraft: Giay1
+  nameCraft: "Gi\xE0y v\u1EA3i"
   resultCount: 1
   resultItem: {fileID: 11400000, guid: 98e40597a7d10f949a89170ae3752626, type: 2}
   requiredItems:

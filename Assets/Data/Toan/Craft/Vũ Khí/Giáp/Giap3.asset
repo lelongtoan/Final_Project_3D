@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40abad5b0bd37894fa7585439dd7a1dd, type: 3}
   m_Name: Giap3
   m_EditorClassIdentifier: 
-  nameCraft: Giap3
+  nameCraft: "Gi\xE1p kim c\u01B0\u01A1ng"
   resultCount: 1
   resultItem: {fileID: 11400000, guid: 0045e73bfd6a14840b72fc8a14bc831e, type: 2}
   requiredItems:

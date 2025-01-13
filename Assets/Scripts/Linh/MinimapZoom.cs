@@ -5,29 +5,18 @@ using UnityEngine.UI;
 
 public class MinimapZoom : MonoBehaviour
 {
-    public Camera minimapCamera;
-    public float zoomedInSize = 10f; 
-    public float defaultSize = 30f; 
-    private bool isZoomedIn = false; 
-    public Button zoomInOut;
+    public GameObject minimapCamera; // Camera hoặc UI của minimap
+    public GameObject largeMapPanel; // UI panel chứa bản đồ lớn
 
-    public void Start()
-    {
-        zoomInOut = GameObject.Find("Mapmini").GetComponent<Button>();
-    }
-    public void ToggleZoom()
-    {
-        if (isZoomedIn)
-        {
-            
-            minimapCamera.orthographicSize = defaultSize;
-        }
-        else
-        {
-            
-            minimapCamera.orthographicSize = zoomedInSize;
-        }
+    private bool isLargeMapActive = false; // Trạng thái bản đồ lớn
 
-        isZoomedIn = !isZoomedIn;
+    public void ToggleMap() // Đảm bảo hàm là public
+    {
+        isLargeMapActive = !isLargeMapActive;
+
+        if (minimapCamera != null) minimapCamera.SetActive(!isLargeMapActive);
+        if (largeMapPanel != null) largeMapPanel.SetActive(isLargeMapActive);
+
+        Debug.Log("Map toggled. Large map active: " + isLargeMapActive);
     }
 }

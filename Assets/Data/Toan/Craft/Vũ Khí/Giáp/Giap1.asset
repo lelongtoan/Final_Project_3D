@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40abad5b0bd37894fa7585439dd7a1dd, type: 3}
   m_Name: Giap1
   m_EditorClassIdentifier: 
-  nameCraft: Giap1
+  nameCraft: "Gi\xE1p v\u1EA3i"
   resultCount: 1
   resultItem: {fileID: 11400000, guid: b01c18a9e777f4e48a5681380a00a650, type: 2}
   requiredItems:

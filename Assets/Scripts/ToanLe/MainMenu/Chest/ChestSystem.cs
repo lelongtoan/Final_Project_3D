@@ -89,7 +89,7 @@ public class ChestSystem : MonoBehaviour
                     Debug.Log($"Bạn nhận được vật phẩm: {selectedItem}");
                 }
                 mainMenu.silverKey--;
-                sound.PlaySound("Coin");
+                sound.PlaySound("Chest");
             }
             else
             {
@@ -130,7 +130,7 @@ public class ChestSystem : MonoBehaviour
                     Debug.Log($"Bạn nhận được vật phẩm: {selectedItem}");
                 }
                 mainMenu.ironKey--;
-                sound.PlaySound("Coin");
+                sound.PlaySound("Chest");
             }
             else
             {
@@ -181,7 +181,7 @@ public class ChestSystem : MonoBehaviour
             ReportMain.instance.SetReport("Không Đủ Chìa Khóa.");
             return;
         }
-        sound.PlaySound("Coin");
+        sound.PlaySound("Chest");
         int totalGold = 0;
         int totalDiamonds = 0;
         Dictionary<int, int> itemCounts = new Dictionary<int, int>();
