@@ -1686,6 +1686,7 @@ MonoBehaviour:
   freeze: 0
   speedEff: {fileID: 1936488993998635378, guid: 88b14fae91f3b5345abdc3e7a5f29793, type: 3}
   runButton: {fileID: 0}
+  runimage: {fileID: 0}
   joystick: {fileID: 0}
   playerCam: {fileID: 7641004714079254164}
 --- !u!54 &2953578238360264623
@@ -1865,6 +1866,9 @@ MonoBehaviour:
   mpbar: {fileID: 0}
   Exp_Image: {fileID: 0}
   text: {fileID: 0}
+  hp_Text: {fileID: 0}
+  mp_Text: {fileID: 0}
+  gold_Text: {fileID: 0}
   parent: {fileID: 0}
   deadPanel: {fileID: 37135910088586535}
   reSpawn: {fileID: 0}
@@ -1924,6 +1928,9 @@ MonoBehaviour:
   skill1: {fileID: 0}
   skill2: {fileID: 0}
   skill3: {fileID: 0}
+  imageSkill1: {fileID: 0}
+  imageSkill2: {fileID: 0}
+  imageSkill3: {fileID: 0}
   dame: 0
 --- !u!114 &-2550296197586893360
 MonoBehaviour:

@@ -21,7 +21,6 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] GameObject loginMenu;
     [SerializeField] GameObject resMenu;
     [SerializeField] GameObject accountMenu;
-    [SerializeField] GameObject languageMenu;
     [SerializeField] GameObject startGameMenu;
     [SerializeField] GameObject newCharMenu;
     [SerializeField] GameObject checkInMenu;
@@ -50,7 +49,6 @@ public class MainMenuManager : MonoBehaviour
         achievementMenu.SetActive(false);
         settingMenu.SetActive(false);
         loginMenu.SetActive(false);
-        languageMenu.SetActive(false);
         startGameMenu.SetActive(false);
         newCharMenu.SetActive(false);
         checkInMenu.SetActive(false);
@@ -129,11 +127,6 @@ public class MainMenuManager : MonoBehaviour
     {
         sound.PlaySound("Button");
         resMenu.SetActive(!resMenu.activeInHierarchy);
-    }
-    public void SetLanguageMenu()
-    {
-        sound.PlaySound("Button");
-        languageMenu.SetActive(!languageMenu.activeInHierarchy);
     }
     public void SetStartMenu()
     {

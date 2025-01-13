@@ -1,5 +1,4 @@
-﻿using Firebase.Auth;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,10 +11,8 @@ public class SaveInGame : MonoBehaviour
     public int idSelect;
 
     public StartData startData;
-    private FirebaseAuth auth;
     private void Awake()
     {
-        auth = FirebaseAuth.DefaultInstance;
         instance = this;
         LoadPanelChar();
     }
@@ -36,7 +33,6 @@ public class SaveInGame : MonoBehaviour
         PlayerPrefs.SetInt("SelectedID", id);
         PlayerPrefs.Save();
         LoadScene.instance.LoadSceneMenu("LobbyMap");
-        Debug.Log("Load fail");
     }
     public void SetCharSave(int id)
     {
@@ -55,10 +51,7 @@ public class SaveInGame : MonoBehaviour
         PlayerPrefs.SetInt("SelectedID", idSelect);
         PlayerPrefs.Save();
         Debug.Log("New Player Success");
-        if (auth.CurrentUser != null)
-        {
-            SaveLoadData.instance.SaveData();
-        }
+        SaveLoadData.instance.SaveData();
         LoadScene.instance.LoadSceneMenu("LobbyMap");
     }
     public void DetelePlayer(int id)
@@ -86,7 +79,7 @@ public class SaveInGame : MonoBehaviour
             }
             startData.data[i].isSave = true;
             startData.data[i].level = saveData._07_level;
-            startData.data[i].point = saveData._07_level * 10;
+            startData.data[i].point = saveData._00_point;
             //Debug.Log(saveData.saveDatas[i].level.ToString());
         }
     }

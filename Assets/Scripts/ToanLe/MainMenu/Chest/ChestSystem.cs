@@ -22,7 +22,12 @@ public class ChestSystem : MonoBehaviour
     public GameObject itemTake;
     public GameObject itemTakePanel;
     public GameObject content;
+    SoundEffect sound;
 
+    private void Start()
+    {
+        sound = FindObjectOfType<SoundEffect>();
+    }
     private void Awake()
     {
         sPerk = new List<PerkData>();
@@ -59,7 +64,7 @@ public class ChestSystem : MonoBehaviour
             {
                 diamondDropRate = 20f;
                 gold = Random.Range(minGold, maxGold + 1);
-                mainMenu.money = gold;
+                mainMenu.money += gold;
                 Debug.Log($"Bạn nhận được: {gold} vàng");
 
                 hasDiamond = Random.value <= (diamondDropRate / 100);
@@ -79,14 +84,16 @@ public class ChestSystem : MonoBehaviour
                         {
                             dataPerk.perkState = PerkState.Unlock;
                         }
-                        else
-                        {
-                            dataPerk.quantity++;
-                        }
+                        dataPerk.quantity++;
                     }
                     Debug.Log($"Bạn nhận được vật phẩm: {selectedItem}");
                 }
                 mainMenu.silverKey--;
+                sound.PlaySound("Coin");
+            }
+            else
+            {
+                ReportMain.instance.SetReport("Không Đủ Chìa Khóa.");
             }
         }
         else
@@ -123,6 +130,11 @@ public class ChestSystem : MonoBehaviour
                     Debug.Log($"Bạn nhận được vật phẩm: {selectedItem}");
                 }
                 mainMenu.ironKey--;
+                sound.PlaySound("Coin");
+            }
+            else
+            {
+                ReportMain.instance.SetReport("Không Đủ Chìa Khóa.");
             }
         }
         foreach (Transform child in content.transform)
@@ -153,17 +165,23 @@ public class ChestSystem : MonoBehaviour
                 perk.transform.SetParent(content.transform);
                 perk.gameObject.GetComponent<ItemTake>().Set(perkData.image, 1);
 
+                SetItemTakePanel();
             }
             else
             {
                 Debug.Log("take perk Error!");
             }
         }
-        SetItemTakePanel();
 
     }
     public void OpenTenChests()
     {
+        if (mainMenu.silverKey < 10)
+        {
+            ReportMain.instance.SetReport("Không Đủ Chìa Khóa.");
+            return;
+        }
+        sound.PlaySound("Coin");
         int totalGold = 0;
         int totalDiamonds = 0;
         Dictionary<int, int> itemCounts = new Dictionary<int, int>();
@@ -229,9 +247,11 @@ public class ChestSystem : MonoBehaviour
                 GameObject perk = Instantiate(itemTake);
                 perk.transform.SetParent(content.transform);
                 perk.gameObject.GetComponent<ItemTake>().Set(perkData.image, item.Value);
+                perkData.perkState = PerkState.Unlock;
+                perkData.quantity += item.Value;
+                SetItemTakePanel();
             }
         }
-        SetItemTakePanel();
     }
     private int GetRandomItem()
     {

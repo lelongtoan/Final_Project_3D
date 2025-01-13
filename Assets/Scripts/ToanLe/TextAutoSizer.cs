@@ -1,18 +1,27 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class TextAutoSizer : MonoBehaviour
 {
     public int minFontSize = 6; // Kích thước font nhỏ nhất
     public int maxFontSize = 72; // Kích thước font lớn nhất
+    public CanvasScaler canvasScaler; // CanvasScaler cần kiểm soát
+    public List<Text> excludedTexts = new List<Text>(); // Danh sách các Text không bị thay đổi
 
     private void Update()
     {
-        Text[] allTexts = FindObjectsOfType<Text>(true);
+        if (canvasScaler == null) return;
+
+        // Lấy tất cả các Text trong Canvas được quản lý bởi CanvasScaler
+        Text[] allTexts = canvasScaler.GetComponentInParent<Canvas>().GetComponentsInChildren<Text>(true);
 
         // Áp dụng AutoSizeText cho từng Text
         foreach (Text text in allTexts)
         {
+            // Bỏ qua các Text trong danh sách excludedTexts
+            if (excludedTexts.Contains(text)) continue;
+
             AutoSizeText(text);
         }
     }

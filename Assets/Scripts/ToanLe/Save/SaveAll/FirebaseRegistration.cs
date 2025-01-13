@@ -13,14 +13,10 @@ public class FirebaseRegistration : MonoBehaviour
     public TextMeshProUGUI statusText;
 
     bool isRes = true; 
-    private void Awake()
-    {
-        auth = FirebaseAuth.DefaultInstance;
-    }
-
     private void Start()
     {
         InitializeUI();
+        auth = FirebaseAuth.DefaultInstance;
     }
     private void Update()
     {
@@ -33,6 +29,8 @@ public class FirebaseRegistration : MonoBehaviour
     {
         SetPasswordVisibility(false);
         statusText.text = string.Empty;
+        emailInput.text = "";
+        passwordInput.text = "";
     }
 
     public void HandleRegistration()

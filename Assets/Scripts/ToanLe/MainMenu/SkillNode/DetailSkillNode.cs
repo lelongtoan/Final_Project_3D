@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -38,18 +38,26 @@ public class DetailSkillNode : MonoBehaviour
         {
             if (data.gold != 0)
             {
-                if(true)
+                if(data.gold <= MainMenuInstance.instance.inforMenu.money)
                 {
-                    //tru gold
+                    MainMenuInstance.instance.inforMenu.money -= data.gold;
                     data.state = SkillNodeState.Taked;
+                }
+                else
+                {
+                    ReportMain.instance.SetReport("Không Đủ Tiền Nâng Cấp.");
                 }
             }
             else
             {
-                if(true)
+                if(data.diamond <= MainMenuInstance.instance.inforMenu.money)
                 {
-                    //tru diamond
+                    MainMenuInstance.instance.inforMenu.diamond -= data.diamond;
                     data.state = SkillNodeState.Taked;
+                }
+                else
+                {
+                    ReportMain.instance.SetReport("Không Đủ Tiền Nâng Cấp.");
                 }
             }
         }

@@ -12,7 +12,11 @@ public class Tutorial : MonoBehaviour
     [SerializeField] GameObject content;
     [SerializeField] GameObject tutorialP;
     public int currentIndex = 0;
-
+    SoundEffect sound;
+    private void Start()
+    {
+        sound = FindObjectOfType<SoundEffect>();
+    }
     private void OnEnable()
     {
         TutorialSet();
@@ -97,6 +101,7 @@ public class Tutorial : MonoBehaviour
         {
             TutorialSet();
         }
+        sound.PlaySound("Button");
     }
 
     public void CloseButton()

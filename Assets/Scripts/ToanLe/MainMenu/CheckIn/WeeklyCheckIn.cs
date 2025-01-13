@@ -6,6 +6,11 @@ public class WeeklyCheckInManager : MonoBehaviour
 {
     public RewardCIData[] rewards;
     public Button[] dayButtons;
+    SoundEffect sound;
+    private void Start()
+    {
+        sound = FindObjectOfType<SoundEffect>();
+    }
 
     private void OnEnable()
     {
@@ -117,7 +122,7 @@ public class WeeklyCheckInManager : MonoBehaviour
 
         MainMenuInstance.instance.achieManager.achieCheck.countSignIn++;
         Debug.Log($"Điểm danh ngày {index + 1}. Nhận phần thưởng: {rewards[index].rewardAmount} {rewards[index].rewardState}");
-
+        sound.PlaySound("Complete");
         UpdateButtonStates();
     }
 }

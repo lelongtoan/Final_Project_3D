@@ -9,6 +9,7 @@ using UnityEngine.UI;
 
 public class AchievementGO : MonoBehaviour
 {
+    SoundEffect sound;
     public int idGoAchiement;
     [SerializeField] public Image itemRewardImage;
     [SerializeField] public GameObject completeGO;
@@ -22,11 +23,9 @@ public class AchievementGO : MonoBehaviour
     [SerializeField] float width;
     [SerializeField] float height;
     RectTransform rectTransform;
-    void SetClose()
+    private void Start()
     {
-        completeGO.SetActive(false);
-        takeGO.SetActive(false);
-        quaCountGO.SetActive(false);
+        sound = FindObjectOfType<SoundEffect>();
     }
     private void Awake()
     {
@@ -37,18 +36,22 @@ public class AchievementGO : MonoBehaviour
         rectTransform.sizeDelta = new Vector2(width, height);
         if (data.stateAchievement == StateAchie.Nope)
         {
-            SetClose();
+
+            completeGO.SetActive(false);
+            takeGO.SetActive(false);
             quaCountGO.SetActive(true);
         }
         else if (data.stateAchievement == StateAchie.Completed)
         {
-            SetClose();
+            takeGO.SetActive(false);
+            quaCountGO.SetActive(false);
             completeGO.SetActive(true);
             
         }
         else
         {
-            SetClose();
+            completeGO.SetActive(false);
+            quaCountGO.SetActive(false);
             takeGO.SetActive(true);
         }
     }

@@ -12,8 +12,11 @@ public class FirebaseLogin : MonoBehaviour
     public InputField passwordInput;
     public TextMeshProUGUI statusText;
     bool isLog = true;
-    private void Awake()
+
+    
+    private void Start()
     {
+        InitializeUI();
         auth = FirebaseAuth.DefaultInstance;
     }
     private void Update()
@@ -27,14 +30,12 @@ public class FirebaseLogin : MonoBehaviour
             statusText.text = "Đăng nhập thất bại. Vui lòng thử lại!";
         }
     }
-    private void Start()
-    {
-        InitializeUI();
-    }
     private void InitializeUI()
     {
         SetPasswordVisibility(false);
-        statusText.text = string.Empty;
+        statusText.text = "";
+        emailInput.text = "";
+        passwordInput.text = "";
     }
 
     public void HandleLogin()

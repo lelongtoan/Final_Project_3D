@@ -7,12 +7,23 @@ public class Account : MonoBehaviour
     private FirebaseAuth auth;
     public Text accounTxt;
 
-    private void Awake()
+    private void Start()
     {
         auth = FirebaseAuth.DefaultInstance;
     }
 
     private void OnEnable()
+    {
+        if (auth.CurrentUser != null)
+        {
+            accounTxt.text = auth.CurrentUser.Email;
+        }
+        else
+        {
+            accounTxt.text = "Chưa đăng nhập";
+        }
+    }
+    private void Update()
     {
         if (auth.CurrentUser != null)
         {

@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/firebase_database_url,@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id">
+  <string name="firebase_database_url" translatable="false">https://finalproject3d-ac1ff-default-rtdb.asia-southeast1.firebasedatabase.app</string>
+  <string name="gcm_defaultSenderId" translatable="false">230792036216</string>
+  <string name="google_storage_bucket" translatable="false">finalproject3d-ac1ff.firebasestorage.app</string>
+  <string name="project_id" translatable="false">finalproject3d-ac1ff</string>
+  <string name="google_api_key" translatable="false">AIzaSyAaLQ42sW4HuRNjvMqHcVkaqqOBlQnnnFQ</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAaLQ42sW4HuRNjvMqHcVkaqqOBlQnnnFQ</string>
+  <string name="google_app_id" translatable="false">1:230792036216:android:4d5092b33ffac7ace7928d</string>
+</resources>
