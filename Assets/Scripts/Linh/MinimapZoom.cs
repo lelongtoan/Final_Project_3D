@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class MinimapZoom : MonoBehaviour
 {
-    public GameObject minimapCamera; // Camera hoặc UI của minimap
-    public GameObject largeMapPanel; // UI panel chứa bản đồ lớn
+    [SerializeField]public GameObject minimapCamera; 
+    [SerializeField]public GameObject largeMapPanel;
 
-    private bool isLargeMapActive = false; // Trạng thái bản đồ lớn
+    private bool isLargeMapActive = false;
 
-    public void ToggleMap() // Đảm bảo hàm là public
+
+    public void ToggleMiniMap(bool on) 
     {
         isLargeMapActive = !isLargeMapActive;
 

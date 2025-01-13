@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questId: 2
   questName: "H\u1ED7 tr\u1EE3 l\xE3o l\xE0ng"
-  questDes: "Nhi\u1EC7m v\u1EE5 t\xECm b\u1ED9t \u0111\u1ECF"
+  questDes: "B\u1ED9t \u0111\u1ECF n\u1EB1m \u1EDF h\u1EA7m ng\u1EE5c ph\xEDa \u0111\xF4ng"
   numberInt: 0
   numberComplete: 5
   isShowQuest: 1

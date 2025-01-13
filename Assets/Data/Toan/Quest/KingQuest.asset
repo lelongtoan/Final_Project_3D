@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questId: 1
   questName: "H\xE0nh tr\xECnh c\u1EE9u th\u1EBF gi\u1EDBi"
-  questDes: "Nhi\u1EC7m v\u1EE5 ti\xEAu di\u1EC7t Boss"
+  questDes: "Nhi\u1EC7m v\u1EE5 ti\xEAu di\u1EC7t Boss \u1EDF h\u1EA7m ng\u1EE5c
+    ph\xEDa \u0111\xF4ng"
   numberInt: 1
   numberComplete: 1
   isShowQuest: 0
