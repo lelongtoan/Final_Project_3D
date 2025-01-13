@@ -21,7 +21,7 @@ MonoBehaviour:
   buffD: 20
   gold: 225
   rateDrop: 25
-  description: "D\u01B0\u1EE3c ph\u1EA9m t\u0103ng 20 \u0111i\u1EC3m mana"
+  description: "T\u0103ng 20 mana"
   buff: 2
   itemSet: 2
   itemType: 0

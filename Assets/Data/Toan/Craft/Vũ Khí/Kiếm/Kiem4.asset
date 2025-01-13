@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40abad5b0bd37894fa7585439dd7a1dd, type: 3}
   m_Name: Kiem4
   m_EditorClassIdentifier: 
-  nameCraft: KiemRuby
+  nameCraft: "Ki\u1EBFm h\u1ED3ng ng\u1ECDc"
   resultCount: 1
   resultItem: {fileID: 11400000, guid: f119c26ceb7da65418c202bd7a7609cd, type: 2}
   requiredItems:

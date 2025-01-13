@@ -1663,8 +1663,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefabs:
-  - {fileID: 841600493510958234, guid: 7f5e690b5447c4d4aa43c3cc3f17b270, type: 3}
-  - {fileID: 1691561008909095270, guid: 66e9f9025c3736b4796f12397f210aff, type: 3}
+  - {fileID: 8033777097734366784, guid: f11205c2b3885424db1ff718f00256e7, type: 3}
+  - {fileID: 1691561008909095270, guid: 01a97fa951334a3458373e85b1f8fda4, type: 3}
   spawnPoints:
   - {fileID: 53907189}
   - {fileID: 1587621347}
@@ -18527,9 +18527,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefabs:
-  - {fileID: 8033777097734366784, guid: 0795617cffcd94649b1f18271ee8a637, type: 3}
-  - {fileID: 1691561008909095270, guid: 66e9f9025c3736b4796f12397f210aff, type: 3}
-  - {fileID: 841600493510958234, guid: 7f5e690b5447c4d4aa43c3cc3f17b270, type: 3}
+  - {fileID: 8033777097734366784, guid: c3a879903956c4c408abf9f959f1441c, type: 3}
+  - {fileID: 841600493510958234, guid: f50365416bd90e94ea09b708870619f7, type: 3}
+  - {fileID: 1691561008909095270, guid: 01a97fa951334a3458373e85b1f8fda4, type: 3}
   spawnPoints:
   - {fileID: 643943569}
   - {fileID: 482254462}
@@ -21415,7 +21415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefabs:
-  - {fileID: 841600493510958234, guid: 7f5e690b5447c4d4aa43c3cc3f17b270, type: 3}
+  - {fileID: 841600493510958234, guid: 6e9918539b1bc50408138dcb75319a2d, type: 3}
   spawnPoints:
   - {fileID: 750048302}
   - {fileID: 2114622031}
@@ -37254,6 +37254,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2703679477858110939, guid: eab495feb39b36846a07fee1e06a41aa, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2703679477858110939, guid: eab495feb39b36846a07fee1e06a41aa, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2703679477858110939, guid: eab495feb39b36846a07fee1e06a41aa, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2703679477858110939, guid: eab495feb39b36846a07fee1e06a41aa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 27.81
       objectReference: {fileID: 0}
@@ -37263,7 +37275,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2703679477858110939, guid: eab495feb39b36846a07fee1e06a41aa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -221.12
+      value: -220.11
       objectReference: {fileID: 0}
     - target: {fileID: 2703679477858110939, guid: eab495feb39b36846a07fee1e06a41aa, type: 3}
       propertyPath: m_LocalRotation.w
@@ -37330,12 +37342,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1714282343}
     - target: {fileID: 8464939872226481876, guid: eab495feb39b36846a07fee1e06a41aa, type: 3}
+      propertyPath: listChat
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8464939872226481876, guid: eab495feb39b36846a07fee1e06a41aa, type: 3}
       propertyPath: interactButton
       value: 
       objectReference: {fileID: 1714282342}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 4143023800965305592, guid: eab495feb39b36846a07fee1e06a41aa, type: 3}
+    - {fileID: 844413040866594204, guid: eab495feb39b36846a07fee1e06a41aa, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eab495feb39b36846a07fee1e06a41aa, type: 3}
@@ -39235,7 +39252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefabs:
-  - {fileID: 1691561008909095270, guid: 66e9f9025c3736b4796f12397f210aff, type: 3}
+  - {fileID: 1691561008909095270, guid: 106b4455ae3ab67478bf5a62f23a1482, type: 3}
   spawnPoints:
   - {fileID: 1428499812}
   - {fileID: 1302012114}
@@ -43796,8 +43813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefabs:
-  - {fileID: 841600493510958234, guid: 7f5e690b5447c4d4aa43c3cc3f17b270, type: 3}
-  - {fileID: 1691561008909095270, guid: 66e9f9025c3736b4796f12397f210aff, type: 3}
+  - {fileID: 1787700734209980585, guid: 9abdd9f08f8570d43b69121269a781c7, type: 3}
   spawnPoints:
   - {fileID: 1584854255}
   - {fileID: 1890423739}
@@ -48553,6 +48569,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8711174523270901686, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
+      propertyPath: save
+      value: 
+      objectReference: {fileID: 1908701254}
     - target: {fileID: 8844118161069747218, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -53145,7 +53165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefabs:
-  - {fileID: 8033777097734366784, guid: 0795617cffcd94649b1f18271ee8a637, type: 3}
+  - {fileID: 8033777097734366784, guid: c3a879903956c4c408abf9f959f1441c, type: 3}
   spawnPoints:
   - {fileID: 1873310528}
   - {fileID: 78464940}
@@ -53201,7 +53221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefabs:
-  - {fileID: 8033777097734366784, guid: 0795617cffcd94649b1f18271ee8a637, type: 3}
+  - {fileID: 8033777097734366784, guid: e6049738d61e46241866580f1c6d701f, type: 3}
   spawnPoints:
   - {fileID: 1882535437}
   - {fileID: 317615221}
@@ -54076,6 +54096,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4302710928754906, guid: a578ee0f8198a4d43909700c19cbf82d, type: 3}
   m_PrefabInstance: {fileID: 1907908748}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1908701254 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3575522382660010698, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
+  m_PrefabInstance: {fileID: 1714282341}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1909527497
 GameObject:
   m_ObjectHideFlags: 0

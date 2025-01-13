@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40abad5b0bd37894fa7585439dd7a1dd, type: 3}
   m_Name: Hoimau3
   m_EditorClassIdentifier: 
-  nameCraft: Hoimau3
+  nameCraft: "B\xECnh m\xE1u l\u1EDBn"
   resultCount: 1
   resultItem: {fileID: 11400000, guid: 83c1018c8ef1ab744b5d3cad575465f3, type: 2}
   requiredItems:
