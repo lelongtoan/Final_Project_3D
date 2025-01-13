@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Equipment
   m_EditorClassIdentifier: 
   swordSlot:
-    item: {fileID: 11400000, guid: 22ac03f5d88cd0a49a4db9ed58f0d8ce, type: 2}
-    toolDurability: 100
-    count: 1
+    item: {fileID: 0}
+    toolDurability: 0
+    count: 0
   shieldSlot:
     item: {fileID: 11400000, guid: 0d66c5c10c3b3ba4bba4d4c3f97f9b43, type: 2}
     toolDurability: 0

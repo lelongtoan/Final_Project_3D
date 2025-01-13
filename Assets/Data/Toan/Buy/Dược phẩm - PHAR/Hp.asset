@@ -23,5 +23,5 @@ MonoBehaviour:
     questShop: {fileID: 0}
   - itemShop: {fileID: 11400000, guid: 83c1018c8ef1ab744b5d3cad575465f3, type: 2}
     priceItem: 1150
-    locked: 0
+    locked: 1
     questShop: {fileID: 0}

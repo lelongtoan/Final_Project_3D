@@ -18,9 +18,9 @@ MonoBehaviour:
     ph\xEDa \u0111\xF4ng"
   numberInt: 1
   numberComplete: 1
-  isShowQuest: 0
+  isShowQuest: 1
   stateQuest: 0
-  isCoin: 3000
+  isCoin: 300
   exp: 1000
   isStack: 1
   itemCheck: {fileID: 11400000, guid: 2314e31a751bb6e47b74d77fc4229f72, type: 2}

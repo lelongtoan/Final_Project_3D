@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d690ab03900124439ed5e618aa451db, type: 3}
   m_Name: TestItem
   m_EditorClassIdentifier: 
-  id: 1223
+  id: 48
   itemName: Test
   stackable: 1
-  HP: 0
+  HP: -1000
   MP: 0
   Dmg: 0
   buffD: 0

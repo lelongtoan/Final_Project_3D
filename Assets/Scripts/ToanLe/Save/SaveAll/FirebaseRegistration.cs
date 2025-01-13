@@ -1,4 +1,5 @@
 ﻿using Firebase.Auth;
+using Firebase.Extensions;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,19 +11,30 @@ public class FirebaseRegistration : MonoBehaviour
     [Header("UI Elements")]
     public InputField emailInput;
     public InputField passwordInput;
-    public TextMeshProUGUI statusText;
+    public Text statusText;
 
-    bool isRes = true; 
-    private void Start()
+    bool isRes = true;
+    bool isResed = false;
+    private void Awake()
+    {
+        auth = auth = FirebaseAuth.DefaultInstance;
+    }
+    private void OnEnable()
     {
         InitializeUI();
-        auth = FirebaseAuth.DefaultInstance;
     }
     private void Update()
     {
         if(isRes == false)
         {
             statusText.text = "Tạo tài khoản thất bại. Vui lòng thử lại!";
+            isRes = true;
+        }
+        if(auth.CurrentUser != null)
+        {
+            ReportMain.instance.SetReport("Tạo tài khoảng và đăng nhập thành công.");
+            gameObject.SetActive(false);
+            isResed = false;
         }
     }
     private void InitializeUI()
@@ -51,18 +63,16 @@ public class FirebaseRegistration : MonoBehaviour
     {
         statusText.text = "Đang tạo tài khoản...";
 
-        auth.CreateUserWithEmailAndPasswordAsync(email, password).ContinueWith(task =>
+        auth.CreateUserWithEmailAndPasswordAsync(email, password).ContinueWithOnMainThread(task =>
         {
             if (task.IsCanceled || task.IsFaulted)
             {
                 isRes = false;
-                Debug.LogError("Account creation failed: " + task.Exception?.Message);
+                Debug.LogError("Account creation failed:Dã có tk " + task.Exception?.Message);
                 return;
             }
-
             FirebaseUser user = task.Result.User;
-            Debug.Log("Account Created! User ID: " + user.UserId);
-            statusText.text = "Tạo tài khoản thành công!";
+            isResed = true;
         });
     }
 

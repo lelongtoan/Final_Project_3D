@@ -16,12 +16,12 @@ MonoBehaviour:
   - itemShop: {fileID: 11400000, guid: e35a369cceb075c4db22d2fdcbb76fb3, type: 2}
     priceItem: 1000
     locked: 0
-    questShop: {fileID: 0}
+    questShop: {fileID: 11400000, guid: 28d7d40c5a2a1dd48b0c4f58bac975e6, type: 2}
   - itemShop: {fileID: 11400000, guid: 8f6264f078d4fd64e99aabc393b637c5, type: 2}
     priceItem: 750
     locked: 0
-    questShop: {fileID: 0}
+    questShop: {fileID: 11400000, guid: 28d7d40c5a2a1dd48b0c4f58bac975e6, type: 2}
   - itemShop: {fileID: 11400000, guid: c3af34225e0195c4cb35ff898a268fd6, type: 2}
     priceItem: 750
     locked: 0
-    questShop: {fileID: 0}
+    questShop: {fileID: 11400000, guid: 28d7d40c5a2a1dd48b0c4f58bac975e6, type: 2}

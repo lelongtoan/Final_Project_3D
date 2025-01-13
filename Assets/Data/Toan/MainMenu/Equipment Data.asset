@@ -19,5 +19,5 @@ MonoBehaviour:
   equippedPerks:
   - {fileID: 11400000, guid: e099a05181c40c14c9f3b22171cf7976, type: 2}
   - {fileID: 0}
-  - {fileID: 11400000, guid: 070b6ac61fcd4e84c8f829c4ce09f4ab, type: 2}
+  - {fileID: 11400000, guid: fe1f3769cde39dd498f65f2ce04185d7, type: 2}
   maxSlots: 3

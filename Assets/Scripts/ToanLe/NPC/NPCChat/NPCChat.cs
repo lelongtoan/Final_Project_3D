@@ -44,6 +44,7 @@ public class NPCChat : MonoBehaviour
     }
     public void ShowDialogueLine()
     {
+        SetInfo();
         Debug.Log("Chat Index :"+currentChatIndex
             +" Line : "+currentLine);
         if (currentChatIndex >= npcChats.list.Count)
