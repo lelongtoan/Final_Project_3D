@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a24f07f266ddca4cb4cadd7e1e2ed46, type: 3}
   m_Name: NewPlayeSkillData
   m_EditorClassIdentifier: 
-  levelSkill1: 1
-  levelSkill2: 1
-  levelSkill3: 1
-  numberSword: 2
+  levelSkill1: 2
+  levelSkill2: 2
+  levelSkill3: 2
+  numberSword: 3
   dame1: 2
-  dameBuff: 10
-  dame3: 25
-  manaskill1: 10
-  manaskill2: 15
-  manaskill3: 25
+  dameBuff: 15
+  dame3: 35
+  manaskill1: 15
+  manaskill2: 18
+  manaskill3: 30
   timeconti1: 5
-  counD1: 15
+  counD1: 14
   counD2: 15
-  counD3: 20
+  counD3: 19

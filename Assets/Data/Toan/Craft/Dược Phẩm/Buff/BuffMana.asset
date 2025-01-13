@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40abad5b0bd37894fa7585439dd7a1dd, type: 3}
   m_Name: BuffMana
   m_EditorClassIdentifier: 
-  nameCraft: "D\u01B0\u1EE3c ph\u1EA9m t\u0103ng mana"
+  nameCraft: "B\xECnh t\u0103ng mana"
   resultCount: 1
   resultItem: {fileID: 11400000, guid: c3af34225e0195c4cb35ff898a268fd6, type: 2}
   requiredItems:

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sign3
   m_EditorClassIdentifier: 
   questId: 0
-  icon: {fileID: -873876263, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
+  icon: {fileID: 575765876, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
   nameAchivement: "\u0110\u0103ng nh\u1EADp 3 ng\xE0y"
   countAchievement: 0
   completeAchivement: 3
