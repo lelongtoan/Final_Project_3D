@@ -10,21 +10,10 @@ public class BuffManager : MonoBehaviour
 
     public float buffDuration = 15f; //5p
 
-    private float maxHP = 100f;
-    private float maxMP = 100f;
-    private float dmg = 10f;
 
-    public float currentHP;
-    public float currentMP;
-
-    private Coroutine hpBuffCoroutine;
-    private Coroutine mpBuffCoroutine;
-    private Coroutine dmgBuffCoroutine;
-    private void Start()
-    {
-        currentHP = maxHP;
-        currentMP = maxMP;
-    }
+    public Coroutine hpBuffCoroutine;
+    public Coroutine mpBuffCoroutine;
+    public Coroutine dmgBuffCoroutine;
 
     public void ActivateBuff(Item item)
     {
@@ -39,7 +28,7 @@ public class BuffManager : MonoBehaviour
                 hpBuffUI.SetActive(true);
                 hpBuffCoroutine = StartCoroutine(ApplyBuff(
                     () => { GameInstance.instance.playerInfor.UpMaxHP(item.buffD); GameInstance.instance.playerInfor.healthPoint += item.buffD; },
-                    () => { GameInstance.instance.playerInfor.UpMaxHP(-item.buffD); GameInstance.instance.playerInfor.healthPoint = Mathf.Min(currentHP, maxHP); },
+                    () => { GameInstance.instance.playerInfor.UpMaxHP(-item.buffD); GameInstance.instance.playerInfor.healthPoint = Mathf.Min(GameInstance.instance.playerInfor.healthPoint, GameInstance.instance.playerInfor.maxHP); },
                     () => hpBuffUI.SetActive(false)
                 ));
                 break;
@@ -53,7 +42,7 @@ public class BuffManager : MonoBehaviour
                 mpBuffUI.SetActive(true);
                 mpBuffCoroutine = StartCoroutine(ApplyBuff(
                     () => { GameInstance.instance.playerInfor.UpMaxMP(item.buffD); GameInstance.instance.playerInfor.manaPoint += item.buffD; },
-                    () => { GameInstance.instance.playerInfor.UpMaxMP(-item.buffD); GameInstance.instance.playerInfor.manaPoint= Mathf.Min(currentMP, maxMP); },
+                    () => { GameInstance.instance.playerInfor.UpMaxMP(-item.buffD); GameInstance.instance.playerInfor.manaPoint = Mathf.Min(GameInstance.instance.playerInfor.manaPoint, GameInstance.instance.playerInfor.maxMP); },
                     () => mpBuffUI.SetActive(false)
                 ));
                 break;
@@ -76,29 +65,32 @@ public class BuffManager : MonoBehaviour
 
     private IEnumerator ApplyBuff(System.Action applyEffect, System.Action resetEffect, System.Action uiReset)
     {
+        Debug.Log("Buff started");
         applyEffect.Invoke();
         yield return new WaitForSeconds(buffDuration);
+        Debug.Log("Buff ended");
         resetEffect.Invoke();
         uiReset.Invoke();
     }
 
     private void ResetHPBuff(float amount)
     {
-        maxHP -= amount;
-        currentHP = Mathf.Min(currentHP, maxHP);
+        GameInstance.instance.playerInfor.UpMaxHP(-amount);
+        GameInstance.instance.playerInfor.healthPoint = Mathf.Min(GameInstance.instance.playerInfor.healthPoint, GameInstance.instance.playerInfor.maxHP);
         hpBuffUI.SetActive(false);
     }
 
     private void ResetMPBuff(float amount)
     {
-        maxMP -= amount;
-        currentMP = Mathf.Min(currentMP, maxMP);
+        GameInstance.instance.playerInfor.UpMaxMP(-amount);
+        GameInstance.instance.playerInfor.manaPoint = Mathf.Min(GameInstance.instance.playerInfor.manaPoint, GameInstance.instance.playerInfor.maxMP);
+        mpBuffUI.SetActive(false);
         mpBuffUI.SetActive(false);
     }
 
     private void ResetDMGBuff(float amount)
     {
-        dmg -= amount;
+        GameInstance.instance.playerInfor.UpDame((int)-amount);
         dmgBuffUI.SetActive(false);
     }
 }

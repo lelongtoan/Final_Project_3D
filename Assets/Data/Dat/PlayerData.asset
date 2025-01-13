@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 155
   healthPoint: 155
-  manaPoint: 110
-  maxMP: 120
+  manaPoint: 87
+  maxMP: 100
   def: 5
   dame: 45
   level: 14
