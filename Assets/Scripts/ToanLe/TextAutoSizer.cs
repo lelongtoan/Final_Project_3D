@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TextAutoSizer : MonoBehaviour
 {
+    [SerializeField] Text nameMap;
     public int minFontSize = 6; // Kích thước font nhỏ nhất
     public int maxFontSize = 72; // Kích thước font lớn nhất
     public CanvasScaler canvasScaler; // CanvasScaler cần kiểm soát
@@ -11,6 +13,10 @@ public class TextAutoSizer : MonoBehaviour
 
     private void Update()
     {
+        if (nameMap != null) 
+        {
+            nameMap.text = SceneManager.GetActiveScene().name;
+        }
         if (canvasScaler == null) return;
 
         // Lấy tất cả các Text trong Canvas được quản lý bởi CanvasScaler

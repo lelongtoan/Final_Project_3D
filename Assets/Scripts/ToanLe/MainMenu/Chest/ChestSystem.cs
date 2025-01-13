@@ -64,15 +64,8 @@ public class ChestSystem : MonoBehaviour
             {
                 diamondDropRate = 20f;
                 gold = Random.Range(minGold, maxGold + 1);
-                mainMenu.money += gold;
-                Debug.Log($"Bạn nhận được: {gold} vàng");
 
                 hasDiamond = Random.value <= (diamondDropRate / 100);
-                if (hasDiamond)
-                {
-                    Debug.Log("Chúc mừng! Bạn nhận được kim cương!");
-                    mainMenu.diamond++;
-                }
 
                 selectedItem = GetRandomItem();
                 if (selectedItem != -1)
@@ -102,15 +95,8 @@ public class ChestSystem : MonoBehaviour
             {
                 diamondDropRate = 5f;
                 gold = Random.Range(minGold, maxGold + 1);
-                mainMenu.money += gold;
-                Debug.Log($"Bạn nhận được: {gold} vàng");
 
                 hasDiamond = Random.value <= (diamondDropRate / 100);
-                if (hasDiamond)
-                {
-                    Debug.Log("Chúc mừng! Bạn nhận được kim cương!");
-                    mainMenu.diamond++;
-                }
 
                 selectedItem = GetRandomItem();
                 if (selectedItem != -1)
@@ -147,13 +133,13 @@ public class ChestSystem : MonoBehaviour
 
             GameObject go = Instantiate(itemTake);
             go.transform.SetParent(content.transform);
-            go.gameObject.GetComponent<ItemTake>().Set(goldImg, gold);
+            go.gameObject.GetComponent<ItemTake>().Set(goldImg, gold, gold);
         }
         if(hasDiamond)
         {
             GameObject dia = Instantiate(itemTake);
             dia.transform.SetParent(content.transform);
-            dia.gameObject.GetComponent<ItemTake>().Set(diaImg, 1);
+            dia.GetComponent<ItemTake>().Set(diaImg, 1, 0, 1);
         }
         if (selectedItem != -1)
         {
@@ -196,13 +182,11 @@ public class ChestSystem : MonoBehaviour
             {
                 diamondDropRate = 20f;
                 gold = Random.Range(minGold, maxGold + 1);
-                mainMenu.money += gold;
 
                 hasDiamond = Random.value <= (diamondDropRate / 100);
                 if (hasDiamond)
                 {
                     totalDiamonds++;
-                    mainMenu.diamond++;
                 }
 
                 selectedItem = GetRandomItem();
@@ -229,14 +213,14 @@ public class ChestSystem : MonoBehaviour
         {
             GameObject go = Instantiate(itemTake);
             go.transform.SetParent(content.transform);
-            go.gameObject.GetComponent<ItemTake>().Set(goldImg, totalGold);
+            go.gameObject.GetComponent<ItemTake>().Set(goldImg, totalGold,totalGold);
         }
 
         if (totalDiamonds > 0)
         {
             GameObject dia = Instantiate(itemTake);
             dia.transform.SetParent(content.transform);
-            dia.gameObject.GetComponent<ItemTake>().Set(diaImg, totalDiamonds);
+            dia.gameObject.GetComponent<ItemTake>().Set(diaImg, totalDiamonds, 0, totalDiamonds);
         }
 
         foreach (var item in itemCounts)
@@ -249,9 +233,9 @@ public class ChestSystem : MonoBehaviour
                 perk.gameObject.GetComponent<ItemTake>().Set(perkData.image, item.Value);
                 perkData.perkState = PerkState.Unlock;
                 perkData.quantity += item.Value;
+                SetItemTakePanel();
             }
         }
-        SetItemTakePanel();
     }
     private int GetRandomItem()
     {
