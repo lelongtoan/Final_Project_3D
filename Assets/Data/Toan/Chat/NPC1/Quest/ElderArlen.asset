@@ -21,6 +21,8 @@ MonoBehaviour:
   questNope:
   - "Khi n\xE0o t\xECm th\u1EA5y b\u1ED9t \u0111\u1ECF th\xEC h\xE3y quay l\u1EA1i
     t\xECm ta nh\xE9."
+  - "B\u1ED9t \u0111\u1ECF n\u1EB1m \u1EDF khu v\u1EF1c h\u1EA7m ng\u1EE5c ph\xEDa
+    \u0111\xF4ng l\u1ED1i m\xF2n"
   questComplete:
   - "Con \u0111\xE3 l\xE0m t\u1ED1t l\u1EAFm, Kailen. \u0110\xE2y ch\u1EC9 l\xE0
     kh\u1EDFi \u0111\u1EA7u, C\xE1nh C\u1ED5ng B\xF3ng T\u1ED1i \u0111ang \u0111\u1EE3i
