@@ -33,6 +33,10 @@ public class PotionButton : MonoBehaviour
                 ItemD.Instance.itemSlot = inventory.slots[i];
                 ItemD.Instance.UseItem(inventory.slots[i]);
                 SetItemCount();
+                if (sound == null)
+                {
+                    sound = FindObjectOfType<SoundEffect>();
+                }
                 sound.PlaySound("Drink");
                 return;
             }
@@ -41,6 +45,10 @@ public class PotionButton : MonoBehaviour
                 ItemD.Instance.itemSlot = inventory.slots[i];
                 ItemD.Instance.UseItem(inventory.slots[i]);
                 SetItemCount();
+                if (sound == null)
+                {
+                    sound = FindObjectOfType<SoundEffect>();
+                }
                 sound.PlaySound("Drink");
                 return;
             }
