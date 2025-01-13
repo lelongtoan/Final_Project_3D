@@ -185,7 +185,7 @@ public class PlayerInfor : MonoBehaviour
     public void Return()
     {
         LoadDataByDie();
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("LobbyMap");
     }
     public void SaveData()
     {
