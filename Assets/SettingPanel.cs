@@ -2,6 +2,7 @@ using Firebase.Auth;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SettingPanel : MonoBehaviour
 {
@@ -11,12 +12,15 @@ public class SettingPanel : MonoBehaviour
     [SerializeField] GameObject login;
     [SerializeField] GameObject account;
     [SerializeField] GameObject res;
+    [SerializeField] Button sound;
+    [SerializeField] GameObject soundpanel;
     private void Awake()
     {
         auth = FirebaseAuth.DefaultInstance;
     }
     private void Start()
     {
+        soundpanel.SetActive(false);
         login.SetActive(false);
         account.SetActive(false);
         res.SetActive(false);
@@ -31,6 +35,10 @@ public class SettingPanel : MonoBehaviour
         {
             isLogin = true;
         }
+    }
+    public void OpenSoundSetting()
+    {
+        soundpanel.SetActive(true);
     }
     public void SetPanelAccount()
     {
