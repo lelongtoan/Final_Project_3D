@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ItemTakeChest : MonoBehaviour
 {
@@ -42,8 +43,9 @@ public class ItemTakeChest : MonoBehaviour
 
     private IEnumerator PlayChestAnimation()
     {
+        gameObject.GetComponent<Button>().interactable = false;
         yield return new WaitForSeconds(animationDuration);
-
+        gameObject.GetComponent<Button>().interactable = true;
         if (chestAnimation != null)
         {
             chestAnimation.SetActive(false);
