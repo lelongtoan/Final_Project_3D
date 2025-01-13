@@ -10,7 +10,6 @@ public class SaveLoadData : MonoBehaviour
     public static SaveLoadData instance;
     private DatabaseReference reference;
     private FirebaseAuth auth;
-    [SerializeField] SaveAllData saveAllData;
     [SerializeField] SaveAllTemp temp;
     private void Awake()
     {
@@ -26,10 +25,6 @@ public class SaveLoadData : MonoBehaviour
             auth = FirebaseAuth.DefaultInstance; // Khởi tạo Firebase Auth
             reference = FirebaseDatabase.DefaultInstance.RootReference;
         });
-        if (auth.CurrentUser != null)
-        {
-            SaveData();
-        }
     }
 
     // Lưu dữ liệu lên Firebase
@@ -39,7 +34,7 @@ public class SaveLoadData : MonoBehaviour
         {
             string email = auth.CurrentUser.Email; // Lấy email người dùng
             string safeEmail = email.Replace("@", "_").Replace(".", "_"); // Firebase không cho phép dấu @ và . trong tên đường dẫn, thay bằng dấu _
-            string json = JsonUtility.ToJson(saveAllData); // Chuyển đổi dữ liệu thành JSON
+            string json = JsonUtility.ToJson(temp.saveAllData); // Chuyển đổi dữ liệu thành JSON
 
             // Lưu dữ liệu vào Firebase theo email của người dùng
             reference.Child("users").Child(safeEmail).Child("saveData").SetRawJsonValueAsync(json)
@@ -47,11 +42,12 @@ public class SaveLoadData : MonoBehaviour
                 {
                     if (task.IsCompleted)
                     {
-                        Debug.Log("Dữ liệu đã được lưu thành công!");
+                        temp.statusText.text = "Đã Lưu Dữ Liệu";
                     }
                     else
                     {
-                        Debug.LogError("Không thể lưu dữ liệu: " + task.Exception);
+                        temp.statusText.text = "Dữ Liệu Chưa Được Lưu";
+                        return;
                     }
                 });
 
@@ -73,7 +69,8 @@ public class SaveLoadData : MonoBehaviour
                             }
                             else
                             {
-                                Debug.LogError($"Không thể lưu dữ liệu Char{i}: " + task.Exception);
+                                temp.statusText.text = "Dữ Liệu Chưa Được Lưu";
+                                return;
                             }
                         });
                     }
@@ -127,9 +124,9 @@ public class SaveLoadData : MonoBehaviour
                         }
                         else
                         {
-                            Debug.Log("Dữ liệu chính đã được tải thành công!");
-                            saveAllData = loadedData;
-                            temp.LoadMenu(saveAllData); // Cập nhật dữ liệu hiện tại với dữ liệu đã tải
+                            temp.statusText.text = "Đã Tải Dữ Liệu";
+                            temp.saveAllData = loadedData;
+                            temp.LoadMenu(temp.saveAllData); // Cập nhật dữ liệu hiện tại với dữ liệu đã tải
                         }
                     }
                     else
@@ -139,7 +136,8 @@ public class SaveLoadData : MonoBehaviour
                 }
                 else
                 {
-                    Debug.LogError("Không thể tải dữ liệu chính: " + task.Exception);
+                    temp.statusText.text = "Dữ Liệu Chưa Được Tải";
+                    return;
                 }
             });
 
@@ -181,7 +179,8 @@ public class SaveLoadData : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Người dùng chưa đăng nhập!");
+            temp.statusText.text = "Người dùng chưa đăng nhập!";
+            return;
         }
     }
 

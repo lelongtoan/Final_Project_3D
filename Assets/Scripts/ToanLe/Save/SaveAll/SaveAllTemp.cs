@@ -1,5 +1,6 @@
 ﻿    using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 
@@ -12,9 +13,10 @@ public class SaveAllTemp : MonoBehaviour
     [SerializeField] ListPerkData listPerkData;
     [SerializeField] ListSkillNode listSkillNode;
     [SerializeField] ListAchievement listAchievement;
-
+    public TextMeshProUGUI statusText;
     public void SaveMenu()
     {
+        saveAllData = new SaveAllData();
         saveAllData._01_countBoss = checkAcie.countBoss;
         saveAllData._02_countEnemy = checkAcie.countEnemy;
         saveAllData._03_countGold = checkAcie.countGold;
@@ -24,7 +26,7 @@ public class SaveAllTemp : MonoBehaviour
         saveAllData._07_diamond = inforMenu.diamond;
         saveAllData._08_ironKey = inforMenu.ironKey;
         saveAllData._09_silverKey = inforMenu.silverKey;
-        saveAllData._10_perks.Clear();
+        saveAllData._10_perks = new List<EquipPerk>();
         for (int i = 0; i < equipPerk.equippedPerks.Count; i++)
         {
             EquipPerk data = new EquipPerk();
@@ -33,7 +35,7 @@ public class SaveAllTemp : MonoBehaviour
             saveAllData._10_perks.Add(data);
         }
         listPerkData.Set();
-        saveAllData._11_listPerk.Clear();
+        saveAllData._11_listPerk = new List<Perks>();
         for (int i = 0; i < listPerkData.listPerk.Count; i++)
         {
             Perks data = new Perks();
@@ -44,7 +46,7 @@ public class SaveAllTemp : MonoBehaviour
             data._05_quantityPerk = listPerkData.listPerk[i].quantity;
             saveAllData._11_listPerk.Add(data);
         }
-        saveAllData._12_skillNode.Clear();
+        saveAllData._12_skillNode = new List<SkillNodes>();
         for (int i = 0; i < listSkillNode.dataSkillNode.Count; i++)
         {
             SkillNodes data = new SkillNodes();
@@ -52,7 +54,7 @@ public class SaveAllTemp : MonoBehaviour
             data._02_state = (int)listSkillNode.dataSkillNode[i].state;
             saveAllData._12_skillNode.Add(data);
         }
-        saveAllData._13_achies.Clear();
+        saveAllData._13_achies = new List<Achies>();
         for (int i = 0; i < listAchievement.listAchievement.Count; i++)
         {
             Achies data = new Achies();

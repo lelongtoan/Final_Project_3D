@@ -23,6 +23,7 @@ public class FirebaseLogin : MonoBehaviour
     {
         if (auth.CurrentUser != null)
         {
+            ReportMain.instance.SetReport("Đăng nhập thành công!");
             gameObject.SetActive(false);
         }
         if (isLog == false)
@@ -74,7 +75,6 @@ public class FirebaseLogin : MonoBehaviour
 
             FirebaseUser user = task.Result.User;
             Debug.Log("Login Success! User ID: " + user.UserId);
-            statusText.text = "Đăng nhập thành công!";
         });
     }
 

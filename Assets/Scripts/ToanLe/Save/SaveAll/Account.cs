@@ -6,8 +6,7 @@ public class Account : MonoBehaviour
 {
     private FirebaseAuth auth;
     public Text accounTxt;
-
-    private void Start()
+    private void Awake()
     {
         auth = FirebaseAuth.DefaultInstance;
     }
@@ -37,6 +36,6 @@ public class Account : MonoBehaviour
     public void Logout()
     {
         auth.SignOut();  // Đăng xuất người dùng
-        Debug.Log("Đã đăng xuất thành công!");
+        ReportMain.instance.SetReport("Đã đăng xuất thành công!");
     }
 }
