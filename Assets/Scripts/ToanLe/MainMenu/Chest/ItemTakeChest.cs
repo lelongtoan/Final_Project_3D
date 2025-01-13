@@ -1,35 +1,77 @@
 using System.Collections;
-using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ItemTakeChest : MonoBehaviour
 {
-    public GameObject chestAnimation;
-    public GameObject lightAnimation;
-    public GameObject content;
-    Animator animator;
-    Animator animator1;
-    public float animationDuration = 1.0f;
+    [SerializeField] private GameObject itemTakePanel;
+    [SerializeField] private GameObject chestAnimation;
+    [SerializeField] private GameObject lightAnimation;
+    [SerializeField] private GameObject content;
+    [SerializeField] private float animationDuration = 1.0f;
+
+    private Animator chestAnimator;
+    private Animator lightAnimator;
+    private Button button;
+    private int clickCount;
 
     private void Awake()
     {
         if (chestAnimation != null)
         {
-            animator = chestAnimation.GetComponent<Animator>();
-            animator1 = lightAnimation.GetComponent<Animator>();
+            chestAnimator = chestAnimation.GetComponent<Animator>();
+        }
+
+        if (lightAnimation != null)
+        {
+            lightAnimator = lightAnimation.GetComponent<Animator>();
+        }
+
+        button = GetComponent<Button>();
+        if (button == null)
+        {
+            Debug.LogError("Button component missing on GameObject.");
         }
     }
 
     private void OnEnable()
     {
-        if (chestAnimation != null && animator != null)
+        ResetState();
+        if (button != null)
         {
-            animator.Rebind();
-            animator.Update(0); 
-            animator1.Rebind();
-            animator1.Update(0);
+            button.interactable = false;
+            StartCoroutine(EnableButtonAfterDelay(1.0f));
+        }
+    }
+
+    public void ClickOpen()
+    {
+        if (clickCount > 0)
+        {
+            CloseChest();
+        }
+        else
+        {
+            OpenChest();
+        }
+    }
+
+    private void ResetState()
+    {
+        clickCount = 0;
+
+        if (chestAnimation != null)
+        {
+            chestAnimator?.Rebind();
+            chestAnimator?.Update(0);
             chestAnimation.SetActive(true);
+        }
+
+        if (lightAnimation != null)
+        {
+            lightAnimator?.Rebind();
+            lightAnimator?.Update(0);
             lightAnimation.SetActive(true);
         }
 
@@ -37,24 +79,85 @@ public class ItemTakeChest : MonoBehaviour
         {
             content.SetActive(false);
         }
+    }
 
-        StartCoroutine(PlayChestAnimation());
+    private void OpenChest()
+    {
+        clickCount++;
+
+        if (chestAnimator != null && lightAnimator != null)
+        {
+            chestAnimator.SetBool("IsShow", true);
+            StartCoroutine(PlayChestAnimation());
+        }
+    }
+
+    private void CloseChest()
+    {
+        clickCount = 0;
+
+        if (chestAnimator != null && lightAnimator != null)
+        {
+            chestAnimator.SetBool("SetPos", false);
+            lightAnimator.SetBool("SetPos", false);
+        }
+
+        chestAnimation?.SetActive(false);
+        lightAnimation?.SetActive(false);
+        itemTakePanel?.SetActive(false);
+
+        ResetState();
     }
 
     private IEnumerator PlayChestAnimation()
     {
-        gameObject.GetComponent<Button>().interactable = false;
-        yield return new WaitForSeconds(animationDuration);
-        gameObject.GetComponent<Button>().interactable = true;
-        if (chestAnimation != null)
+        if (button != null)
         {
-            chestAnimation.SetActive(false);
-            lightAnimation.SetActive(false);
+            button.interactable = false;
         }
+
+        yield return new WaitForSeconds(animationDuration);
+
+        if (button != null)
+        {
+            button.interactable = true;
+        }
+
+        if (chestAnimator != null && lightAnimator != null)
+        {
+            chestAnimator.SetBool("IsShow", false);
+            chestAnimator.SetBool("SetPos", true);
+            lightAnimator.SetBool("SetPos", true);
+        }
+
+        yield return new WaitForSeconds(animationDuration);
 
         if (content != null)
         {
             content.SetActive(true);
+            ProcessRewards();
+        }
+    }
+
+    private IEnumerator EnableButtonAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        if (button != null)
+        {
+            button.interactable = true;
+        }
+    }
+
+    private void ProcessRewards()
+    {
+        foreach (Transform child in content.transform)
+        {
+            ItemTake itemTake = child.GetComponent<ItemTake>();
+            if (itemTake != null)
+            {
+                MainMenuInstance.instance.inforMenu.money += itemTake.gold;
+                MainMenuInstance.instance.inforMenu.diamond += itemTake.diamond;
+            }
         }
     }
 }
