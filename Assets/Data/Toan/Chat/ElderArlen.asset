@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ElderArlen
   m_EditorClassIdentifier: 
   npcName: ElderArlen
-  npcImage: {fileID: 0}
+  npcImage: {fileID: 21300000, guid: 2dfd315ff95a7a040ba264c42411808c, type: 3}
   list:
   - {fileID: 11400000, guid: 53231b04f4776434684b2f997f928c0a, type: 2}

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Gron
   m_EditorClassIdentifier: 
   npcName: Gron
-  npcImage: {fileID: 0}
+  npcImage: {fileID: 21300000, guid: cbd58cdecf1503543ae4ff5abaf448de, type: 3}
   list:
   - {fileID: 11400000, guid: 70fe30524ee58e04eab76ab4c2c5758b, type: 2}
