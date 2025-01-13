@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: King
   m_EditorClassIdentifier: 
   npcName: VuaEldrin
-  npcImage: {fileID: 0}
+  npcImage: {fileID: 21300000, guid: b7cc8b7220df5b343b35fa959cc0aae6, type: 3}
   list:
   - {fileID: 11400000, guid: ac25dc44b07bd2b49ab51beb7738d859, type: 2}

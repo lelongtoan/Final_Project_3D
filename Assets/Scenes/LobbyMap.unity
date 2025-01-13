@@ -650,6 +650,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1839195311}
     m_Modifications:
+    - target: {fileID: 2485189904678530682, guid: e546b1ba47c8dff4ca46d25dc21aa7cb, type: 3}
+      propertyPath: m_Height
+      value: 2.7271543
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485189904678530682, guid: e546b1ba47c8dff4ca46d25dc21aa7cb, type: 3}
+      propertyPath: m_Center.y
+      value: 1.437058
+      objectReference: {fileID: 0}
     - target: {fileID: 2651513063798029304, guid: e546b1ba47c8dff4ca46d25dc21aa7cb, type: 3}
       propertyPath: m_Name
       value: NPC Inventory
@@ -3085,7 +3093,7 @@ PrefabInstance:
       objectReference: {fileID: 620995054}
     - target: {fileID: 4987040690277174273, guid: ccba23fb5c41d3a4eb9e70219718b656, type: 3}
       propertyPath: m_Name
-      value: Gron - Shop Ren
+      value: Gron
       objectReference: {fileID: 0}
     - target: {fileID: 4987040690277174273, guid: ccba23fb5c41d3a4eb9e70219718b656, type: 3}
       propertyPath: m_TagString
@@ -3130,6 +3138,14 @@ PrefabInstance:
     - target: {fileID: 5656054635225650875, guid: ccba23fb5c41d3a4eb9e70219718b656, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6973447915349256528, guid: ccba23fb5c41d3a4eb9e70219718b656, type: 3}
+      propertyPath: m_Height
+      value: 3.1380458
+      objectReference: {fileID: 0}
+    - target: {fileID: 6973447915349256528, guid: ccba23fb5c41d3a4eb9e70219718b656, type: 3}
+      propertyPath: m_Center.y
+      value: 1.7542841
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4461,6 +4477,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1839195311}
     m_Modifications:
+    - target: {fileID: 2110413358470216591, guid: eab495feb39b36846a07fee1e06a41aa, type: 3}
+      propertyPath: m_Height
+      value: 1.8912578
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110413358470216591, guid: eab495feb39b36846a07fee1e06a41aa, type: 3}
+      propertyPath: m_Center.y
+      value: 1.3013483
+      objectReference: {fileID: 0}
     - target: {fileID: 2703679477858110939, guid: eab495feb39b36846a07fee1e06a41aa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 54.266144
@@ -5808,6 +5832,10 @@ PrefabInstance:
       propertyPath: m_Type
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6260138149489662805, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 670
+      objectReference: {fileID: 0}
     - target: {fileID: 6463856937810921749, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -5916,6 +5944,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 31.599976
       objectReference: {fileID: 0}
+    - target: {fileID: 8711174523270901686, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
+      propertyPath: save
+      value: 
+      objectReference: {fileID: 628436602}
     - target: {fileID: 8753915972251452735, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6148,6 +6180,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 136306802490482818, guid: ccd8c3b89aa02e943a08ab9238a8a70c, type: 3}
+      propertyPath: m_Height
+      value: 1.6311431
+      objectReference: {fileID: 0}
+    - target: {fileID: 136306802490482818, guid: ccd8c3b89aa02e943a08ab9238a8a70c, type: 3}
+      propertyPath: m_Center.y
+      value: 1.1058524
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6301,6 +6341,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7710302961883104627, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
   m_PrefabInstance: {fileID: 620995053}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &628436602 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3575522382660010698, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
+  m_PrefabInstance: {fileID: 620995053}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 628436600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &649530608 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1512746137559074, guid: f66a133dc2ffd9f4a94fa3cdcd8367c9, type: 3}
@@ -7482,6 +7533,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1839195311}
     m_Modifications:
+    - target: {fileID: 1188596011368148448, guid: a8d64b1d47e57104c8b6f74911f52308, type: 3}
+      propertyPath: m_Height
+      value: 2.0248334
+      objectReference: {fileID: 0}
+    - target: {fileID: 1188596011368148448, guid: a8d64b1d47e57104c8b6f74911f52308, type: 3}
+      propertyPath: m_Center.y
+      value: 1.3604919
+      objectReference: {fileID: 0}
     - target: {fileID: 3966934374049839532, guid: a8d64b1d47e57104c8b6f74911f52308, type: 3}
       propertyPath: chat
       value: 
@@ -7572,10 +7631,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8019399265761494201, guid: a8d64b1d47e57104c8b6f74911f52308, type: 3}
       propertyPath: m_Name
-      value: Borin
+      value: Borin - Shop Ren
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4185446465353631193, guid: a8d64b1d47e57104c8b6f74911f52308, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8d64b1d47e57104c8b6f74911f52308, type: 3}
@@ -22109,6 +22169,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1839195311}
     m_Modifications:
+    - target: {fileID: -5410570905583608821, guid: 7b9c6b629899db640ac414bb011a4a38, type: 3}
+      propertyPath: m_Height
+      value: 2.6448371
+      objectReference: {fileID: 0}
+    - target: {fileID: -5410570905583608821, guid: 7b9c6b629899db640ac414bb011a4a38, type: 3}
+      propertyPath: m_Center.y
+      value: 1.4807192
+      objectReference: {fileID: 0}
     - target: {fileID: -3225967703053262664, guid: 7b9c6b629899db640ac414bb011a4a38, type: 3}
       propertyPath: chat
       value: 
@@ -22429,6 +22497,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1839195311}
     m_Modifications:
+    - target: {fileID: 2710284602843543829, guid: a2156ee03960d764bafa855bf2f1cd57, type: 3}
+      propertyPath: m_Height
+      value: 2.6653662
+      objectReference: {fileID: 0}
+    - target: {fileID: 2710284602843543829, guid: a2156ee03960d764bafa855bf2f1cd57, type: 3}
+      propertyPath: m_Center.y
+      value: 1.4824929
+      objectReference: {fileID: 0}
+    - target: {fileID: 2710284602843543829, guid: a2156ee03960d764bafa855bf2f1cd57, type: 3}
+      propertyPath: m_Center.z
+      value: 9.67922e-17
+      objectReference: {fileID: 0}
     - target: {fileID: 3480714997881303390, guid: a2156ee03960d764bafa855bf2f1cd57, type: 3}
       propertyPath: m_LocalPosition.x
       value: -46.174316
