@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40abad5b0bd37894fa7585439dd7a1dd, type: 3}
   m_Name: Gang1
   m_EditorClassIdentifier: 
-  nameCraft: Gang1
+  nameCraft: "G\u0103ng v\u1EA3i"
   resultCount: 1
   resultItem: {fileID: 11400000, guid: eb8c4c52af65fe346ae15510aa580e09, type: 2}
   requiredItems:

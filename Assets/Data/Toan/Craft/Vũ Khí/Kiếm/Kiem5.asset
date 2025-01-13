@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40abad5b0bd37894fa7585439dd7a1dd, type: 3}
   m_Name: Kiem5
   m_EditorClassIdentifier: 
-  nameCraft: KiemKimCuong
+  nameCraft: "Ki\u1EBFm kim c\u01B0\u01A1ng"
   resultCount: 1
   resultItem: {fileID: 11400000, guid: 486a37206aadaaf4f898f9bffe1588d8, type: 2}
   requiredItems:

@@ -21,7 +21,7 @@ MonoBehaviour:
   buffD: 0
   gold: 60
   rateDrop: 75
-  description: "D\u01B0\u1EE3c ph\u1EA9m gi\xFAp h\u1ED3i 10 mana"
+  description: "H\u1ED3i 10 mana"
   buff: 0
   itemSet: 4
   itemType: 0

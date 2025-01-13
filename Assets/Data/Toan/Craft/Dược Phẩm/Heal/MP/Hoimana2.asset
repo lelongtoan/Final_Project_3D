@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40abad5b0bd37894fa7585439dd7a1dd, type: 3}
   m_Name: Hoimana2
   m_EditorClassIdentifier: 
-  nameCraft: Hoimana2
+  nameCraft: "B\xECnh mana v\u1EEBa"
   resultCount: 1
   resultItem: {fileID: 11400000, guid: b2e6e2fbdaa54c94fa872e6bbc07608a, type: 2}
   requiredItems:

@@ -21,8 +21,7 @@ MonoBehaviour:
   buffD: 0
   gold: 150
   rateDrop: 10
-  description: "C\u0169ng l\xE0 gi\xE1p nh\u01B0ng x\u1ECBn h\u01A1n, m\u1EB7c v\xF4
-    t\u0103ng 20HP"
+  description: "T\u0103ng 20HP"
   buff: 0
   itemSet: 1
   itemType: 4

@@ -21,7 +21,7 @@ MonoBehaviour:
   buffD: 50
   gold: 225
   rateDrop: 25
-  description: "D\u01B0\u1EE3c ph\u1EA9m t\u0103ng 50 \u0111i\u1EC3m m\xE1u"
+  description: "T\u0103ng 50 m\xE1u"
   buff: 1
   itemSet: 2
   itemType: 0
