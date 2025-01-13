@@ -22,6 +22,8 @@ MonoBehaviour:
   questNope:
   - "Mu\u1ED1n b\u1ECF cu\u1ED9c b\xE2y gi\u1EDD c\u0169ng kh\xF4ng qu\xE1 mu\u1ED9n
     \u0111\xE2u (C\u01B0\u1EDDi m\u1EC9a)"
+  - "\u0110i v\u1EC1 ph\xEDa t\xE2y c\u1EE7a h\u1EA7m ng\u1EE5c l\xE0 ng\u01B0\u01A1i
+    s\u1EBD th\u1EA5y th\u1EE9 m\xECnh c\u1EA7n t\xECm"
   questComplete:
   - "H\u1EEBm, ng\u01B0\u01A1i l\xE0m t\u1ED1t h\u01A1n ta t\u01B0\u1EDFng. \u0110\xE2y
     l\xE0 ph\u1EA7n th\u01B0\u1EDFng, nh\u01B0 \u0111\xE3 h\u1EE9a. H\xE3y d\xF9ng

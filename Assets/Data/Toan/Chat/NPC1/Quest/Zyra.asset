@@ -22,6 +22,8 @@ MonoBehaviour:
   questNope:
   - "Ng\u01B0\u01A1i c\xF2n \u0111i\u1EC1u g\xEC mu\u1ED1n h\u1ECFi n\u1EEFa sao
     ?"
+  - "Da qu\xE1i v\u1EADt s\u1EBD \u0111\u01B0\u1EE3c t\xECm th\u1EA5y khi ti\xEAu
+    di\u1EC7t qu\xE1i \u1EDF h\u1EA7m ng\u1EE5c"
   questComplete:
   - "Kh\xF4ng t\u1EC7 ch\xFAt n\xE0o! \u0110\xE2y, h\xE3y c\u1EA7m l\u1EA5y v\u1EADt
     n\xE0y v\xE0 \u0111i \u0111\u1EBFn Borin \u0111\u1EC3 h\u1ECDc c\xE1ch ch\u1EBF
