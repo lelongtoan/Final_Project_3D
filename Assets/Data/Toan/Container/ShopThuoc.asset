@@ -15,37 +15,37 @@ MonoBehaviour:
   itemsInShop:
   - itemShop: {fileID: 11400000, guid: e35a369cceb075c4db22d2fdcbb76fb3, type: 2}
     priceItem: 1000
-    locked: 1
-    questShop: {fileID: 11400000, guid: fa7d85dec35b73245b1ff1ee4e3520b1, type: 2}
+    locked: 0
+    questShop: {fileID: 0}
   - itemShop: {fileID: 11400000, guid: c3af34225e0195c4cb35ff898a268fd6, type: 2}
     priceItem: 750
-    locked: 1
-    questShop: {fileID: 11400000, guid: fa7d85dec35b73245b1ff1ee4e3520b1, type: 2}
+    locked: 0
+    questShop: {fileID: 0}
   - itemShop: {fileID: 11400000, guid: 8f6264f078d4fd64e99aabc393b637c5, type: 2}
     priceItem: 750
-    locked: 1
-    questShop: {fileID: 11400000, guid: fa7d85dec35b73245b1ff1ee4e3520b1, type: 2}
+    locked: 0
+    questShop: {fileID: 0}
   - itemShop: {fileID: 11400000, guid: c34d11372e66d5f4d98fa85a113e7831, type: 2}
     priceItem: 200
-    locked: 1
-    questShop: {fileID: 11400000, guid: fa7d85dec35b73245b1ff1ee4e3520b1, type: 2}
+    locked: 0
+    questShop: {fileID: 11400000, guid: 28d7d40c5a2a1dd48b0c4f58bac975e6, type: 2}
   - itemShop: {fileID: 11400000, guid: f51bccb8db383294c898ffe947078937, type: 2}
     priceItem: 700
-    locked: 1
-    questShop: {fileID: 11400000, guid: fa7d85dec35b73245b1ff1ee4e3520b1, type: 2}
+    locked: 0
+    questShop: {fileID: 11400000, guid: 28d7d40c5a2a1dd48b0c4f58bac975e6, type: 2}
   - itemShop: {fileID: 11400000, guid: 83c1018c8ef1ab744b5d3cad575465f3, type: 2}
     priceItem: 1150
-    locked: 1
-    questShop: {fileID: 11400000, guid: fa7d85dec35b73245b1ff1ee4e3520b1, type: 2}
+    locked: 0
+    questShop: {fileID: 11400000, guid: 28d7d40c5a2a1dd48b0c4f58bac975e6, type: 2}
   - itemShop: {fileID: 11400000, guid: a43f8c0733058a649a2ec0fa3867264b, type: 2}
     priceItem: 200
-    locked: 1
-    questShop: {fileID: 11400000, guid: fa7d85dec35b73245b1ff1ee4e3520b1, type: 2}
+    locked: 0
+    questShop: {fileID: 11400000, guid: 28d7d40c5a2a1dd48b0c4f58bac975e6, type: 2}
   - itemShop: {fileID: 11400000, guid: b2e6e2fbdaa54c94fa872e6bbc07608a, type: 2}
     priceItem: 700
-    locked: 1
-    questShop: {fileID: 11400000, guid: fa7d85dec35b73245b1ff1ee4e3520b1, type: 2}
+    locked: 0
+    questShop: {fileID: 11400000, guid: 28d7d40c5a2a1dd48b0c4f58bac975e6, type: 2}
   - itemShop: {fileID: 11400000, guid: e3e5a220c0b4ffc4fa968cf3288bbc65, type: 2}
     priceItem: 1150
-    locked: 1
-    questShop: {fileID: 11400000, guid: fa7d85dec35b73245b1ff1ee4e3520b1, type: 2}
+    locked: 0
+    questShop: {fileID: 11400000, guid: 28d7d40c5a2a1dd48b0c4f58bac975e6, type: 2}

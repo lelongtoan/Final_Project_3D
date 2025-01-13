@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: List Perk Data
   m_EditorClassIdentifier: 
   listPerk:
+  - {fileID: 11400000, guid: e099a05181c40c14c9f3b22171cf7976, type: 2}
+  - {fileID: 11400000, guid: fe1f3769cde39dd498f65f2ce04185d7, type: 2}
   - {fileID: 11400000, guid: dfb2386409141804281cece7106ed0f0, type: 2}
   - {fileID: 11400000, guid: de5ef668271449c4eb286e085ba4ae77, type: 2}
   - {fileID: 11400000, guid: 554b6ae3384683540b115286c3135e85, type: 2}

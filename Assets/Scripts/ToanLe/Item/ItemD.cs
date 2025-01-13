@@ -37,7 +37,7 @@ public class ItemD : MonoBehaviour
         idSelect = -1;
         Clear();
     }
-    private void Update()
+    private void OnEnable()
     {
         sell = GameInstance.instance.gameMenu.buyNPCPanel.activeInHierarchy;
     }
@@ -184,6 +184,12 @@ public class ItemD : MonoBehaviour
     }
     public void MoveItem(ItemSlot itemSlot)
     {
+        if (ReferenceEquals(this.itemSlot, itemSlot))
+        {
+            GameInstance.instance.gameReport.SetReport(" ??? Không thể di chuyển vào vị trí cũ! ");
+            isMoving = false;
+            return;
+        }
         if (this.itemSlot.item != null)
         {
             if (this.itemSlot.item == itemSlot.item && itemSlot.item.stackable == true)

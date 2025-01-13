@@ -8,7 +8,7 @@ public class BuffManager : MonoBehaviour
     public GameObject mpBuffUI;
     public GameObject dmgBuffUI;
 
-    public float buffDuration = 300f; //5p
+    public float buffDuration = 15f; //5p
 
     private float maxHP = 100f;
     private float maxMP = 100f;
@@ -38,8 +38,8 @@ public class BuffManager : MonoBehaviour
                 }
                 hpBuffUI.SetActive(true);
                 hpBuffCoroutine = StartCoroutine(ApplyBuff(
-                    () => { maxHP += item.buffD; currentHP += item.buffD; },
-                    () => { maxHP -= item.buffD; currentHP = Mathf.Min(currentHP, maxHP); },
+                    () => { GameInstance.instance.playerInfor.UpMaxHP(item.buffD); GameInstance.instance.playerInfor.healthPoint += item.buffD; },
+                    () => { GameInstance.instance.playerInfor.UpMaxHP(-item.buffD); GameInstance.instance.playerInfor.healthPoint = Mathf.Min(currentHP, maxHP); },
                     () => hpBuffUI.SetActive(false)
                 ));
                 break;
@@ -52,8 +52,8 @@ public class BuffManager : MonoBehaviour
                 }
                 mpBuffUI.SetActive(true);
                 mpBuffCoroutine = StartCoroutine(ApplyBuff(
-                    () => { maxMP += item.buffD; currentMP += item.buffD; },
-                    () => { maxMP -= item.buffD; currentMP = Mathf.Min(currentMP, maxMP); },
+                    () => { GameInstance.instance.playerInfor.UpMaxMP(item.buffD); GameInstance.instance.playerInfor.manaPoint += item.buffD; },
+                    () => { GameInstance.instance.playerInfor.UpMaxMP(-item.buffD); GameInstance.instance.playerInfor.manaPoint= Mathf.Min(currentMP, maxMP); },
                     () => mpBuffUI.SetActive(false)
                 ));
                 break;
@@ -66,8 +66,8 @@ public class BuffManager : MonoBehaviour
                 }
                 dmgBuffUI.SetActive(true);
                 dmgBuffCoroutine = StartCoroutine(ApplyBuff(
-                    () => dmg += item.buffD,
-                    () => dmg -= item.buffD,
+                    () => GameInstance.instance.playerInfor.UpDame((int)item.buffD),
+                    () => GameInstance.instance.playerInfor.UpDame((int)-item.buffD),
                     () => dmgBuffUI.SetActive(false)
                 ));
                 break;

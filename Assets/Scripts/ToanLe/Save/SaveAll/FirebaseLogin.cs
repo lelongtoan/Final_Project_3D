@@ -1,4 +1,5 @@
 ﻿using Firebase.Auth;
+using Firebase.Extensions;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,14 +11,17 @@ public class FirebaseLogin : MonoBehaviour
     [Header("UI Elements")]
     public InputField emailInput;
     public InputField passwordInput;
-    public TextMeshProUGUI statusText;
+    public Text statusText;
     bool isLog = true;
 
-    
-    private void Start()
+
+    private void Awake()
+    {
+        auth = auth = FirebaseAuth.DefaultInstance;
+    }
+    private void OnEnable()
     {
         InitializeUI();
-        auth = FirebaseAuth.DefaultInstance;
     }
     private void Update()
     {
@@ -64,7 +68,7 @@ public class FirebaseLogin : MonoBehaviour
     {
         statusText.text = "Đang đăng nhập...";
 
-        auth.SignInWithEmailAndPasswordAsync(email, password).ContinueWith(task =>
+        auth.SignInWithEmailAndPasswordAsync(email, password).ContinueWithOnMainThread(task =>
         {
             if (task.IsCanceled || task.IsFaulted)
             {
