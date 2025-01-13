@@ -25,7 +25,6 @@ public class TutorialButton : MonoBehaviour
             tutorialScript.currentIndex = 0;
             tutorialScript.TutorialSet();
             tutorialPanel.SetActive(true);
-            soundEffect.PlaySound("Button");
         }
         else
         {
