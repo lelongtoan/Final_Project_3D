@@ -123,5 +123,6 @@ public class AchievementGO : MonoBehaviour
     {
         AchievementData data = MainMenuInstance.instance.achieManager.listAchievement.listAchievement.Find(c => c.questId == idGoAchiement);
         MainMenuInstance.instance.achieManager.SetTake(data);
+        sound.PlaySound("Complete");
     }
 }
