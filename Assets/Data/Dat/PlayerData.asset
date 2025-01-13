@@ -16,7 +16,7 @@ MonoBehaviour:
   healthPoint: 120
   manaPoint: 100
   maxMP: 100
-  def: 5
+  def: 30
   dame: 10
   level: 1
   exp: 0
