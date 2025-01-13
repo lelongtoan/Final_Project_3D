@@ -46,18 +46,20 @@ public class EquipmentGenerator : ScriptableObject
         }
         else
         {
+            GameInstance.instance.playerInfor.UpMaxHP(-targetSlot.item.HP);
+            GameInstance.instance.playerInfor.UpMaxMP(-targetSlot.item.MP);
+            GameInstance.instance.playerInfor.UpDame((int)-targetSlot.item.Dmg);
+
             Item tempItem = targetSlot.item;
             int tempCount = targetSlot.count;
             int tempDurability = targetSlot.toolDurability;
 
             targetSlot.Copy(itemSlot);
-            GameInstance.instance.playerInfor.UpMaxHP(-targetSlot.item.HP);
-            GameInstance.instance.playerInfor.UpMaxMP(-targetSlot.item.MP);
-            GameInstance.instance.playerInfor.UpDame((int)-targetSlot.item.Dmg);
-            //GameInstance.instance.playerInfor.UpDef((int)-targetSlot.item);
+
             GameInstance.instance.playerInfor.UpMaxHP(itemSlot.item.HP);
             GameInstance.instance.playerInfor.UpMaxMP(itemSlot.item.MP);
             GameInstance.instance.playerInfor.UpDame((int)itemSlot.item.Dmg);
+
             itemSlot.Set(tempItem, tempDurability, tempCount);
         }
     }
