@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d690ab03900124439ed5e618aa451db, type: 3}
+  m_Name: "Tr\xE1i t\xE1o"
+  m_EditorClassIdentifier: 
+  id: 45
+  itemName: "Tr\xE1i t\xE1o"
+  stackable: 1
+  HP: 10
+  MP: 0
+  Dmg: 0
+  buffD: 0
+  gold: 30
+  rateDrop: 75
+  description: "H\u1ED3i 10HP"
+  buff: 0
+  itemSet: 2
+  itemType: 0
+  icon: {fileID: -619223243, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
