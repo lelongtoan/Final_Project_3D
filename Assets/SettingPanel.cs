@@ -51,4 +51,8 @@ public class SettingPanel : MonoBehaviour
             account.SetActive(true);
         }
     }
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
