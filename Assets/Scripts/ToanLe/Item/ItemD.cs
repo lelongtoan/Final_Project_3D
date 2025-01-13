@@ -37,7 +37,7 @@ public class ItemD : MonoBehaviour
         idSelect = -1;
         Clear();
     }
-    private void OnEnable()
+    private void Update()
     {
         sell = GameInstance.instance.gameMenu.buyNPCPanel.activeInHierarchy;
     }

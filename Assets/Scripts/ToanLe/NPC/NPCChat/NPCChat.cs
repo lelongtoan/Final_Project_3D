@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Xml.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class NPCChat : MonoBehaviour
 {
+    [SerializeField] GameObject gameO;
+    public TextMeshProUGUI textMeshProUGUI;
     public ListNPCChat npcChats;
     public TextMeshProUGUI nameText;
     public Image avatarImage;
@@ -17,6 +20,14 @@ public class NPCChat : MonoBehaviour
     private void Start()
     {
         SetCurrentChat();
+        SetInfo();
+    }
+    private void Update()
+    {
+        if(gameO.activeInHierarchy)
+        {
+            textMeshProUGUI.text = npcChats.npcName;
+        }
     }
     public void SetCurrentChat()
     {

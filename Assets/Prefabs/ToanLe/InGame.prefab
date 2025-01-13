@@ -4068,7 +4068,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4478256308380823211
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8377,7 +8377,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000061035156}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &425482441422378524
@@ -20103,7 +20103,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &250125621326564514
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20176,6 +20176,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74cbc43262f02574989798aaa835f77e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameO: {fileID: 0}
+  textMeshProUGUI: {fileID: 0}
   npcChats: {fileID: 11400000, guid: 8918ec1e9d043fb47a5683a1f938204f, type: 2}
   nameText: {fileID: 3830459674678574843}
   avatarImage: {fileID: 7975084279230326704}
@@ -23223,8 +23225,6 @@ MonoBehaviour:
   mpBuffUI: {fileID: 4660140947618256227}
   dmgBuffUI: {fileID: 4398408672670014252}
   buffDuration: 15
-  currentHP: 0
-  currentMP: 0
 --- !u!114 &7968659244251749483
 MonoBehaviour:
   m_ObjectHideFlags: 0
