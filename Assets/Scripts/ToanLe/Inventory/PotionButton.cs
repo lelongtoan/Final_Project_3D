@@ -28,7 +28,7 @@ public class PotionButton : MonoBehaviour
     {
         for (int i = 0; i < inventory.slots.Count; i++)
         {
-            if (countItem > 0 && healingPotion && inventory.slots[i].item.itemSet == ItemSet.Heal )
+            if (healingPotion && countItem > 0 && inventory.slots[i].item.itemSet == ItemSet.Heal )
             {
                 ItemD.Instance.itemSlot = inventory.slots[i];
                 ItemD.Instance.UseItem(inventory.slots[i]);
@@ -40,7 +40,7 @@ public class PotionButton : MonoBehaviour
                 sound.PlaySound("Drink");
                 return;
             }
-            else if (countItem > 0 && !healingPotion && inventory.slots[i].item.itemSet == ItemSet.Mana)
+            else if (!healingPotion && countItem > 0 && inventory.slots[i].item.itemSet == ItemSet.Mana)
             {
                 ItemD.Instance.itemSlot = inventory.slots[i];
                 ItemD.Instance.UseItem(inventory.slots[i]);

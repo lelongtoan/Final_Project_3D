@@ -32,7 +32,7 @@ public class FirebaseRegistration : MonoBehaviour
         }
         if(auth.CurrentUser != null)
         {
-            ReportMain.instance.SetReport("Tạo tài khoảng và đăng nhập thành công.");
+            ReportMain.instance.SetReport("Tạo tài khoản và đăng nhập thành công.");
             gameObject.SetActive(false);
             isResed = false;
         }
