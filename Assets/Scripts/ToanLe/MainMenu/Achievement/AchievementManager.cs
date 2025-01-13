@@ -63,7 +63,6 @@ public class AchievementManager : MonoBehaviour
                     if (ac.completeAchivement >= achieCheck.countGold)
                     {
                         ac.stateAchievement = StateAchie.Completed;
-                        sound.PlaySound("Complete");
                     }
                     break;
 
@@ -71,7 +70,6 @@ public class AchievementManager : MonoBehaviour
                     if (ac.completeAchivement >= achieCheck.countLevel)
                     {
                         ac.stateAchievement = StateAchie.Completed;
-                        sound.PlaySound("Complete");
                     }
                     break;
 
@@ -79,7 +77,6 @@ public class AchievementManager : MonoBehaviour
                     if (ac.completeAchivement >= achieCheck.countBoss)
                     {
                         ac.stateAchievement = StateAchie.Completed;
-                        sound.PlaySound("Complete");
                     }
                     break;
 
@@ -87,7 +84,6 @@ public class AchievementManager : MonoBehaviour
                     if (ac.completeAchivement >= achieCheck.countEnemy)
                     {
                         ac.stateAchievement = StateAchie.Completed;
-                        sound.PlaySound("Complete");
                     }
                     break;
 
@@ -95,7 +91,6 @@ public class AchievementManager : MonoBehaviour
                     if (ac.completeAchivement >= achieCheck.countSignIn)
                     {
                         ac.stateAchievement = StateAchie.Completed;
-                        sound.PlaySound("Complete");
                     }
                     break;
 
