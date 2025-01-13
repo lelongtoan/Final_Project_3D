@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 120
   healthPoint: 120
-  manaPoint: 105
-  maxMP: 105
+  manaPoint: 100
+  maxMP: 100
   def: 5
-  dame: 20
+  dame: 10
   level: 1
   exp: 0
   money: 0

@@ -3681,7 +3681,7 @@ MonoBehaviour:
   brg_slider: {fileID: 7119056140978376638}
   vfx_slider: {fileID: 3809881896990814899}
   sound: {fileID: 0}
-  save: {fileID: 0}
+  save: {fileID: 9051895226199844306}
 --- !u!1 &1537645317828947905
 GameObject:
   m_ObjectHideFlags: 0
@@ -5839,7 +5839,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 53.4, y: 0}
+  m_AnchoredPosition: {x: 53.4, y: 4.71}
   m_SizeDelta: {x: 355, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1669508833349704522
@@ -23165,6 +23165,7 @@ MonoBehaviour:
   minFontSize: 6
   maxFontSize: 36
   canvasScaler: {fileID: 0}
+  excludedTexts: []
 --- !u!114 &481196196815354987
 MonoBehaviour:
   m_ObjectHideFlags: 0

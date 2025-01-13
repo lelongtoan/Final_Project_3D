@@ -16,6 +16,11 @@ public class ItemShopDetail : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSho
     [SerializeField] Button buttonWatch;
     [SerializeField] string _androidAdUnitId = "Rewarded_Android"; // ID quảng cáo trên Android
     string _adUnitId = null;
+    SoundEffect sound;
+    private void Start()
+    {
+        sound = FindObjectOfType<SoundEffect>();
+    }
     private void Awake()
     {
         buttonBuy.onClick.AddListener(Buy); 
@@ -150,6 +155,7 @@ public class ItemShopDetail : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSho
             }
             MainMenuInstance.instance.inforMenu.money -= shopData.price;
             ReportMain.instance.SetReport("Đã Mua Thành Công.");
+            sound.PlaySound("Coin");
         }
         else if(shopData.priceType == StatePrice.Diamond)
         {
@@ -161,6 +167,7 @@ public class ItemShopDetail : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSho
 
             MainMenuInstance.instance.inforMenu.diamond -= shopData.price;
             ReportMain.instance.SetReport("Đã Mua Thành Công.");
+            sound.PlaySound("Coin");
         }
 
         if (shopData.buyType == ItemBuy.Nope)
