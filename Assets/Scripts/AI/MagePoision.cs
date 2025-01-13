@@ -8,20 +8,37 @@ public class MagePoision : MonoBehaviour
     private float time=1;
     public bool inside = false;
     public PlayerInfor player;
+    Coroutine coroutine;
     private void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("MageEnemy"))
+        {
+            return;
+        }
         if (other.CompareTag("Player"))
         {
             player = GameObject.FindWithTag("Player").GetComponent<PlayerInfor>();
             dame = GameObject.FindWithTag("MageEnemy").GetComponent<EnemyInfor>().dame / 3;
             inside = true;
-            StartCoroutine(ApplyDamge());
+            if (coroutine == null)
+            {
+                coroutine = StartCoroutine(ApplyDamge());
+            }
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        inside = false;
-        player = null;
+        if(other.CompareTag("Player"))
+        {
+            inside = false;
+            player = null;
+            if (coroutine != null)
+            {
+                StopCoroutine(coroutine);
+                coroutine = null;
+            }
+        }
+
     }
     private IEnumerator ApplyDamge()
     {

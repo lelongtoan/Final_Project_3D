@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Zyra
   m_EditorClassIdentifier: 
   npcName: Zyra
-  npcImage: {fileID: 0}
+  npcImage: {fileID: 21300000, guid: 7a01a2addae3ea64fbb540a677a08051, type: 3}
   list:
   - {fileID: 11400000, guid: 8583fb2c6254e814cbd75c821a11ed54, type: 2}

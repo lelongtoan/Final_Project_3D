@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SecondBoss
   m_EditorClassIdentifier: 
   questId: 0
-  icon: {fileID: -1150650850, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
+  icon: {fileID: 559429178, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
   nameAchivement: "Ti\xEAu di\u1EC7t Boss l\u1EA7n th\u1EE9 2"
   countAchievement: 0
   completeAchivement: 2

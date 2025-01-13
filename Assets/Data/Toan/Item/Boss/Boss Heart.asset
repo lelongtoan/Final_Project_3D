@@ -20,7 +20,7 @@ MonoBehaviour:
   Dmg: 0
   buffD: 0
   gold: 0
-  rateDrop: 0
+  rateDrop: 100
   description: "Tr\xE1i tim Warrior"
   buff: 0
   itemSet: 0
