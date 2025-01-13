@@ -21,8 +21,7 @@ MonoBehaviour:
   buffD: 0
   gold: 450
   rateDrop: 10
-  description: "Ki\u1EBFm h\u1ED3ng ng\u1ECDc khi trang b\u1ECB t\u0103ng 20 s\u1EE9c
-    m\u1EA1nh"
+  description: "T\u0103ng 20 s\u1EE9c m\u1EA1nh"
   buff: 0
   itemSet: 1
   itemType: 1

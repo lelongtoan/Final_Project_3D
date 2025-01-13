@@ -21,7 +21,7 @@ MonoBehaviour:
   buffD: 0
   gold: 30
   rateDrop: 75
-  description: "Tr\xE1i t\xE1o ! S\u1EED d\u1EE5ng h\u1ED3i 10HP"
+  description: "H\u1ED3i 10HP"
   buff: 0
   itemSet: 2
   itemType: 0

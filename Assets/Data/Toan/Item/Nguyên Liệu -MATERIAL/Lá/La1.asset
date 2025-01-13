@@ -21,8 +21,7 @@ MonoBehaviour:
   buffD: 0
   gold: 15
   rateDrop: 60
-  description: "L\xE1 ba nh\xE1nh \u0111\u01B0\u1EE3c d\xF9ng trong ch\u1EBF t\u1EA1o
-    d\u01B0\u1EE3c ph\u1EA9m"
+  description: "Ch\u1EBF t\u1EA1o d\u01B0\u1EE3c ph\u1EA9m"
   buff: 0
   itemSet: 0
   itemType: 0

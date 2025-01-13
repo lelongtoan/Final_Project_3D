@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40abad5b0bd37894fa7585439dd7a1dd, type: 3}
   m_Name: Khien1
   m_EditorClassIdentifier: 
-  nameCraft: Khien1
+  nameCraft: "Khi\xEAn g\u1ED7"
   resultCount: 1
   resultItem: {fileID: 11400000, guid: 0d66c5c10c3b3ba4bba4d4c3f97f9b43, type: 2}
   requiredItems:

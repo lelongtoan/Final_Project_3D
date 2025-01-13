@@ -21,7 +21,7 @@ MonoBehaviour:
   buffD: 0
   gold: 90
   rateDrop: 30
-  description: "\u0110\xE2y l\xE0 m\u0169 nh\u01B0ng m\u1EB7c v\xF4 t\u0103ng 10HP"
+  description: "T\u0103ng 10HP"
   buff: 0
   itemSet: 1
   itemType: 3
