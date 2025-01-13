@@ -23222,7 +23222,7 @@ MonoBehaviour:
   hpBuffUI: {fileID: 1983017788291040521}
   mpBuffUI: {fileID: 4660140947618256227}
   dmgBuffUI: {fileID: 4398408672670014252}
-  buffDuration: 300
+  buffDuration: 15
   currentHP: 0
   currentMP: 0
 --- !u!114 &7968659244251749483
