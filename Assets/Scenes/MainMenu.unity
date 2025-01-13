@@ -19712,7 +19712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   list: {fileID: 11400000, guid: f92c75137ebf5fd4c9960385aa525300, type: 2}
-  stats: {fileID: 0}
+  stats: {fileID: 11400000, guid: 5d729e226f472e749b2218f573329a0b, type: 2}
 --- !u!1 &814600069
 GameObject:
   m_ObjectHideFlags: 0
