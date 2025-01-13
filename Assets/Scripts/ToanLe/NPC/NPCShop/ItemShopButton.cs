@@ -33,6 +33,10 @@ public class ItemShopButton : MonoBehaviour
         {
             item.locked = false;
         }
+        if(item.questShop == null)
+        {
+            item.locked = false;
+        }
         if (item.locked)
         {
             buyText.text = "Lock";
