@@ -233,9 +233,9 @@ public class ChestSystem : MonoBehaviour
                 perk.gameObject.GetComponent<ItemTake>().Set(perkData.image, item.Value);
                 perkData.perkState = PerkState.Unlock;
                 perkData.quantity += item.Value;
-                SetItemTakePanel();
             }
         }
+        SetItemTakePanel();
     }
     private int GetRandomItem()
     {

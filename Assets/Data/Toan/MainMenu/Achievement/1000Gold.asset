@@ -18,6 +18,6 @@ MonoBehaviour:
   countAchievement: 0
   completeAchivement: 1000
   rewardAchievement: 200
-  stateAchievement: 2
+  stateAchievement: 0
   checkAchievement: 0
   rewardAchie: 0

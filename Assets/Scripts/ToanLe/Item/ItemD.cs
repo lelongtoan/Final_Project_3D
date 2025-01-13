@@ -188,22 +188,47 @@ public class ItemD : MonoBehaviour
         {
             if (this.itemSlot.item == itemSlot.item && itemSlot.item.stackable == true)
             {
-                itemSlot.toolDurability = (itemSlot.toolDurability + this.itemSlot.toolDurability) / 2;
-                itemSlot.count += this.itemSlot.count;
-                this.itemSlot.Clear();
+                int totalQuantity = this.itemSlot.count + itemSlot.count;
+
+                if (itemSlot.count == 99)
+                {
+                    Item tempItem = itemSlot.item;
+                    int tempDurability = itemSlot.toolDurability;
+
+                    itemSlot.Copy(this.itemSlot);
+                    this.itemSlot.Set(tempItem, tempDurability, 99);
+                }
+                else if (totalQuantity <= 99)
+                {
+                    itemSlot.count += this.itemSlot.count;
+                    this.itemSlot.Clear();
+                }
+                else
+                {
+                    int remaining = totalQuantity - 99;
+                    itemSlot.count = 99;
+                    this.itemSlot.count = remaining;
+                }
             }
             else
             {
-                Item item = itemSlot.item;
-                int toolDurability = itemSlot.toolDurability;
-                int count = itemSlot.count;
+                Item tempItem = itemSlot.item;
+                int tempDurability = itemSlot.toolDurability;
+                int tempCount = itemSlot.count;
+
                 itemSlot.Copy(this.itemSlot);
-                this.itemSlot.Set(item, toolDurability, count);
-                this.itemSlot = new ItemSlot();
+                this.itemSlot.Set(tempItem, tempDurability, tempCount);
             }
         }
+        else
+        {
+            this.itemSlot.Copy(itemSlot);
+            itemSlot.Clear();
+        }
+
         isMoving = false;
     }
+
     public void SetMoveItem()
     {
         isMoving = true;
