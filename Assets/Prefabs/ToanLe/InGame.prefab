@@ -23164,7 +23164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minFontSize: 6
   maxFontSize: 36
-  canvasScaler: {fileID: 0}
+  canvasScaler: {fileID: 3440770884925500486}
   excludedTexts: []
 --- !u!114 &481196196815354987
 MonoBehaviour:
