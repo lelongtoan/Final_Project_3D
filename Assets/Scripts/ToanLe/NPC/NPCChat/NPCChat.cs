@@ -85,7 +85,7 @@ public class NPCChat : MonoBehaviour
             }
             else
             {
-                if (npcData != null && currentLine < npcData.questNope.Length)
+                if (npcData != null && currentLine < npcData.questComplete.Length)
                 {
                     dialogueText.text = npcData.questComplete[currentLine];
                 }
