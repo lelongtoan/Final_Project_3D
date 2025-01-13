@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 0
   levelPerk: 1
   perkName: Heart
-  description: 
+  description: "T\u0103ng hp"
   image: {fileID: 1756937319, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
   quantity: 3
   rate: 0

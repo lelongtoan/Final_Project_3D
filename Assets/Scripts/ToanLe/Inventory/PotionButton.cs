@@ -22,8 +22,7 @@ public class PotionButton : MonoBehaviour
     void Update()
     {
         countText.text = countItem.ToString();
-        //countItem = 0;
-        //SetItemCount();
+        SetItemCount();
     }
     public void UseItem()
     {
@@ -31,25 +30,19 @@ public class PotionButton : MonoBehaviour
         {
             if (countItem > 0 && healingPotion && inventory.slots[i].item.itemSet == ItemSet.Heal )
             {
-                if(SceneManager.GetActiveScene().name != "LobbyMap")
-                {
-                    ItemD.Instance.itemSlot = inventory.slots[i];
-                    ItemD.Instance.UseItem(inventory.slots[i]);
-                    SetItemCount();
-                    sound.PlaySound("Drink");
-                    return;
-                }
+                ItemD.Instance.itemSlot = inventory.slots[i];
+                ItemD.Instance.UseItem(inventory.slots[i]);
+                SetItemCount();
+                sound.PlaySound("Drink");
+                return;
             }
             else if (countItem > 0 && !healingPotion && inventory.slots[i].item.itemSet == ItemSet.Mana)
             {
-                if (SceneManager.GetActiveScene().name != "LobbyMap")
-                {
-                    ItemD.Instance.itemSlot = inventory.slots[i];
-                    ItemD.Instance.UseItem(inventory.slots[i]);
-                    SetItemCount();
-                    sound.PlaySound("Drink");
-                    return;
-                }
+                ItemD.Instance.itemSlot = inventory.slots[i];
+                ItemD.Instance.UseItem(inventory.slots[i]);
+                SetItemCount();
+                sound.PlaySound("Drink");
+                return;
             }
         }
     }
