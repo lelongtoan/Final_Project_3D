@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 0
   levelPerk: 1
   perkName: Dame
-  description: "T\u0103ng S\xE1t Th\u01B0\u01A1ng"
+  description: 'ncrease '
   image: {fileID: 1730401510, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
   quantity: 0
   rate: 0

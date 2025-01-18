@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88a160f614ebf2d48ad4caaf4b0081d4, type: 3}
   m_Name: 1000Gold
   m_EditorClassIdentifier: 
-  questId: 5
+  questId: 6
   icon: {fileID: 575765876, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
-  nameAchivement: "Ki\u1EBFm 1000 Gold"
-  countAchievement: 0
+  nameAchivement: Earn 1000 Gold
+  countAchievement: 1555
   completeAchivement: 1000
   rewardAchievement: 200
-  stateAchievement: 0
+  stateAchievement: 1
   checkAchievement: 0
   rewardAchie: 0

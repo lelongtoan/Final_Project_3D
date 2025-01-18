@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shops:
   - {fileID: 11400000, guid: c7f0328809949cb4b84216d72a536df5, type: 2}
-  - {fileID: 11400000, guid: 8353333b62b9aa64e8b685b61b83d445, type: 2}
   - {fileID: 11400000, guid: d1791dacb1f83a943b89f636f62461d4, type: 2}
   - {fileID: 11400000, guid: a6f41d5bd9103be44a5771a370928ed1, type: 2}
   - {fileID: 11400000, guid: e23f1a4e02fa0a54980f3810b7a9a22a, type: 2}

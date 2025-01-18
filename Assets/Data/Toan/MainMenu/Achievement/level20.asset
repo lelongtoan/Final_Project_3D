@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88a160f614ebf2d48ad4caaf4b0081d4, type: 3}
   m_Name: level20
   m_EditorClassIdentifier: 
-  questId: 0
+  questId: 11
   icon: {fileID: 40750794, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
-  nameAchivement: "\u0110\u1EA1t c\u1EA5p 20"
+  nameAchivement: Reach Level 20
   countAchievement: 0
   completeAchivement: 20
   rewardAchievement: 5

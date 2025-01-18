@@ -59,7 +59,7 @@ public class LoadScene : MonoBehaviour
             yield return null;
         }
         loadingSlider.value = 1f;
-        loadingText.text = "Ấn Vào Để Tiếp Tục.";
+        loadingText.text = "Tap to Continue.    ";
         while (!Input.GetMouseButtonDown(0))
         {
             yield return null;

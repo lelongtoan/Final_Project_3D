@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88a160f614ebf2d48ad4caaf4b0081d4, type: 3}
   m_Name: 2000Enemy
   m_EditorClassIdentifier: 
-  questId: 0
+  questId: 5
   icon: {fileID: 40750794, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
-  nameAchivement: "Ti\xEAu di\u1EC7t 2000 qu\xE1i"
-  countAchievement: 0
+  nameAchivement: Defeat 2000 enemies
+  countAchievement: 100
   completeAchivement: 2000
   rewardAchievement: 10
   stateAchievement: 0

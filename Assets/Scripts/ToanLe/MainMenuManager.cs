@@ -26,6 +26,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] GameObject checkInMenu;
     [SerializeField] GameObject statsTreeMenu;
     [SerializeField] GameObject tutorialPanel;
+    [SerializeField] GameObject creditPanel;
     [Header("Detail")]
     [SerializeField] GameObject skillNodeDetail;
     public SoundEffect sound;
@@ -55,6 +56,10 @@ public class MainMenuManager : MonoBehaviour
         statsTreeMenu.SetActive(false);
         skillNodeDetail.SetActive(false);
         tutorialPanel.SetActive(false);
+    }
+    public void SetCreditPanel()
+    {
+        creditPanel.SetActive(!creditPanel.activeInHierarchy);
     }
     public void SetTutorialPanel()
     {

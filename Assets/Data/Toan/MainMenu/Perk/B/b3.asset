@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: b3
   m_EditorClassIdentifier: 
   id: 3
-  levelPerk: 9
+  levelPerk: 1
   perkName: Mana Up
-  description: "T\u0103ng Mana t\u1ED1i \u0111a"
+  description: Increase Mana Point
   image: {fileID: 2047035002, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
   quantity: 0
   rate: 0
