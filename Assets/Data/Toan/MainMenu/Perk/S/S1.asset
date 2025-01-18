@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: S1
   m_EditorClassIdentifier: 
   id: 7
-  levelPerk: 17
+  levelPerk: 1
   perkName: Unstoppable
-  description: "Kh\xF4ng th\u1EC3 c\u1EA3n ph\xE1 "
+  description: Increase Health Point
   image: {fileID: 2117922318, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
   quantity: 0
   rate: 0
-  hp: 50
+  hp: 100
   mp: 0
   dmg: 0
-  def: 30
+  def: 0
   perkState: 0
   quality: 0

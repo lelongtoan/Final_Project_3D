@@ -22,13 +22,6 @@ public class NPCChat : MonoBehaviour
         SetCurrentChat();
         SetInfo();
     }
-    private void Update()
-    {
-        if(gameO.activeInHierarchy)
-        {
-            textMeshProUGUI.text = npcChats.npcName;
-        }
-    }
     public void SetCurrentChat()
     {
         for (int i = 0; i < npcChats.list.Count; i++)

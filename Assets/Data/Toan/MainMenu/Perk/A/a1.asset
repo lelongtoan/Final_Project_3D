@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: a1
   m_EditorClassIdentifier: 
   id: 4
-  levelPerk: 11
+  levelPerk: 1
   perkName: Power & Mana
-  description: "S\u1EF1 pha tr\u1ED9n tr\u1EAFng"
+  description: Increase Damage
   image: {fileID: -1356054371, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
   quantity: 0
   rate: 0
   hp: 0
-  mp: 15
+  mp: 0
   dmg: 15
   def: 0
   perkState: 0

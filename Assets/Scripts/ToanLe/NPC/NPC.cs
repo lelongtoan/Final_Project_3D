@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class NPC : MonoBehaviour
 {
+    public string npcName;
+    [SerializeField] TextMeshProUGUI namePanel;
     [Header("Đang Xài")]
     [SerializeField] NPCChat chat;
     [SerializeField] NPCCraft craft;
@@ -76,6 +79,7 @@ public class NPC : MonoBehaviour
         {
             shop.shopInventory = null;
         }
+        namePanel.text = npcName;
         Debug.Log($"Tương tác với NPC: {gameObject.name}"); 
         InGameMenu.Instance.SetNPC();
     }

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SkillNode
   m_EditorClassIdentifier: 
   icon: {fileID: -895623538, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
-  nameSkillNode: "T\u0103ng M\xE1u I"
-  description: "T\u0103ng 5 M\xE1u"
+  nameSkillNode: Increase Health Point I
+  description: Increase 5 Health Point
   hp: 5
   mp: 0
   dmg: 0

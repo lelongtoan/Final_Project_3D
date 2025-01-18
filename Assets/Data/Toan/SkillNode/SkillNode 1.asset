@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SkillNode 1
   m_EditorClassIdentifier: 
   icon: {fileID: 2047035002, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
-  nameSkillNode: "T\u0103ng N\u0103ng L\u01B0\u1EE3ng I"
-  description: "T\u0103ng 5 N\u0103ng L\u01B0\u1EE3ng"
+  nameSkillNode: Increase Mana Point I
+  description: Increase 5 Mana Point
   hp: 0
   mp: 5
   dmg: 0

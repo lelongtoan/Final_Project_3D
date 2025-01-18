@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88a160f614ebf2d48ad4caaf4b0081d4, type: 3}
   m_Name: FirstBoss
   m_EditorClassIdentifier: 
-  questId: 0
+  questId: 17
   icon: {fileID: 559429178, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
-  nameAchivement: "Ti\xEAu di\u1EC7t Boss l\u1EA7n \u0111\u1EA7u"
+  nameAchivement: Defeat the Boss for the First Time
   countAchievement: 0
   completeAchivement: 1
   rewardAchievement: 5

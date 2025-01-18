@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: S2
   m_EditorClassIdentifier: 
   id: 8
-  levelPerk: 19
+  levelPerk: 1
   perkName: Berserker Rage
-  description: "Si\xEAu s\u1EE9c m\u1EA1nh"
+  description: Increase Damage
   image: {fileID: 1278563006, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
   quantity: 0
   rate: 0

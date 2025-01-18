@@ -29,11 +29,11 @@ public class PerkDetail : MonoBehaviour
         buttonPerk.interactable = false;
         if (data.perkState == PerkState.Lock)
         {
-            buttonPerk.GetComponentInChildren<Text>().text = "Đã Khóa";
+            buttonPerk.GetComponentInChildren<Text>().text = "Locked";
         }
         else
         {
-            buttonPerk.GetComponentInChildren<Text>().text = "Đã Mở";
+            buttonPerk.GetComponentInChildren<Text>().text = "Level Up";
             if (isEquip)
             {
                 buttonPerk.interactable = true;
@@ -44,7 +44,7 @@ public class PerkDetail : MonoBehaviour
             {
                 buttonPerk.interactable = true;
                 buttonPerk.onClick.AddListener(UpLevelPerk);
-                buttonPerk.GetComponentInChildren<Text>().text = "Tăng Cấp";
+                buttonPerk.GetComponentInChildren<Text>().text = "Level Up";
             }
         }
         
@@ -55,12 +55,12 @@ public class PerkDetail : MonoBehaviour
             && equipData.equippedPerks[idEquip] == perk)
         {
             buttonPerk.onClick.AddListener(UnEquipPerk);
-            buttonPerk.GetComponentInChildren<Text>().text = "Gỡ";
+            buttonPerk.GetComponentInChildren<Text>().text = "UnEquip";
         }
         else
         {
             buttonPerk.onClick.AddListener(EquipPerk);
-            buttonPerk.GetComponentInChildren<Text>().text = "Trang Bị";
+            buttonPerk.GetComponentInChildren<Text>().text = "Equip";
         }
     }
     private void UpdateUI()

@@ -3092,6 +3092,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 206379137}
     - target: {fileID: -1802061402740189607, guid: ccba23fb5c41d3a4eb9e70219718b656, type: 3}
+      propertyPath: npcName
+      value: Gron
+      objectReference: {fileID: 0}
+    - target: {fileID: -1802061402740189607, guid: ccba23fb5c41d3a4eb9e70219718b656, type: 3}
       propertyPath: questGO
       value: 
       objectReference: {fileID: 620995057}
@@ -3099,6 +3103,10 @@ PrefabInstance:
       propertyPath: interact
       value: 
       objectReference: {fileID: 620995055}
+    - target: {fileID: -1802061402740189607, guid: ccba23fb5c41d3a4eb9e70219718b656, type: 3}
+      propertyPath: namePanel
+      value: 
+      objectReference: {fileID: 928532227}
     - target: {fileID: -1802061402740189607, guid: ccba23fb5c41d3a4eb9e70219718b656, type: 3}
       propertyPath: interactButton
       value: 
@@ -4562,6 +4570,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 206379137}
     - target: {fileID: 8464939872226481876, guid: eab495feb39b36846a07fee1e06a41aa, type: 3}
+      propertyPath: npcName
+      value: Aella
+      objectReference: {fileID: 0}
+    - target: {fileID: 8464939872226481876, guid: eab495feb39b36846a07fee1e06a41aa, type: 3}
       propertyPath: questGO
       value: 
       objectReference: {fileID: 620995057}
@@ -4577,6 +4589,10 @@ PrefabInstance:
       propertyPath: listCraft
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8464939872226481876, guid: eab495feb39b36846a07fee1e06a41aa, type: 3}
+      propertyPath: namePanel
+      value: 
+      objectReference: {fileID: 928532227}
     - target: {fileID: 8464939872226481876, guid: eab495feb39b36846a07fee1e06a41aa, type: 3}
       propertyPath: listItemShop
       value: 
@@ -5468,6 +5484,30 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4726056347059704742, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4726056347059704742, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4726056347059704742, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4726056347059704742, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4726056347059704742, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4726056347059704742, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4766497046428825207, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -5489,6 +5529,30 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4766497046428825207, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913022549741144221, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913022549741144221, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913022549741144221, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913022549741144221, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913022549741144221, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913022549741144221, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
@@ -5700,6 +5764,30 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5881594684200214101, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881594684200214101, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881594684200214101, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881594684200214101, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881594684200214101, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881594684200214101, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6088343907265150124, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -5742,6 +5830,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6463856937810921749, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621963713464376175, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621963713464376175, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621963713464376175, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621963713464376175, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621963713464376175, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621963713464376175, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7026563989496996960, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
@@ -7543,6 +7655,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 206379137}
     - target: {fileID: 3966934374049839532, guid: a8d64b1d47e57104c8b6f74911f52308, type: 3}
+      propertyPath: npcName
+      value: Borin
+      objectReference: {fileID: 0}
+    - target: {fileID: 3966934374049839532, guid: a8d64b1d47e57104c8b6f74911f52308, type: 3}
       propertyPath: questGO
       value: 
       objectReference: {fileID: 620995057}
@@ -7550,6 +7666,10 @@ PrefabInstance:
       propertyPath: interact
       value: 
       objectReference: {fileID: 620995055}
+    - target: {fileID: 3966934374049839532, guid: a8d64b1d47e57104c8b6f74911f52308, type: 3}
+      propertyPath: namePanel
+      value: 
+      objectReference: {fileID: 928532227}
     - target: {fileID: 3966934374049839532, guid: a8d64b1d47e57104c8b6f74911f52308, type: 3}
       propertyPath: interactButton
       value: 
@@ -9018,6 +9138,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &928532227 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 925707830396409362, guid: 7ecc991fd338aa6458380f8acfcbca54, type: 3}
+  m_PrefabInstance: {fileID: 620995053}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &932308582
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22331,6 +22462,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 206379137}
     - target: {fileID: -3225967703053262664, guid: 7b9c6b629899db640ac414bb011a4a38, type: 3}
+      propertyPath: npcName
+      value: Elyn
+      objectReference: {fileID: 0}
+    - target: {fileID: -3225967703053262664, guid: 7b9c6b629899db640ac414bb011a4a38, type: 3}
       propertyPath: questGO
       value: 
       objectReference: {fileID: 620995057}
@@ -22346,6 +22481,10 @@ PrefabInstance:
       propertyPath: listCraft
       value: 
       objectReference: {fileID: 11400000, guid: c361133d9ac1ead41bb733d811ca3420, type: 2}
+    - target: {fileID: -3225967703053262664, guid: 7b9c6b629899db640ac414bb011a4a38, type: 3}
+      propertyPath: namePanel
+      value: 
+      objectReference: {fileID: 928532227}
     - target: {fileID: -3225967703053262664, guid: 7b9c6b629899db640ac414bb011a4a38, type: 3}
       propertyPath: listItemShop
       value: 
@@ -23181,6 +23320,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 206379137}
     - target: {fileID: 1748768650007987362, guid: 4c01b10d8004298489bb0d23ea8040d8, type: 3}
+      propertyPath: npcName
+      value: King
+      objectReference: {fileID: 0}
+    - target: {fileID: 1748768650007987362, guid: 4c01b10d8004298489bb0d23ea8040d8, type: 3}
       propertyPath: questGO
       value: 
       objectReference: {fileID: 620995057}
@@ -23188,6 +23331,10 @@ PrefabInstance:
       propertyPath: interact
       value: 
       objectReference: {fileID: 620995055}
+    - target: {fileID: 1748768650007987362, guid: 4c01b10d8004298489bb0d23ea8040d8, type: 3}
+      propertyPath: namePanel
+      value: 
+      objectReference: {fileID: 928532227}
     - target: {fileID: 1748768650007987362, guid: 4c01b10d8004298489bb0d23ea8040d8, type: 3}
       propertyPath: interactButton
       value: 

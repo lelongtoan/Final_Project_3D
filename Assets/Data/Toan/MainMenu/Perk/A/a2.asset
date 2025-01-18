@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: a2
   m_EditorClassIdentifier: 
   id: 5
-  levelPerk: 13
+  levelPerk: 1
   perkName: Iron Will
-  description: "T\u0103ng s\u1EE9c ch\u1ECBu \u0111\u1EF1ng"
+  description: Increase Defence
   image: {fileID: -1470200957, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
   quantity: 0
   rate: 0

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88a160f614ebf2d48ad4caaf4b0081d4, type: 3}
   m_Name: Sign7
   m_EditorClassIdentifier: 
-  questId: 0
+  questId: 16
   icon: {fileID: 1913866363, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
-  nameAchivement: "\u0110\u0103ng nh\u1EADp 7 ng\xE0y"
+  nameAchivement: Log in for 7 Days
   countAchievement: 0
   completeAchivement: 7
   rewardAchievement: 3

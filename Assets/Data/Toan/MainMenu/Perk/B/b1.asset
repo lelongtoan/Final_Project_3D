@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: b1
   m_EditorClassIdentifier: 
   id: 1
-  levelPerk: 5
+  levelPerk: 1
   perkName: Power Up
-  description: "T\u0103ng s\u1EE9c m\u1EA1nh"
+  description: Increase Damage
   image: {fileID: 1001500363, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
   quantity: 0
   rate: 0

@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: S3
   m_EditorClassIdentifier: 
   id: 9
-  levelPerk: 21
+  levelPerk: 1
   perkName: Titan Spirit
-  description: "T\u0103ng m\u1EA1nh "
+  description: Increase Mana Point
   image: {fileID: -816475600, guid: ea00180722d526c43a031c6ec3c7eeb4, type: 3}
   quantity: 0
   rate: 0
-  hp: 100
-  mp: 50
+  hp: 0
+  mp: 100
   dmg: 0
   def: 0
   perkState: 0
